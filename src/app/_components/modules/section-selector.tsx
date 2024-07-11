@@ -3,6 +3,7 @@
 import { Brain, BriefcaseBusiness, CodeXml, DraftingCompass } from 'lucide-react';
 
 import { SECTION_SELECTOR_LANGUAGES } from '@/app/_languages/section-selector.lng';
+
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
 

@@ -5,6 +5,7 @@
 import Image from 'next/image';
 
 import { ABOUT_ME_LANGUAGES } from '@/app/_languages/about-me.lng';
+
 import { useLanguage } from '@/ui/components/language';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/ui/components/ui/card';
 
@@ -15,7 +16,7 @@ export function AboutMe(): JSX.Element {
 
   return (
     <section className="relative flex h-[100vh] items-center justify-center">
-      <Card className="w-[560px] rounded-none">
+      <Card className="w-[560px] rounded-none border-dashed">
         <CardHeader className="flex flex-row items-center justify-between">
           <div className="flex flex-col">
             <CardDescription>{translate('hi', ABOUT_ME_LANGUAGES)}</CardDescription>
@@ -29,7 +30,7 @@ export function AboutMe(): JSX.Element {
             className="rounded-full"
           />
         </CardHeader>
-        <CardContent className="border-t border-border">
+        <CardContent className="border-t border-dashed border-border">
           <p className="text-justify">{translate('description', ABOUT_ME_LANGUAGES)}</p>
         </CardContent>
       </Card>

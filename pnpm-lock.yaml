@@ -29,9 +29,6 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
-  flag-icons:
-    specifier: ^7.2.3
-    version: 7.2.3
   husky:
     specifier: ^9.0.11
     version: 9.0.11
@@ -2261,10 +2258,6 @@ packages:
       path-exists: 5.0.0
       unicorn-magic: 0.1.0
     dev: true
-
-  /flag-icons@7.2.3:
-    resolution: {integrity: sha512-X2gUdteNuqdNqob2KKTJTS+ZCvyWeLCtDz9Ty8uJP17Y4o82Y+U/Vd4JNrdwTAjagYsRznOn9DZ+E/Q52qbmqg==}
-    dev: false
 
   /flat-cache@3.2.0:
     resolution: {integrity: sha512-CYcENa+FtcUKLmhhqyctpclsq7QF38pKjZHsGNiSQF5r4FtoKDWabFDl3hzaEQMvT1LHEysw5twgLvpYYb4vbw==}

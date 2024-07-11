@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+   "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "n:lint": "next lint",
+    "p:check": "prettier --check .",
+    "p:write": "prettier --write .",
+    "e:check": "eslint . --ext .ts,.tsx",
+    "e:lint": "eslint . --ext .ts,.tsx --fix",
     "prepare": "husky"
   },
   "dependencies": {
@@ -18,7 +22,6 @@
     "@radix-ui/react-tooltip": "^1.1.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "flag-icons": "^7.2.3",
     "husky": "^9.0.11",
     "lucide-react": "^0.407.0",
     "next": "14.2.5",
