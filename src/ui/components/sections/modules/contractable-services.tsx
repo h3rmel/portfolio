@@ -12,6 +12,12 @@ import { useLanguage } from '@/ui/components/language';
 
 interface ContractableServicesProps extends ComponentPropsWithoutRef<'section'> {}
 
+/**
+ * Contractable Services Section
+ *
+ * @see ContractableServicesProps for the props interface.
+ * @returns The Contractable Services Section with his ref being forwarded.
+ */
 export const ContractableServices = forwardRef<HTMLElement, ContractableServicesProps>(
   function RenderContractableServices(props, ref): JSX.Element {
     const { translate } = useLanguage();
@@ -27,6 +33,8 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
               {translate('contractable-services-list', CONTRACTABLE_SERVICES_LANGUAGES)}
             </p>
           </hgroup>
+          {/* Grid */}
+          <section className="grid grid-cols-2"></section>
         </section>
       </section>
     );

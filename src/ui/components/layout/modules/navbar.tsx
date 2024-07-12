@@ -1,9 +1,19 @@
 'use client';
 
+// #region Imports
+
 import Link from 'next/link';
 
 import { LanguageToggle } from '@/ui/components/language';
 
+// #endregion
+
+/**
+ * Renders a navbar component.
+ *
+ * @component
+ * @returns {JSX.Element} The navbar component.
+ */
 export function Navbar(): JSX.Element {
   return (
     <header className="fixed top-4 z-50 flex w-full items-center justify-center">

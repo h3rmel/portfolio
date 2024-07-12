@@ -39,6 +39,7 @@ const LanguageProviderContext = createContext<LanguageProviderState>(initialStat
 /**
  * Provides language context to its children components.
  *
+ * @provider
  * @see LanguagesProviderProps for the available props.
  * @returns {JSX.Element} The language provider component.
  */
@@ -51,9 +52,9 @@ export function LanguageProvider({
 
   /**
    * Translates a given key using the provided language list.
-   * @param {string | undefined} key - The key to be translated.
-   * @param {LanguageList} list - The language list containing translations for the key.
-   * @returns {string | undefined} The translated string if the key is found in the list and a valid language is set, otherwise undefined.
+   * @param key - The key to be translated.
+   * @param list - The language list containing translations for the key.
+   * @returns The translated string if the key is found in the list and a valid language is set, otherwise undefined.
    */
   const translate = useCallback(
     (key: string | undefined, list: LanguageList): string => {
@@ -80,8 +81,8 @@ export function LanguageProvider({
 
 /**
  * Custom hook that provides the language state from the LanguageProvider context.
- * Throws an error if used outside of a LanguageProvider.
  *
+ * @hook
  * @returns {LanguageProviderState} The language state from the LanguageProvider context.
  * @throws {Error} If used outside of a LanguageProvider.
  */

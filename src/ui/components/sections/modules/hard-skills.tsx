@@ -18,6 +18,12 @@ import { cn } from '@/lib/utils';
 
 interface HardSkillsProps extends ComponentPropsWithoutRef<'section'> {}
 
+/**
+ * Hard Skills Section
+ *
+ * @see HardSkillsProps for the props interface.
+ * @returns The Hard Skills Section with his ref being forwarded.
+ */
 export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function RenderHardSkills(props, ref): JSX.Element {
   const { translate } = useLanguage();
 
@@ -30,7 +36,7 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
           <h2 className="text-2xl">{translate('hard-skills', HARD_SKILLS_LANGUAGES)}</h2>
           <p className="text-muted-foreground">{translate('tech-list', HARD_SKILLS_LANGUAGES)}</p>
         </hgroup>
-        {/* Tech Grid */}
+        {/* Grid */}
         <TooltipProvider>
           <section className="grid grid-cols-5 gap-16">
             {HARD_SKILLS_DATA.map((skill) => (

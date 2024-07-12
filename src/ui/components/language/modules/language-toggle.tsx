@@ -32,7 +32,8 @@ const LANGUAGES_OPTIONS: { [key: string]: { flag: string; name: string } } = {
 /**
  * Renders a language toggle component.
  *
- * @returns {JSX.Element } The language toggle component.
+ * @component
+ * @returns {JSX.Element} The language toggle component.
  */
 export function LanguageToggle(): JSX.Element {
   const { language, setLanguage } = useLanguage();
@@ -51,6 +52,7 @@ export function LanguageToggle(): JSX.Element {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-background/60 backdrop-blur-md">
+        {/* Doesn't render the current language */}
         {Object.entries(LANGUAGES_OPTIONS).map(
           ([key, value]) =>
             value.name !== LANGUAGES_OPTIONS[language].name && (

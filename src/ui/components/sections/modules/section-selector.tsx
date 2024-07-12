@@ -11,6 +11,12 @@ import { Button } from '@/ui/components/ui/button';
 
 // #endregion
 
+/**
+ * @param projectsRef - The reference to the projects section.
+ * @param hardSkillsRef - The reference to the hard skills section.
+ * @param softSkillsRef - The reference to the soft skills section.
+ * @param contractableServicesRef - The reference to the contractable services section.
+ */
 interface SectionSelectorProps {
   projectsRef: RefObject<HTMLHeadingElement>;
   hardSkillsRef: RefObject<HTMLHeadingElement>;
@@ -18,6 +24,14 @@ interface SectionSelectorProps {
   contractableServicesRef: RefObject<HTMLHeadingElement>;
 }
 
+/**
+ * Render the SectionSelector component
+ *
+ * The SectionSelector is responsible for manipulating the scroll to the desired section.
+ *
+ * @see SectionSelectorProps for the props interface.
+ * @returns {JSX.Element} The SectionSelector component
+ */
 export function SectionSelector({
   contractableServicesRef,
   hardSkillsRef,
@@ -26,6 +40,11 @@ export function SectionSelector({
 }: SectionSelectorProps): JSX.Element {
   const { translate } = useLanguage();
 
+  /**
+   * Renders the scroll to the desired section.
+   *
+   * @param ref - The reference of the desired section.
+   */
   function handleScrollToRef(ref: RefObject<HTMLHeadingElement>) {
     window.scrollTo({
       top: (ref.current?.offsetTop ?? 0) - 96,

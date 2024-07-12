@@ -4,22 +4,27 @@
 
 import { useRef } from 'react';
 
-import { AboutMe, ContractableServices, HardSkills, Projects, SectionSelector, SoftSkills } from './_components';
+import {
+  AboutMe,
+  ContractableServices,
+  HardSkills,
+  Projects,
+  SectionSelector,
+  SoftSkills,
+} from '@/ui/components/sections';
 
 // #endregion
 
-export default function Home() {
+/**
+ * Renders the Home page.
+ *
+ * @returns {JSX.Element} The Home page.
+ */
+export default function Home(): JSX.Element {
   const projectsRef = useRef(null);
   const hardSkillsRef = useRef(null);
   const softSkillsRef = useRef(null);
   const contractableServicesRef = useRef(null);
-
-  console.log({
-    projectsRef,
-    hardSkillsRef,
-    softSkillsRef,
-    contractableServicesRef,
-  });
 
   return (
     <main className="min-h-screen w-full">

@@ -12,6 +12,12 @@ import { useLanguage } from '@/ui/components/language';
 
 interface ProjectsProps extends ComponentPropsWithoutRef<'section'> {}
 
+/**
+ * Projects Section
+ *
+ * @see ProjectsProps for the props interface.
+ * @returns The Projects Section with his ref being forwarded.
+ */
 export const Projects = forwardRef<HTMLElement, ProjectsProps>(function RenderProjects(props, ref): JSX.Element {
   const { translate } = useLanguage();
 

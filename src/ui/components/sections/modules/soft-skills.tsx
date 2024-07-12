@@ -15,6 +15,12 @@ import { SOFT_SKILLS_DATA } from '@/data/soft-skills';
 
 interface SoftSkillsProps extends ComponentPropsWithoutRef<'section'> {}
 
+/**
+ * Soft Skills Section
+ *
+ * @see SoftSkillsProps for the props interface.
+ * @returns The Soft Skills Section with his ref being forwarded.
+ */
 export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function RenderSoftSkills(props, ref): JSX.Element {
   const { translate } = useLanguage();
   return (
@@ -26,7 +32,7 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
           <h2 className="text-2xl">{translate('soft-skills', SOFT_SKILLS_LANGUAGES)}</h2>
           <p className="text-muted-foreground">{translate('soft-list', SOFT_SKILLS_LANGUAGES)}</p>
         </hgroup>
-        {/* Soft List */}
+        {/* Grid */}
         <section className="grid grid-cols-2 gap-4">
           {SOFT_SKILLS_DATA.map((skill) => (
             <Card

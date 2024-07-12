@@ -1,5 +1,7 @@
 'use client';
 
+// #region Imports
+
 import * as React from 'react';
 
 import { useTheme } from 'next-themes';
@@ -8,11 +10,24 @@ import { Moon, Sun } from 'lucide-react';
 
 import { Button, ButtonProps } from '@/ui/components/ui/button';
 
+// #endregion
+
 interface ThemeToggleProps extends ButtonProps {}
 
+/**
+ * Renders the ThemeToggle component.
+ *
+ * @param props - The props of the ThemeToggle component.
+ * @returns {JSX.Element} The ThemeToggle component.
+ */
 export function ThemeToggle({ ...props }: ThemeToggleProps): JSX.Element {
   const { theme, setTheme } = useTheme();
 
+  /**
+   * Handles the theme change.
+   *
+   * `light` <-> `dark`
+   */
   function handleThemeChange() {
     if (theme === 'light') setTheme('dark');
     else setTheme('light');

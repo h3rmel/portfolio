@@ -1,9 +1,17 @@
 import type { Config } from 'tailwindcss';
 
+/**
+ * The Tailwind CSS configuration.
+ * 
+ * @see https://tailwindcss.com/docs/configuration
+ */
 const config: Config = {
   darkMode: ['class'],
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
+    /**
+     * Shadcn/ui
+     */
     container: {
       center: true,
       padding: '2rem',
@@ -69,6 +77,9 @@ const config: Config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      /**
+       * Kamome (a.k.a my things)
+       */
       fontFamily: {
         'ibm-plex-mono': 'var(--ibm-plex-mono)',
       },

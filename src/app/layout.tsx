@@ -20,7 +20,17 @@ interface RootLayoutProps {
   children: ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+/**
+ * Renders the root layout component.
+ *
+ * The RootLayout is the main layout of the application.
+ * Is required and must contain `html` and `body` tags.
+ *
+ * @component
+ * @param children -
+ * @returns {JSX.Element} The root layout component.
+ */
+export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html lang="pt" suppressHydrationWarning>
       <body className={ibm_plex_mono.className}>
