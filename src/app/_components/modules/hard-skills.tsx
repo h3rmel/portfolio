@@ -1,6 +1,6 @@
-'use client';
-
 // #region Imports
+
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import Image from 'next/image';
 
@@ -16,13 +16,16 @@ import { cn } from '@/lib/utils';
 
 // #endregion
 
-export function HardSkills(): JSX.Element {
+interface HardSkillsProps extends ComponentPropsWithoutRef<'section'> {}
+
+export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function RenderHardSkills(props, ref): JSX.Element {
   const { translate } = useLanguage();
 
   return (
-    <section className="border-y border-dashed border-border">
+    <section {...props} ref={ref} className="border-y border-dashed border-border">
       <section className="container relative flex flex-col gap-8 border-x border-dashed border-border p-16">
         <CodeXml className="absolute right-4 top-4 h-8 w-8 text-muted-foreground" />
+        {/* Header */}
         <hgroup className="flex flex-col gap-1">
           <h2 className="text-2xl">{translate('hard-skills', HARD_SKILLS_LANGUAGES)}</h2>
           <p className="text-muted-foreground">{translate('tech-list', HARD_SKILLS_LANGUAGES)}</p>
@@ -63,7 +66,7 @@ export function HardSkills(): JSX.Element {
           </section>
         </TooltipProvider>
         <section className="flex flex-col gap-1">
-          <p className="text-muted-foreground">{translate('other-skills', HARD_SKILLS_LANGUAGES)}:</p>
+          <h4 className="text-xl text-muted-foreground">{translate('other-skills', HARD_SKILLS_LANGUAGES)}:</h4>
           <ul>
             {OTHER_HARD_SKILLS_DATA.map((skill) => (
               <li key={skill}>- {translate(skill, HARD_SKILLS_LANGUAGES)}</li>
@@ -73,4 +76,4 @@ export function HardSkills(): JSX.Element {
       </section>
     </section>
   );
-}
+});

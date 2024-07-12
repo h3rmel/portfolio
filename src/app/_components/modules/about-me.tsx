@@ -1,5 +1,3 @@
-'use client';
-
 // #region Imports
 
 import Image from 'next/image';
@@ -15,8 +13,9 @@ export function AboutMe(): JSX.Element {
   const { translate } = useLanguage();
 
   return (
-    <section className="relative flex h-[100vh] items-center justify-center">
-      <Card className="w-[560px] rounded-none border-dashed">
+    <section className="relative h-[100vh] w-full bg-dots">
+      <div className="background-animate absolute left-[50%] top-[50%] h-[320px] w-[520px] translate-x-[-50%] translate-y-[-50%] bg-gradient-to-tr from-emerald-500 to-green-500 blur-md" />
+      <Card className="absolute left-[50%] top-[50%] w-[560px] translate-x-[-50%] translate-y-[-50%] rounded-none border-dashed">
         <CardHeader className="flex flex-row items-center justify-between">
           <div className="flex flex-col">
             <CardDescription>{translate('hi', ABOUT_ME_LANGUAGES)}</CardDescription>

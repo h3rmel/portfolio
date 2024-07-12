@@ -34,3 +34,21 @@
     @apply font-ibm-plex-mono;
   }
 }
+
+.background-animate {
+  background-size: 400%;
+
+  -webkit-animation: BackgroundAnimation 5s ease infinite;
+  -moz-animation: BackgroundAnimation 5s ease infinite;
+  animation: BackgroundAnimation 5s ease infinite;
+}
+
+@keyframes BackgroundAnimation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

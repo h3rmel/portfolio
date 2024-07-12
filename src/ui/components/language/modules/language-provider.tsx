@@ -44,7 +44,7 @@ const LanguageProviderContext = createContext<LanguageProviderState>(initialStat
  */
 export function LanguageProvider({
   children,
-  defaultLanguage = 'en-US',
+  defaultLanguage = 'pt-BR',
   storageKey = 'h3rmel-portfolio-language',
 }: LanguagesProviderProps): JSX.Element {
   const [language, setLanguage] = useState<Language>(defaultLanguage);
