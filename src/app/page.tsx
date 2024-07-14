@@ -8,7 +8,7 @@ import {
   AboutMe,
   ContractableServices,
   HardSkills,
-  Projects,
+  Portfolio,
   SectionSelector,
   SoftSkills,
 } from '@/ui/components/sections';
@@ -20,8 +20,8 @@ import {
  *
  * @returns {JSX.Element} The Home page.
  */
-export default function Home(): JSX.Element {
-  const projectsRef = useRef(null);
+export default function Page(): JSX.Element {
+  const portfolioRef = useRef(null);
   const hardSkillsRef = useRef(null);
   const softSkillsRef = useRef(null);
   const contractableServicesRef = useRef(null);
@@ -30,12 +30,12 @@ export default function Home(): JSX.Element {
     <main className="min-h-screen w-full">
       <AboutMe />
       <SectionSelector
-        projectsRef={projectsRef}
+        portfolioRef={portfolioRef}
         hardSkillsRef={hardSkillsRef}
         softSkillsRef={softSkillsRef}
         contractableServicesRef={contractableServicesRef}
       />
-      <Projects ref={projectsRef} />
+      <Portfolio ref={portfolioRef} />
       <HardSkills ref={hardSkillsRef} />
       <SoftSkills ref={softSkillsRef} />
       <ContractableServices ref={contractableServicesRef} />

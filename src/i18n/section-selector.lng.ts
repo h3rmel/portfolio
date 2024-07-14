@@ -7,6 +7,9 @@ export const SECTION_SELECTOR_LANGUAGES: LanguageList = {
     'pt-BR': 'Clique em um dos botões abaixo para saber mais sobre:',
     'en-US': 'Click on one of the buttons below to know more about:',
   },
+  /**
+   * Sections
+   */
   'contractable-services': {
     'pt-BR': 'Serviços Contratáveis',
     'en-US': 'Contractable Services',

@@ -7,6 +7,9 @@ export const HARD_SKILLS_LANGUAGES: LanguageList = {
     'pt-BR': 'Aqui esta a lista de linguagens e tecnologias que uso para trabalho.',
     'en-US': 'Here is the list of languages and technologies that I use for work.',
   },
+  /**
+   * Other Skills (List)
+   */
   'other-skills': {
     'pt-BR': 'Outras Habilidades',
     'en-US': 'Other Skills',

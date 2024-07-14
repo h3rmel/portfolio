@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import { LanguageProvider } from '@/ui/components/language';
 import { Navbar } from '@/ui/components/layout';
 import { ThemeProvider } from '@/ui/components/theme/theme-provider';
+import { Toaster } from '@/ui/components/ui/toaster';
 import { ibm_plex_mono } from '@/ui/fonts';
 import '@/ui/globals.css';
 
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
           <LanguageProvider>
             <Navbar />
             {children}
+            <Toaster />
           </LanguageProvider>
         </ThemeProvider>
       </body>

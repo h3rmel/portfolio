@@ -3,11 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ABOUT_ME_LANGUAGES } from '@/app/_languages/about-me.lng';
-
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/components/ui/card';
+
+import { ABOUT_ME_LANGUAGES } from '@/i18n/about-me.lng';
 
 // #endregion
 
@@ -20,13 +20,13 @@ export function AboutMe(): JSX.Element {
   const { translate } = useLanguage();
 
   return (
-    <section className="relative h-[100vh] w-full bg-dots">
-      <div className="background-animate absolute left-[50%] top-[50%] h-[400px] w-[520px] translate-x-[-50%] translate-y-[-50%] bg-gradient-to-tr from-emerald-100 to-emerald-950 blur-md" />
-      <Card className="absolute left-[50%] top-[50%] w-[560px] translate-x-[-50%] translate-y-[-50%] rounded-none border-dashed">
+    <section className="border-divider relative h-[100vh] w-full bg-dots">
+      {/* Content */}
+      <Card className="absolute left-[50%] top-[50%] w-[560px] translate-x-[-50%] translate-y-[-50%]">
         <CardHeader className="flex flex-row items-center justify-between">
           <hgroup className="flex flex-col">
             <CardDescription>{translate('hi', ABOUT_ME_LANGUAGES)}</CardDescription>
-            <CardTitle>Isaac "Hermel" Reginato</CardTitle>
+            <CardTitle className="text-2xl">Isaac "Hermel" Reginato</CardTitle>
           </hgroup>
           <Image
             src="/profile.webp"
@@ -36,7 +36,7 @@ export function AboutMe(): JSX.Element {
             className="rounded-full"
           />
         </CardHeader>
-        <CardContent className="border-t border-dashed border-border">
+        <CardContent>
           <p className="text-justify">{translate('description', ABOUT_ME_LANGUAGES)}</p>
         </CardContent>
         <CardFooter className="inline-flex w-full gap-4">

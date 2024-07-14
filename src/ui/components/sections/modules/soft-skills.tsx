@@ -4,12 +4,11 @@ import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import { Brain } from 'lucide-react';
 
-import { SOFT_SKILLS_LANGUAGES } from '@/app/_languages/soft-skills.lng';
-
 import { useLanguage } from '@/ui/components/language';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/ui/components/ui/card';
 
 import { SOFT_SKILLS_DATA } from '@/data/soft-skills';
+import { SOFT_SKILLS_LANGUAGES } from '@/i18n/soft-skills.lng';
 
 // #endregion
 
@@ -24,7 +23,8 @@ interface SoftSkillsProps extends ComponentPropsWithoutRef<'section'> {}
 export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function RenderSoftSkills(props, ref): JSX.Element {
   const { translate } = useLanguage();
   return (
-    <section {...props} ref={ref}>
+    <section {...props} ref={ref} className="border-divider">
+      {/* Content */}
       <section className="container relative flex flex-col gap-8 border-x border-dashed border-border p-16">
         <Brain className="absolute right-4 top-4 h-8 w-8 text-muted-foreground" />
         {/* Header */}
@@ -35,12 +35,9 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
         {/* Grid */}
         <section className="grid grid-cols-2 gap-4">
           {SOFT_SKILLS_DATA.map((skill) => (
-            <Card
-              key={skill.name}
-              className="basis-1/3 cursor-pointer rounded-none border-dashed duration-300 hover:border-emerald-500"
-            >
+            <Card key={skill.name} className="group basis-1/3 cursor-pointer duration-300 hover:border-emerald-500">
               <CardHeader>
-                <CardTitle className="tracking-wide duration-300 hover:text-emerald-500">
+                <CardTitle className="tracking-wide duration-300 group-hover:text-emerald-500">
                   {translate(skill.name, SOFT_SKILLS_LANGUAGES)}
                 </CardTitle>
                 <CardDescription>{translate(skill.desc, SOFT_SKILLS_LANGUAGES)}</CardDescription>

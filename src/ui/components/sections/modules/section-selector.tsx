@@ -4,21 +4,21 @@ import { RefObject } from 'react';
 
 import { Brain, BriefcaseBusiness, CodeXml, DraftingCompass } from 'lucide-react';
 
-import { SECTION_SELECTOR_LANGUAGES } from '@/app/_languages/section-selector.lng';
-
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
+
+import { SECTION_SELECTOR_LANGUAGES } from '@/i18n/section-selector.lng';
 
 // #endregion
 
 /**
- * @param projectsRef - The reference to the projects section.
+ * @param portfolioRef - The reference to the projects section.
  * @param hardSkillsRef - The reference to the hard skills section.
  * @param softSkillsRef - The reference to the soft skills section.
  * @param contractableServicesRef - The reference to the contractable services section.
  */
 interface SectionSelectorProps {
-  projectsRef: RefObject<HTMLHeadingElement>;
+  portfolioRef: RefObject<HTMLHeadingElement>;
   hardSkillsRef: RefObject<HTMLHeadingElement>;
   softSkillsRef: RefObject<HTMLHeadingElement>;
   contractableServicesRef: RefObject<HTMLHeadingElement>;
@@ -35,7 +35,7 @@ interface SectionSelectorProps {
 export function SectionSelector({
   contractableServicesRef,
   hardSkillsRef,
-  projectsRef,
+  portfolioRef,
   softSkillsRef,
 }: SectionSelectorProps): JSX.Element {
   const { translate } = useLanguage();
@@ -54,7 +54,8 @@ export function SectionSelector({
   }
 
   return (
-    <section className="border-y border-dashed border-border">
+    <section className="border-divider border-b">
+      {/* Content */}
       <section className="container flex flex-col justify-center gap-4 border-x border-dashed border-border p-16">
         {/* Header */}
         <hgroup className="flex flex-col gap-1">
@@ -63,19 +64,23 @@ export function SectionSelector({
         </hgroup>
         {/* Buttons List */}
         <section className="flex items-center gap-4">
-          <Button variant="outline" className="flex gap-2" onClick={() => handleScrollToRef(projectsRef)}>
+          <Button variant="outline" className="inline-flex gap-2" onClick={() => handleScrollToRef(portfolioRef)}>
             <DraftingCompass className="h-5 w-5" />
             {translate('projects', SECTION_SELECTOR_LANGUAGES)}
           </Button>
-          <Button variant="outline" className="flex gap-2" onClick={() => handleScrollToRef(hardSkillsRef)}>
+          <Button variant="outline" className="inline-flex gap-2" onClick={() => handleScrollToRef(hardSkillsRef)}>
             <CodeXml className="h-5 w-5" />
             {translate('hard-skills', SECTION_SELECTOR_LANGUAGES)}
           </Button>
-          <Button variant="outline" className="flex gap-2" onClick={() => handleScrollToRef(softSkillsRef)}>
+          <Button variant="outline" className="inline-flex gap-2" onClick={() => handleScrollToRef(softSkillsRef)}>
             <Brain className="h-5 w-5" />
             {translate('soft-skills', SECTION_SELECTOR_LANGUAGES)}
           </Button>
-          <Button variant="outline" className="flex gap-2" onClick={() => handleScrollToRef(contractableServicesRef)}>
+          <Button
+            variant="outline"
+            className="inline-flex gap-2"
+            onClick={() => handleScrollToRef(contractableServicesRef)}
+          >
             <BriefcaseBusiness className="h-5 w-5" />
             {translate('contractable-services', SECTION_SELECTOR_LANGUAGES)}
           </Button>
