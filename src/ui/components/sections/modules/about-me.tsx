@@ -22,7 +22,7 @@ export function AboutMe(): JSX.Element {
   return (
     <section className="relative h-[100vh] w-full border-b border-dashed border-border bg-dots">
       {/* Content */}
-      <Card className="absolute left-[50%] top-[50%] w-[560px] translate-x-[-50%] translate-y-[-50%]">
+      <Card className="absolute left-[50%] top-[50%] w-full translate-x-[-50%] translate-y-[-50%] sm:w-[560px]">
         <CardHeader className="flex flex-row items-center justify-between">
           <hgroup className="flex flex-col">
             <CardDescription>{translate('hi', ABOUT_ME_LANGUAGES)}</CardDescription>

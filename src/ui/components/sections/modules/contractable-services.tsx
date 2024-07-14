@@ -31,7 +31,7 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
     return (
       <Section {...props} ref={ref}>
         {/* Content */}
-        <BriefcaseBusiness className="absolute right-4 top-4 h-8 w-8 text-muted-foreground" />
+        <BriefcaseBusiness className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
         {/* Header */}
         <hgroup className="flex flex-col gap-1">
           <h2 className="text-2xl">{translate('contractable-services', CONTRACTABLE_SERVICES_LANGUAGES)}</h2>
@@ -40,7 +40,7 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
           </p>
         </hgroup>
         {/* Grid */}
-        <section className="grid grid-cols-2 gap-4">
+        <section className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
           {CONTRACTABLE_SERVICES_DATA.map((contractableService) => (
             <Card key={contractableService.name} className="group cursor-pointer duration-300 hover:border-emerald-500">
               <CardHeader>
@@ -57,7 +57,7 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
         {/* Links */}
         <section className="flex flex-col gap-2">
           <h4 className="text-lg text-muted-foreground">{translate('contact-me', CONTRACTABLE_SERVICES_LANGUAGES)}</h4>
-          <ul className="inline-flex gap-4">
+          <ul className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <li className={`${buttonVariants({ variant: 'secondary' })}`}>
               <Link
                 href="https://www.linkedin.com/in/isaachermel/"

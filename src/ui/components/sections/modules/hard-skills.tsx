@@ -12,6 +12,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/ui/c
 
 import { HARD_SKILLS_DATA, OTHER_HARD_SKILLS_DATA, TECH_COLORS } from '@/data/hard-skills';
 import { HARD_SKILLS_LANGUAGES } from '@/i18n/hard-skills.lng';
+import { checkScreenWidth } from '@/lib/screen';
 import { cn } from '@/lib/utils';
 
 // #endregion
@@ -30,7 +31,7 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
   return (
     <Section {...props} ref={ref}>
       {/* Content */}
-      <CodeXml className="absolute right-4 top-4 h-8 w-8 text-muted-foreground" />
+      <CodeXml className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('hard-skills', HARD_SKILLS_LANGUAGES)}</h2>
@@ -38,28 +39,28 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
       </hgroup>
       {/* Grid */}
       <TooltipProvider>
-        <section className="grid grid-cols-5 gap-16">
+        <section className="grid grid-cols-3 place-items-center gap-4 sm:grid-cols-5 sm:gap-16">
           {HARD_SKILLS_DATA.map((skill) => (
             <Tooltip key={skill.name}>
-              <TooltipTrigger className="relative h-48 w-48">
+              <TooltipTrigger className="relative h-24 w-24 sm:h-48 sm:w-48">
                 <article
                   key={skill.name}
                   className={cn(
-                    'absolute left-[50%] top-[50%] h-48 w-48 translate-x-[-50%] translate-y-[-50%] overflow-hidden border border-dashed border-border duration-300',
+                    'absolute left-[50%] top-[50%] h-24 w-24 translate-x-[-50%] translate-y-[-50%] overflow-hidden border border-dashed border-border duration-300 sm:h-48 sm:w-48',
                     TECH_COLORS[skill.colorKey].border,
                   )}
                 >
                   <div
                     className={cn(
-                      'absolute left-[50%] top-[50%] h-32 w-32 translate-x-[-50%] translate-y-[-50%] rounded-full opacity-30 blur-xl',
+                      'absolute left-[50%] top-[50%] h-16 w-16 translate-x-[-50%] translate-y-[-50%] rounded-full opacity-30 blur-xl sm:h-32 sm:w-32',
                       TECH_COLORS[skill.colorKey].bg,
                     )}
                   />
                   <Image
                     src={skill.image}
                     alt={`${skill.name}'s icon`}
-                    width={96}
-                    height={96}
+                    width={checkScreenWidth(640) ? 96 : 64}
+                    height={checkScreenWidth(640) ? 96 : 64}
                     className="absolute left-[50%] top-[50%] h-auto w-auto translate-x-[-50%] translate-y-[-50%]"
                   />
                 </article>

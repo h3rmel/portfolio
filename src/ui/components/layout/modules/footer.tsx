@@ -20,7 +20,7 @@ export function Footer(): JSX.Element {
 
   return (
     <footer className="w-full">
-      <section className="container flex items-center justify-between p-4">
+      <section className="container flex flex-col justify-between gap-4 p-4 sm:flex-row sm:items-center sm:gap-0 sm:p-16">
         <hgroup>
           <h3 className="text-xl">Isaac "Hermel" Reginato.</h3>
           <p className="text-sm text-muted-foreground">&copy; 2024</p>

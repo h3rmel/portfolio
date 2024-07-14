@@ -18,6 +18,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/ui/components/ui/dialog'
 
 import { PROJECTS_DATA } from '@/data/portfolio';
 import { PORTFOLIO_LANGUAGES } from '@/i18n/portfolio';
+import { checkScreenWidth } from '@/lib/screen';
 
 // #endregion
 
@@ -35,17 +36,17 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
   return (
     <Section {...props} ref={ref}>
       {/* Content */}
-      <DraftingCompass className="absolute right-4 top-4 h-8 w-8 text-muted-foreground" />
+      <DraftingCompass className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('portfolio', PORTFOLIO_LANGUAGES)}</h2>
         <p className="text-muted-foreground">{translate('projects-list', PORTFOLIO_LANGUAGES)}</p>
       </hgroup>
       {/* Carousel */}
-      <Carousel>
+      <Carousel className="w-full overflow-hidden">
         <CarouselContent>
           {PROJECTS_DATA.map((project) => (
-            <CarouselItem key={project.name} className="basis-1/2">
+            <CarouselItem key={project.name} className="sm:basis-1/2">
               <Card>
                 <CardHeader>
                   <Link href={project.url} className="underline duration-300 hover:text-emerald-500" target="_blank">
@@ -77,7 +78,7 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
                     </Dialog>
                   )}
                 </CardContent>
-                <CardFooter className="flex items-center justify-between">
+                <CardFooter className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center sm:gap-0">
                   {project.topics.length > 0 && (
                     <ul className="flex basis-3/4 flex-wrap gap-1">
                       {project.topics.map((topic) => (
@@ -97,8 +98,12 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {checkScreenWidth(640) && (
+          <>
+            <CarouselPrevious />
+            <CarouselNext />
+          </>
+        )}
       </Carousel>
     </Section>
   );

@@ -26,14 +26,14 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
   return (
     <Section {...props} ref={ref} className="border-divider">
       {/* Content */}
-      <Brain className="absolute right-4 top-4 h-8 w-8 text-muted-foreground" />
+      <Brain className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('soft-skills', SOFT_SKILLS_LANGUAGES)}</h2>
         <p className="text-muted-foreground">{translate('soft-list', SOFT_SKILLS_LANGUAGES)}</p>
       </hgroup>
       {/* Grid */}
-      <section className="grid grid-cols-2 gap-4">
+      <section className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
         {SOFT_SKILLS_DATA.map((skill) => (
           <Card key={skill.name} className="group basis-1/3 cursor-pointer duration-300 hover:border-emerald-500">
             <CardHeader>
