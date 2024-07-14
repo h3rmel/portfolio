@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
 import { LanguageProvider } from '@/ui/components/language';
-import { Navbar } from '@/ui/components/layout';
+import { Footer, Navbar } from '@/ui/components/layout';
 import { ThemeProvider } from '@/ui/components/theme/theme-provider';
 import { ibm_plex_mono } from '@/ui/fonts';
 import '@/ui/globals.css';
@@ -38,6 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
           <LanguageProvider>
             <Navbar />
             {children}
+            <Footer />
           </LanguageProvider>
         </ThemeProvider>
       </body>

@@ -18,14 +18,16 @@ import {
 /**
  * The available languages options.
  */
-const LANGUAGES_OPTIONS: { [key: string]: { flag: string; name: string } } = {
+const LANGUAGES_OPTIONS: { [key: string]: { flag: string; name: string; alt: string } } = {
   'pt-BR': {
     flag: '/languages/pt-BR.png',
     name: 'BR',
+    alt: 'Brasil',
   },
   'en-US': {
     flag: '/languages/en-US.png',
     name: 'EN',
+    alt: 'United StateS',
   },
 };
 
@@ -44,9 +46,9 @@ export function LanguageToggle(): JSX.Element {
         <Button variant="outline" size="sm" className="flex gap-2">
           <Image
             src={LANGUAGES_OPTIONS[language].flag}
-            alt={`${LANGUAGES_OPTIONS[language].name}'s flag`}
+            alt={`${LANGUAGES_OPTIONS[language].alt}'s flag`}
             width={24}
-            height={20}
+            height={24}
           />
           {LANGUAGES_OPTIONS[language].name}
         </Button>
