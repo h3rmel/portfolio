@@ -5,7 +5,7 @@ export const PROJECTS_DATA: IProject[] = [
     image: '/projects/front-flow.png',
     license: 'MIT',
     topics: ['react', 'next', 'typescript', 'tailwindcss', 'shadcn/ui', 'react-hook-form', 'zod', 'eslint'],
-    url: 'https://github.com/k4mome/front-flow',
+    url: 'https://front-flow-main.vercel.app/',
   },
   {
     name: 'React I.S.A',
@@ -23,5 +23,12 @@ export const PROJECTS_DATA: IProject[] = [
     topics: ['react', 'next', 'typescript', 'tailwindcss', 'shadcn/ui', 'eslint', 'commitlint', 'husky', 'template'],
     url: 'https://github.com/k4mome/next-lp-template',
   },
-  // TODO: Add a new project (chosse one from h3rmel github account)
+  {
+    name: 'SenFinança',
+    description: 'sen-financa-desc',
+    image: '/projects/sen-financa.png',
+    license: 'MIT',
+    topics: ['react', 'react-router', 'tailwindcss', 'daisyui', 'local storage', 'vite', 'pwa'],
+    url: 'https://sen-financa-henna.vercel.app/',
+  },
 ];

@@ -7,19 +7,18 @@ import type { Metadata } from 'next';
 import { LanguageProvider } from '@/ui/components/language';
 import { Navbar } from '@/ui/components/layout';
 import { ThemeProvider } from '@/ui/components/theme/theme-provider';
-import { Toaster } from '@/ui/components/ui/toaster';
 import { ibm_plex_mono } from '@/ui/fonts';
 import '@/ui/globals.css';
 
 // #endregion
 
-export const metadata: Metadata = {
-  title: `Isaac "Hermel" Reginato`,
-};
-
 interface RootLayoutProps {
   children: ReactNode;
 }
+
+export const metadata: Metadata = {
+  title: `Isaac "Hermel" Reginato`,
+};
 
 /**
  * Renders the root layout component.
@@ -28,7 +27,7 @@ interface RootLayoutProps {
  * Is required and must contain `html` and `body` tags.
  *
  * @component
- * @param children -
+ * @param children - The children to render inside the layout.
  * @returns {JSX.Element} The root layout component.
  */
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
@@ -39,7 +38,6 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
           <LanguageProvider>
             <Navbar />
             {children}
-            <Toaster />
           </LanguageProvider>
         </ThemeProvider>
       </body>

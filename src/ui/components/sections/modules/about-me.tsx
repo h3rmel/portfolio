@@ -20,7 +20,7 @@ export function AboutMe(): JSX.Element {
   const { translate } = useLanguage();
 
   return (
-    <section className="border-divider relative h-[100vh] w-full bg-dots">
+    <section className="relative h-[100vh] w-full border-b border-dashed border-border bg-dots">
       {/* Content */}
       <Card className="absolute left-[50%] top-[50%] w-[560px] translate-x-[-50%] translate-y-[-50%]">
         <CardHeader className="flex flex-row items-center justify-between">

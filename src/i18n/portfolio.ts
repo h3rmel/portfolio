@@ -11,14 +11,17 @@ export const PORTFOLIO_LANGUAGES: LanguageList = {
     'pt-BR': 'Licença',
     'en-US': 'License',
   },
+  close: {
+    'pt-BR': 'Fechar',
+    'en-US': 'Close',
+  },
   /**
    * Projects
    */
   'front-flow-desc': {
     'pt-BR':
-      'Um conjunto de ferramentas específicas para front-end visando auxiliar desenvolvedores a criar interfaces com mais facilidade e simplicidade no seu dia a dia.',
-    'en-US':
-      'A set of front-end tools that helps developers create interfaces in a greater ease and simplistic way in their daily lives.',
+      'Um conjunto de ferramentas para front-end que desenvolvedores a criar interfaces com mais facilidade no seu dia a dia.',
+    'en-US': 'A set of tools for front-end developers to create interfaces more easily in their day-to-day work.',
   },
   'isa-arch-desc': {
     'pt-BR': 'Uma arquitetura para React que separa o código em três camadas: Interface (I), Estados (S) e Ações (A)',
@@ -29,5 +32,9 @@ export const PORTFOLIO_LANGUAGES: LanguageList = {
     'pt-BR':
       'Um template simples, escalável e poderoso para construir páginas de destino prontas para produção com NextJS.',
     'en-US': 'A simple, scalable and powerful template for building production ready NextJS landing pages.',
+  },
+  'sen-financa-desc': {
+    'pt-BR': 'Um aplicativo para gerenciar as finanças pessoais de forma simples e intuitiva.',
+    'en-US': 'An application to manage personal finances in a simple and intuitive way.',
   },
 };
