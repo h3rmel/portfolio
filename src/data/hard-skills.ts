@@ -181,8 +181,8 @@ export const TECH_COLORS: { [key: string]: { bg: string; border: string } } = {
     border: 'hover:border-[#fefefe]',
   },
   docker: {
-    bg: 'bg-[#1fb9ec]',
-    border: 'hover:border-[#1fb9ec]',
+    bg: 'bg-[#089cec]',
+    border: 'hover:border-[#089cec]',
   },
   'vs-code': {
     bg: 'bg-[#1f9cef]',

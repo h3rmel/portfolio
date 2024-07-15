@@ -4,6 +4,7 @@ import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import Link from 'next/link';
 
+import { motion } from 'framer-motion';
 import { BriefcaseBusiness, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 import { useLanguage } from '@/ui/components/language';
@@ -21,6 +22,7 @@ interface ContractableServicesProps extends ComponentPropsWithoutRef<'section'> 
 /**
  * Contractable Services Section
  *
+ * @component
  * @see ContractableServicesProps for the props interface.
  * @returns The Contractable Services Section with his ref being forwarded.
  */
@@ -42,16 +44,24 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
         {/* Grid */}
         <section className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
           {CONTRACTABLE_SERVICES_DATA.map((contractableService) => (
-            <Card key={contractableService.name} className="group cursor-pointer duration-300 hover:border-emerald-500">
-              <CardHeader>
-                <CardTitle className="tracking-wide duration-300 group-hover:text-emerald-500">
-                  {translate(contractableService.name, CONTRACTABLE_SERVICES_LANGUAGES)}
-                </CardTitle>
-                <CardDescription>
-                  {translate(contractableService.desc, CONTRACTABLE_SERVICES_LANGUAGES)}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <motion.div
+              initial={{ opacity: 0, y: 100, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              key={contractableService.name}
+            >
+              <Card className="group duration-300 hover:border-emerald-500">
+                <CardHeader>
+                  <CardTitle className="tracking-wide duration-300 group-hover:text-emerald-500">
+                    {translate(contractableService.name, CONTRACTABLE_SERVICES_LANGUAGES)}
+                  </CardTitle>
+                  <CardDescription>
+                    {translate(contractableService.desc, CONTRACTABLE_SERVICES_LANGUAGES)}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
           ))}
         </section>
         {/* Links */}

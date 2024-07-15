@@ -22,8 +22,8 @@ export const SECTION_SELECTOR_LANGUAGES: LanguageList = {
     'pt-BR': 'Habilidades Comportamentais',
     'en-US': 'Soft Skills',
   },
-  projects: {
-    'pt-BR': 'Projetos',
-    'en-US': 'Projects',
+  portfolio: {
+    'pt-BR': 'Portfólio',
+    'en-US': 'Portfolio',
   },
 };

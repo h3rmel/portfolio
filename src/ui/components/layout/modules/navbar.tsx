@@ -5,6 +5,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 
 import { LanguageToggle } from '@/ui/components/language';
@@ -27,9 +28,19 @@ import { useWindowDimensions } from '@/lib/screen-dimensions';
 export function Navbar(): JSX.Element {
   const { language, setLanguage, translate } = useLanguage();
   const { windowWidth } = useWindowDimensions();
+
   return (
-    <header className="fixed z-50 flex w-full items-center justify-center sm:top-4">
-      <nav className="relative flex h-20 w-full max-w-3xl items-center justify-between border-b border-border bg-background/10 px-4 backdrop-blur-md sm:h-16 sm:justify-start sm:rounded-md sm:border">
+    <motion.header
+      initial={{ opacity: 0, y: -80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: 'backInOut' }}
+      viewport={{ once: true }}
+      className="fixed z-50 flex w-full items-center justify-center sm:top-4"
+    >
+      <nav
+        id="navbar"
+        className="relative flex h-20 w-full max-w-3xl items-center justify-between border-b border-border bg-background/10 px-4 backdrop-blur-md sm:h-16 sm:justify-start sm:rounded-md sm:border"
+      >
         {/* Logo */}
         <Link href="/">
           <h1 className="w-fit text-2xl font-semibold tracking-widest duration-150 hover:text-emerald-500">Hermel</h1>
@@ -47,7 +58,7 @@ export function Navbar(): JSX.Element {
         ) : (
           // Mobile Version
           <Sheet>
-            <SheetTrigger>
+            <SheetTrigger asChild>
               <Button variant="outline" size="icon">
                 <Menu />
               </Button>
@@ -72,6 +83,6 @@ export function Navbar(): JSX.Element {
           </Sheet>
         )}
       </nav>
-    </header>
+    </motion.header>
   );
 }

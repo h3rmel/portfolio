@@ -30,6 +30,7 @@ interface SectionSelectorProps {
  *
  * The SectionSelector is responsible for manipulating the scroll to the desired section.
  *
+ * @component
  * @see SectionSelectorProps for the props interface.
  * @returns {JSX.Element} The SectionSelector component
  */
@@ -66,7 +67,7 @@ export function SectionSelector({
       <section className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
         <Button variant="outline" className="inline-flex gap-2" onClick={() => handleScrollToRef(portfolioRef)}>
           <DraftingCompass className="h-5 w-5" />
-          {translate('projects', SECTION_SELECTOR_LANGUAGES)}
+          {translate('portfolio', SECTION_SELECTOR_LANGUAGES)}
         </Button>
         <Button variant="outline" className="inline-flex gap-2" onClick={() => handleScrollToRef(hardSkillsRef)}>
           <CodeXml className="h-5 w-5" />

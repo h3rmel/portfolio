@@ -24,9 +24,9 @@ export const PORTFOLIO_LANGUAGES: LanguageList = {
     'en-US': 'A set of tools for front-end developers to create interfaces more easily in their day-to-day work.',
   },
   'isa-arch-desc': {
-    'pt-BR': 'Uma arquitetura para React que separa o código em três camadas: Interface (I), Estados (S) e Ações (A)',
+    'pt-BR': 'Uma arquitetura para React que separa o código em três camadas: Interface (I), Estados (S) e Ações (A).',
     'en-US':
-      'An architecture for React that separates the code into three layers: Interface (I), States (S), and Actions (A)',
+      'An architecture for React that separates the code into three layers: Interface (I), States (S), and Actions (A).',
   },
   'next-lp-template-desc': {
     'pt-BR':

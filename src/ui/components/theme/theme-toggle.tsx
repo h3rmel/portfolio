@@ -17,6 +17,7 @@ interface ThemeToggleProps extends ButtonProps {}
 /**
  * Renders the ThemeToggle component.
  *
+ * @component
  * @param props - The props of the ThemeToggle component.
  * @returns {JSX.Element} The ThemeToggle component.
  */
