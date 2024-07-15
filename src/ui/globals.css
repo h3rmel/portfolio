@@ -7,31 +7,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --js: '#f0dc4e';
-    --ts: '#3078c6';
-    --react: '#61d8f9';
-    --next: '#9ca3af';
-    --node: '#8dc03c';
-    --jest: '#c53d10';
-    --html: '#f56328';
-    --css: '#2b67ee';
-    --python: '#3771a2';
-    --flask: '#9ca3af';
-    --sql: '#31668f';
-    --mongo: '#55ad47';
-    --tailwind-css: '#3cbafb';
-    --sass: '#c96997';
-    --csharp: '#250067';
-    --blazor: '#5c2c90';
-    --git: '#ef5333';
-    --bash: '#fefefe';
-    --docker: '#1fb9ec';
-    --vs-code: '#1f9cef';
-  }
-
   * {
-    @apply font-ibm-plex-mono;
+    @apply font-jet-brains-mono;
   }
 
   .border-divider {
