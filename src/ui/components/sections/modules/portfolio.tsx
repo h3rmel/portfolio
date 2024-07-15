@@ -18,7 +18,6 @@ import { Dialog, DialogContent, DialogTrigger } from '@/ui/components/ui/dialog'
 
 import { PROJECTS_DATA } from '@/data/portfolio';
 import { PORTFOLIO_LANGUAGES } from '@/i18n/portfolio';
-import { checkScreenWidth } from '@/lib/screen';
 
 // #endregion
 
@@ -98,12 +97,8 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
             </CarouselItem>
           ))}
         </CarouselContent>
-        {checkScreenWidth(640) && (
-          <>
-            <CarouselPrevious />
-            <CarouselNext />
-          </>
-        )}
+        <CarouselPrevious className="hidden sm:inline-flex" />
+        <CarouselNext className="hidden sm:inline-flex" />
       </Carousel>
     </Section>
   );

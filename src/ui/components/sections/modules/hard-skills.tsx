@@ -12,7 +12,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/ui/c
 
 import { HARD_SKILLS_DATA, OTHER_HARD_SKILLS_DATA, TECH_COLORS } from '@/data/hard-skills';
 import { HARD_SKILLS_LANGUAGES } from '@/i18n/hard-skills.lng';
-import { checkScreenWidth } from '@/lib/screen';
+import { useWindowDimensions } from '@/lib/screen-dimensions';
 import { cn } from '@/lib/utils';
 
 // #endregion
@@ -27,6 +27,7 @@ interface HardSkillsProps extends ComponentPropsWithoutRef<'section'> {}
  */
 export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function RenderHardSkills(props, ref): JSX.Element {
   const { translate } = useLanguage();
+  const { windowWidth } = useWindowDimensions();
 
   return (
     <Section {...props} ref={ref}>
@@ -39,7 +40,7 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
       </hgroup>
       {/* Grid */}
       <TooltipProvider>
-        <section className="grid grid-cols-3 place-items-center gap-4 sm:grid-cols-5 sm:gap-16">
+        <section className="grid grid-cols-3 place-items-center gap-8 sm:grid-cols-5 sm:gap-16">
           {HARD_SKILLS_DATA.map((skill) => (
             <Tooltip key={skill.name}>
               <TooltipTrigger className="relative h-24 w-24 sm:h-48 sm:w-48">
@@ -59,8 +60,8 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
                   <Image
                     src={skill.image}
                     alt={`${skill.name}'s icon`}
-                    width={checkScreenWidth(640) ? 96 : 64}
-                    height={checkScreenWidth(640) ? 96 : 64}
+                    width={windowWidth > 640 ? 96 : 64}
+                    height={windowWidth > 640 ? 96 : 64}
                     className="absolute left-[50%] top-[50%] h-auto w-auto translate-x-[-50%] translate-y-[-50%]"
                   />
                 </article>
