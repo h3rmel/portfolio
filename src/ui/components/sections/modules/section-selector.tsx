@@ -1,3 +1,5 @@
+'use client';
+
 // #region Imports
 
 import { RefObject } from 'react';

@@ -86,8 +86,7 @@ const config: Config = {
       fontFamily: {
         'jet-brains-mono': 'var(--jet-brains-mono)',
       },
-      backgroundImage: {
-      },
+      backgroundImage: {},
     },
   },
   plugins: [require('tailwindcss-animate')],
