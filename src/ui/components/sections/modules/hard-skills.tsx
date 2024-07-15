@@ -48,7 +48,6 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
               initial={{ opacity: 0, y: 100, rotate: index % 2 === 0 ? 5 : -5, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
               transition={{ duration: 1 }}
-              viewport={{ once: true }}
               key={skill.name}
             >
               <Tooltip>

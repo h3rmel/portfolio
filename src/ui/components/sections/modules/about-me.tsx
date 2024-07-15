@@ -25,12 +25,7 @@ export function AboutMe(): JSX.Element {
   return (
     <section className="relative flex h-[100vh] w-full items-center justify-center border-b border-dashed border-border">
       {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
+      <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
         <Card className="w-full sm:w-[560px]">
           <CardHeader className="flex flex-row items-center justify-between">
             <hgroup className="flex flex-col">

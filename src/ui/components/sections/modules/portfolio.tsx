@@ -54,7 +54,6 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                viewport={{ once: true }}
               >
                 <Card>
                   <CardHeader>

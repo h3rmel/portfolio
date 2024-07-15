@@ -38,10 +38,9 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
       <section className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
         {SOFT_SKILLS_DATA.map((skill) => (
           <motion.div
-            initial={{ opacity: 0, y: 100, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }}
             key={skill.name}
             className="basis-1/3"
           >
