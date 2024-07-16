@@ -8,19 +8,12 @@
 
 @layer base {
   * {
-    @apply cursor-default font-jet-brains-mono sm:cursor-none;
+    @apply font-jet-brains-mono;
   }
 
   .border-divider {
     @apply border-b border-dashed border-border;
   }
-}
-
-#cursor-dot {
-  box-shadow:
-    0 0 20px #10b981,
-    0 0 60px #10b981,
-    0 0 100px #10b981;
 }
 
 #cursor-dot:before {

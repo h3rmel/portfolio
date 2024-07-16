@@ -80,7 +80,7 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
                             alt={`${project.name}'s picture`}
                             width={480}
                             height={360}
-                            className="mx-auto rounded-lg border border-border"
+                            className="mx-auto cursor-pointer rounded-lg border border-border duration-300 hover:border-neutral-500"
                           />
                         </DialogTrigger>
                         <DialogContent className="w-full max-w-7xl">

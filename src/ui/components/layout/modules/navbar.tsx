@@ -34,7 +34,7 @@ export function Navbar(): JSX.Element {
       initial={{ opacity: 0, y: -80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
-      className="fixed z-50 flex w-full items-center justify-center sm:top-4"
+      className="fixed z-[999] flex w-full items-center justify-center sm:top-4"
     >
       <nav
         id="navbar"
@@ -45,32 +45,36 @@ export function Navbar(): JSX.Element {
           <h1 className="w-fit text-2xl font-semibold tracking-widest duration-150 hover:text-emerald-500">Hermel</h1>
         </Link>
         {windowWidth > 640 ? (
-          <LanguageToggle />
+          <>
+            <LanguageToggle />
+          </>
         ) : (
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu />
-              </Button>
-            </SheetTrigger>
-            <SheetContent className="flex w-3/4 flex-col justify-between">
-              <SheetTitle>{translate('options', NAVBAR_LANGUAGES)}</SheetTitle>
-              {/* Language */}
-              <ToggleGroup
-                type="single"
-                defaultValue={language}
-                onValueChange={(value) => setLanguage(value as Language)}
-                className="w-fit"
-              >
-                <ToggleGroupItem value="pt-BR">
-                  <Image src="/languages/pt-BR.png" alt={`Brasil's flag`} width={24} height={24} />
-                </ToggleGroupItem>
-                <ToggleGroupItem value="en-US">
-                  <Image src="/languages/en-US.png" alt={`United States's flag`} width={24} height={24} />
-                </ToggleGroupItem>
-              </ToggleGroup>
-            </SheetContent>
-          </Sheet>
+          <>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="flex w-3/4 flex-col justify-between">
+                <SheetTitle>{translate('options', NAVBAR_LANGUAGES)}</SheetTitle>
+                {/* Language */}
+                <ToggleGroup
+                  type="single"
+                  defaultValue={language}
+                  onValueChange={(value) => setLanguage(value as Language)}
+                  className="w-fit"
+                >
+                  <ToggleGroupItem value="pt-BR">
+                    <Image src="/languages/pt-BR.png" alt={`Brasil's flag`} width={24} height={24} />
+                  </ToggleGroupItem>
+                  <ToggleGroupItem value="en-US">
+                    <Image src="/languages/en-US.png" alt={`United States's flag`} width={24} height={24} />
+                  </ToggleGroupItem>
+                </ToggleGroup>
+              </SheetContent>
+            </Sheet>
+          </>
         )}
       </nav>
     </motion.header>

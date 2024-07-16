@@ -80,8 +80,8 @@ const config: Config = {
       fontFamily: {
         'jet-brains-mono': 'var(--jet-brains-mono)',
       },
-      backgroundImage: {
-        dots: 'url(/backgrounds/dots.svg)',
+      boxShadow: {
+        glow: '2px 2px 4px 16px rgba(16, 185, 129, 0.3)',
       },
     },
   },

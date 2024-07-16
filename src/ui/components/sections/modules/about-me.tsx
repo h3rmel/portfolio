@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/components/ui/card';
+import { Particles } from '@/ui/components/visual/particles';
 
 import { ABOUT_ME_LANGUAGES } from '@/i18n/about-me.lng';
 
@@ -23,14 +24,9 @@ export function AboutMe(): JSX.Element {
   const { translate } = useLanguage();
 
   return (
-    <section className="bg-whirl relative flex h-[100vh] w-full items-center justify-center overflow-hidden border-b border-dashed border-border bg-cover bg-center bg-no-repeat">
+    <section className="relative flex h-[100vh] w-full items-center justify-center overflow-hidden border-b border-dashed border-border">
       {/* Content */}
-      {/* <motion.div
-        initial={{ x: 0, y: 0 }}
-        animate={{ x: 100, y: 100 }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute left-[15%] top-[15%] h-96 w-96 rounded-full bg-emerald-500 opacity-50 blur-3xl"
-      /> */}
+      <Particles />
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
