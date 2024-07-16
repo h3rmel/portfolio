@@ -15,13 +15,18 @@ export const PORTFOLIO_LANGUAGES: LanguageList = {
     'pt-BR': 'Fechar',
     'en-US': 'Close',
   },
+  'drag-to-side': {
+    'pt-BR': 'Arraste para o lado',
+    'en-US': 'Drag to the side',
+  },
+
   /**
    * Projects
    */
   'front-flow-desc': {
     'pt-BR':
-      'Um conjunto de ferramentas para front-end que desenvolvedores a criar interfaces com mais facilidade no seu dia a dia.',
-    'en-US': 'A set of tools for front-end developers to create interfaces more easily in their day-to-day work.',
+      'Um conjunto de ferramentas para ajudar desenvolvedores a criar interfaces com mais facilidade no seu dia a dia.',
+    'en-US': 'A set of tools to help developers create interfaces more easily in their day-to-day.',
   },
   'isa-arch-desc': {
     'pt-BR': 'Uma arquitetura para React que separa o código em três camadas: Interface (I), Estados (S) e Ações (A).',
@@ -29,9 +34,8 @@ export const PORTFOLIO_LANGUAGES: LanguageList = {
       'An architecture for React that separates the code into three layers: Interface (I), States (S), and Actions (A).',
   },
   'next-lp-template-desc': {
-    'pt-BR':
-      'Um template simples, escalável e poderoso para construir páginas de destino prontas para produção com NextJS.',
-    'en-US': 'A simple, scalable and powerful template for building production ready NextJS landing pages.',
+    'pt-BR': 'Um template simples e escalável para construir landing pages prontas para produção com NextJS.',
+    'en-US': 'A simple and scalable template to build production-ready landing pages with NextJS.',
   },
   'sen-financa-desc': {
     'pt-BR': 'Um aplicativo para gerenciar as finanças pessoais de forma simples e intuitiva.',

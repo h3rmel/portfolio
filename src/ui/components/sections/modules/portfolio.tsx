@@ -16,6 +16,7 @@ import { Badge } from '@/ui/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/ui/components/ui/carousel';
 import { Dialog, DialogContent, DialogTrigger } from '@/ui/components/ui/dialog';
+import { ScrollIndicator } from '@/ui/components/visual/scroll-indicator';
 
 import { PROJECTS_DATA } from '@/data/portfolio';
 import { PORTFOLIO_LANGUAGES } from '@/i18n/portfolio';
@@ -39,21 +40,28 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
   return (
     <Section {...props} ref={ref}>
       {/* Content */}
-      <DraftingCompass className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+      <motion.div
+        className="absolute right-4 top-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <DraftingCompass className="h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+      </motion.div>
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('portfolio', PORTFOLIO_LANGUAGES)}</h2>
         <p className="text-muted-foreground">{translate('projects-list', PORTFOLIO_LANGUAGES)}</p>
       </hgroup>
       {/* Carousel */}
-      <Carousel className="w-full overflow-hidden sm:overflow-visible">
+      <Carousel className="w-full gap-2 overflow-hidden sm:overflow-visible">
         <CarouselContent>
-          {PROJECTS_DATA.map((project) => (
+          {PROJECTS_DATA.map((project, index) => (
             <CarouselItem key={project.name} className="sm:basis-1/2">
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1 + index / 5 }}
               >
                 <Card>
                   <CardHeader>
@@ -117,8 +125,9 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:inline-flex" />
-        <CarouselNext className="hidden sm:inline-flex" />
+        <CarouselPrevious className="hidden md:inline-flex" />
+        <CarouselNext className="hidden md:inline-flex" />
+        <ScrollIndicator className="mx-auto mt-2 sm:hidden" orientation="horizontal" />
       </Carousel>
     </Section>
   );

@@ -23,10 +23,21 @@ export function AboutMe(): JSX.Element {
   const { translate } = useLanguage();
 
   return (
-    <section className="relative flex h-[100vh] w-full items-center justify-center border-b border-dashed border-border">
+    <section className="bg-whirl relative flex h-[100vh] w-full items-center justify-center overflow-hidden border-b border-dashed border-border bg-cover bg-center bg-no-repeat">
       {/* Content */}
-      <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-        <Card className="w-full sm:w-[560px]">
+      {/* <motion.div
+        initial={{ x: 0, y: 0 }}
+        animate={{ x: 100, y: 100 }}
+        transition={{ duration: 5, repeat: Infinity }}
+        className="absolute left-[15%] top-[15%] h-96 w-96 rounded-full bg-emerald-500 opacity-50 blur-3xl"
+      /> */}
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="bg-background/30 shadow-sm backdrop-blur-md"
+      >
+        <Card className="w-full bg-none backdrop-blur-none sm:w-[560px]">
           <CardHeader className="flex flex-row items-center justify-between">
             <hgroup className="flex flex-col">
               <CardDescription>{translate('hi', ABOUT_ME_LANGUAGES)}</CardDescription>

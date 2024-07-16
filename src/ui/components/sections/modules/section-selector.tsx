@@ -59,7 +59,6 @@ export function SectionSelector({
 
   return (
     <Section>
-      {/* Content */}
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('what-you-want-to-know', SECTION_SELECTOR_LANGUAGES)}</h2>

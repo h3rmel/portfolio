@@ -72,21 +72,17 @@ const config: Config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
-        'border-spin': {
-          '100%': {
-            transform: 'rotate(-360deg)',
-          },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'border-spin': 'border-spin 7s linear infinite',
       },
       fontFamily: {
         'jet-brains-mono': 'var(--jet-brains-mono)',
       },
-      backgroundImage: {},
+      backgroundImage: {
+        dots: 'url(/backgrounds/dots.svg)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

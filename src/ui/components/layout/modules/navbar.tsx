@@ -33,30 +33,20 @@ export function Navbar(): JSX.Element {
     <motion.header
       initial={{ opacity: 0, y: -80 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: 'backInOut' }}
-      viewport={{ once: true }}
+      transition={{ duration: 1, delay: 0.5 }}
       className="fixed z-50 flex w-full items-center justify-center sm:top-4"
     >
       <nav
         id="navbar"
-        className="relative flex h-20 w-full max-w-3xl items-center justify-between border-b border-border bg-background/10 px-4 backdrop-blur-md sm:h-16 sm:justify-start sm:rounded-md sm:border"
+        className="relative flex h-20 w-full max-w-3xl items-center justify-between border-b border-border bg-background/30 px-4 backdrop-blur-md sm:h-16 sm:rounded-md sm:border"
       >
         {/* Logo */}
         <Link href="/">
           <h1 className="w-fit text-2xl font-semibold tracking-widest duration-150 hover:text-emerald-500">Hermel</h1>
         </Link>
         {windowWidth > 640 ? (
-          // Desktop Version
-          <>
-            {/* Links */}
-            <section className="flex basis-1/2 items-center justify-center"></section>
-            {/* Options */}
-            <section className="flex basis-1/2 items-center justify-end gap-4">
-              <LanguageToggle />
-            </section>
-          </>
+          <LanguageToggle />
         ) : (
-          // Mobile Version
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">

@@ -28,7 +28,14 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
   return (
     <Section {...props} ref={ref} className="border-divider">
       {/* Content */}
-      <Brain className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+      <motion.div
+        className="absolute right-4 top-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <Brain className="h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+      </motion.div>
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('soft-skills', SOFT_SKILLS_LANGUAGES)}</h2>
@@ -37,22 +44,14 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
       {/* Grid */}
       <section className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
         {SOFT_SKILLS_DATA.map((skill) => (
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            key={skill.name}
-            className="basis-1/3"
-          >
-            <Card className="group h-full w-full duration-300 hover:border-emerald-500">
-              <CardHeader>
-                <CardTitle className="tracking-wide duration-300 group-hover:text-emerald-500">
-                  {translate(skill.name, SOFT_SKILLS_LANGUAGES)}
-                </CardTitle>
-                <CardDescription>{translate(skill.desc, SOFT_SKILLS_LANGUAGES)}</CardDescription>
-              </CardHeader>
-            </Card>
-          </motion.div>
+          <Card key={skill.name} className="group h-full w-full duration-300 hover:border-emerald-500">
+            <CardHeader>
+              <CardTitle className="tracking-wide duration-300 group-hover:text-emerald-500">
+                {translate(skill.name, SOFT_SKILLS_LANGUAGES)}
+              </CardTitle>
+              <CardDescription>{translate(skill.desc, SOFT_SKILLS_LANGUAGES)}</CardDescription>
+            </CardHeader>
+          </Card>
         ))}
       </section>
     </Section>

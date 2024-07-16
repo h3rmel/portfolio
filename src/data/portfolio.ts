@@ -4,7 +4,7 @@ export const PROJECTS_DATA: IProject[] = [
     description: 'front-flow-desc',
     image: '/projects/front-flow.png',
     license: 'MIT',
-    topics: ['react', 'next', 'typescript', 'tailwindcss', 'shadcn/ui', 'react-hook-form', 'zod', 'eslint'],
+    topics: ['react', 'next', 'typescript', 'tailwindcss', 'react-hook-form', 'zod', 'shadcn/ui'],
     url: 'https://front-flow-main.vercel.app/',
   },
   {
@@ -12,7 +12,7 @@ export const PROJECTS_DATA: IProject[] = [
     description: 'isa-arch-desc',
     image: '/projects/isa-arch.png',
     license: 'MIT',
-    topics: ['react', 'vite', 'typescript', 'tailwindcss', 'axios', 'daisyui', 'architecture'],
+    topics: ['react', 'typescript', 'tailwindcss', 'zustand', 'daisyui', 'architecture'],
     url: 'https://github.com/k4mome/isa-arch',
   },
   {
@@ -20,7 +20,7 @@ export const PROJECTS_DATA: IProject[] = [
     description: 'next-lp-template-desc',
     image: '/projects/next-lp-template.png',
     license: 'MIT',
-    topics: ['react', 'next', 'typescript', 'tailwindcss', 'shadcn/ui', 'eslint', 'commitlint', 'husky', 'template'],
+    topics: ['react', 'next', 'typescript', 'tailwindcss', 'gtm', 'shadcn/ui', 'template'],
     url: 'https://github.com/k4mome/next-lp-template',
   },
   {
@@ -28,7 +28,7 @@ export const PROJECTS_DATA: IProject[] = [
     description: 'sen-financa-desc',
     image: '/projects/sen-financa.png',
     license: 'MIT',
-    topics: ['react', 'react-router', 'tailwindcss', 'daisyui', 'local storage', 'vite', 'pwa'],
+    topics: ['react', 'react-router', 'tailwindcss', 'daisyui', 'vite', 'pwa'],
     url: 'https://sen-financa-henna.vercel.app/',
   },
 ];

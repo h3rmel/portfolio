@@ -4,6 +4,7 @@
 
 import { useEffect, useRef } from 'react';
 
+import { Cursor } from '@/ui/components/layout';
 import {
   AboutMe,
   ContractableServices,
@@ -12,6 +13,8 @@ import {
   SectionSelector,
   SoftSkills,
 } from '@/ui/components/sections';
+
+import { useWindowDimensions } from '@/lib/screen-dimensions';
 
 // #endregion
 
@@ -28,30 +31,35 @@ export default function Page(): JSX.Element {
   const softSkillsRef = useRef(null);
   const contractableServicesRef = useRef(null);
 
+  const { windowWidth } = useWindowDimensions();
+
   useEffect(() => {
-    const cursor = document.getElementById('cursor-dot')!;
+    if (windowWidth > 640) {
+      const cursor = document.getElementById('cursor-dot')!;
 
-    document.addEventListener('mousemove', (event) => {
-      const x = event.clientX;
-      const y = event.clientY;
+      document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
 
-      cursor.style.top = y + 'px';
-      cursor.style.left = x + 'px';
-      cursor.style.display = 'block';
-    });
+        cursor.style.top = y + 'px';
+        cursor.style.left = x + 'px';
+        cursor.style.display = 'block';
+      });
 
-    document.addEventListener('mouseout', () => {
-      cursor.style.display = 'none';
-    });
+      document.addEventListener('mouseout', () => {
+        cursor.style.display = 'none';
+      });
+    }
 
     return () => {
       document.removeEventListener('mousemove', () => {});
       document.removeEventListener('mouseout', () => {});
     };
-  }, []);
+  }, [windowWidth]);
 
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen w-full overflow-hidden">
+      <Cursor />
       <AboutMe />
       <SectionSelector
         portfolioRef={portfolioRef}

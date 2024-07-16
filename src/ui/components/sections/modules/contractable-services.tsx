@@ -33,7 +33,14 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
     return (
       <Section {...props} ref={ref}>
         {/* Content */}
-        <BriefcaseBusiness className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+        <motion.div
+          className="absolute right-4 top-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <BriefcaseBusiness className="h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+        </motion.div>
         {/* Header */}
         <hgroup className="flex flex-col gap-1">
           <h2 className="text-2xl">{translate('contractable-services', CONTRACTABLE_SERVICES_LANGUAGES)}</h2>
@@ -44,24 +51,16 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
         {/* Grid */}
         <section className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
           {CONTRACTABLE_SERVICES_DATA.map((contractableService) => (
-            <motion.div
-              initial={{ opacity: 0, y: 100, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              key={contractableService.name}
-            >
-              <Card className="group duration-300 hover:border-emerald-500">
-                <CardHeader>
-                  <CardTitle className="tracking-wide duration-300 group-hover:text-emerald-500">
-                    {translate(contractableService.name, CONTRACTABLE_SERVICES_LANGUAGES)}
-                  </CardTitle>
-                  <CardDescription>
-                    {translate(contractableService.desc, CONTRACTABLE_SERVICES_LANGUAGES)}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
+            <Card key={contractableService.name} className="group h-full w-full duration-300 hover:border-emerald-500">
+              <CardHeader>
+                <CardTitle className="tracking-wide duration-300 group-hover:text-emerald-500">
+                  {translate(contractableService.name, CONTRACTABLE_SERVICES_LANGUAGES)}
+                </CardTitle>
+                <CardDescription>
+                  {translate(contractableService.desc, CONTRACTABLE_SERVICES_LANGUAGES)}
+                </CardDescription>
+              </CardHeader>
+            </Card>
           ))}
         </section>
         {/* Links */}

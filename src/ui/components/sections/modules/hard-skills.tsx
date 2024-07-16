@@ -34,7 +34,14 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
   return (
     <Section {...props} ref={ref}>
       {/* Content */}
-      <CodeXml className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+      <motion.div
+        className="absolute right-4 top-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <CodeXml className="h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+      </motion.div>
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('hard-skills', HARD_SKILLS_LANGUAGES)}</h2>
@@ -42,19 +49,19 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
       </hgroup>
       {/* Grid */}
       <TooltipProvider>
-        <section className="grid grid-cols-3 place-items-center gap-8 sm:grid-cols-5 sm:gap-16">
+        <section className="grid grid-cols-3 place-items-center gap-7 sm:grid-cols-5 sm:gap-16">
           {HARD_SKILLS_DATA.map((skill, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 100, rotate: index % 2 === 0 ? 5 : -5, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, y: 100, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1 + index / 30 }}
               key={skill.name}
             >
               <Tooltip>
                 <TooltipTrigger className="relative h-24 w-24 sm:h-48 sm:w-48">
                   <article
                     className={cn(
-                      'group absolute left-[50%] top-[50%] h-24 w-24 translate-x-[-50%] translate-y-[-50%] overflow-hidden border border-dashed border-border duration-300 sm:h-48 sm:w-48',
+                      'group absolute left-[50%] top-[50%] h-24 w-24 translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-lg border border-dashed border-border duration-300 sm:h-48 sm:w-48',
                       TECH_COLORS[skill.colorKey].border,
                     )}
                   >
