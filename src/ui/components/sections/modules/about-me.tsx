@@ -56,7 +56,7 @@ export function AboutMe(): JSX.Element {
           <CardFooter className="inline-flex w-full gap-4">
             <Button variant="secondary" className="inline-flex basis-1/2 gap-2" asChild>
               <Link
-                href="https://docs.google.com/document/d/1o8XjcSInC8zKHd211-MRR6ObYG9IjmrkIfag9BTY3GA/edit?usp=sharing"
+                href="https://drive.google.com/file/d/12W2b0A431CJ1_yP3oAPTRmvVreB3wt57/view?usp=sharing"
                 target="_blank"
               >
                 Curriculo <Image src="/languages/pt-BR.png" alt="Brasil's flag" width={24} height={20} />
@@ -64,7 +64,7 @@ export function AboutMe(): JSX.Element {
             </Button>
             <Button variant="secondary" className="inline-flex basis-1/2 gap-2" asChild>
               <Link
-                href="https://docs.google.com/document/d/1I-ZKI6TaovKdojuvWrd-zEa6LJbMCDUqULz5MuPFhgQ/edit?usp=sharing"
+                href="https://drive.google.com/file/d/1Uay3sXrBHcm872eGvcyhvnn-UtFsPi0m/view?usp=sharing"
                 target="_blank"
               >
                 Curriculum <Image src="/languages/en-US.png" alt="USA's flag" width={24} height={20} />
