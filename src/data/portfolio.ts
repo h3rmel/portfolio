@@ -13,7 +13,7 @@ export const PROJECTS_DATA: IProject[] = [
     image: '/projects/isa-arch.png',
     license: 'MIT',
     topics: ['react', 'typescript', 'tailwindcss', 'zustand', 'daisyui', 'architecture'],
-    url: 'https://github.com/k4mome/isa-arch',
+    url: 'https://github.com/h3rmel/isa-arch',
   },
   {
     name: 'Next LP Template',
@@ -21,7 +21,7 @@ export const PROJECTS_DATA: IProject[] = [
     image: '/projects/next-lp-template.png',
     license: 'MIT',
     topics: ['react', 'next', 'typescript', 'tailwindcss', 'gtm', 'shadcn/ui', 'template'],
-    url: 'https://github.com/k4mome/next-lp-template',
+    url: 'https://github.com/h3rmel/next-lp-template',
   },
   {
     name: 'SenFinança',
@@ -30,5 +30,13 @@ export const PROJECTS_DATA: IProject[] = [
     license: 'MIT',
     topics: ['react', 'react-router', 'tailwindcss', 'daisyui', 'vite', 'pwa'],
     url: 'https://sen-financa-henna.vercel.app/',
+  },
+  {
+    name: 'Portfolio',
+    description: 'portfolio-desc',
+    image: '/projects/portfolio.png',
+    license: 'MIT',
+    topics: ['react', 'next', 'typescript', 'tailwindcss', 'shadcn-ui', 'framer motion'],
+    url: 'https://h3rmel-portfolio.vercel.app/',
   },
 ];
