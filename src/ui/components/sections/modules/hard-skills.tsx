@@ -13,7 +13,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/ui/c
 
 import { HARD_SKILLS_DATA, OTHER_HARD_SKILLS_DATA, TECH_COLORS } from '@/data/hard-skills';
 import { HARD_SKILLS_LANGUAGES } from '@/i18n/hard-skills.lng';
-import { useWindowDimensions } from '@/lib/screen-dimensions';
 import { cn } from '@/lib/utils';
 
 // #endregion
@@ -29,19 +28,11 @@ interface HardSkillsProps extends ComponentPropsWithoutRef<'section'> {}
  */
 export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function RenderHardSkills(props, ref): JSX.Element {
   const { translate } = useLanguage();
-  const { windowWidth } = useWindowDimensions();
 
   return (
     <Section {...props} ref={ref}>
       {/* Content */}
-      <motion.div
-        className="absolute right-4 top-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <CodeXml className="h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
-      </motion.div>
+      <CodeXml className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('hard-skills', HARD_SKILLS_LANGUAGES)}</h2>
@@ -68,22 +59,22 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
                   >
                     <div
                       className={cn(
-                        'absolute left-0 top-0 h-8 w-8 rounded-full opacity-30 blur-xl duration-500 group-hover:left-[30%] sm:h-32 sm:w-32',
+                        'absolute left-4 top-4 h-8 w-8 rounded-full opacity-60 blur-lg duration-500 group-hover:left-[45%] sm:left-0 sm:top-0 sm:h-32 sm:w-32 sm:opacity-30 sm:blur-xl sm:group-hover:left-[30%]',
                         TECH_COLORS[skill.colorKey].bg,
                       )}
                     />
                     <div
                       className={cn(
-                        'absolute bottom-0 right-0 h-8 w-8 rounded-full opacity-30 blur-xl duration-500 group-hover:right-[30%] sm:h-32 sm:w-32',
+                        'absolute bottom-4 right-4 h-8 w-8 rounded-full opacity-60 blur-lg duration-500 group-hover:right-[45%] sm:bottom-0 sm:right-0 sm:h-32 sm:w-32 sm:opacity-30 sm:blur-xl sm:group-hover:right-[30%]',
                         TECH_COLORS[skill.colorKey].bg,
                       )}
                     />
                     <Image
                       src={skill.image}
                       alt={`${skill.name}'s icon`}
-                      width={windowWidth > 640 ? 96 : 64}
-                      height={windowWidth > 640 ? 96 : 64}
-                      className="absolute left-[50%] top-[50%] h-auto w-auto translate-x-[-50%] translate-y-[-50%] duration-300 group-hover:scale-105"
+                      width={72}
+                      height={72}
+                      className="absolute left-[50%] top-[50%] h-auto w-16 translate-x-[-50%] translate-y-[-50%] duration-300 group-hover:scale-105 sm:w-auto"
                     />
                   </article>
                 </TooltipTrigger>
@@ -96,7 +87,7 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
         </section>
       </TooltipProvider>
       <section className="flex flex-col gap-1">
-        <h4 className="text-lg text-muted-foreground">{translate('other-skills', HARD_SKILLS_LANGUAGES)}:</h4>
+        <h3 className="text-lg text-muted-foreground">{translate('other-skills', HARD_SKILLS_LANGUAGES)}:</h3>
         <ul>
           {OTHER_HARD_SKILLS_DATA.map((skill) => (
             <li key={skill}>- {translate(skill, HARD_SKILLS_LANGUAGES)}</li>

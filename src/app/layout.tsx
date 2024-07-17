@@ -18,6 +18,7 @@ interface RootLayoutProps {
 
 export const metadata: Metadata = {
   title: `Isaac "Hermel" Reginato`,
+  description: 'My personal portfolio to show my skills and projects and makes contact with me easier.',
 };
 
 /**

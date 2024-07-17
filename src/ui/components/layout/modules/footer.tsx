@@ -27,33 +27,33 @@ export function Footer(): JSX.Element {
   const { windowWidth } = useWindowDimensions();
 
   return (
-    <footer className="w-full bg-dots bg-fixed">
+    <footer className="bg-dots w-full bg-fixed">
       <section className="container flex flex-col justify-between gap-4 p-4 sm:flex-row sm:items-center sm:gap-0 sm:p-16">
-        <div className="flex flex-col items-center gap-2 sm:flex-col sm:items-start sm:gap-4">
+        <section className="flex flex-col items-center gap-2 sm:flex-col sm:items-start sm:gap-4">
           <hgroup className="text-center sm:text-left">
             <h3 className="text-xl">Isaac "Hermel" Reginato.</h3>
             <p className="text-sm text-muted-foreground">&copy; 2024</p>
           </hgroup>
           <ul className="inline-flex items-center gap-2">
             <li className={`${buttonVariants({ variant: 'outline', size: 'icon' })}`}>
-              <Link href="https://github.com/h3rmel" target="_blank">
+              <Link href="https://github.com/h3rmel" target="_blank" aria-label="Github link">
                 <Github className="h-4 w-4" />
               </Link>
             </li>
             <li className={`${buttonVariants({ variant: 'outline', size: 'icon' })}`}>
-              <Link href="https://www.linkedin.com/in/isaachermel/" target="_blank">
+              <Link href="https://www.linkedin.com/in/isaachermel/" target="_blank" aria-label="Linkedin link">
                 <Linkedin className="h-4 w-4" />
               </Link>
             </li>
           </ul>
-        </div>
+        </section>
         {windowWidth < 640 && <Separator />}
         <ToggleGroup type="single" defaultValue={language} onValueChange={(value) => setLanguage(value as Language)}>
           <ToggleGroupItem value="pt-BR">
-            <Image src="/languages/pt-BR.png" alt={`Brasil's flag`} width={24} height={24} />
+            <Image src="/languages/pt-BR.png" alt={`Brasil's flag`} aria-label="pt-BR" width={24} height={24} />
           </ToggleGroupItem>
           <ToggleGroupItem value="en-US">
-            <Image src="/languages/en-US.png" alt={`United States's flag`} width={24} height={24} />
+            <Image src="/languages/en-US.png" alt={`United States's flag`} aria-label="en-US" width={24} height={24} />
           </ToggleGroupItem>
         </ToggleGroup>
       </section>

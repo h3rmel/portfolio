@@ -15,12 +15,10 @@ import { Section } from '@/ui/components/layout';
 import { Badge } from '@/ui/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/ui/components/ui/carousel';
-import { Dialog, DialogContent, DialogTrigger } from '@/ui/components/ui/dialog';
 import { ScrollIndicator } from '@/ui/components/visual/scroll-indicator';
 
 import { PROJECTS_DATA } from '@/data/portfolio';
 import { PORTFOLIO_LANGUAGES } from '@/i18n/portfolio';
-import { useWindowDimensions } from '@/lib/screen-dimensions';
 
 // #endregion
 
@@ -35,19 +33,11 @@ interface PortfolioProps extends ComponentPropsWithoutRef<'section'> {}
  */
 export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function RenderPortfolio(props, ref): JSX.Element {
   const { translate } = useLanguage();
-  const { windowWidth } = useWindowDimensions();
 
   return (
     <Section {...props} ref={ref}>
       {/* Content */}
-      <motion.div
-        className="absolute right-4 top-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <DraftingCompass className="h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
-      </motion.div>
+      <DraftingCompass className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('portfolio', PORTFOLIO_LANGUAGES)}</h2>
@@ -71,38 +61,13 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
                     <CardDescription>{translate(project.description, PORTFOLIO_LANGUAGES)}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    {windowWidth > 640 ? (
-                      // Desktop version
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <Image
-                            src={project.image}
-                            alt={`${project.name}'s picture`}
-                            width={480}
-                            height={360}
-                            className="mx-auto cursor-pointer rounded-lg border border-border duration-300 hover:border-neutral-500"
-                          />
-                        </DialogTrigger>
-                        <DialogContent className="w-full max-w-7xl">
-                          <Image
-                            src={project.image}
-                            alt={`${project.name}'s picture`}
-                            width={1366}
-                            height={768}
-                            className="mx-auto rounded-lg border border-border"
-                          />
-                        </DialogContent>
-                      </Dialog>
-                    ) : (
-                      // Mobile version
-                      <Image
-                        src={project.image}
-                        alt={`${project.name}'s picture`}
-                        width={480}
-                        height={360}
-                        className="mx-auto rounded-lg border border-border"
-                      />
-                    )}
+                    <Image
+                      src={project.image}
+                      alt={`${project.name}'s picture`}
+                      width={480}
+                      height={360}
+                      className="mx-auto rounded-lg border border-border"
+                    />
                   </CardContent>
                   <CardFooter className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center sm:gap-0">
                     {project.topics.length > 0 && (

@@ -2,7 +2,6 @@
 
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
-import { motion } from 'framer-motion';
 import { Brain } from 'lucide-react';
 
 import { useLanguage } from '@/ui/components/language';
@@ -28,14 +27,7 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
   return (
     <Section {...props} ref={ref} className="border-divider">
       {/* Content */}
-      <motion.div
-        className="absolute right-4 top-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <Brain className="h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
-      </motion.div>
+      <Brain className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
         <h2 className="text-2xl">{translate('soft-skills', SOFT_SKILLS_LANGUAGES)}</h2>

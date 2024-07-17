@@ -41,30 +41,28 @@ export function LanguageToggle(): JSX.Element {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <section>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="sm" className="gap-2">
-            <Image
-              src={LANGUAGES_OPTIONS[language].flag}
-              alt={`${LANGUAGES_OPTIONS[language].alt}'s flag`}
-              width={24}
-              height={24}
-            />
-            {language}
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="z-[999] bg-background/60 backdrop-blur-md">
-          <DropdownMenuItem className="flex gap-2" onClick={() => setLanguage('pt-BR')}>
-            <Image src="/languages/pt-BR.png" alt="Brasil's flag" width={24} height={24} />
-            BR
-          </DropdownMenuItem>
-          <DropdownMenuItem className="flex gap-2" onClick={() => setLanguage('en-US')}>
-            <Image src="/languages/en-US.png" alt="United States's flag" width={24} height={24} />
-            EN
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>{' '}
-    </section>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="sm" className="hidden gap-2 sm:inline-flex">
+          <Image
+            src={LANGUAGES_OPTIONS[language].flag}
+            alt={`${LANGUAGES_OPTIONS[language].alt}'s flag`}
+            width={24}
+            height={24}
+          />
+          {language}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="z-[999] bg-background/60 backdrop-blur-md">
+        <DropdownMenuItem className="flex gap-2" onClick={() => setLanguage('pt-BR')}>
+          <Image src="/languages/pt-BR.png" alt="Brasil's flag" width={24} height={24} />
+          BR
+        </DropdownMenuItem>
+        <DropdownMenuItem className="flex gap-2" onClick={() => setLanguage('en-US')}>
+          <Image src="/languages/en-US.png" alt="United States's flag" width={24} height={24} />
+          EN
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

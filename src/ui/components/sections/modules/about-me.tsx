@@ -7,8 +7,7 @@ import { motion } from 'framer-motion';
 
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/components/ui/card';
-import { Particles } from '@/ui/components/visual/particles';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '@/ui/components/ui/card';
 
 import { ABOUT_ME_LANGUAGES } from '@/i18n/about-me.lng';
 
@@ -40,7 +39,7 @@ export function AboutMe(): JSX.Element {
           <CardHeader className="flex flex-row items-center justify-between">
             <hgroup className="flex flex-col">
               <CardDescription>{translate('hi', ABOUT_ME_LANGUAGES)}</CardDescription>
-              <CardTitle className="text-2xl">Isaac "Hermel" Reginato</CardTitle>
+              <h2 className="text-2xl font-medium leading-none tracking-tight">Isaac "Hermel" Reginato</h2>
             </hgroup>
             <Image
               src="/profile.webp"

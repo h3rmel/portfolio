@@ -4,7 +4,6 @@ import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import Link from 'next/link';
 
-import { motion } from 'framer-motion';
 import { BriefcaseBusiness, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 import { useLanguage } from '@/ui/components/language';
@@ -33,14 +32,7 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
     return (
       <Section {...props} ref={ref}>
         {/* Content */}
-        <motion.div
-          className="absolute right-4 top-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <BriefcaseBusiness className="h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
-        </motion.div>
+        <BriefcaseBusiness className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
         {/* Header */}
         <hgroup className="flex flex-col gap-1">
           <h2 className="text-2xl">{translate('contractable-services', CONTRACTABLE_SERVICES_LANGUAGES)}</h2>
