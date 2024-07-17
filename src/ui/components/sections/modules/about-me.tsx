@@ -31,6 +31,7 @@ export function AboutMe(): JSX.Element {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="bg-background/30 shadow-sm backdrop-blur-md"
       >
         <Card className="w-full bg-none backdrop-blur-none sm:w-[560px]">

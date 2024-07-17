@@ -26,4 +26,8 @@ export const HARD_SKILLS_LANGUAGES: LanguageList = {
     'pt-BR': 'Experiência com metodologias ágeis Scrum e Kanban.',
     'en-US': 'Experience with agile methodologies Scrum and Kanban.',
   },
+  'experience-ci-cd': {
+    'pt-BR': 'Experiência com integração e entrega contínua (CI/CD) e pipelines.',
+    'en-US': 'Experience with continuous integration and delivery (CI/CD) and pipelines.',
+  },
 };

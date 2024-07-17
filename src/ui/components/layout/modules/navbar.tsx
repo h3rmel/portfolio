@@ -2,6 +2,8 @@
 
 // #region Imports
 
+import { useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -26,8 +28,21 @@ import { useWindowDimensions } from '@/lib/screen-dimensions';
  * @returns {JSX.Element} The navbar component.
  */
 export function Navbar(): JSX.Element {
+  const [sheetOpen, setSheetOpen] = useState<boolean>(false);
+
   const { language, setLanguage, translate } = useLanguage();
   const { windowWidth } = useWindowDimensions();
+
+  /**
+   * Renders the scroll to the desired section.
+   *
+   * @param id - The id of the desired section.
+   */
+  function handleScrollToId(id: string) {
+    const element = document.getElementById(id);
+
+    if (element) element.scrollIntoView();
+  }
 
   return (
     <motion.header
@@ -46,18 +61,37 @@ export function Navbar(): JSX.Element {
         </Link>
         {windowWidth > 640 ? (
           <>
+            <section className="flex basis-1/2 items-center justify-center">
+              <Button variant="link" onClick={() => handleScrollToId('contact-me')}>
+                {translate('contact', NAVBAR_LANGUAGES)}
+              </Button>
+            </section>
             <LanguageToggle />
           </>
         ) : (
           <>
-            <Sheet>
+            <Sheet open={sheetOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" onClick={() => setSheetOpen(true)}>
                   <Menu />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="flex w-3/4 flex-col justify-between">
+              <SheetContent className="z-[999] flex w-3/4 flex-col gap-4">
                 <SheetTitle>{translate('options', NAVBAR_LANGUAGES)}</SheetTitle>
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => {
+                        handleScrollToId('contact-me');
+                        setSheetOpen(false);
+                      }}
+                    >
+                      {translate('contact', NAVBAR_LANGUAGES)}
+                    </Button>
+                  </li>
+                </ul>
                 {/* Language */}
                 <ToggleGroup
                   type="single"

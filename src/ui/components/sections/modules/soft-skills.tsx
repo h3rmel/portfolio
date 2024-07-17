@@ -34,7 +34,7 @@ export const SoftSkills = forwardRef<HTMLElement, SoftSkillsProps>(function Rend
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <Brain className="h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+        <Brain className="h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
       </motion.div>
       {/* Header */}
       <hgroup className="flex flex-col gap-1">

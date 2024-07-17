@@ -19,7 +19,7 @@ export const SECTION_SELECTOR_LANGUAGES: LanguageList = {
     'en-US': 'Hard Skills',
   },
   'soft-skills': {
-    'pt-BR': 'Habilidades Comportamentais',
+    'pt-BR': 'Soft Skills',
     'en-US': 'Soft Skills',
   },
   portfolio: {

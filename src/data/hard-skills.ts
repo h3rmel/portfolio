@@ -105,6 +105,7 @@ export const OTHER_HARD_SKILLS_DATA: string[] = [
   'experience-docs-and-searches',
   'experience-others',
   'experience-agile',
+  'experience-ci-cd',
 ];
 
 export const TECH_COLORS: { [key: string]: { bg: string; border: string } } = {

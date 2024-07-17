@@ -57,6 +57,12 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        /**
+         * Other colors
+         */
+        gmail: 'hsl(var(--gmail))',
+        linkedin: 'hsl(var(--linked-in))',
+        whatsapp: 'hsl(var(--whats-app))',
       },
       borderRadius: {
         lg: 'var(--radius)',

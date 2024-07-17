@@ -45,7 +45,11 @@ export const CONTRACTABLE_SERVICES_LANGUAGES: LanguageList = {
     'en-US': 'I optimize the indexing of your site, improving its position in search engines.',
   },
   'contact-me': {
-    'pt-BR': 'Se interessou pelos meus serviços? Entre em contato:',
-    'en-US': 'Interested in my services? Contact me:',
+    'pt-BR': 'Se interessou pelos meus serviços?',
+    'en-US': 'Interested in my services?',
+  },
+  'contact-me-desc': {
+    'pt-BR': 'Entre em contato:',
+    'en-US': 'Contact me:',
   },
 };

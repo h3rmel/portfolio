@@ -7,6 +7,12 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --gmail: 4 87% 59%;
+    --linked-in: 199 92% 37%;
+    --whats-app: 131 68% 47%;
+  }
+
   * {
     @apply font-jet-brains-mono;
   }

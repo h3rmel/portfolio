@@ -40,7 +40,7 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <CodeXml className="h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+        <CodeXml className="h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
       </motion.div>
       {/* Header */}
       <hgroup className="flex flex-col gap-1">
@@ -48,17 +48,18 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
         <p className="text-muted-foreground">{translate('tech-list', HARD_SKILLS_LANGUAGES)}</p>
       </hgroup>
       {/* Grid */}
-      <TooltipProvider>
+      <TooltipProvider delayDuration={100} skipDelayDuration={0}>
         <section className="grid grid-cols-3 place-items-center gap-7 sm:grid-cols-5 sm:gap-16">
           {HARD_SKILLS_DATA.map((skill, index) => (
             <motion.div
               initial={{ opacity: 0, y: 100, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 1 + index / 30 }}
+              viewport={{ once: true }}
               key={skill.name}
             >
               <Tooltip>
-                <TooltipTrigger className="relative h-24 w-24 sm:h-48 sm:w-48">
+                <TooltipTrigger className="relative h-24 w-24 cursor-default sm:h-48 sm:w-48">
                   <article
                     className={cn(
                       'group absolute left-[50%] top-[50%] h-24 w-24 translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-lg border border-dashed border-border duration-300 sm:h-48 sm:w-48',
@@ -67,13 +68,13 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
                   >
                     <div
                       className={cn(
-                        'absolute left-0 top-0 h-8 w-8 rounded-full opacity-30 blur-xl duration-300 group-hover:left-[30%] sm:h-32 sm:w-32',
+                        'absolute left-0 top-0 h-8 w-8 rounded-full opacity-30 blur-xl duration-500 group-hover:left-[30%] sm:h-32 sm:w-32',
                         TECH_COLORS[skill.colorKey].bg,
                       )}
                     />
                     <div
                       className={cn(
-                        'absolute bottom-0 right-0 h-8 w-8 rounded-full opacity-30 blur-xl duration-300 group-hover:right-[30%] sm:h-32 sm:w-32',
+                        'absolute bottom-0 right-0 h-8 w-8 rounded-full opacity-30 blur-xl duration-500 group-hover:right-[30%] sm:h-32 sm:w-32',
                         TECH_COLORS[skill.colorKey].bg,
                       )}
                     />

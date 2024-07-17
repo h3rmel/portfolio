@@ -39,7 +39,7 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <BriefcaseBusiness className="h-6 w-6 text-muted-foreground opacity-30 sm:h-8 sm:w-8" />
+          <BriefcaseBusiness className="h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
         </motion.div>
         {/* Header */}
         <hgroup className="flex flex-col gap-1">
@@ -64,26 +64,30 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
           ))}
         </section>
         {/* Links */}
-        <section className="flex flex-col gap-2">
-          <h4 className="text-lg text-muted-foreground">{translate('contact-me', CONTRACTABLE_SERVICES_LANGUAGES)}</h4>
+        <section className="flex flex-col gap-2" id="contact-me">
+          <hgroup className="flex flex-col gap-1">
+            <h4 className="text-xl">{translate('contact-me', CONTRACTABLE_SERVICES_LANGUAGES)}</h4>
+            <p className="text-muted-foreground">{translate('contact-me-desc', CONTRACTABLE_SERVICES_LANGUAGES)}</p>
+          </hgroup>
           <ul className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <li className={`${buttonVariants({ variant: 'secondary' })}`}>
+            <li className={`${buttonVariants({ variant: 'linkedin' })} group`}>
               <Link
                 href="https://www.linkedin.com/in/isaachermel/"
                 target="_blank"
                 className="inline-flex items-center gap-2"
               >
-                LinkedIn <Linkedin className="h-4 w-4" />
+                LinkedIn <Linkedin className="h-4 w-4 text-linkedin transition-colors group-hover:text-linkedin/60" />
               </Link>
             </li>
-            <li className={`${buttonVariants({ variant: 'secondary' })}`}>
+            <li className={`${buttonVariants({ variant: 'gmail' })} group`}>
               <Link href="mailto:isaachermel@gmail.com" target="_blank" className="inline-flex items-center gap-2">
-                E-mail <Mail className="h-4 w-4" />
+                E-mail <Mail className="h-4 w-4 text-gmail transition-colors group-hover:text-gmail/60" />
               </Link>
             </li>
-            <li className={`${buttonVariants({ variant: 'secondary' })}`}>
+            <li className={`${buttonVariants({ variant: 'whatsapp' })} group`}>
               <Link href="https://wa.me/+5551997099876" target="_blank" className="inline-flex items-center gap-2">
-                WhatsApp <MessageCircle className="h-4 w-4" />
+                WhatsApp{' '}
+                <MessageCircle className="h-4 w-4 text-whatsapp transition-colors group-hover:text-whatsapp/60" />
               </Link>
             </li>
           </ul>
