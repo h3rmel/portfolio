@@ -37,6 +37,6 @@ export const PROJECTS_DATA: IProject[] = [
     image: '/projects/portfolio.png',
     license: 'MIT',
     topics: ['react', 'next', 'typescript', 'tailwindcss', 'shadcn-ui', 'framer motion'],
-    url: 'https://h3rmel-portfolio.vercel.app/',
+    url: 'https://h3rmel.vercel.app/',
   },
 ];
