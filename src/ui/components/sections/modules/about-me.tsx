@@ -12,6 +12,8 @@ import { Particles } from '@/ui/components/visual/particles';
 
 import { ABOUT_ME_LANGUAGES } from '@/i18n/about-me.lng';
 
+import { ScrollIndicator } from '../../visual/scroll-indicator';
+
 // #endregion
 
 /**
@@ -71,6 +73,7 @@ export function AboutMe(): JSX.Element {
           </CardFooter>
         </Card>
       </motion.div>
+      <ScrollIndicator className="absolute bottom-4 left-[50%] translate-x-[-50%]" />
     </section>
   );
 }
