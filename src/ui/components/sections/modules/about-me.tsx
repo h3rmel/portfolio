@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '@/ui/components/ui/card';
+import { Particles } from '@/ui/components/visual/particles';
+import { ScrollIndicator } from '@/ui/components/visual/scroll-indicator';
 
 import { ABOUT_ME_LANGUAGES } from '@/i18n/about-me.lng';
-
-import { ScrollIndicator } from '../../visual/scroll-indicator';
 
 // #endregion
 
