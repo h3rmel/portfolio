@@ -41,4 +41,8 @@ export const PORTFOLIO_LANGUAGES: LanguageList = {
     'pt-BR': 'Um aplicativo para gerenciar as finanças pessoais de forma simples e intuitiva.',
     'en-US': 'An application to manage personal finances in a simple and intuitive way.',
   },
+  'portfolio-desc': {
+    'pt-BR': 'Meu portfólio pessoal, onde compartilho um pouco sobre mim e meus projetos.',
+    'en-US': 'My personal portfolio, where I share a little about me and my projects.',
+  },
 };

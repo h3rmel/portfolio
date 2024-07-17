@@ -86,9 +86,6 @@ const config: Config = {
       fontFamily: {
         'jet-brains-mono': 'var(--jet-brains-mono)',
       },
-      boxShadow: {
-        glow: '2px 2px 4px 16px rgba(16, 185, 129, 0.3)',
-      },
     },
   },
   plugins: [require('tailwindcss-animate')],
