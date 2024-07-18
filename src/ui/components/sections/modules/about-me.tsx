@@ -1,3 +1,5 @@
+'use client';
+
 // #region Imports
 
 import Image from 'next/image';

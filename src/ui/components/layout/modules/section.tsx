@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 interface SectionProps extends ComponentPropsWithoutRef<'section'> {}

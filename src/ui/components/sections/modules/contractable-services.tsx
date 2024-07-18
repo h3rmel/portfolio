@@ -1,3 +1,5 @@
+'use client';
+
 // #region Imports
 
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
