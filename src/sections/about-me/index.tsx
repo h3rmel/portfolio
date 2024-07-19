@@ -61,9 +61,8 @@ export function AboutMe(): JSX.Element {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="bg-background/30 shadow-sm backdrop-blur-md"
       >
-        <Card className="w-full bg-none backdrop-blur-none sm:w-[560px]">
+        <Card className="w-full sm:w-[560px]">
           <CardHeader className="flex flex-row items-center justify-between">
             <hgroup className="flex flex-col">
               <CardDescription>{translate('hi', ABOUT_ME_LANGUAGES)}</CardDescription>

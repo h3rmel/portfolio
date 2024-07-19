@@ -44,7 +44,7 @@ export function Navbar(): JSX.Element {
     <header className="fixed z-[999] flex w-full items-center justify-center sm:top-4">
       <nav
         id="navbar"
-        className="relative flex h-20 w-full max-w-3xl items-center justify-between border-b border-border bg-background/30 px-4 backdrop-blur-md sm:h-16 sm:rounded-md sm:border"
+        className="relative flex h-20 w-full max-w-3xl items-center justify-between border-b border-border bg-gradient-to-br from-background/30 to-neutral-800/30 px-4 backdrop-blur-md sm:h-16 sm:rounded-md sm:border"
       >
         {/* Logo */}
         <Link href="/">
