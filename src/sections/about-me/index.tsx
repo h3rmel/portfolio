@@ -2,6 +2,8 @@
 
 // #region Imports
 
+import { useEffect } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,6 +12,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '@/ui/components/ui/card';
+import { GradientBackground } from '@/ui/components/visual/gradient-bg';
 import { ScrollIndicator } from '@/ui/components/visual/scroll-indicator';
 
 import { ABOUT_ME_LANGUAGES } from './language';
@@ -25,10 +28,34 @@ import { ABOUT_ME_LANGUAGES } from './language';
 export function AboutMe(): JSX.Element {
   const { translate } = useLanguage();
 
+  useEffect(() => {
+    const interBubble = document.querySelector<HTMLDivElement>('.interactive')!;
+    let curX = 0;
+    let curY = 0;
+    let tgX = 0;
+    let tgY = 0;
+
+    function move() {
+      curX += (tgX - curX) / 20;
+      curY += (tgY - curY) / 20;
+      interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+      requestAnimationFrame(() => {
+        move();
+      });
+    }
+
+    window.addEventListener('mousemove', (event) => {
+      tgX = event.clientX;
+      tgY = event.clientY;
+    });
+
+    move();
+  }, []);
+
   return (
     <section className="relative flex h-[100vh] w-full items-center justify-center overflow-hidden border-b border-dashed border-border">
       {/* Content */}
-      {/* <Particles /> */}
+      <GradientBackground />
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

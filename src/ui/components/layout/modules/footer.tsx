@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import { Github, Linkedin } from 'lucide-react';
 
-import { useWindowDimensions } from '@/lib/screen-dimensions';
 import { LanguageToggle } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
 import { Separator } from '@/ui/components/ui/separator';
@@ -20,8 +19,6 @@ import { Separator } from '@/ui/components/ui/separator';
  * @returns {JSX.Element} The footer component.
  */
 export function Footer(): JSX.Element {
-  const { windowWidth } = useWindowDimensions();
-
   return (
     <footer className="bg-dots w-full bg-fixed">
       <section className="container flex flex-col items-center justify-between gap-4 p-4 sm:flex-row sm:gap-0 sm:p-16">
@@ -47,7 +44,7 @@ export function Footer(): JSX.Element {
             </li>
           </ul>
         </section>
-        {windowWidth < 640 && <Separator />}
+        <Separator className="block sm:hidden" />
         <LanguageToggle />
       </section>
     </footer>
