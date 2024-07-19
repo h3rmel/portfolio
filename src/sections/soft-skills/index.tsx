@@ -10,8 +10,8 @@ import { useLanguage } from '@/ui/components/language';
 import { Section } from '@/ui/components/layout';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/ui/components/ui/card';
 
-import { SOFT_SKILLS_DATA } from '@/data/soft-skills';
-import { SOFT_SKILLS_LANGUAGES } from '@/i18n/soft-skills.lng';
+import { SOFT_SKILLS_DATA } from './data';
+import { SOFT_SKILLS_LANGUAGES } from './language';
 
 // #endregion
 

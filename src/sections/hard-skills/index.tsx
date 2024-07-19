@@ -9,13 +9,13 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CodeXml } from 'lucide-react';
 
+import { cn } from '@/lib/utils';
 import { useLanguage } from '@/ui/components/language';
 import { Section } from '@/ui/components/layout';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/ui/components/ui/tooltip';
 
-import { HARD_SKILLS_DATA, OTHER_HARD_SKILLS_DATA, TECH_COLORS } from '@/data/hard-skills';
-import { HARD_SKILLS_LANGUAGES } from '@/i18n/hard-skills.lng';
-import { cn } from '@/lib/utils';
+import { HARD_SKILLS_DATA, OTHER_HARD_SKILLS_DATA, TECH_COLORS } from './data';
+import { HARD_SKILLS_LANGUAGES } from './language';
 
 // #endregion
 

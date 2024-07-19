@@ -10,10 +10,9 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '@/ui/components/ui/card';
-import { Particles } from '@/ui/components/visual/particles';
 import { ScrollIndicator } from '@/ui/components/visual/scroll-indicator';
 
-import { ABOUT_ME_LANGUAGES } from '@/i18n/about-me.lng';
+import { ABOUT_ME_LANGUAGES } from './language';
 
 // #endregion
 
@@ -29,7 +28,7 @@ export function AboutMe(): JSX.Element {
   return (
     <section className="relative flex h-[100vh] w-full items-center justify-center overflow-hidden border-b border-dashed border-border">
       {/* Content */}
-      <Particles />
+      {/* <Particles /> */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

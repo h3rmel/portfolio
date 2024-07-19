@@ -43,7 +43,7 @@ export function LanguageToggle(): JSX.Element {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="hidden gap-2 sm:inline-flex">
+        <Button variant="outline" size="sm" className="gap-2">
           <Image
             src={LANGUAGES_OPTIONS[language].flag}
             alt={`${LANGUAGES_OPTIONS[language].alt}'s flag`}

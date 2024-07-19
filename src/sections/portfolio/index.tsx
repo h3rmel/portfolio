@@ -17,8 +17,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/ui/components/ui/carousel';
 import { ScrollIndicator } from '@/ui/components/visual/scroll-indicator';
 
-import { PROJECTS_DATA } from '@/data/portfolio';
-import { PORTFOLIO_LANGUAGES } from '@/i18n/portfolio';
+import { PROJECTS_DATA } from './data';
+import { PORTFOLIO_LANGUAGES } from './language';
 
 // #endregion
 

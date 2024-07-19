@@ -10,7 +10,7 @@ import { useLanguage } from '@/ui/components/language';
 import { Section } from '@/ui/components/layout';
 import { Button } from '@/ui/components/ui/button';
 
-import { SECTION_SELECTOR_LANGUAGES } from '@/i18n/section-selector.lng';
+import { SECTION_SELECTOR_LANGUAGES } from './language';
 
 // #endregion
 

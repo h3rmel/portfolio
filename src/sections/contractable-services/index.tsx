@@ -13,8 +13,8 @@ import { Section } from '@/ui/components/layout';
 import { buttonVariants } from '@/ui/components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/ui/components/ui/card';
 
-import { CONTRACTABLE_SERVICES_DATA } from '@/data/contractable-services';
-import { CONTRACTABLE_SERVICES_LANGUAGES } from '@/i18n/contractable-services.lng';
+import { CONTRACTABLE_SERVICES_DATA } from './data';
+import { CONTRACTABLE_SERVICES_LANGUAGES } from './language';
 
 // #endregion
 

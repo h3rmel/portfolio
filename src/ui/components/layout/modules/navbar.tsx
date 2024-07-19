@@ -4,7 +4,6 @@
 
 import { useState } from 'react';
 
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Menu } from 'lucide-react';
@@ -12,10 +11,10 @@ import { Menu } from 'lucide-react';
 import { LanguageToggle } from '@/ui/components/language';
 import { useLanguage } from '@/ui/components/language';
 import { Button } from '@/ui/components/ui/button';
+import { Separator } from '@/ui/components/ui/separator';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/ui/components/ui/sheet';
-import { ToggleGroup, ToggleGroupItem } from '@/ui/components/ui/toggle-group';
 
-import { NAVBAR_LANGUAGES } from '@/i18n/navbar.lng';
+import { NAVBAR_LANGUAGES } from './navbar.lng';
 
 // #endregion
 
@@ -28,7 +27,7 @@ import { NAVBAR_LANGUAGES } from '@/i18n/navbar.lng';
 export function Navbar(): JSX.Element {
   const [sheetOpen, setSheetOpen] = useState<boolean>(false);
 
-  const { language, setLanguage, translate } = useLanguage();
+  const { translate } = useLanguage();
 
   /**
    * Renders the scroll to the desired section.
@@ -56,9 +55,11 @@ export function Navbar(): JSX.Element {
             {translate('contact', NAVBAR_LANGUAGES)}
           </Button>
         </section>
-        <LanguageToggle />
+        <section className="hidden sm:block">
+          <LanguageToggle />
+        </section>
         <section className="block sm:hidden">
-          <Sheet open={sheetOpen}>
+          <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" onClick={() => setSheetOpen(true)} aria-label="Navbar Options">
                 <Menu />
@@ -80,20 +81,8 @@ export function Navbar(): JSX.Element {
                   </Button>
                 </li>
               </ul>
-              {/* Language */}
-              <ToggleGroup
-                type="single"
-                defaultValue={language}
-                onValueChange={(value) => setLanguage(value as Language)}
-                className="w-fit"
-              >
-                <ToggleGroupItem value="pt-BR">
-                  <Image src="/languages/pt-BR.png" alt={`Brasil's flag`} width={24} height={24} />
-                </ToggleGroupItem>
-                <ToggleGroupItem value="en-US">
-                  <Image src="/languages/en-US.png" alt={`United States's flag`} width={24} height={24} />
-                </ToggleGroupItem>
-              </ToggleGroup>
+              <Separator />
+              <LanguageToggle />
             </SheetContent>
           </Sheet>
         </section>

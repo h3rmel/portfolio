@@ -26,8 +26,6 @@
           "/^react/",
           "/^next/",
           "module",
-          "/^@/app/",
-          "/^@/ui/",
           "/^@/",
           ["parent", "sibling", "index"]
         ],
