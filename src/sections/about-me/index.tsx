@@ -99,7 +99,7 @@ export function AboutMe(): JSX.Element {
           </CardFooter>
         </Card>
       </motion.div>
-      <ScrollIndicator className="absolute bottom-4 left-[50%] translate-x-[-50%] border-emerald-500" />
+      <ScrollIndicator className="absolute bottom-4 left-[50%] translate-x-[-50%] border-neutral-600" />
     </section>
   );
 }

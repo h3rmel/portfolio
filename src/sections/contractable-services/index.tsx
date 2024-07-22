@@ -10,7 +10,6 @@ import { BriefcaseBusiness, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 import { useLanguage } from '@/ui/components/language';
 import { Section } from '@/ui/components/layout';
-import { buttonVariants } from '@/ui/components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/ui/components/ui/card';
 
 import { CONTRACTABLE_SERVICES_DATA } from './data';
@@ -36,7 +35,7 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
         {/* Content */}
         <BriefcaseBusiness className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
         {/* Header */}
-        <hgroup className="flex flex-col gap-1">
+        <hgroup className="flex flex-col">
           <h2 className="text-2xl">{translate('contractable-services', CONTRACTABLE_SERVICES_LANGUAGES)}</h2>
           <p className="text-muted-foreground">
             {translate('contractable-services-list', CONTRACTABLE_SERVICES_LANGUAGES)}
@@ -58,33 +57,53 @@ export const ContractableServices = forwardRef<HTMLElement, ContractableServices
           ))}
         </section>
         {/* Links */}
-        <section className="flex flex-col gap-2" id="contact-me">
-          <hgroup className="flex flex-col gap-1">
+        <section className="flex flex-col gap-6" id="contact-me">
+          <hgroup className="flex flex-col">
             <h4 className="text-xl">{translate('contact-me', CONTRACTABLE_SERVICES_LANGUAGES)}</h4>
             <p className="text-muted-foreground">{translate('contact-me-desc', CONTRACTABLE_SERVICES_LANGUAGES)}</p>
           </hgroup>
-          <ul className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <li className={`${buttonVariants({ variant: 'linkedin' })} group`}>
-              <Link
-                href="https://www.linkedin.com/in/isaachermel/"
-                target="_blank"
-                className="inline-flex items-center gap-2"
-              >
-                LinkedIn <Linkedin className="h-4 w-4 text-linkedin transition-colors group-hover:text-linkedin/60" />
-              </Link>
-            </li>
-            <li className={`${buttonVariants({ variant: 'gmail' })} group`}>
-              <Link href="mailto:isaachermel@gmail.com" target="_blank" className="inline-flex items-center gap-2">
-                E-mail <Mail className="h-4 w-4 text-gmail transition-colors group-hover:text-gmail/60" />
-              </Link>
-            </li>
-            <li className={`${buttonVariants({ variant: 'whatsapp' })} group`}>
-              <Link href="https://wa.me/+5551997099876" target="_blank" className="inline-flex items-center gap-2">
-                WhatsApp{' '}
-                <MessageCircle className="h-4 w-4 text-whatsapp transition-colors group-hover:text-whatsapp/60" />
-              </Link>
-            </li>
-          </ul>
+          <section className="flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="https://www.linkedin.com/in/isaachermel/"
+              target="_blank"
+              className="flex-grow bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md"
+            >
+              <article className="group flex flex-col items-center gap-2 rounded-lg border border-dashed border-linkedin p-6 duration-300 hover:border-linkedin/60">
+                <h4 className="text-xl tracking-wide text-linkedin duration-300 group-hover:text-linkedin/60">
+                  LinkedIn
+                </h4>
+                <Linkedin
+                  strokeWidth={1.2}
+                  className="h-8 w-8 text-linkedin transition-colors group-hover:text-linkedin/60"
+                />
+              </article>
+            </Link>
+            <Link
+              href="mailto:isaachermel@gmail.com"
+              target="_blank"
+              className="flex-grow bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md"
+            >
+              <article className="group flex flex-col items-center gap-2 rounded-lg border border-dashed border-gmail p-6 duration-300 hover:border-gmail/60">
+                <h4 className="text-xl tracking-wide text-gmail duration-300 group-hover:text-gmail/60">E-mail</h4>
+                <Mail strokeWidth={1.2} className="h-8 w-8 text-gmail transition-colors group-hover:text-gmail/60" />
+              </article>
+            </Link>
+            <Link
+              href="https://wa.me/+5551997099876"
+              target="_blank"
+              className="flex-grow bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md"
+            >
+              <article className="group flex flex-col items-center gap-2 rounded-lg border border-dashed border-whatsapp p-6 duration-300 hover:border-whatsapp/60">
+                <h4 className="text-xl tracking-wide text-whatsapp duration-300 group-hover:text-whatsapp/60">
+                  WhatsApp
+                </h4>
+                <MessageCircle
+                  strokeWidth={1.2}
+                  className="h-8 w-8 text-whatsapp transition-colors group-hover:text-whatsapp/60"
+                />
+              </article>
+            </Link>
+          </section>
         </section>
       </Section>
     );

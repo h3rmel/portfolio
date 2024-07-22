@@ -29,18 +29,18 @@ export function Footer(): JSX.Element {
           </hgroup>
           <ul className="inline-flex items-center gap-2">
             <li>
-              <Button variant="outline" size="icon" asChild>
-                <Link href="https://github.com/h3rmel" target="_blank" aria-label="Github link">
+              <Link href="https://github.com/h3rmel" target="_blank" aria-label="Github link">
+                <Button variant="outline" size="icon">
                   <Github className="h-4 w-4" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </li>
             <li>
-              <Button variant="outline" size="icon" asChild>
-                <Link href="https://www.linkedin.com/in/isaachermel/" target="_blank" aria-label="Linkedin link">
+              <Link href="https://www.linkedin.com/in/isaachermel/" target="_blank" aria-label="Linkedin link">
+                <Button variant="outline" size="icon">
                   <Linkedin className="h-4 w-4" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </li>
           </ul>
         </section>

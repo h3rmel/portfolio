@@ -36,7 +36,7 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
       {/* Content */}
       <CodeXml className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
       {/* Header */}
-      <hgroup className="flex flex-col gap-1">
+      <hgroup className="flex flex-col">
         <h2 className="text-2xl">{translate('hard-skills', HARD_SKILLS_LANGUAGES)}</h2>
         <p className="text-muted-foreground">{translate('tech-list', HARD_SKILLS_LANGUAGES)}</p>
       </hgroup>
@@ -90,9 +90,11 @@ export const HardSkills = forwardRef<HTMLElement, HardSkillsProps>(function Rend
       </TooltipProvider>
       <section className="flex flex-col gap-1">
         <h3 className="text-lg text-muted-foreground">{translate('other-skills', HARD_SKILLS_LANGUAGES)}:</h3>
-        <ul>
+        <ul className="flex flex-col gap-1 sm:gap-0">
           {OTHER_HARD_SKILLS_DATA.map((skill) => (
-            <li key={skill}>- {translate(skill, HARD_SKILLS_LANGUAGES)}</li>
+            <li key={skill} className="text-sm sm:text-base">
+              - {translate(skill, HARD_SKILLS_LANGUAGES)}
+            </li>
           ))}
         </ul>
       </section>

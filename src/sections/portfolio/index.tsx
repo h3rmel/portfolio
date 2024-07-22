@@ -39,7 +39,7 @@ export const Portfolio = forwardRef<HTMLElement, PortfolioProps>(function Render
       {/* Content */}
       <DraftingCompass className="absolute right-4 top-4 h-6 w-6 text-muted-foreground opacity-30 duration-300 hover:opacity-100 sm:h-8 sm:w-8" />
       {/* Header */}
-      <hgroup className="flex flex-col gap-1">
+      <hgroup className="flex flex-col">
         <h2 className="text-2xl">{translate('portfolio', PORTFOLIO_LANGUAGES)}</h2>
         <p className="text-muted-foreground">{translate('projects-list', PORTFOLIO_LANGUAGES)}</p>
       </hgroup>

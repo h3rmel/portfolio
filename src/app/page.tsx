@@ -24,14 +24,23 @@ export default function Page(): JSX.Element {
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        refs={{
+          portfolioRef,
+          hardSkillsRef,
+          softSkillsRef,
+          contractableServicesRef,
+        }}
+      />
       <main className="min-h-screen w-full overflow-hidden">
         <AboutMe />
         <SectionSelector
-          portfolioRef={portfolioRef}
-          hardSkillsRef={hardSkillsRef}
-          softSkillsRef={softSkillsRef}
-          contractableServicesRef={contractableServicesRef}
+          refs={{
+            portfolioRef,
+            hardSkillsRef,
+            softSkillsRef,
+            contractableServicesRef,
+          }}
         />
         <Portfolio ref={portfolioRef} />
         <HardSkills ref={hardSkillsRef} />
