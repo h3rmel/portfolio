@@ -4,3 +4,4 @@ export * from './hard-skills';
 export * from './portfolio';
 export * from './section-selector';
 export * from './soft-skills';
+export * from './experience';

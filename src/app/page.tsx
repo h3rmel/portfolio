@@ -4,7 +4,15 @@
 
 import { useRef } from 'react';
 
-import { AboutMe, ContractableServices, HardSkills, Portfolio, SectionSelector, SoftSkills } from '@/sections';
+import {
+  AboutMe,
+  ContractableServices,
+  Experience,
+  HardSkills,
+  Portfolio,
+  SectionSelector,
+  SoftSkills,
+} from '@/sections';
 import { Footer, Navbar } from '@/ui/components/layout';
 
 // #endregion
@@ -17,6 +25,7 @@ import { Footer, Navbar } from '@/ui/components/layout';
  */
 export default function Page(): JSX.Element {
   // Refs
+  const experienceRef = useRef(null);
   const portfolioRef = useRef(null);
   const hardSkillsRef = useRef(null);
   const softSkillsRef = useRef(null);
@@ -26,6 +35,7 @@ export default function Page(): JSX.Element {
     <>
       <Navbar
         refs={{
+          experienceRef,
           portfolioRef,
           hardSkillsRef,
           softSkillsRef,
@@ -36,12 +46,14 @@ export default function Page(): JSX.Element {
         <AboutMe />
         <SectionSelector
           refs={{
+            experienceRef,
             portfolioRef,
             hardSkillsRef,
             softSkillsRef,
             contractableServicesRef,
           }}
         />
+        <Experience ref={experienceRef} />
         <Portfolio ref={portfolioRef} />
         <HardSkills ref={hardSkillsRef} />
         <SoftSkills ref={softSkillsRef} />

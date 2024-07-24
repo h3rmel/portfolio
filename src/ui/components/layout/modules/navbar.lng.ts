@@ -22,6 +22,10 @@ export const NAVBAR_LANGUAGES: LanguageList = {
     'pt-BR': 'Portfólio',
     'en-US': 'Portfolio',
   },
+  experience: {
+    'pt-BR': 'Experiência',
+    'en-US': 'Experience',
+  },
   contact: {
     'pt-BR': 'Contato',
     'en-US': 'Contact',

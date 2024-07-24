@@ -4,7 +4,7 @@
 
 import { RefObject } from 'react';
 
-import { Brain, BriefcaseBusiness, CodeXml, DraftingCompass } from 'lucide-react';
+import { Brain, BriefcaseBusiness, CodeXml, Compass, DraftingCompass } from 'lucide-react';
 
 import { useLanguage } from '@/ui/components/language';
 import { Section } from '@/ui/components/layout';
@@ -23,6 +23,7 @@ import { SECTION_SELECTOR_LANGUAGES } from './language';
  */
 interface SectionSelectorProps {
   refs: {
+    experienceRef: RefObject<HTMLHeadingElement>;
     portfolioRef: RefObject<HTMLHeadingElement>;
     hardSkillsRef: RefObject<HTMLHeadingElement>;
     softSkillsRef: RefObject<HTMLHeadingElement>;
@@ -51,6 +52,10 @@ export function SectionSelector({ refs }: SectionSelectorProps): JSX.Element {
       </hgroup>
       {/* Buttons List */}
       <section className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+        <Button variant="outline" className="inline-flex gap-2" onClick={() => handleScroll('ref', refs.experienceRef)}>
+          <Compass className="h-5 w-5" />
+          {translate('experience', SECTION_SELECTOR_LANGUAGES)}
+        </Button>
         <Button variant="outline" className="inline-flex gap-2" onClick={() => handleScroll('ref', refs.portfolioRef)}>
           <DraftingCompass className="h-5 w-5" />
           {translate('portfolio', SECTION_SELECTOR_LANGUAGES)}

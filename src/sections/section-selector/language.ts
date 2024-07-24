@@ -26,4 +26,8 @@ export const SECTION_SELECTOR_LANGUAGES: LanguageList = {
     'pt-BR': 'Portfólio',
     'en-US': 'Portfolio',
   },
+  experience: {
+    'pt-BR': 'Experiência',
+    'en-US': 'Experience',
+  },
 };

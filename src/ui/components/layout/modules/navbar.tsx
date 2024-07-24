@@ -31,6 +31,7 @@ import { NAVBAR_LANGUAGES } from './navbar.lng';
  */
 interface NavbarProps {
   refs: {
+    experienceRef: RefObject<HTMLHeadingElement>;
     portfolioRef: RefObject<HTMLHeadingElement>;
     hardSkillsRef: RefObject<HTMLHeadingElement>;
     softSkillsRef: RefObject<HTMLHeadingElement>;
@@ -66,6 +67,9 @@ export function Navbar({ refs }: NavbarProps): JSX.Element {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="z-[999]">
+              <DropdownMenuItem onClick={() => handleScroll('ref', refs.experienceRef)}>
+                {translate('experience', NAVBAR_LANGUAGES)}
+              </DropdownMenuItem>
               <DropdownMenuItem onClick={() => handleScroll('ref', refs.portfolioRef)}>
                 {translate('portfolio', NAVBAR_LANGUAGES)}
               </DropdownMenuItem>
