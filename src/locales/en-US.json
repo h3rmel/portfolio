@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "explore": "Explore",
+    "portfolio": "Portfolio",
+    "hard_skills": "Hard Skills",
+    "soft_skills": "Soft Skills",
+    "contractable_services": "Contractable Services"
+  }
+}

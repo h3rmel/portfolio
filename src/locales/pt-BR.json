@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "explore": "Explorar",
+    "portfolio": "Portfólio",
+    "hard_skills": "Habilidades Técnicas",
+    "soft_skills": "Habilidades Comportamentais",
+    "contractable_services": "Serviços Contratáveis"
+  }
+}
