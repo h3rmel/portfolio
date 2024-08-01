@@ -15,6 +15,7 @@ defineProps({
 
 <template>
   <div
+    role="figure"
     aria-label="Scroll indicator"
     :class="
       cn(
