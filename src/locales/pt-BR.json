@@ -5,5 +5,9 @@
     "hard_skills": "Habilidades Técnicas",
     "soft_skills": "Habilidades Comportamentais",
     "contractable_services": "Serviços Contratáveis"
+  },
+  "about_me": {
+    "hello": "Olá, eu sou...",
+    "content": "Desenvolvedor com 3 anos de experiência trabalhando em segmentos como gestão empresarial, hospedagem de sites e e-mails, fluxos de E[T]L e sucesso do cliente. Almejo me tornar especialista para colaborar operacionalmente e taticamente em projetos de grande escala que impactam positivamente a vida das pessoas."
   }
 }

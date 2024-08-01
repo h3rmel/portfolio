@@ -13,14 +13,14 @@ import { Button } from '@/components/ui/button';
           'relative',
           'flex items-center justify-between gap-4',
           'h-16 max-w-3xl w-full',
-          'px-4 border-b sm:border border-border sm:rounded-md',
+          'px-4 border-b sm:border border-border border-dashed sm:rounded-md',
           'bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md'
         )
       "
     >
       <!-- Logo -->
       <section class="basis-1/3">
-        <Button variant="logo" class="p-0 duration-300">
+        <Button variant="logo" class="p-0 duration-300 relative">
           <span>her</span>
           <span class="-ml-1">mel</span>
         </Button>

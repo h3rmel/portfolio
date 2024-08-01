@@ -12,7 +12,7 @@ import { Icon } from '@iconify/vue';
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" size="sm">
+      <Button variant="ghost" size="sm" class="font-light tracking-wide">
         {{ $t('navbar.explore') }}
       </Button>
     </DropdownMenuTrigger>

@@ -2,6 +2,8 @@
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@iconify/vue';
+
+// TODO: Add drawer footer with switch for languages.
 </script>
 
 <template>

@@ -5,5 +5,9 @@
     "hard_skills": "Hard Skills",
     "soft_skills": "Soft Skills",
     "contractable_services": "Contractable Services"
+  },
+  "about_me": {
+    "hello": "Hello, I am...",
+    "content": "Developer with 3 years of experience working in segments like business management, websites and e-mails hosting, E[T]L flows and customer success. I aim to become a specialist to collaborate operationally and tactically on large-scale projects that positively impact people's lives."
   }
 }

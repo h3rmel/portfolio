@@ -88,6 +88,9 @@ const config: Config = {
       },
       fontFamily: {
         geist: 'Geist, sans-serif'
+      },
+      boxShadow: {
+        'outline': '0 0 0 2px'
       }
     }
   },
