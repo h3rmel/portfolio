@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 
 import { Navbar } from '@/components/layout/navbar';
 import { NavbarMobile } from '@/components/layout/navbar-mobile';
-import { AboutMe } from '@/views';
+import { RouterView } from 'vue-router';
 
 onMounted(function () {
   document.cookie = 'locale=pt-BR';
@@ -15,7 +15,7 @@ onMounted(function () {
     <Navbar />
     <NavbarMobile />
     <main class="min-h-screen w-full overflow-hidden">
-      <AboutMe />
+      <RouterView />
     </main>
   </div>
 </template>

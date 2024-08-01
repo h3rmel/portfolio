@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import { RouterLink } from 'vue-router';
+
+import { Icon } from '@iconify/vue';
+
 import { LanguageToggle } from '@/components/language';
+import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { NavbarLinks } from '../navbar-links';
-import { Button } from '@/components/ui/button';
 </script>
 
 <template>
@@ -19,18 +22,18 @@ import { Button } from '@/components/ui/button';
       "
     >
       <!-- Logo -->
-      <section class="basis-1/3">
-        <Button variant="logo" class="p-0 duration-300 relative">
+      <section>
+        <RouterLink to="/" class="text-3xl duration-300 hover:text-emerald-500 font-normal">
           <span>her</span>
           <span class="-ml-1">mel</span>
-        </Button>
-      </section>
-      <!-- Links -->
-      <section class="basis-1/3 sm:flex justify-center hidden">
-        <NavbarLinks />
+        </RouterLink>
       </section>
       <!-- Options -->
-      <section class="basis-1/3 sm:flex justify-end hidden">
+      <section class="basis-1/5 sm:flex gap-4 justify-end hidden">
+        <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'secondary', size: 'sm' })} gap-1`">
+          <Icon icon="lucide:phone" width="20" />
+          {{ $t('navbar.contact') }}
+        </RouterLink>
         <LanguageToggle />
       </section>
     </nav>

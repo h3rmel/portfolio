@@ -1,13 +1,26 @@
 {
   "navbar": {
-    "explore": "Explore",
-    "portfolio": "Portfolio",
-    "hard_skills": "Hard Skills",
-    "soft_skills": "Soft Skills",
-    "contractable_services": "Contractable Services"
+    "contact": "Contact",
+    "options": "Options"
   },
   "about_me": {
     "hello": "Hello, I am...",
     "content": "Developer with 3 years of experience working in segments like business management, websites and e-mails hosting, E[T]L flows and customer success. I aim to become a specialist to collaborate operationally and tactically on large-scale projects that positively impact people's lives."
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Here is a summary of my professional experience"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Here are some projects I've worked on"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Here are some skills I have"
+  },
+  "contractable_services": {
+    "title": "Contractable Services",
+    "subtitle": "Here is the list of services I offer"
   }
 }

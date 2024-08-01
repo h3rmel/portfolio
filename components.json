@@ -6,7 +6,7 @@
   "tailwind": {
     "config": "tailwind.config.ts",
     "css": "src/assets/shadcn-ui.css",
-    "baseColor": "gray",
+    "baseColor": "neutral",
     "cssVariables": true
   },
   "framework": "vite",

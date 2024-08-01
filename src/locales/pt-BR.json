@@ -1,13 +1,26 @@
 {
   "navbar": {
-    "explore": "Explorar",
-    "portfolio": "Portfólio",
-    "hard_skills": "Habilidades Técnicas",
-    "soft_skills": "Habilidades Comportamentais",
-    "contractable_services": "Serviços Contratáveis"
+    "contact": "Contato",
+    "options": "Opções"
   },
   "about_me": {
     "hello": "Olá, eu sou...",
     "content": "Desenvolvedor com 3 anos de experiência trabalhando em segmentos como gestão empresarial, hospedagem de sites e e-mails, fluxos de E[T]L e sucesso do cliente. Almejo me tornar especialista para colaborar operacionalmente e taticamente em projetos de grande escala que impactam positivamente a vida das pessoas."
+  },
+  "experience": {
+    "title": "Experiência",
+    "subtitle": "Aqui está um resumo da minha experiência profissional"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Aqui estão alguns projetos nos quais trabalhei"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Aqui estão algumas habilidades que possuo"
+  },
+  "contractable_services": {
+    "title": "Serviços Contratáveis",
+    "subtitle": "Aqui está a lista de serviços que ofereço"
   }
 }

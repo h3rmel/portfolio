@@ -2,8 +2,6 @@
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@iconify/vue';
-
-// TODO: Add drawer footer with switch for languages.
 </script>
 
 <template>
@@ -12,44 +10,27 @@ import { Icon } from '@iconify/vue';
       <Button
         variant="outline"
         size="icon-lg"
-        class="inline-flex sm:hidden fixed bottom-4 right-4 rounded-full"
+        class="inline-flex sm:hidden fixed bottom-4 right-4 rounded-full z-[800]"
         aria-label="Navbar sheet opener"
       >
-        <Icon icon="ph:squares-four" width="28" />
+        <Icon icon="lucide:layout-grid" width="28" />
       </Button>
     </DrawerTrigger>
     <DrawerContent class="z-[999] p-4 pt-0">
       <DrawerHeader>
         <DrawerTitle>
-          {{ $t('navbar.explore') }}
+          {{ $t('navbar.options') }}
         </DrawerTitle>
       </DrawerHeader>
       <!-- Options -->
       <ul class="flex flex-col gap-2">
         <li>
           <Button variant="outline" size="lg" class="w-full gap-2">
-            <Icon icon="ph:compass-tool" width="20" />
-            <span>{{ $t('navbar.portfolio') }}</span>
+            <Icon icon="lucide:phone" width="20" />
+            {{ $t('navbar.contact') }}
           </Button>
         </li>
-        <li>
-          <Button variant="outline" size="lg" class="w-full gap-2">
-            <Icon icon="ph:code" width="20" />
-            <span>{{ $t('navbar.hard_skills') }}</span>
-          </Button>
-        </li>
-        <li>
-          <Button variant="outline" size="lg" class="w-full gap-2">
-            <Icon icon="ph:chat-teardrop" width="20" />
-            <span>{{ $t('navbar.soft_skills') }}</span>
-          </Button>
-        </li>
-        <li>
-          <Button variant="outline" size="lg" class="w-full gap-2">
-            <Icon icon="ph:briefcase" width="20" />
-            <span>{{ $t('navbar.contractable_services') }}</span>
-          </Button>
-        </li>
+        <li></li>
       </ul>
     </DrawerContent>
   </Drawer>
