@@ -16,7 +16,7 @@ import { AtSign } from 'lucide-vue-next';
           'flex items-center justify-between gap-4',
           'h-16 max-w-3xl w-full',
           'px-4 border-b sm:border border-border border-dashed sm:rounded-md',
-          'bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md'
+          'bg-noise backdrop-blur-md'
         )
       "
     >

@@ -87,6 +87,9 @@ const config: Config = {
       fontFamily: {
         'jetbrains-mono': 'JetBrains Mono, monospace',
         geist: 'Geist, sans-serif'
+      },
+      backgroundImage: {
+        'noise': 'url("/background/noise.svg")',
       }
     }
   },

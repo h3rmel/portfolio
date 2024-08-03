@@ -8,7 +8,7 @@ import { LayoutGrid, AtSign } from 'lucide-vue-next';
   <Drawer>
     <DrawerTrigger as-child>
       <Button
-        variant="outline"
+        variant="outline-reverse"
         size="icon-lg"
         class="inline-flex sm:hidden fixed bottom-4 right-4 rounded-full z-[800]"
         aria-label="Navbar sheet opener"

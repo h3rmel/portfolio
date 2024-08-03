@@ -6,9 +6,6 @@ import { hardSkillsData, techColorsData } from '@/data/hardSkills';
 import { otherHardSkillsData } from '@/data/otherHardSkills';
 import { softSkillsData } from '@/data/softSkills';
 import { cn } from '@/utils/cn';
-
-console.log('hardSkillsData', hardSkillsData);
-console.log('techColorsData', techColorsData);
 </script>
 
 <template>
@@ -36,35 +33,26 @@ console.log('techColorsData', techColorsData);
                     'h-24 w-24 sm:h-48 sm:w-48',
                     'border border-dashed border-border rounded-lg',
                     'group overflow-hidden duration-300',
+                    'bg-noise',
                     techColorsData[hardSkill.colorKey].border,
                     techColorsData[hardSkill.colorKey].glow
                   )
                 "
               >
+                <!-- Visual Effect -->
                 <div
                   :class="
                     cn(
-                      'absolute left-4 top-4 sm:left-0 sm:top-0 group-hover:left-[45%] sm:group-hover:left-[30%]',
-                      'h-8 w-8 sm:h-32 sm:w-32',
+                      'absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-8',
+                      'h-20 w-20 sm:h-40 sm:w-40',
                       'rounded-full',
                       'opacity-60 blur-lg sm:opacity-30 sm:blur-xl',
-                      'duration-500',
+                      'duration-500 group-hover:scale-[2]',
                       techColorsData[hardSkill.colorKey].bg
                     )
                   "
                 />
-                <div
-                  :class="
-                    cn(
-                      'absolute bottom-4 right-4 sm:bottom-0 sm:right-0 group-hover:right-[45%] sm:group-hover:right-[30%]',
-                      'h-8 w-8 sm:h-32 sm:w-32',
-                      'rounded-full',
-                      'opacity-60 blur-lg sm:opacity-30 sm:blur-xl',
-                      'duration-500',
-                      techColorsData[hardSkill.colorKey].bg
-                    )
-                  "
-                />
+                <!-- Hard Skill Logo -->
                 <img
                   :src="hardSkill.imageUrl"
                   :alt="`${hardSkill.name}'s logo'`"
@@ -85,11 +73,11 @@ console.log('techColorsData', techColorsData);
         </section>
       </TooltipProvider>
       <!-- Other Skills List -->
-      <section class="flex flex-col gap-1">
-        <h4 class="text-lg text-muted-foreground">
+      <section class="flex flex-col gap-1 mt-4">
+        <h4 class="text-lg">
           {{ $t('skills.other_hard_skills') }}
         </h4>
-        <ul class="flex flex-col gap-1 sm:gap-0">
+        <ul class="flex flex-col gap-1 sm:gap-0 text-muted-foreground">
           <li v-for="otherHardSkill in otherHardSkillsData" :key="otherHardSkill">
             - {{ $t(`skills.other_hard_skills_list.${otherHardSkill}`) }}
           </li>
@@ -114,13 +102,30 @@ console.log('techColorsData', techColorsData);
           :key="softSkill.name"
           class="glow group p-6 flex flex-col items-center text-center"
         >
+          <!-- Visual Effect -->
+          <div
+            :class="
+              cn(
+                'absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-8',
+                'h-20 w-20 sm:h-40 sm:w-40',
+                'rounded-full',
+                'opacity-60 blur-lg sm:opacity-30 sm:blur-xl',
+                'duration-500 group-hover:scale-[5]',
+                'bg-neutral-700'
+              )
+            "
+          />
           <component :is="softSkill.icon" :size="48" class="duration-300 group-hover:text-emerald-500" />
           <CardTitle class="py-2">
             {{ $t(`skills.soft_skills_list.${softSkill.name}`) }}
           </CardTitle>
-          <CardDescription class="w-[80%]">{{ $t(`skills.soft_skills_list.${softSkill.desc}`) }}</CardDescription>
+          <CardDescription class="sm:w-[80%]">{{ $t(`skills.soft_skills_list.${softSkill.desc}`) }}</CardDescription>
         </Card>
       </div>
     </section>
+    <img
+      src="/shapes/cross.svg"
+      class="rotate-45 w-16 sm:w-32 h-16 sm:h-32 absolute -bottom-8 sm:-bottom-16 -right-8 sm:-left-16"
+    />
   </Section>
 </template>

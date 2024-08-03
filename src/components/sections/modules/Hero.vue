@@ -7,19 +7,24 @@ import { ScrollIndicator } from '@/components/visual/scroll-indicator';
 
 <template>
   <section
-    class="relative flex h-[100vh] w-full items-center justify-center overflow-hidden border-b border-dashed border-border"
+    class="relative flex min-h-screen h-full w-full items-center justify-center overflow-hidden border-b border-dashed border-border"
   >
     <GradientBackground />
+    <!-- bg-gradient-to-br from-background/30 to-neutral-800/30 -->
     <Card class="glow group z-10 w-full sm:w-[560px]" aria-label="About me card">
       <CardHeader class="flex flex-row items-center justify-between">
         <hgroup class="flex flex-col">
           <CardDescription>{{ $t('about_me.hello') }}</CardDescription>
           <h1 class="text-2xl font-medium leading-none tracking-tight">Isaac "Hermel" Reginato</h1>
         </hgroup>
-        <img src="/profile.webp" alt="Isaac Hermel's profile picture" class="w-[72px] rounded-full" />
+        <img
+          src="/profile.webp"
+          alt="Isaac Hermel's profile picture"
+          class="w-[72px] rounded-full border border-border border-dashed group-hover:border-emerald-500 duration-300"
+        />
       </CardHeader>
       <CardContent class="duration-300 group-hover:border-emerald-500">
-        <p class="text-justify">{{ $t('about_me.content') }}</p>
+        <p class="text-justify text-sm sm:text-base">{{ $t('about_me.content') }}</p>
       </CardContent>
       <CardFooter class="inline-flex w-full gap-4">
         <a
@@ -38,6 +43,6 @@ import { ScrollIndicator } from '@/components/visual/scroll-indicator';
         </a>
       </CardFooter>
     </Card>
-    <ScrollIndicator className="absolute bottom-4 left-[50%] translate-x-[-50%]" />
+    <ScrollIndicator className="absolute bottom-3 sm:bottom-4 left-[50%] translate-x-[-50%]" />
   </section>
 </template>

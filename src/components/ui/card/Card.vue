@@ -11,7 +11,7 @@ const props = defineProps<{
   <article
     :class="
       cn(
-        'rounded-lg border border-border border-dashed bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md text-card-foreground shadow-sm',
+        'rounded-lg border border-border border-dashed bg-noise backdrop-blur-md text-card-foreground shadow-sm overflow-hidden',
         props.class
       )
     "
