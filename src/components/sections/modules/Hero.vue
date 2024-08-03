@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { GradientBackground } from '@/components/visual/gradient-background';
-import { Card, CardHeader, CardDescription, CardContent, CardTitle, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { buttonVariants } from '@/components/ui/button';
 import { ScrollIndicator } from '@/components/visual/scroll-indicator';
 </script>
@@ -10,15 +10,15 @@ import { ScrollIndicator } from '@/components/visual/scroll-indicator';
     class="relative flex h-[100vh] w-full items-center justify-center overflow-hidden border-b border-dashed border-border"
   >
     <GradientBackground />
-    <Card class="z-10 w-full sm:w-[560px]" aria-label="About me card">
+    <Card class="glow group z-10 w-full sm:w-[560px]" aria-label="About me card">
       <CardHeader class="flex flex-row items-center justify-between">
         <hgroup class="flex flex-col">
           <CardDescription>{{ $t('about_me.hello') }}</CardDescription>
-          <CardTitle class="text-2xl font-medium leading-none tracking-tight">Isaac "Hermel" Reginato</CardTitle>
+          <h1 class="text-2xl font-medium leading-none tracking-tight">Isaac "Hermel" Reginato</h1>
         </hgroup>
         <img src="/profile.webp" alt="Isaac Hermel's profile picture" class="w-[72px] rounded-full" />
       </CardHeader>
-      <CardContent>
+      <CardContent class="duration-300 group-hover:border-emerald-500">
         <p class="text-justify">{{ $t('about_me.content') }}</p>
       </CardContent>
       <CardFooter class="inline-flex w-full gap-4">

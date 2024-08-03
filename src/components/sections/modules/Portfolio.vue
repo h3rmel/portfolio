@@ -2,5 +2,5 @@
 import { Section } from '@/components/layout/section';
 </script>
 <template>
-  <Section :title="$t('projects.title')" :subtitle="$t('projects.subtitle')"></Section>
+  <Section :title="$t('portfolio.title')" :subtitle="$t('portfolio.subtitle')"></Section>
 </template>

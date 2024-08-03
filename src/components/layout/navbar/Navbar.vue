@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router';
 
-import { Icon } from '@iconify/vue';
-
 import { LanguageToggle } from '@/components/language';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -17,21 +15,21 @@ import { cn } from '@/lib/utils';
           'flex items-center justify-between gap-4',
           'h-16 max-w-3xl w-full',
           'px-4 border-b sm:border border-border border-dashed sm:rounded-md',
-          'bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md'
+          'bg-gradient-to-br from-background/30 to-neutral-800/30 backdrop-blur-md',
+          'glow'
         )
       "
     >
       <!-- Logo -->
       <section>
-        <RouterLink to="/" class="text-3xl duration-300 hover:text-emerald-500 font-normal">
+        <RouterLink to="/" class="font-geist text-3xl duration-300 hover:text-emerald-500 font-normal">
           <span>her</span>
-          <span class="-ml-1">mel</span>
+          <span class="-ml-[4px]">mel</span>
         </RouterLink>
       </section>
       <!-- Options -->
       <section class="basis-1/5 sm:flex gap-4 justify-end hidden">
-        <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'secondary', size: 'sm' })} gap-1`">
-          <Icon icon="lucide:phone" width="20" />
+        <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'ghost', size: 'sm' })} gap-1`">
           {{ $t('navbar.contact') }}
         </RouterLink>
         <LanguageToggle />

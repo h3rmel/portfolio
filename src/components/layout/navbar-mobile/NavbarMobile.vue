@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
 import { Button } from '@/components/ui/button';
-import { Icon } from '@iconify/vue';
 </script>
 
 <template>
@@ -26,7 +25,6 @@ import { Icon } from '@iconify/vue';
       <ul class="flex flex-col gap-2">
         <li>
           <Button variant="outline" size="lg" class="w-full gap-2">
-            <Icon icon="lucide:phone" width="20" />
             {{ $t('navbar.contact') }}
           </Button>
         </li>

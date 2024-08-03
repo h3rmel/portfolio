@@ -1,4 +1,4 @@
-import { HomeView, ContactView } from '@/views';
+import { HomePage, ContactPage } from '@/pages';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: HomeView,
+      component: HomePage,
       meta: {
         title: 'Isaac "Hermel" Reginato'
       }
@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/contact',
       name: 'Contact',
-      component: ContactView,
+      component: ContactPage,
       meta: {
         title: 'Contact | Isaac "Hermel" Reginato'
       }
