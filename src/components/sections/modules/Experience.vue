@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Section } from '@/components/layout/section';
+import { Section } from '@/components/layout';
 </script>
 
 <template>

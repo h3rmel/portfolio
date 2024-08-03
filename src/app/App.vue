@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router';
 
-import { Navbar } from '@/components/layout/navbar';
-import { NavbarMobile } from '@/components/layout/navbar-mobile';
+import { Navbar, NavbarMobile } from '@/components/layout';
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Section } from '@/components/layout/section';
+import { Section } from '@/components/layout';
 import { Card, CardTitle, CardDescription } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { hardSkillsData, techColorsData } from '@/data/hardSkills';
