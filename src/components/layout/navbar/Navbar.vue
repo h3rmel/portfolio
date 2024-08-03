@@ -4,6 +4,7 @@ import { RouterLink } from 'vue-router';
 import { LanguageToggle } from '@/components/language';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { AtSign } from 'lucide-vue-next';
 </script>
 
 <template>
@@ -29,7 +30,8 @@ import { cn } from '@/lib/utils';
       </section>
       <!-- Options -->
       <section class="basis-1/5 sm:flex gap-4 justify-end hidden">
-        <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'ghost', size: 'sm' })} gap-1`">
+        <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'outline', size: 'sm' })} bg-transparent gap-1`">
+          <AtSign class="w-5 h-5" />
           {{ $t('navbar.contact') }}
         </RouterLink>
         <LanguageToggle />

@@ -1,187 +1,205 @@
-export const hardSkillsData: { name: string; image: string; colorKey: string }[] = [
+export const hardSkillsData: { name: string; imageUrl: string; colorKey: string }[] = [
   {
     name: 'JavaScript',
-    image: '/hard-skills/javascript-logo.webp',
+    imageUrl: '/hard-skills/javascript.webp',
     colorKey: 'js'
   },
   {
     name: 'TypeScript',
-    image: '/hard-skills/typescript-logo.webp',
+    imageUrl: '/hard-skills/typescript.webp',
     colorKey: 'ts'
   },
   {
     name: 'React',
-    image: '/hard-skills/react-logo.webp',
+    imageUrl: '/hard-skills/react.webp',
     colorKey: 'react'
   },
   {
     name: 'Next',
-    image: '/hard-skills/next-js-logo.webp',
+    imageUrl: '/hard-skills/next.webp',
     colorKey: 'next'
   },
   {
+    name: 'Vue',
+    imageUrl: '/hard-skills/vue.webp',
+    colorKey: 'vue'
+  },
+  {
     name: 'Node',
-    image: '/hard-skills/node-js-logo.webp',
+    imageUrl: '/hard-skills/node.webp',
     colorKey: 'node'
   },
   {
+    name: 'Vite',
+    imageUrl: '/hard-skills/vite.webp',
+    colorKey: 'vite'
+  },
+  {
+    name: 'Webpack',
+    imageUrl: '/hard-skills/webpack.webp',
+    colorKey: 'webpack'
+  },
+  {
     name: 'Jest',
-    image: '/hard-skills/jest-logo.webp',
+    imageUrl: '/hard-skills/jest.webp',
     colorKey: 'jest'
   },
   {
-    name: 'HTML',
-    image: '/hard-skills/html-5-logo.webp',
-    colorKey: 'html'
-  },
-  {
-    name: 'CSS',
-    image: '/hard-skills/css-3-logo.webp',
-    colorKey: 'css'
-  },
-  {
     name: 'Python',
-    image: '/hard-skills/python-logo.webp',
+    imageUrl: '/hard-skills/python.webp',
     colorKey: 'python'
   },
   {
     name: 'Flask',
-    image: '/hard-skills/flask-logo.webp',
+    imageUrl: '/hard-skills/flask.webp',
     colorKey: 'flask'
   },
   {
     name: 'PostgreSQL',
-    image: '/hard-skills/sql-logo.webp',
+    imageUrl: '/hard-skills/postgresql.webp',
     colorKey: 'postgresql'
   },
   {
+    name: 'Firebase',
+    imageUrl: '/hard-skills/firebase.webp',
+    colorKey: 'firebase'
+  },
+  {
     name: 'Mongo DB',
-    image: '/hard-skills/mongo-db-logo.webp',
+    imageUrl: '/hard-skills/mongodb.webp',
     colorKey: 'mongodb'
   },
   {
     name: 'Tailwind CSS',
-    image: '/hard-skills/tailwind-css-logo.webp',
-    colorKey: 'tailwind-css'
+    imageUrl: '/hard-skills/tailwindcss.webp',
+    colorKey: 'tailwindcss'
   },
   {
     name: 'Sass',
-    image: '/hard-skills/sass-logo.webp',
+    imageUrl: '/hard-skills/sass.webp',
     colorKey: 'sass'
   },
   {
     name: 'C#',
-    image: '/hard-skills/c-sharp-logo.webp',
+    imageUrl: '/hard-skills/csharp.webp',
     colorKey: 'csharp'
   },
   {
     name: 'Blazor',
-    image: '/hard-skills/blazor-logo.webp',
+    imageUrl: '/hard-skills/blazor.webp',
     colorKey: 'blazor'
   },
   {
-    name: 'Git',
-    image: '/hard-skills/git-logo.webp',
-    colorKey: 'git'
-  },
-  {
     name: 'Bash',
-    image: '/hard-skills/bash-logo.webp',
+    imageUrl: '/hard-skills/bash.webp',
     colorKey: 'bash'
   },
   {
     name: 'Docker',
-    image: '/hard-skills/docker-logo.webp',
+    imageUrl: '/hard-skills/docker.webp',
     colorKey: 'docker'
-  },
-  {
-    name: 'Visual Studio Code',
-    image: '/hard-skills/vs-code-logo.webp',
-    colorKey: 'vs-code'
   }
 ];
 
-export const otherHardSkillsData: string[] = ['experience_docs_and_searches', 'experience_others', 'experience_ci_cd'];
-
-export const techColorsData: { [key: string]: { bg: string; border: string } } = {
+export const techColorsData: { [key: string]: { bg: string; border: string; glow: string } } = {
   js: {
     bg: 'bg-[#f0dc4e]',
-    border: 'hover:border-[#f0dc4e]'
+    border: 'hover:border-[#f0dc4e]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(240,220,78,0.4)]'
   },
   ts: {
     bg: 'bg-[#3078c6]',
-    border: 'hover:border-[#3078c6]'
+    border: 'hover:border-[#3078c6]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(0,123,204,0.4)]'
   },
   react: {
-    bg: 'bg-[#61d8f9]',
-    border: 'hover:border-[#61d8f9]'
+    bg: 'bg-[#60dafa]',
+    border: 'hover:border-[#60dafa]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(96,218,250,0.4)]'
   },
   next: {
     bg: 'bg-[#9ca3af]',
-    border: 'hover:border-[#9ca3af]'
+    border: 'hover:border-[#9ca3af]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(156,163,175,0.4)]'
+  },
+  vue: {
+    bg: 'bg-[#3fb781]',
+    border: 'hover:border-[#3fb781]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(63,183,129,0.4)]'
   },
   node: {
-    bg: 'bg-[#8dc03c]',
-    border: 'hover:border-[#8dc03c]'
+    bg: 'bg-[#83ce27]',
+    border: 'hover:border-[#83ce27]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(131,206,39,0.4)]'
+  },
+  vite: {
+    bg: 'bg-[#b142fe]',
+    border: 'hover:border-[#b142fe]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(177,66,254,0.4)]'
+  },
+  webpack: {
+    bg: 'bg-[#1c79c2]',
+    border: 'hover:border-[#1c79c2]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(28,121,194,0.4)]'
   },
   jest: {
-    bg: 'bg-[#c53d10]',
-    border: 'hover:border-[#c53d10]'
-  },
-  html: {
-    bg: 'bg-[#f56328]',
-    border: 'hover:border-[#f56328]'
-  },
-  css: {
-    bg: 'bg-[#2b67ee]',
-    border: 'hover:border-[#2b67ee]'
+    bg: 'bg-[#9a405a]',
+    border: 'hover:border-[#9a405a]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(154,64,90,0.4)]'
   },
   python: {
-    bg: 'bg-[#3771a2]',
-    border: 'hover:border-[#3771a2]'
+    bg: 'bg-[#4483b4]',
+    border: 'hover:border-[#4483b4]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(68,131,180,0.4)]'
   },
   flask: {
     bg: 'bg-[#9ca3af]',
-    border: 'hover:border-[#9ca3af]'
+    border: 'hover:border-[#9ca3af]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(156,163,175,0.4)]'
   },
   postgresql: {
-    bg: 'bg-[#31668f]',
-    border: 'hover:border-[#31668f]'
+    bg: 'bg-[#326792]',
+    border: 'hover:border-[#326792]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(50,103,146,0.4)]'
+  },
+  firebase: {
+    bg: 'bg-[#f5831f]',
+    border: 'hover:border-[#f5831f]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(245,131,31,0.4)]'
   },
   mongodb: {
-    bg: 'bg-[#55ad47]',
-    border: 'hover:border-[#55ad47]'
+    bg: 'bg-[#419b32]',
+    border: 'hover:border-[#419b32]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(65,155,50,0.4)]'
   },
-  'tailwind-css': {
-    bg: 'bg-[#3cbafb]',
-    border: 'hover:border-[#3cbafb]'
+  tailwindcss: {
+    bg: 'bg-[#37bdf9]',
+    border: 'hover:border-[#37bdf9]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(55,189,249,0.4)]'
   },
   sass: {
-    bg: 'bg-[#c96997]',
-    border: 'hover:border-[#c96997]'
+    bg: 'bg-[#cc669b]',
+    border: 'hover:border-[#cc669b]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(204,102,155,0.4)]'
   },
   csharp: {
-    bg: 'bg-[#5c2c90]',
-    border: 'hover:border-[#5c2c90]'
+    bg: 'bg-[#68207b]',
+    border: 'hover:border-[#68207b]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(104,32,123,0.4)]'
   },
   blazor: {
-    bg: 'bg-[#5c2c90]',
-    border: 'hover:border-[#5c2c90]'
-  },
-  git: {
-    bg: 'bg-[#ef5333]',
-    border: 'hover:border-[#ef5333]'
+    bg: 'bg-[#5d2d92]',
+    border: 'hover:border-[#5d2d92]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(93,45,146,0.4)]'
   },
   bash: {
     bg: 'bg-[#fefefe]',
-    border: 'hover:border-[#fefefe]'
+    border: 'hover:border-[#fefefe]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(254,254,254,0.4)]'
   },
   docker: {
-    bg: 'bg-[#089cec]',
-    border: 'hover:border-[#089cec]'
-  },
-  'vs-code': {
-    bg: 'bg-[#1f9cef]',
-    border: 'hover:border-[#1f9cef]'
+    bg: 'bg-[#28b8ec]',
+    border: 'hover:border-[#28b8ec]',
+    glow: 'hover:shadow-[0_0_16px_4px_rgba(39,185,236,0.4)]'
   }
 };

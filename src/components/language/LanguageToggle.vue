@@ -16,7 +16,7 @@ const countryName: { [key: string]: string } = {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="secondary" size="sm" class="gap-2 px-5">
+      <Button variant="outline" size="sm" class="bg-transparent gap-2 px-5">
         <img
           :src="`/languages/${$i18n.locale}.png`"
           :alt="`${countryName[$i18n.locale]}'s flag`"

@@ -21,6 +21,7 @@ export default {
     subtitle: 'Soft e hard skills que possuo e demonstro:',
     hard_skills: 'Hard Skills',
     hard_skills_desc: 'Habilidades técnicas e específicas que possuo e demonstro:',
+    other_hard_skills: 'Outras Habilidades',
     other_hard_skills_list: {
       experience_docs_and_searches:
         'Experiência com documentação de código (ex.: JSDoc) e pesquisas técnicas e negociais.',
