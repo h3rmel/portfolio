@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router';
 
 import { LanguageToggle } from '@/components/language';
 import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import { AtSign } from 'lucide-vue-next';
 </script>
 

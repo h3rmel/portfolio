@@ -5,7 +5,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { hardSkillsData, techColorsData } from '@/data/hardSkills';
 import { otherHardSkillsData } from '@/data/otherHardSkills';
 import { softSkillsData } from '@/data/softSkills';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 
 console.log('hardSkillsData', hardSkillsData);
 console.log('techColorsData', techColorsData);
