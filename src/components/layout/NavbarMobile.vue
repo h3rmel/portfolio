@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
-import { Button } from '@/components/ui/button';
 import { LayoutGrid, AtSign } from 'lucide-vue-next';
+
+import { Button } from '@/components/ui/button';
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
+import { LanguageToggle } from '@/components/language';
 </script>
 
 <template>
@@ -32,6 +34,8 @@ import { LayoutGrid, AtSign } from 'lucide-vue-next';
         </li>
         <li></li>
       </ul>
+      <!-- Language -->
+      <LanguageToggle />
     </DrawerContent>
   </Drawer>
 </template>

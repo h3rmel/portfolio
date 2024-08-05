@@ -101,20 +101,8 @@ import { cn } from '@/utils/cn';
           v-for="softSkill in softSkillsData"
           :key="softSkill.name"
           class="glow group p-6 flex flex-col items-center text-center"
+          :visual-effect="true"
         >
-          <!-- Visual Effect -->
-          <div
-            :class="
-              cn(
-                'absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-8',
-                'h-20 w-20 sm:h-40 sm:w-40',
-                'rounded-full',
-                'opacity-60 blur-lg sm:opacity-30 sm:blur-xl',
-                'duration-500 group-hover:scale-[5]',
-                'bg-neutral-700'
-              )
-            "
-          />
           <component :is="softSkill.icon" :size="48" class="duration-300 group-hover:text-emerald-500" />
           <CardTitle class="py-2">
             {{ $t(`skills.soft_skills_list.${softSkill.name}`) }}
@@ -123,9 +111,10 @@ import { cn } from '@/utils/cn';
         </Card>
       </div>
     </section>
+    <!-- Absolute Shape -->
     <img
-      src="/shapes/cross.svg"
-      class="rotate-45 w-16 sm:w-32 h-16 sm:h-32 absolute -bottom-8 sm:-bottom-16 -right-8 sm:-left-16"
+      src="/shapes/cross.webp"
+      class="opacity-60 w-16 sm:w-24 h-16 sm:h-24 absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12"
     />
   </Section>
 </template>

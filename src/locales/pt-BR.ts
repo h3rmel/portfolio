@@ -14,7 +14,18 @@ export default {
   },
   portfolio: {
     title: 'Portfólio',
-    subtitle: 'Alguns dos projetos paralelos que já desenvolvi/trabalhei:'
+    subtitle: 'Alguns dos projetos paralelos que já desenvolvi/trabalhei:',
+    license: 'Licença',
+    projects: {
+      front_flow_desc:
+        'Um conjunto de ferramentas para ajudar desenvolvedores a criar interfaces com mais facilidade no seu dia a dia.',
+      isa_arch_desc:
+        'Uma arquitetura para React que separa o código em três camadas: Interface (I), Estados (S) e Ações (A).',
+      next_lp_template_desc:
+        'Um template simples e escalável para construir landing pages prontas para produção com NextJS.',
+      sen_financa_desc: 'Um aplicativo para gerenciar as finanças pessoais de forma simples e intuitiva.',
+      portfolio_desc: 'Meu portfólio pessoal, onde compartilho um pouco sobre mim e meus projetos.'
+    }
   },
   skills: {
     title: 'Habilidades',

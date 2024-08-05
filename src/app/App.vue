@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router';
 
-import { Navbar, NavbarMobile } from '@/components/layout';
+import { Navbar, NavbarMobile, Footer } from '@/components/layout';
 </script>
 
 <template>
@@ -10,4 +10,5 @@ import { Navbar, NavbarMobile } from '@/components/layout';
   <main class="min-h-screen w-full overflow-hidden">
     <RouterView />
   </main>
+  <Footer />
 </template>

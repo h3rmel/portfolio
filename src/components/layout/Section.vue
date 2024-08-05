@@ -11,7 +11,11 @@ defineProps({
   <section class="border-b border-dashed border-border">
     <section
       :class="
-        cn('container relative', 'flex flex-col gap-6 sm:gap-8', 'p-4 sm:p-16 border-dashed border-border sm:border-x')
+        cn(
+          'container relative',
+          'flex flex-col gap-6 sm:gap-8',
+          'py-8 px-4 sm:p-16 border-dashed border-border sm:border-x'
+        )
       "
     >
       <hgroup>

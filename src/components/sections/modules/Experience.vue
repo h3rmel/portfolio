@@ -4,9 +4,10 @@ import { Section } from '@/components/layout';
 
 <template>
   <Section :title="$t('experience.title')" :subtitle="$t('experience.subtitle')">
+    <!-- Absolute Shape -->
     <img
-      src="/shapes/circle.svg"
-      class="w-16 sm:w-32 h-16 sm:h-32 absolute -bottom-8 sm:-bottom-16 -right-8 sm:-right-16"
+      src="/shapes/circle.webp"
+      class="opacity-60 w-16 sm:w-24 h-16 sm:h-24 absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12"
     />
   </Section>
 </template>

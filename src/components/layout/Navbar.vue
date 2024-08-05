@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router';
 
-import { LanguageToggle } from '@/components/language';
+import { LanguageDropdown } from '@/components/language';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import { AtSign } from 'lucide-vue-next';
@@ -33,7 +33,7 @@ import { AtSign } from 'lucide-vue-next';
           <AtSign class="w-5 h-5" />
           {{ $t('navbar.contact') }}
         </RouterLink>
-        <LanguageToggle />
+        <LanguageDropdown />
       </section>
     </nav>
   </header>
