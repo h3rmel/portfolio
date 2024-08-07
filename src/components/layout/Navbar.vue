@@ -1,10 +1,16 @@
 <script lang="ts" setup>
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
 
 import { LanguageDropdown } from '@/components/language';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
-import { AtSign } from 'lucide-vue-next';
+import { PhAt } from '@phosphor-icons/vue';
+
+const route = useRoute();
+
+function isActiveLink(path: string): boolean {
+  return route.path === path;
+}
 </script>
 
 <template>
@@ -29,8 +35,11 @@ import { AtSign } from 'lucide-vue-next';
       </section>
       <!-- Options -->
       <section class="basis-1/5 sm:flex gap-4 justify-end hidden">
-        <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'outline', size: 'sm' })} bg-transparent gap-1`">
-          <AtSign class="w-5 h-5" />
+        <RouterLink
+          to="/contact"
+          :class="`${buttonVariants({ variant: isActiveLink('/contact') ? 'secondary' : 'outline', size: 'sm' })} gap-2`"
+        >
+          <PhAt :size="20" />
           {{ $t('navbar.contact') }}
         </RouterLink>
         <LanguageDropdown />

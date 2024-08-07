@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft } from 'lucide-vue-next';
+import { PhArrowLeft } from '@phosphor-icons/vue';
 import { useCarousel } from './useCarousel';
 import type { WithClassAsProps } from './interface';
 import { cn } from '@/utils/cn';
@@ -26,7 +26,7 @@ const { orientation, canScrollPrev, scrollPrev } = useCarousel();
     @click="scrollPrev"
   >
     <slot>
-      <ArrowLeft class="h-4 w-4 text-current" />
+      <PhArrowLeft :size="16" class="text-current" />
       <span class="sr-only">Previous Slide</span>
     </slot>
   </Button>

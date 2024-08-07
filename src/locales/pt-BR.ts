@@ -3,6 +3,23 @@ export default {
     contact: 'Contato',
     options: 'Opções'
   },
+  contact: {
+    card_title: 'Entre em Contato',
+    card_subtitle:
+      'Se deseja falar comigo, fazer uma pergunta ou apenas dar um oi, sinta-se à vontade para entrar em contato.',
+    label_name: 'Nome',
+    label_email: 'E-mail',
+    label_message: 'Mensagem',
+    submit: 'Enviar',
+    toast_success: 'Sucesso',
+    toast_success_desc: 'Mensagem enviada com sucesso! Você poderá enviar novamente mais tarde.',
+    toast_error: 'Erro',
+    toast_error_desc: 'Erro ao enviar a mensagem. Tente novamente mais tarde.',
+    options: {
+      title: 'Outras opções de contato',
+      subtitle: 'Se preferir, você pode me encontrar de outras formas:'
+    }
+  },
   about_me: {
     hello: 'Olá, eu sou...',
     content:

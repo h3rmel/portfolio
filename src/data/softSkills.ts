@@ -1,5 +1,14 @@
 import type { Component } from 'vue';
-import { AudioWaveform, Users, View, Target, Hourglass, SquareKanban, Lightbulb, BrainCircuit } from 'lucide-vue-next';
+import {
+  PhEye,
+  PhHeadCircuit,
+  PhHourglassHigh,
+  PhKanban,
+  PhLightbulbFilament,
+  PhTarget,
+  PhUsersThree,
+  PhWaveform
+} from '@phosphor-icons/vue';
 
 export const softSkillsData: {
   name: string;
@@ -9,41 +18,41 @@ export const softSkillsData: {
   {
     name: 'active_listening',
     desc: 'active_listening_desc',
-    icon: AudioWaveform
+    icon: PhWaveform
   },
   {
     name: 'adaptability',
     desc: 'adaptability_desc',
-    icon: BrainCircuit
+    icon: PhHeadCircuit
   },
   {
     name: 'team_work',
     desc: 'team_work_desc',
-    icon: Users
+    icon: PhUsersThree
   },
   {
     name: 'analytic_view',
     desc: 'analytic_view_desc',
-    icon: View
+    icon: PhEye
   },
   {
     name: 'objectivity',
     desc: 'objectivity_desc',
-    icon: Target
+    icon: PhTarget
   },
   {
     name: 'problem_solving',
     desc: 'problem_solving_desc',
-    icon: Lightbulb
+    icon: PhLightbulbFilament
   },
   {
     name: 'scrum_and_kanban',
     desc: 'scrum_and_kanban_desc',
-    icon: SquareKanban
+    icon: PhKanban
   },
   {
     name: 'time_management',
     desc: 'time_management_desc',
-    icon: Hourglass
+    icon: PhHourglassHigh
   }
 ];

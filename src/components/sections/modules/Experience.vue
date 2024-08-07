@@ -7,6 +7,8 @@ import { Section } from '@/components/layout';
     <!-- Absolute Shape -->
     <img
       src="/shapes/circle.webp"
+      role="figure"
+      alt="Circle shape for decoration"
       class="opacity-60 w-16 sm:w-24 h-16 sm:h-24 absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12"
     />
   </Section>

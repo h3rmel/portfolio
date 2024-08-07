@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { LanguageToggle } from '@/components/language';
-import { Button, buttonVariants } from '@/components/ui/button';
-import { Github, Linkedin } from 'lucide-vue-next';
-import { RouterLink } from 'vue-router';
+import { buttonVariants } from '@/components/ui/button';
+import { PhGitFork, PhGithubLogo } from '@phosphor-icons/vue';
 </script>
 
 <template>
-  <footer class="w-full">
+  <footer class="w-full z-10">
     <!-- Footer -->
     <section class="container flex items-center justify-between sm:p-16 p-4">
       <!-- Social Media Links -->
@@ -15,14 +14,16 @@ import { RouterLink } from 'vue-router';
           :class="`${buttonVariants({ variant: 'outline', size: 'icon' })} cursor-pointer`"
           href="https://github.com/h3rmel"
           target="_blank"
+          aria-label="Visit my GitHub"
         >
-          <Github /> </a
+          <PhGithubLogo :size="20" /> </a
         ><a
           :class="`${buttonVariants({ variant: 'outline', size: 'icon' })} cursor-pointer`"
-          href="https://linkedin.com/in/isaachermel"
+          href="https://github.com/h3rmel/portfolio"
           target="_blank"
+          aria-label="Fork me on GitHub"
         >
-          <Linkedin />
+          <PhGitFork :size="20" />
         </a>
       </section>
       <LanguageToggle />

@@ -7,11 +7,10 @@ import { ScrollIndicator } from '@/components/visual/scroll-indicator';
 
 <template>
   <section
-    class="relative flex min-h-screen h-full w-full items-center justify-center overflow-hidden border-b border-dashed border-border"
+    class="bg-noise pt-12 sm:p-0 relative flex min-h-screen h-full w-full items-center justify-center overflow-hidden border-b border-dashed border-border"
   >
     <GradientBackground />
-    <!-- bg-gradient-to-br from-background/30 to-neutral-800/30 -->
-    <Card class="glow group z-10 w-full sm:w-[560px]" aria-label="About me card">
+    <Card class="glow group bg-background/30 z-10 w-full sm:w-[560px]" aria-label="About me card">
       <CardHeader class="flex flex-row items-center justify-between">
         <hgroup class="flex flex-col">
           <CardDescription>{{ $t('about_me.hello') }}</CardDescription>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ArrowRight } from 'lucide-vue-next';
 import { useCarousel } from './useCarousel';
 import type { WithClassAsProps } from './interface';
 import { cn } from '@/utils/cn';
 import { Button } from '@/components/ui/button';
+import { PhArrowRight } from '@phosphor-icons/vue';
 
 const props = defineProps<WithClassAsProps>();
 
@@ -26,7 +26,7 @@ const { orientation, canScrollNext, scrollNext } = useCarousel();
     @click="scrollNext"
   >
     <slot>
-      <ArrowRight class="h-4 w-4 text-current" />
+      <PhArrowRight :size="16" class="text-current" />
       <span class="sr-only">Next Slide</span>
     </slot>
   </Button>

@@ -4,6 +4,7 @@ import PT_BR from '@/locales/pt-BR';
 import EN_US from '@/locales/en-US';
 
 const i18n = createI18n({
+  legacy: false,
   locale: navigator.language || 'pt-BR',
   messages: {
     'pt-BR': PT_BR,

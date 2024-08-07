@@ -1,21 +1,30 @@
 <script setup lang="ts">
-import { LayoutGrid, AtSign } from 'lucide-vue-next';
+import { RouterLink } from 'vue-router';
+import { PhAt, PhSquaresFour } from '@phosphor-icons/vue';
 
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
 import { LanguageToggle } from '@/components/language';
+import { reactive } from 'vue';
+
+const open = reactive({ value: false });
+
+function toggleOpen() {
+  open.value = !open.value;
+}
 </script>
 
 <template>
-  <Drawer>
+  <Drawer :open="open.value">
     <DrawerTrigger as-child>
       <Button
         variant="outline-reverse"
         size="icon-lg"
         class="inline-flex sm:hidden fixed bottom-4 right-4 rounded-full z-[800]"
         aria-label="Navbar sheet opener"
+        @click="toggleOpen"
       >
-        <LayoutGrid class="w-7 h-7" />
+        <PhSquaresFour :size="32" />
       </Button>
     </DrawerTrigger>
     <DrawerContent class="z-[999] p-4 pt-0">
@@ -26,11 +35,11 @@ import { LanguageToggle } from '@/components/language';
       </DrawerHeader>
       <!-- Options -->
       <ul class="flex flex-col gap-2">
-        <li>
-          <Button variant="outline" size="lg" class="w-full gap-2">
-            <AtSign class="w-5 h-5" />
+        <li @click="toggleOpen">
+          <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'outline', size: 'lg' })} w-full gap-2`">
+            <PhAt :size="20" />
             {{ $t('navbar.contact') }}
-          </Button>
+          </RouterLink>
         </li>
         <li></li>
       </ul>

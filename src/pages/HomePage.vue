@@ -4,7 +4,7 @@ import { Hero, Experience, ContractableServices, Portfolio, Skills } from '@/com
 
 <template>
   <Hero />
-  <Experience />
+  <!-- <Experience /> -->
   <Portfolio />
   <Skills />
   <ContractableServices />

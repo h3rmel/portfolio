@@ -3,6 +3,22 @@ export default {
     contact: 'Contact',
     options: 'Options'
   },
+  contact: {
+    card_title: 'Contact Me',
+    card_subtitle: 'If you want to talk to me, ask a question or just say hi, feel free to contact me.',
+    label_name: 'Name',
+    label_email: 'E-mail',
+    label_message: 'Message',
+    submit: 'Submit',
+    toast_success: 'Success',
+    toast_success_desc: 'Message sent successfully! You can send again later.',
+    toast_error: 'Error',
+    toast_error_desc: 'Error sending the message. Try again later.',
+    options: {
+      title: 'Other contact options',
+      subtitle: 'If you prefer, you can find me in other ways:'
+    }
+  },
   about_me: {
     hello: 'Hello, I am...',
     content:

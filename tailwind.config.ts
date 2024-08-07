@@ -52,7 +52,13 @@ const config: Config = {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
-        }
+        },
+        /**
+         * Other colors
+         */
+        gmail: 'hsl(var(--gmail))',
+        linkedin: 'hsl(var(--linked-in))',
+        whatsapp: 'hsl(var(--whats-app))'
       },
       borderRadius: {
         xl: 'calc(var(--radius) + 4px)',
@@ -85,11 +91,11 @@ const config: Config = {
         'collapsible-up': 'collapsible-up 0.2s ease-in-out'
       },
       fontFamily: {
-        'jetbrains-mono': 'JetBrains Mono, monospace',
         sora: 'Sora, sans-serif'
       },
       backgroundImage: {
-        'noise': 'url("/background/noise.svg")',
+        noise: 'url("/background/noise.svg")',
+        holographic: 'url("/background/holographic.webp")'
       }
     }
   },

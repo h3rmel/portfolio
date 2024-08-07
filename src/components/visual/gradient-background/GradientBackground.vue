@@ -27,7 +27,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div className="gradient-bg z-[-1]">
+  <div className="gradient-bg z-[-1] w-full h-full">
     <svg xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="goo">

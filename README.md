@@ -1,39 +1,35 @@
-# portfolio
+# Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+<!-- Badges from: https://github.com/Ileriayo/markdown-badges -->
 
-## Recommended IDE Setup
+[![License](https://img.shields.io/github/license/k4mome/front-flow?style=for-the-badge)](./LICENSE)
+[![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/home)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+My personal portfolio to show my skills and projects and makes contact with me easier.
 
-## Type Support for `.vue` Imports in TS
+## 💻 Application Overview
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Prerequisites:
 
-## Customize configuration
+- Node 20+
+- PNPM 8+
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+To set up the app execute the following commands.
 
-## Project Setup
+```bash
+git clone https://github.com/h3rmel/portfolio.git
 
-```sh
+cd portfolio
+
 pnpm install
+
+pnpm run dev
 ```
 
-### Compile and Hot-Reload for Development
+## 🌐 Deployment
 
-```sh
-pnpm dev
-```
+The deployment of this application is handled with [Vercel](https://vercel.com/home).
 
-### Type-Check, Compile and Minify for Production
+## License
 
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+[MIT](LICENSE)

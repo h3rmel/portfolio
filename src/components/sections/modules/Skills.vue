@@ -23,14 +23,14 @@ import { cn } from '@/utils/cn';
       </hgroup>
       <!-- Card Grid -->
       <TooltipProvider :delay-duration="100" :skip-delay-duration="0">
-        <section class="grid grid-cols-3 place-items-center gap-7 sm:grid-cols-5 sm:gap-16">
+        <section class="grid grid-cols-3 place-items-center gap-7 md:grid-cols-4 lg:grid-cols-5 sm:gap-16">
           <Tooltip v-for="hardSkill in hardSkillsData" :key="hardSkill.name">
             <TooltipTrigger class="relative h-24 w-24 cursor-default sm:h-48 sm:w-48">
               <article
                 :class="
                   cn(
                     'absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]',
-                    'h-24 w-24 sm:h-48 sm:w-48',
+                    'h-24 w-24 md:h-48 md:w-48',
                     'border border-dashed border-border rounded-lg',
                     'group overflow-hidden duration-300',
                     'bg-noise',
@@ -44,7 +44,7 @@ import { cn } from '@/utils/cn';
                   :class="
                     cn(
                       'absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-8',
-                      'h-20 w-20 sm:h-40 sm:w-40',
+                      'h-20 w-20 md:h-40 md:w-40',
                       'rounded-full',
                       'opacity-60 blur-lg sm:opacity-30 sm:blur-xl',
                       'duration-500 group-hover:scale-[2]',
@@ -60,7 +60,7 @@ import { cn } from '@/utils/cn';
                     cn(
                       'absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]',
                       'duration-300 group-hover:scale-105',
-                      'h-auto w-16 sm:w-24'
+                      'h-auto w-16 md:w-24'
                     )
                   "
                 />
@@ -114,6 +114,8 @@ import { cn } from '@/utils/cn';
     <!-- Absolute Shape -->
     <img
       src="/shapes/cross.webp"
+      role="figure"
+      alt="Cross shape for decoration"
       class="opacity-60 w-16 sm:w-24 h-16 sm:h-24 absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12"
     />
   </Section>
