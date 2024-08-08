@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { reactive } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
 import { PhAt, PhSquaresFour } from '@phosphor-icons/vue';
 
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
 import { LanguageToggle } from '@/components/language';
-import { reactive } from 'vue';
+
+const route = useRoute();
 
 const open = reactive({ value: false });
 
@@ -36,9 +38,12 @@ function toggleOpen() {
       <!-- Options -->
       <ul class="flex flex-col gap-2">
         <li @click="toggleOpen">
-          <RouterLink to="/contact" :class="`${buttonVariants({ variant: 'outline', size: 'lg' })} w-full gap-2`">
-            <PhAt :size="20" />
-            {{ $t('navbar.contact') }}
+          <RouterLink
+            :to="route.path === '/' ? '/contact' : '/'"
+            :class="`${buttonVariants({ variant: 'outline', size: 'sm' })} bg-transparent gap-2`"
+          >
+            <PhAt v-if="route.path !== '/contact'" :size="20" />
+            {{ route.path === '/contact' ? 'Home' : $t('navbar.contact') }}
           </RouterLink>
         </li>
         <li></li>
