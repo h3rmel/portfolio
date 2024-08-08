@@ -20,7 +20,7 @@ import { cn } from '@/utils/cn';
       </hgroup>
       <!-- Card Grid -->
       <TooltipProvider :delay-duration="100" :skip-delay-duration="0">
-        <section class="grid grid-cols-3 place-items-center gap-7 md:grid-cols-4 lg:grid-cols-5">
+        <section class="grid grid-cols-2 place-items-center gap-7 md:grid-cols-4 lg:grid-cols-5">
           <Tooltip v-for="companyOrClient in companiesAndClientsData" :key="companyOrClient.name">
             <TooltipTrigger class="w-full h-full cursor-default">
               <article
