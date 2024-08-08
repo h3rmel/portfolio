@@ -96,7 +96,7 @@ import { cn } from '@/utils/cn';
         </p>
       </hgroup>
       <!-- Card Grid -->
-      <div class="flex flex-col gap-8 sm:grid sm:grid-cols-2">
+      <section class="flex flex-col gap-8 sm:grid sm:grid-cols-2">
         <Card
           v-for="softSkill in softSkillsData"
           :key="softSkill.name"
@@ -109,12 +109,12 @@ import { cn } from '@/utils/cn';
           </CardTitle>
           <CardDescription class="sm:w-[80%]">{{ $t(`skills.soft_skills_list.${softSkill.desc}`) }}</CardDescription>
         </Card>
-      </div>
+      </section>
     </section>
     <!-- Absolute Shape -->
     <img
       src="/shapes/cross.webp"
-      role="figure"
+      role="img"
       alt="Cross shape for decoration"
       class="opacity-60 w-16 sm:w-24 h-16 sm:h-24 absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12"
     />

@@ -26,7 +26,7 @@ const CONTRACTABLE_SERVICES_DATA: { name: string; desc: string }[] = [
 
 <template>
   <Section :title="$t('contractable_services.title')" :subtitle="$t('contractable_services.subtitle')" class="">
-    <div class="flex flex-col gap-8 sm:grid sm:grid-cols-2">
+    <section class="flex flex-col gap-8 sm:grid sm:grid-cols-2">
       <Card
         v-for="contractableService in CONTRACTABLE_SERVICES_DATA"
         :key="contractableService.name"
@@ -40,6 +40,6 @@ const CONTRACTABLE_SERVICES_DATA: { name: string; desc: string }[] = [
           <CardDescription>{{ $t(`contractable_services.services.${contractableService.desc}`) }} </CardDescription>
         </CardHeader>
       </Card>
-    </div>
+    </section>
   </Section>
 </template>
