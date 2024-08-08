@@ -40,7 +40,7 @@ async function handleSubmit() {
         message: formData.message
       },
       {
-        publicKey: dotEnvs.PUBLIC_KEY,
+        publicKey: dotEnvs.EMAILJS_PUBLIC_KEY,
         limitRate: {
           throttle: TIMEOUT_DURATION
         }
