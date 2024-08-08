@@ -26,6 +26,10 @@ pnpm install
 pnpm run dev
 ```
 
+To run the contact e-mail form properly, see the following tutorial at FreeCodeCamp:
+
+[How to Send Emails from your Vue.js Application with EmailJS](https://www.freecodecamp.org/news/send-emails-from-your-vue-application/)
+
 ## 🌐 Deployment
 
 The deployment of this application is handled with [Vercel](https://vercel.com/home).
