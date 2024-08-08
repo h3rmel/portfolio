@@ -80,18 +80,18 @@ async function handleSubmit() {
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex flex-col gap-2 w-full">
               <Label for="name">{{ $t('contact.label_name') }}</Label>
-              <Input type="text" name="name" id="name" v-model="formData.name" />
+              <Input type="text" name="name" id="name" v-model="formData.name" required />
             </div>
             <div class="flex flex-col gap-2 w-full">
               <Label for="email">{{ $t('contact.label_email') }}</Label>
-              <Input type="email" name="email" id="email" v-model="formData.email" />
+              <Input type="email" name="email" id="email" v-model="formData.email" required />
             </div>
           </div>
           <div class="flex flex-col gap-2 w-full">
             <Label for="message">
               {{ $t('contact.label_message') }}
             </Label>
-            <Textarea name="message" id="message" v-model="formData.message" />
+            <Textarea name="message" id="message" v-model="formData.message" required />
           </div>
         </CardContent>
         <CardFooter>
