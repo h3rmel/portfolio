@@ -31,15 +31,15 @@ async function handleSubmit() {
 
   try {
     emailjs.send(
-      String(import.meta.env.VITE_SERVICE_ID),
-      String(import.meta.env.VITE_TEMPLATE_ID),
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
       {
         name: formData.name,
         email: formData.email,
         message: formData.message
       },
       {
-        publicKey: String(import.meta.env.VITE_PUBLIC_KEY),
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
         limitRate: {
           throttle: TIMEOUT_DURATION
         }

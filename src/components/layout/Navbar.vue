@@ -7,10 +7,6 @@ import { cn } from '@/utils/cn';
 import { PhAt } from '@phosphor-icons/vue';
 
 const route = useRoute();
-
-function isActiveLink(path: string): boolean {
-  return route.path === path;
-}
 </script>
 
 <template>
@@ -36,11 +32,11 @@ function isActiveLink(path: string): boolean {
       <!-- Options -->
       <section class="basis-1/5 sm:flex gap-4 justify-end hidden">
         <RouterLink
-          to="/contact"
-          :class="`${buttonVariants({ variant: isActiveLink('/contact') ? 'secondary' : 'outline', size: 'sm' })} gap-2`"
+          :to="route.path === '/' ? '/contact' : '/'"
+          :class="`${buttonVariants({ variant: 'outline', size: 'sm' })} bg-transparent gap-2`"
         >
-          <PhAt :size="20" />
-          {{ $t('navbar.contact') }}
+          <PhAt v-if="route.path !== '/contact'" :size="20" />
+          {{ route.path === '/contact' ? 'Home' : $t('navbar.contact') }}
         </RouterLink>
         <LanguageDropdown />
       </section>
