@@ -52,6 +52,10 @@ async function handleSubmit() {
       duration: 5000
     });
 
+    formData.name = '';
+    formData.email = '';
+    formData.message = '';
+
     setTimeout(() => {
       isButtonDisabled.value = false;
     }, TIMEOUT_DURATION);
