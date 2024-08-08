@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/toast/use-toast';
+import { dotEnvs } from '@/utils/dot-envs';
 
 // Equal to 60 seconds
 const TIMEOUT_DURATION = 60000;
@@ -31,15 +32,15 @@ async function handleSubmit() {
 
   try {
     emailjs.send(
-      String(import.meta.env.VITE_SERVICE_ID),
-      String(import.meta.env.VITE_TEMPLATE_ID),
+      dotEnvs.SERVICE,
+      dotEnvs.TEMPLATE,
       {
         name: formData.name,
         email: formData.email,
         message: formData.message
       },
       {
-        publicKey: String(import.meta.env.VITE_PUBLIC_KEY),
+        publicKey: dotEnvs.PUBLIC_KEY,
         limitRate: {
           throttle: TIMEOUT_DURATION
         }
