@@ -17,7 +17,7 @@ Prerequisites:
 To set up the app execute the following commands.
 
 ```bash
-git clone https://github.com/k4mome/portfolio.git
+git clone https://github.com/h3rmel/portfolio.git
 
 cd portfolio
 

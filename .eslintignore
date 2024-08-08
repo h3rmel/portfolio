@@ -2,11 +2,8 @@
 node_modules/
 build/
 dist/
-docs/
-src/ui/components/ui
 
-# Files
-*.yaml
+.gitignore
 
 # NPM Packages
 package-lock.json
