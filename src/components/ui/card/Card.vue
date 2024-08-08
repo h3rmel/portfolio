@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<CardProps>(), {
           'h-20 w-20 sm:h-40 sm:w-40',
           'rounded-full',
           'opacity-60 blur-lg sm:opacity-30 sm:blur-xl',
-          'duration-500 group-hover:scale-[5]',
+          'duration-500 group-hover:scale-[4]',
           'bg-neutral-700'
         )
       "

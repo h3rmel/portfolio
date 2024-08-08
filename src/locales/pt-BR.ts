@@ -23,11 +23,17 @@ export default {
   about_me: {
     hello: 'Olá, eu sou...',
     content:
-      'Desenvolvedor com 3 anos de experiência trabalhando em segmentos como gestão empresarial, hospedagem de sites e e-mails, fluxos de E[T]L e sucesso do cliente. Almejo me tornar especialista para colaborar operacionalmente e taticamente em projetos de grande escala que impactam positivamente a vida das pessoas.'
+      'Acredito que a tecnologia é um conceito que transcende definições limitantes, agindo como uma força transformadora que permeia lugares, objetos e pessoas. Ela é a ponte que nos conecta a um futuro de possibilidades ilimitadas, onde a solução para nossos desafios e dificuldades se tornam reais.'
   },
   experience: {
     title: 'Experiência',
-    subtitle: 'Aqui está um resumo da minha experiência profissional'
+    subtitle: 'Aqui está um resumo da minha experiência profissional:',
+    paragraph:
+      'Desenvolvedor de software com três anos de experiência, trabalhando na construção e manutenção de produtos e plataformas de diversos segmentos como gestão empresarial, hospedagem de sites e e-mails, fluxos E[T]L e sucesso do cliente, bem como prestando serviços de criação de landing pages e interfaces para e-commerces.',
+    companies: {
+      title: 'Empresas & Clientes',
+      subtitle: 'Aqui estão algumas das empresas e clientes que já trabalhei e/ou prestei serviços:'
+    }
   },
   portfolio: {
     title: 'Portfólio',
@@ -47,7 +53,7 @@ export default {
   skills: {
     title: 'Habilidades',
     subtitle:
-      'Abaixo você pode conferir minhas soft e hard skills que possuo e demonstro no dia a dia como profissional.',
+      'Abaixo você pode conferir minhas soft e hard skills que possuo e demonstro no dia a dia como profissional:',
     hard_skills: 'Hard Skills',
     hard_skills_desc: 'Habilidades técnicas e específicas que possuo e demonstro:',
     other_hard_skills: 'Outras Hard Skills',

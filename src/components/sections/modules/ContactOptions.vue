@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { Section } from '@/components/layout';
 import { Card } from '@/components/ui/card';
-import { contactOptions } from '@/data/contactOptions';
+import { contactOptionsData } from '@/data/contactOptions';
 import { cn } from '@/utils/cn';
 </script>
 
 <template>
   <Section :title="$t('contact.options.title')" :subtitle="$t('contact.options.subtitle')">
     <ul class="flex flex-col sm:flex-row gap-4">
-      <li class="basis-1/3" v-for="contact in contactOptions" :key="contact.name">
+      <li class="basis-1/3" v-for="contact in contactOptionsData" :key="contact.name">
         <a :href="contact.url" target="_blank">
           <Card
             :class="

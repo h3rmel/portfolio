@@ -22,11 +22,17 @@ export default {
   about_me: {
     hello: 'Hello, I am...',
     content:
-      "Developer with 3 years of experience working in segments like business management, websites and e-mails hosting, E[T]L flows and customer success. I aim to become a specialist to collaborate operationally and tactically on large-scale projects that positively impact people's lives."
+      'I believe that technology is a concept that transcends limiting definitions, acting as a transformative force that permeates places, objects, and people. It is the bridge that connects us to a future of unlimited possibilities, where the solution to our challenges and difficulties becomes real.'
   },
   experience: {
     title: 'Experience',
-    subtitle: 'Here is a summary of my professional experience'
+    subtitle: 'Here is a summary of my professional experience:',
+    paragraph:
+      'Software developer with three years of experience, working in the construction and maintenance of products and platforms in various segments such as business management, website and email hosting, E[T]L flows and customer success, as well as providing services such as creating landing pages and interfaces for e-commerce.',
+    companies: {
+      title: 'Companies & Clients',
+      subtitle: 'Here are some of the companies and clients I have worked for and/or provided services:'
+    }
   },
   portfolio: {
     title: 'Portfolio',
@@ -43,7 +49,7 @@ export default {
   },
   skills: {
     title: 'Skills',
-    subtitle: 'Below you can see my soft and hard skills that I have and demonstrate daily as a professional.',
+    subtitle: 'Below you can see my soft and hard skills that I have and demonstrate daily as a professional:',
     hard_skills: 'Hard Skills',
     hard_skills_desc: 'Technical and specific skills I have and demonstrate:',
     other_hard_skills: 'Other Hard Skills',

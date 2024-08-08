@@ -1,4 +1,4 @@
-export const portfolioProjects: {
+export const portfolioProjectsData: {
   name: string;
   description: string;
   imageUrl: string;

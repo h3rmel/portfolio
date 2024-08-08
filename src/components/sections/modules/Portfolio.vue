@@ -5,13 +5,13 @@ import { Carousel, CarouselItem, CarouselNext, CarouselPrevious, CarouselContent
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { ScrollIndicator } from '@/components/visual/scroll-indicator';
 
-import { portfolioProjects } from '@/data/portfolioProjects';
+import { portfolioProjectsData } from '@/data/portfolioProjects';
 </script>
 <template>
   <Section :title="$t('portfolio.title')" :subtitle="$t('portfolio.subtitle')">
     <Carousel class="w-full gap-2 overflow-hidden sm:overflow-visible">
       <CarouselContent>
-        <CarouselItem v-for="project in portfolioProjects" :key="project.name" class="sm:basis-1/2">
+        <CarouselItem v-for="project in portfolioProjectsData" :key="project.name" class="sm:basis-1/2">
           <!-- <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}

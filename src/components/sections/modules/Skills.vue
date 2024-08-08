@@ -73,7 +73,7 @@ import { cn } from '@/utils/cn';
         </section>
       </TooltipProvider>
       <!-- Other Skills List -->
-      <section class="flex flex-col gap-1 mt-4">
+      <section class="flex flex-col gap-1 mt-2">
         <h4 class="text-lg">
           {{ $t('skills.other_hard_skills') }}
         </h4>
