@@ -15,7 +15,7 @@
 @layer components {
   /* Glow effect for Cards */
   .glow {
-    @apply duration-300 hover:border-emerald-500 hover:shadow-[0_0_16px_4px_rgba(16,185,129,0.4)];
+    @apply duration-300 md:hover:border-emerald-500 md:hover:shadow-[0_0_16px_4px_rgba(16,185,129,0.4)];
   }
 
   /* Gradient background */

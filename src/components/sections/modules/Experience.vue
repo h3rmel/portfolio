@@ -19,7 +19,7 @@ import { cn } from '@/utils/cn';
         <p class="text-muted-foreground">{{ $t('experience.companies.subtitle') }}</p>
       </hgroup>
       <!-- Card Grid -->
-      <TooltipProvider :delay-duration="100" :skip-delay-duration="0">
+      <TooltipProvider :delay-duration="100" :skip-delay-duration="0" :disable-closing-trigger="true">
         <section class="grid grid-cols-2 place-items-center gap-7 md:grid-cols-4 lg:grid-cols-5">
           <Tooltip v-for="companyOrClient in companiesAndClientsData" :key="companyOrClient.name">
             <TooltipTrigger class="w-full h-full cursor-default">
@@ -28,7 +28,7 @@ import { cn } from '@/utils/cn';
                   cn(
                     'relative flex items-center justify-center',
                     'w-full h-full',
-                    'p-4 rounded-lg border border-border border-dashed hover:border-emerald-500',
+                    'p-4 rounded-lg border border-border border-dashed md:hover:border-emerald-500',
                     'group duration-300 glow overflow-hidden',
                     'bg-noise'
                   )

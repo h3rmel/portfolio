@@ -22,7 +22,7 @@ import { cn } from '@/utils/cn';
         </p>
       </hgroup>
       <!-- Card Grid -->
-      <TooltipProvider :delay-duration="100" :skip-delay-duration="0">
+      <TooltipProvider :delay-duration="100" :skip-delay-duration="0" :disable-closing-trigger="true">
         <section class="grid grid-cols-3 place-items-center gap-7 md:grid-cols-4 lg:grid-cols-5 sm:gap-16">
           <Tooltip v-for="hardSkill in hardSkillsData" :key="hardSkill.name">
             <TooltipTrigger class="relative h-24 w-24 cursor-default sm:h-48 sm:w-48">

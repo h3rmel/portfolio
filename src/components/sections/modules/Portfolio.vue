@@ -17,14 +17,14 @@ import { portfolioProjectsData } from '@/data/portfolioProjects';
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 + index / 5 }}
               > -->
-          <Card class="group duration-300 hover:border-emerald-500" :visual-effect="true">
+          <Card class="group duration-300 md:hover:border-emerald-500" :visual-effect="true">
             <CardHeader>
               <a :href="project.url" class="underline duration-300 group-hover:text-emerald-500" target="_blank">
                 <CardTitle>{{ project.name }}</CardTitle>
               </a>
               <CardDescription>{{ $t(`portfolio.projects.${project.description}`) }}</CardDescription>
             </CardHeader>
-            <CardContent class="group-hover:border-emerald-500 duration-300">
+            <CardContent class="md:group-hover:border-emerald-500 duration-300">
               <img
                 :src="project.imageUrl"
                 :alt="`${project.name}'s picture`"

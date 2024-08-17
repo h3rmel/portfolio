@@ -19,10 +19,10 @@ import { ScrollIndicator } from '@/components/visual/scroll-indicator';
         <img
           src="/profile.webp"
           alt="Isaac Hermel's profile picture"
-          class="w-[72px] rounded-full border border-border border-dashed group-hover:border-emerald-500 duration-300"
+          class="w-[72px] rounded-full border border-border border-dashed md:group-hover:border-emerald-500 duration-300"
         />
       </CardHeader>
-      <CardContent class="duration-300 group-hover:border-emerald-500">
+      <CardContent class="duration-300 md:group-hover:border-emerald-500">
         <p class="text-justify text-sm sm:text-base">{{ $t('about_me.content') }}</p>
       </CardContent>
       <CardFooter class="inline-flex w-full gap-4">
