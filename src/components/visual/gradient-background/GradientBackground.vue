@@ -1,34 +1,39 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+
+const interBubble = ref<HTMLDivElement | null>(null);
+let curX = 0;
+let curY = 0;
+let tgX = 0;
+let tgY = 0;
 
 onMounted(() => {
-  const interBubble = document.querySelector<HTMLDivElement>('.interactive')!;
-  let curX = 0;
-  let curY = 0;
-  let tgX = 0;
-  let tgY = 0;
-
   function move() {
+    if (!interBubble.value) return;
     curX += (tgX - curX) / 20;
     curY += (tgY - curY) / 20;
-    interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-    requestAnimationFrame(() => {
-      move();
-    });
+    interBubble.value.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+    requestAnimationFrame(move);
   }
 
-  window.addEventListener('mousemove', (event) => {
+  function handleMouseMove(event: MouseEvent) {
     tgX = event.clientX;
     tgY = event.clientY;
-  });
+  }
 
+  window.addEventListener('mousemove', handleMouseMove);
   move();
+
+  // Limpeza do evento ao desmontar o componente
+  return () => {
+    window.removeEventListener('mousemove', handleMouseMove);
+  };
 });
 </script>
 
 <template>
-  <div className="gradient-bg z-[-1] w-full h-full">
-    <svg xmlns="http://www.w3.org/2000/svg">
+  <div class="gradient-bg z-[-1] w-full h-full" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
       <defs>
         <filter id="goo">
           <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -37,13 +42,13 @@ onMounted(() => {
         </filter>
       </defs>
     </svg>
-    <div className="gradients-container">
-      <div className="g1"></div>
-      <div className="g2"></div>
-      <div className="g3"></div>
-      <div className="g4"></div>
-      <div className="g5"></div>
-      <div className="interactive"></div>
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div ref="interBubble" class="interactive"></div>
     </div>
   </div>
 </template>

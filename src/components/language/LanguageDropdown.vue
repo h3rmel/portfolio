@@ -6,31 +6,47 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
 
 const countryName: { [key: string]: string } = {
-  'pt-BR': 'Brazil',
-  'en-US': 'United States'
+  'pt-BR': 'Brasil',
+  'en-US': 'Estados Unidos'
+};
+
+const changeLanguage = (newLocale: string) => {
+  locale.value = newLocale;
 };
 </script>
 
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="outline" size="sm" class="gap-2 bg-transparent px-5">
+      <Button variant="outline" size="sm" class="gap-2 bg-transparent px-5" aria-label="Selecionar idioma">
         <img
           :src="`/languages/${$i18n.locale}.png`"
           :alt="`${countryName[$i18n.locale]}'s flag`"
           class="w-6 object-fit"
+          aria-hidden="true"
         />
-        {{ $i18n.locale }}
+        {{ locale }}
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent>
-      <DropdownMenuItem class="flex gap-2" @click="$i18n.locale = 'pt-BR'">
-        <img src="/languages/pt-BR.png" alt="Brazil's flag" class="w-6 object-fit" /> BR
+      <DropdownMenuItem
+        class="flex gap-2"
+        @click="changeLanguage('pt-BR')"
+        :aria-label="t('language.select', { lang: 'Português' })"
+      >
+        <img src="/languages/pt-BR.png" alt="Bandeira do Brasil" class="w-6 object-fit" aria-hidden="true" /> BR
       </DropdownMenuItem>
-      <DropdownMenuItem class="flex gap-2" @click="$i18n.locale = 'en-US'">
-        <img src="/languages/en-US.png" alt="United States's flag" class="w-6 object-fit" /> EN
+      <DropdownMenuItem
+        class="flex gap-2"
+        @click="changeLanguage('en-US')"
+        :aria-label="t('language.select', { lang: 'Inglês' })"
+      >
+        <img src="/languages/en-US.png" alt="United State's flag" class="w-6 object-fit" aria-hidden="true" /> EN
       </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>

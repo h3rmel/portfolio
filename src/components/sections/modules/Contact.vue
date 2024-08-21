@@ -23,6 +23,7 @@ const formData = reactive({
   message: ''
 });
 const isButtonDisabled = ref(false);
+const formRef = ref<HTMLFormElement | null>(null);
 
 const { toast } = useToast();
 
@@ -30,7 +31,7 @@ async function handleSubmit() {
   isButtonDisabled.value = true;
 
   try {
-    emailjs.send(
+    await emailjs.send(
       import.meta.env.VITE_SERVICE_ID,
       import.meta.env.VITE_TEMPLATE_ID,
       {
@@ -59,12 +60,19 @@ async function handleSubmit() {
     setTimeout(() => {
       isButtonDisabled.value = false;
     }, TIMEOUT_DURATION);
+
+    // Foca no primeiro campo do formulário após o envio bem-sucedido
+    if (formRef.value) {
+      const firstInput = formRef.value.querySelector('input, textarea') as HTMLElement;
+      if (firstInput) firstInput.focus();
+    }
   } catch (error) {
     toast({
       title: t('contact.toast_error'),
       description: t('contact.toast_error_desc'),
       duration: 5000
     });
+    isButtonDisabled.value = false;
   }
 }
 </script>
@@ -72,34 +80,69 @@ async function handleSubmit() {
 <template>
   <section
     class="pt-32 pb-16 sm:p-0 bg-noise relative min-h-screen h-full w-full flex justify-center items-center border-b border-dashed border-border"
+    aria-labelledby="contact-title"
   >
     <GradientBackground />
     <Card class="bg-background group max-w-xl">
       <CardHeader>
-        <CardTitle class="text-2xl">{{ $t('contact.card_title') }}</CardTitle>
-        <CardDescription class="text-wrap">{{ $t('contact.card_subtitle') }}</CardDescription>
+        <CardTitle id="contact-title" class="text-2xl">{{ t('contact.card_title') }}</CardTitle>
+        <CardDescription class="text-wrap">{{ t('contact.card_subtitle') }}</CardDescription>
       </CardHeader>
-      <form @submit.prevent="handleSubmit">
+      <form @submit.prevent="handleSubmit" ref="formRef">
         <CardContent class="flex flex-col gap-4">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex flex-col gap-2 w-full">
-              <Label for="name">{{ $t('contact.label_name') }}</Label>
-              <Input type="text" name="name" id="name" v-model="formData.name" required />
+              <Label for="name">{{ t('contact.label_name') }}</Label>
+              <Input
+                type="text"
+                name="name"
+                id="name"
+                v-model="formData.name"
+                required
+                :aria-invalid="formData.name === ''"
+                :aria-describedby="formData.name === '' ? 'name-error' : undefined"
+              />
+              <span id="name-error" v-if="formData.name === ''" class="sr-only">
+                {{ t('contact.name_required') }}
+              </span>
             </div>
             <div class="flex flex-col gap-2 w-full">
-              <Label for="email">{{ $t('contact.label_email') }}</Label>
-              <Input type="email" name="email" id="email" v-model="formData.email" required />
+              <Label for="email">{{ t('contact.label_email') }}</Label>
+              <Input
+                type="email"
+                name="email"
+                id="email"
+                v-model="formData.email"
+                required
+                :aria-invalid="formData.email === ''"
+                :aria-describedby="formData.email === '' ? 'email-error' : undefined"
+              />
+              <span id="email-error" v-if="formData.email === ''" class="sr-only">
+                {{ t('contact.email_required') }}
+              </span>
             </div>
           </div>
           <div class="flex flex-col gap-2 w-full">
             <Label for="message">
-              {{ $t('contact.label_message') }}
+              {{ t('contact.label_message') }}
             </Label>
-            <Textarea name="message" id="message" v-model="formData.message" required />
+            <Textarea
+              name="message"
+              id="message"
+              v-model="formData.message"
+              required
+              :aria-invalid="formData.message === ''"
+              :aria-describedby="formData.message === '' ? 'message-error' : undefined"
+            />
+            <span id="message-error" v-if="formData.message === ''" class="sr-only">
+              {{ t('contact.message_required') }}
+            </span>
           </div>
         </CardContent>
         <CardFooter>
-          <Button :disabled="isButtonDisabled" type="submit" variant="secondary">{{ $t('contact.submit') }}</Button>
+          <Button :disabled="isButtonDisabled" type="submit" variant="secondary" :aria-busy="isButtonDisabled">
+            {{ t('contact.submit') }}
+          </Button>
         </CardFooter>
       </form>
     </Card>

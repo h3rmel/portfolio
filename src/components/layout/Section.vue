@@ -2,14 +2,21 @@
 import { cn } from '@/utils/cn';
 
 defineProps({
-  title: String,
-  subtitle: String
+  title: {
+    type: String,
+    required: true
+  },
+  subtitle: String,
+  id: {
+    type: String,
+    default: () => `section-${Math.random().toString(36).substr(2, 9)}`
+  }
 });
 </script>
 
 <template>
-  <section class="border-b border-dashed border-border">
-    <section
+  <section :id="id" class="border-b border-dashed border-border" :aria-labelledby="`${id}-title`">
+    <div
       :class="
         cn(
           'container relative',
@@ -18,11 +25,13 @@ defineProps({
         )
       "
     >
-      <hgroup>
-        <h2 class="text-2xl font-medium tracking-wider">{{ title }}</h2>
-        <p class="text-muted-foreground">{{ subtitle }}</p>
-      </hgroup>
-      <slot></slot>
-    </section>
+      <header>
+        <h2 :id="`${id}-title`" class="text-2xl font-medium tracking-wider">{{ title }}</h2>
+        <p v-if="subtitle" class="text-muted-foreground">{{ subtitle }}</p>
+      </header>
+      <div role="region" :aria-labelledby="`${id}-title`">
+        <slot></slot>
+      </div>
+    </div>
   </section>
 </template>

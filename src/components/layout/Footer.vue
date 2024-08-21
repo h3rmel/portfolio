@@ -5,32 +5,43 @@ import { PhGitFork, PhGithubLogo } from '@phosphor-icons/vue';
 </script>
 
 <template>
-  <footer class="w-full z-10">
-    <!-- Footer -->
-    <section class="container flex items-center justify-between sm:p-16 p-4">
-      <!-- Social Media Links -->
-      <section class="flex gap-4">
-        <a
-          :class="`${buttonVariants({ variant: 'outline', size: 'icon' })} cursor-pointer`"
-          href="https://github.com/h3rmel"
-          target="_blank"
-          aria-label="Visit my GitHub"
-        >
-          <PhGithubLogo :size="20" /> </a
-        ><a
-          :class="`${buttonVariants({ variant: 'outline', size: 'icon' })} cursor-pointer`"
-          href="https://github.com/h3rmel/portfolio"
-          target="_blank"
-          aria-label="Fork me on GitHub"
-        >
-          <PhGitFork :size="20" />
-        </a>
-      </section>
+  <footer class="w-full z-10" role="contentinfo">
+    <!-- Links e Idioma -->
+    <div class="container flex items-center justify-between sm:p-16 p-4">
+      <!-- Links de Mídia Social -->
+      <nav aria-label="Links de mídia social">
+        <ul class="flex gap-4">
+          <li>
+            <a
+              :class="`${buttonVariants({ variant: 'outline', size: 'icon' })} cursor-pointer`"
+              href="https://github.com/h3rmel"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visite meu GitHub"
+            >
+              <PhGithubLogo :size="20" aria-hidden="true" />
+            </a>
+          </li>
+          <li>
+            <a
+              :class="`${buttonVariants({ variant: 'outline', size: 'icon' })} cursor-pointer`"
+              href="https://github.com/h3rmel/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Faça um fork no GitHub"
+            >
+              <PhGitFork :size="20" aria-hidden="true" />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <LanguageToggle />
-    </section>
-    <!-- Copyright -->
-    <section class="flex items-center justify-center border-t border-dashed py-2">
-      Isaac "Hermel" Reginato &copy; {{ new Date().getFullYear() }}
-    </section>
+    </div>
+    <!-- Direitos Autorais -->
+    <div class="flex items-center justify-center border-t border-dashed py-2">
+      <p>
+        <span>Isaac "Hermel" Reginato &copy; {{ new Date().getFullYear() }}</span>
+      </p>
+    </div>
   </footer>
 </template>

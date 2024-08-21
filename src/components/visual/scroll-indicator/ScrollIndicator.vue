@@ -4,7 +4,8 @@ import { cn } from '@/utils/cn';
 defineProps({
   orientation: {
     type: String,
-    default: 'vertical'
+    default: 'vertical',
+    validator: (value: string) => ['vertical', 'horizontal'].includes(value)
   },
   className: {
     type: String,
@@ -15,8 +16,8 @@ defineProps({
 
 <template>
   <div
-    role="figure"
-    aria-label="Scroll indicator"
+    role="img"
+    :aria-label="orientation === 'vertical' ? 'Indicador de rolagem vertical' : 'Indicador de rolagem horizontal'"
     :class="
       cn(
         'relative flex rounded-3xl border-2 border-neutral-600',
@@ -36,6 +37,7 @@ defineProps({
             : 'animate-out fade-out-0 slide-out-to-left-7 sm:slide-out-to-left-10 repeat-infinite'
         )
       "
+      aria-hidden="true"
     />
   </div>
 </template>
