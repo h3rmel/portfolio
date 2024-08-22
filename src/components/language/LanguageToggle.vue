@@ -16,7 +16,12 @@ const changeLanguage = (value: string) => {
 </script>
 
 <template>
-  <ToggleGroup type="single" :model-value="locale" @update:model-value="changeLanguage" aria-label="Selecionar idioma">
+  <ToggleGroup
+    type="single"
+    :model-value="locale"
+    @update:model-value="(value) => changeLanguage(value[0])"
+    aria-label="Selecionar idioma"
+  >
     <ToggleGroupItem
       v-for="lang in languages"
       :key="lang.value"

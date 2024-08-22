@@ -119,7 +119,7 @@ const { t } = useI18n();
       </hgroup>
       <!-- Card Grid -->
       <ul class="flex flex-col gap-8 sm:grid sm:grid-cols-2" role="list">
-        <li v-for="(softSkill, index) in softSkillsData" :key="softSkill.name">
+        <li v-for="softSkill in softSkillsData" :key="softSkill.name">
           <div
             class="h-full w-full"
             v-motion
@@ -129,7 +129,7 @@ const { t } = useI18n();
               y: 0,
               transition: { type: 'spring', stiffness: 90, damping: 30, ease: 'easeInOut' }
             }"
-            :delay="100 * index + 1"
+            :delay="100"
             :duration="1000"
           >
             <Card class="glow group flex h-full flex-col items-center p-6 text-center" :visual-effect="true">
