@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue';
+
 import {
   DropdownMenuItemIndicator,
   DropdownMenuRadioItem,
@@ -7,8 +8,10 @@ import {
   type DropdownMenuRadioItemProps,
   useForwardPropsEmits
 } from 'radix-vue';
-import { PhCircle } from '@phosphor-icons/vue';
+
 import { cn } from '@/utils/cn';
+
+import { PhCircle } from '@phosphor-icons/vue';
 
 const props = defineProps<DropdownMenuRadioItemProps & { class?: HTMLAttributes['class'] }>();
 

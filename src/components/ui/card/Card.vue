@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue';
+
 import { cn } from '@/utils/cn';
 
 interface CardProps {
@@ -17,7 +18,7 @@ const props = withDefaults(defineProps<CardProps>(), {
   <article
     :class="
       cn(
-        'rounded-lg border border-border border-dashed bg-noise backdrop-blur-md text-card-foreground shadow-sm overflow-hidden',
+        'overflow-hidden rounded-lg border border-dashed border-border bg-noise text-card-foreground shadow-sm backdrop-blur-md',
         props.class
       )
     "
@@ -26,7 +27,7 @@ const props = withDefaults(defineProps<CardProps>(), {
       v-if="props.visualEffect ?? 'false'"
       :class="
         cn(
-          'z-[-1] absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-8',
+          'absolute -bottom-4 -right-4 z-[-1] sm:-bottom-8 sm:-right-8',
           'h-20 w-20 sm:h-40 sm:w-40',
           'rounded-full',
           'opacity-60 blur-lg sm:opacity-30 sm:blur-xl',

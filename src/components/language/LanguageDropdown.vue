@@ -1,12 +1,13 @@
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
+
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
-import { useI18n } from 'vue-i18n';
 
 const { t, locale } = useI18n();
 
@@ -27,7 +28,7 @@ const changeLanguage = (newLocale: string) => {
         <img
           :src="`/languages/${$i18n.locale}.png`"
           :alt="`${countryName[$i18n.locale]}'s flag`"
-          class="w-6 object-fit"
+          class="object-fit w-6"
           aria-hidden="true"
         />
         {{ locale }}
@@ -39,14 +40,14 @@ const changeLanguage = (newLocale: string) => {
         @click="changeLanguage('pt-BR')"
         :aria-label="t('language.select', { lang: 'Português' })"
       >
-        <img src="/languages/pt-BR.png" alt="Bandeira do Brasil" class="w-6 object-fit" aria-hidden="true" /> BR
+        <img src="/languages/pt-BR.png" alt="Bandeira do Brasil" class="object-fit w-6" aria-hidden="true" /> BR
       </DropdownMenuItem>
       <DropdownMenuItem
         class="flex gap-2"
         @click="changeLanguage('en-US')"
         :aria-label="t('language.select', { lang: 'Inglês' })"
       >
-        <img src="/languages/en-US.png" alt="United State's flag" class="w-6 object-fit" aria-hidden="true" /> EN
+        <img src="/languages/en-US.png" alt="United State's flag" class="object-fit w-6" aria-hidden="true" /> EN
       </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>

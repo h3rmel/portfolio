@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { RouterLink, useRoute } from 'vue-router';
-import { PhAt, PhSquaresFour } from '@phosphor-icons/vue';
 
+import { LanguageToggle } from '@/components/language';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
-import { LanguageToggle } from '@/components/language';
-import { useI18n } from 'vue-i18n';
+
+import { PhAt, PhSquaresFour } from '@phosphor-icons/vue';
 
 const { t } = useI18n();
 
@@ -24,7 +25,7 @@ function closeDrawer() {
       <Button
         variant="outline-reverse"
         size="icon-lg"
-        class="inline-flex sm:hidden fixed bottom-4 right-4 rounded-full z-[800]"
+        class="fixed bottom-4 right-4 z-[800] inline-flex rounded-full sm:hidden"
         aria-label="Abrir menu de navegação"
       >
         <PhSquaresFour :size="32" aria-hidden="true" />

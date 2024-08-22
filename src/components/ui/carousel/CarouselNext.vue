@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { useCarousel } from './useCarousel';
-import type { WithClassAsProps } from './interface';
-import { cn } from '@/utils/cn';
 import { Button } from '@/components/ui/button';
+
+import { cn } from '@/utils/cn';
+
 import { PhArrowRight } from '@phosphor-icons/vue';
+
+import type { WithClassAsProps } from './interface';
+import { useCarousel } from './useCarousel';
 
 const props = defineProps<WithClassAsProps>();
 
@@ -15,7 +18,7 @@ const { orientation, canScrollNext, scrollNext } = useCarousel();
     :disabled="!canScrollNext"
     :class="
       cn(
-        'touch-manipulation absolute h-8 w-8 rounded-full p-0',
+        'absolute h-8 w-8 touch-manipulation rounded-full p-0',
         orientation === 'horizontal'
           ? '-right-12 top-1/2 -translate-y-1/2'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',

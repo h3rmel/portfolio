@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { LanguageToggle } from '@/components/language';
 import { buttonVariants } from '@/components/ui/button';
+
 import { PhGitFork, PhGithubLogo } from '@phosphor-icons/vue';
 </script>
 
 <template>
-  <footer class="w-full z-10" role="contentinfo">
+  <footer class="z-10 w-full" role="contentinfo">
     <!-- Links e Idioma -->
-    <div class="container flex items-center justify-between sm:p-16 p-4">
+    <div class="container flex items-center justify-between p-4 sm:p-16">
       <!-- Links de Mídia Social -->
       <nav aria-label="Links de mídia social">
         <ul class="flex gap-4">

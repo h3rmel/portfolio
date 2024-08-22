@@ -1,7 +1,7 @@
 import { createI18n } from 'vue-i18n';
 
-import PT_BR from '@/locales/pt-BR';
 import EN_US from '@/locales/en-US';
+import PT_BR from '@/locales/pt-BR';
 
 const i18n = createI18n({
   legacy: false,

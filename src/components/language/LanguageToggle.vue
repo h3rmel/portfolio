@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { useI18n } from 'vue-i18n';
+
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
 const { t, locale } = useI18n();
 
@@ -23,7 +24,7 @@ const changeLanguage = (value: string) => {
       :aria-label="t('language.select', { lang: lang.label })"
       :pressed="locale === lang.value"
     >
-      <img :src="lang.flag" :alt="lang.alt" class="w-6 object-fit" aria-hidden="true" />
+      <img :src="lang.flag" :alt="lang.alt" class="object-fit w-6" aria-hidden="true" />
     </ToggleGroupItem>
   </ToggleGroup>
 </template>

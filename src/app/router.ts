@@ -1,5 +1,6 @@
-import { HomePage, ContactPage } from '@/pages';
 import { createRouter, createWebHistory } from 'vue-router';
+
+import { HomePage, ContactPage } from '@/pages';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

@@ -1,5 +1,6 @@
-import { PhEnvelope, PhLinkedinLogo, PhWhatsappLogo } from '@phosphor-icons/vue';
 import type { Component } from 'vue';
+
+import { PhEnvelope, PhLinkedinLogo, PhWhatsappLogo } from '@phosphor-icons/vue';
 
 export const contactOptionsData: {
   name: string;

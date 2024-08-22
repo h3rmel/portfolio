@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue';
+
 import {
   DropdownMenuCheckboxItem,
   type DropdownMenuCheckboxItemEmits,
@@ -7,8 +8,10 @@ import {
   DropdownMenuItemIndicator,
   useForwardPropsEmits
 } from 'radix-vue';
-import { PhCheck } from '@phosphor-icons/vue';
+
 import { cn } from '@/utils/cn';
+
+import { PhCheck } from '@phosphor-icons/vue';
 
 const props = defineProps<DropdownMenuCheckboxItemProps & { class?: HTMLAttributes['class'] }>();
 const emits = defineEmits<DropdownMenuCheckboxItemEmits>();

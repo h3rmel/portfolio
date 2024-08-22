@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue';
+
 import { DropdownMenuSubTrigger, type DropdownMenuSubTriggerProps, useForwardProps } from 'radix-vue';
+
 import { cn } from '@/utils/cn';
+
 import { PhCaretRight } from '@phosphor-icons/vue';
 
 const props = defineProps<DropdownMenuSubTriggerProps & { class?: HTMLAttributes['class'] }>();

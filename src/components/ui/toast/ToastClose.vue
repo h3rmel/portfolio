@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue';
+
 import { ToastClose, type ToastCloseProps } from 'radix-vue';
-import { PhX } from '@phosphor-icons/vue';
+
 import { cn } from '@/utils/cn';
+
+import { PhX } from '@phosphor-icons/vue';
 
 const props = defineProps<
   ToastCloseProps & {

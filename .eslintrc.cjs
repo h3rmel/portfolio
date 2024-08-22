@@ -12,7 +12,29 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
+  plugins: ['import-helpers'],
   rules: {
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    /**
+     * Import Helpers
+     * @see https://github.com/willhoney7/eslint-plugin-import-helpers
+     */
+    'import-helpers/order-imports': [
+      'error',
+      {
+        newlinesBetween: 'always', // new line between groups
+        groups: [
+          '/^vue/',
+          'module',
+          '/^@/components/',
+          '/^@/utils/',
+          '/^@/assets/',
+          '/^@/data/',
+          '/^@/',
+          ['parent', 'sibling', 'index']
+        ],
+        alphabetize: { order: 'asc', ignoreCase: true }
+      }
+    ]
   }
 };

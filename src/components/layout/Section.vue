@@ -21,7 +21,7 @@ defineProps({
         cn(
           'container relative',
           'flex flex-col gap-6 sm:gap-8',
-          'py-8 px-4 sm:p-16 border-dashed border-border sm:border-x'
+          'border-dashed border-border px-4 py-8 sm:border-x sm:p-16'
         )
       "
     >

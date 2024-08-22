@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue';
-import { useVModel } from '@vueuse/core';
+
 import { cn } from '@/utils/cn';
+
+import { useVModel } from '@vueuse/core';
 
 const props = defineProps<{
   defaultValue?: string | number;
@@ -24,7 +26,7 @@ const modelValue = useVModel(props, 'modelValue', emits, {
     v-model="modelValue"
     :class="
       cn(
-        'flex h-10 w-full rounded-md border border-dashed duration-300 hover:border-emerald-500 border-input bg-background px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus-visible:outline-none focus:border-emerald-500 disabled:cursor-not-allowed disabled:opacity-50',
+        'flex h-10 w-full rounded-md border border-dashed border-input bg-background px-3 py-2 text-sm duration-300 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground hover:border-emerald-500 focus:border-emerald-500 focus:outline-none focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
         props.class
       )
     "

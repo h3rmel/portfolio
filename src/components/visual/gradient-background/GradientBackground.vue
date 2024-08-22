@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="gradient-bg z-[-1] w-full h-full" aria-hidden="true">
+  <div class="gradient-bg z-[-1] h-full w-full" aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
       <defs>
         <filter id="goo">

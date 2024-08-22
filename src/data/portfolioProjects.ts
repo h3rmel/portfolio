@@ -4,7 +4,7 @@ export const portfolioProjectsData: {
   imageUrl: string;
   license: string;
   topics: string[];
-  url: string;
+  url?: string;
 }[] = [
   {
     name: 'FrontFlow',
@@ -43,7 +43,6 @@ export const portfolioProjectsData: {
     description: 'portfolio_desc',
     imageUrl: '/projects/portfolio.png',
     license: 'MIT',
-    topics: ['vue', 'vue-router', 'typescript', 'tailwindcss', 'shadcn-vue', 'framer motion', 'vite'],
-    url: 'https://h3rmel.vercel.app/'
+    topics: ['vue', 'vue-router', 'typescript', 'tailwindcss', 'shadcn-vue', 'framer motion', 'vite']
   }
 ];
