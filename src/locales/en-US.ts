@@ -22,7 +22,10 @@ export default {
   about_me: {
     hello: 'Hello, I am...',
     content:
-      'I believe that technology is a concept that transcends limiting definitions, acting as a transformative force that permeates places, objects, and people. It is the bridge that connects us to a future of unlimited possibilities, where the solution to our challenges and difficulties becomes real.'
+      'I believe that technology is a concept that transcends limiting definitions, acting as a transformative force that permeates places, objects, and people. It is the bridge that connects us to a future of unlimited possibilities, where the solution to our challenges and difficulties becomes real.',
+    want_to_see_something_cool: 'Want to see something cool?',
+    tooltip_want_to_see: 'Click with the second mouse button on the background!',
+    background: 'Backgrounds'
   },
   experience: {
     title: 'Experience',

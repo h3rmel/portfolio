@@ -18,6 +18,10 @@
     @apply duration-300 md:hover:border-emerald-500 md:hover:shadow-[0_0_16px_4px_rgba(16,185,129,0.4)];
   }
 
+  .isometric-grid-background {
+    transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1.25);
+  }
+
   /* Gradient background */
 
   .gradient-bg {

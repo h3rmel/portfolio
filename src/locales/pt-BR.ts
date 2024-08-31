@@ -23,7 +23,10 @@ export default {
   about_me: {
     hello: 'Olá, eu sou...',
     content:
-      'Acredito que a tecnologia é um conceito que transcende definições limitantes, agindo como uma força transformadora que permeia lugares, objetos e pessoas. Ela é a ponte que nos conecta a um futuro de possibilidades ilimitadas, onde a solução para nossos desafios e dificuldades se tornam reais.'
+      'Acredito que a tecnologia é um conceito que transcende definições limitantes, agindo como uma força transformadora que permeia lugares, objetos e pessoas. Ela é a ponte que nos conecta a um futuro de possibilidades ilimitadas, onde a solução para nossos desafios e dificuldades se tornam reais.',
+    want_to_see_something_cool: 'Quer ver algo legal?',
+    tooltip_want_to_see: 'Clique com o segundo botão do mouse no fundo!',
+    background: 'Fundos de tela'
   },
   experience: {
     title: 'Experiência',
