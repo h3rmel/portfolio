@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <div :class="cn('absolute h-full min-h-screen w-full bg-muted/20', className)">
+  <div :class="cn('absolute min-h-screen w-full bg-muted/20', className)">
     <div class="absolute inset-0 grid grid-cols-8 gap-1 p-1 sm:grid-cols-16 md:grid-cols-32">
       <div
         v-for="(_, index) in 1200"
