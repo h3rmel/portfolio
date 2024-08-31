@@ -7,17 +7,17 @@ export const portfolioProjectsData: {
   url?: string;
 }[] = [
   {
-    name: 'FrontFlow',
-    description: 'front_flow_desc',
-    imageUrl: '/projects/front-flow.png',
+    name: 'Front Hub',
+    description: 'front_hub_desc',
+    imageUrl: '/projects/front-hub.png',
     license: 'MIT',
     topics: ['react', 'next', 'typescript', 'tailwindcss', 'react-hook-form', 'zod', 'shadcn/ui'],
-    url: 'https://front-flow-main.vercel.app/'
+    url: 'https://front-hub.vercel.app/'
   },
   {
     name: 'React I.S.A',
     description: 'isa_arch_desc',
-    imageUrl: '/projects/isa-arch.png',
+    imageUrl: '/projects/react-isa.png',
     license: 'MIT',
     topics: ['react', 'typescript', 'tailwindcss', 'zustand', 'daisyui', 'architecture'],
     url: 'https://github.com/h3rmel/isa-arch'
@@ -31,18 +31,11 @@ export const portfolioProjectsData: {
     url: 'https://github.com/h3rmel/next-lp-template'
   },
   {
-    name: 'SenFinança',
-    description: 'sen_financa_desc',
-    imageUrl: '/projects/sen-financa.png',
+    name: 'H3rmel Lint Config',
+    description: 'h3rmel_lint_config_desc',
+    imageUrl: '/projects/h3rmel-lint-config.png',
     license: 'MIT',
-    topics: ['react', 'react-router', 'tailwindcss', 'daisyui', 'vite', 'pwa'],
-    url: 'https://sen-financa-henna.vercel.app/'
-  },
-  {
-    name: 'Portfolio',
-    description: 'portfolio_desc',
-    imageUrl: '/projects/portfolio.png',
-    license: 'MIT',
-    topics: ['vue', 'vue-router', 'typescript', 'tailwindcss', 'shadcn-vue', 'framer motion', 'vite']
+    topics: ['eslint', 'prettier', 'tailwindcss', 'react', 'jsx-a11y', 'react-hooks', 'import-helpers'],
+    url: 'https://github.com/h3rmel/lint-config-h3rmel'
   }
 ];

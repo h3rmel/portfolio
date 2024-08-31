@@ -39,12 +39,12 @@ export default {
     subtitle: 'Some of the side projects I have developed/worked on:',
     license: 'License',
     projects: {
-      front_flow_desc: 'A set of tools to help developers create interfaces more easily in their day-to-day.',
+      front_hub_desc:
+        'A collection of tools and resources for developers to do their work more easily on a daily basis',
       isa_arch_desc:
         'An architecture for React that separates the code into three layers: Interface (I), States (S), and Actions (A).',
       next_lp_template_desc: 'A simple and scalable template to build production-ready landing pages with NextJS.',
-      sen_financa_desc: 'An application to manage personal finances in a simple and intuitive way.',
-      portfolio_desc: 'My personal portfolio, where I share a little about me and my projects.'
+      h3rmel_lint_config_desc: 'My personal lint configuration for Next and React projects using ESLint and Prettier.'
     }
   },
   skills: {

@@ -44,13 +44,13 @@ const { t } = useI18n();
                 </a>
                 <CardDescription>{{ t(`portfolio.projects.${project.description}`) }}</CardDescription>
               </CardHeader>
-              <CardContent class="duration-300 md:group-hover:border-emerald-500">
+              <CardContent class="flex items-center justify-center duration-300 md:group-hover:border-emerald-500">
                 <img
                   :src="project.imageUrl"
                   :alt="`Imagem do projeto ${project.name}`"
                   width="480"
                   height="360"
-                  class="mx-auto rounded-lg border border-border"
+                  class="h-auto w-full max-w-[480px] rounded-lg border border-border"
                 />
               </CardContent>
               <CardFooter class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center sm:gap-0">

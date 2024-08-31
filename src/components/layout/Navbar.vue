@@ -15,13 +15,13 @@ const route = useRoute();
 </script>
 
 <template>
-  <header :class="cn('fixed z-[999]', 'flex w-full items-center justify-center')" role="banner">
+  <header :class="cn('fixed left-0 top-0 z-[999]', 'flex w-full items-center justify-center')" role="banner">
     <nav
       v-motion
       :initial="{ opacity: 0, y: -50 }"
       :visible-once="{
         opacity: 1,
-        y: 16,
+        y: 0,
         transition: { type: 'spring', stiffness: 90, damping: 30, ease: 'easeInOut' }
       }"
       :delay="100"
@@ -31,7 +31,7 @@ const route = useRoute();
           'relative',
           'flex items-center justify-between gap-4',
           'h-16 w-full max-w-3xl',
-          'border-b border-t-0 border-dashed border-border px-4 sm:rounded-md sm:border',
+          'border-b border-t-0 border-dashed border-border px-4 sm:rounded-b-md sm:border',
           'bg-noise backdrop-blur-md'
         )
       "

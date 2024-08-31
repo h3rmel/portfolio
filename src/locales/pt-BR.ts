@@ -40,14 +40,14 @@ export default {
     subtitle: 'Alguns dos projetos paralelos que já desenvolvi/trabalhei:',
     license: 'Licença',
     projects: {
-      front_flow_desc:
-        'Um conjunto de ferramentas para ajudar desenvolvedores a criar interfaces com mais facilidade no seu dia a dia.',
+      front_hub_desc:
+        'Uma coleção de ferramentas e recursos para desenvolvedores para facilitar seu trabalho no dia a dia.',
       isa_arch_desc:
         'Uma arquitetura para React que separa o código em três camadas: Interface (I), Estados (S) e Ações (A).',
       next_lp_template_desc:
         'Um template simples e escalável para construir landing pages prontas para produção com NextJS.',
-      sen_financa_desc: 'Um aplicativo para gerenciar as finanças pessoais de forma simples e intuitiva.',
-      portfolio_desc: 'Meu portfólio pessoal, onde compartilho um pouco sobre mim e meus projetos.'
+      h3rmel_lint_config_desc:
+        'Minha configuração pessoal de lint para projetos Next e React utilizando ESLint e Prettier.'
     }
   },
   skills: {
