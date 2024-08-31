@@ -15,7 +15,7 @@ defineProps({
       <div
         v-for="(_, index) in 1200"
         :key="index"
-        class="aspect-square bg-background transition-all duration-1000 ease-in-out hover:bg-emerald-500/50 hover:duration-0"
+        class="hover:glow aspect-square bg-background transition-all duration-1000 ease-in-out hover:bg-emerald-500/50 hover:duration-0"
       />
     </div>
   </div>
