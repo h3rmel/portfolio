@@ -7,4 +7,4 @@ import '@/assets/globals.css';
 
 const app = createApp(App);
 
-app.use(i18n).use(router).use(MotionPlugin).mount('#app');
+app.use(router).use(i18n).use(MotionPlugin).mount('#app');
