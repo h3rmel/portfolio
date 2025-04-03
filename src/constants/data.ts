@@ -170,4 +170,38 @@ export const DATA = {
       },
     },
   },
+  navbar: {
+    title: 'Navegação',
+    description: 'Navegue pelas sessões do meu portfólio.',
+    links: [
+      {
+        href: '#hero-session',
+        label: 'Início',
+      },
+      {
+        href: '#experience-session',
+        label: 'Experiência',
+      },
+      {
+        href: '#education-session',
+        label: 'Educação',
+      },
+      {
+        href: '#skills-session',
+        label: 'Habilidades',
+      },
+      {
+        href: '#languages-session',
+        label: 'Idiomas',
+      },
+      {
+        href: '#projects-session',
+        label: 'Projetos',
+      },
+      {
+        href: '#contact-session',
+        label: 'Contato',
+      },
+    ],
+  },
 };

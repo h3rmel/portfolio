@@ -33,7 +33,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
   return (
     <AccordionItem
       value={index}
-      className={cn('border', 'px-4 rounded-2xl')}
+      className={cn('border', 'px-2 lg:px-4 rounded-2xl')}
       onClick={handleClick}
     >
       <AccordionTrigger
@@ -52,7 +52,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
               )}
             />
           </Link>
-          <h3 className={cn('text-lg font-semibold tracking-wide')}>{content.title}</h3>
+          <h3 className={cn('text-base lg:text-lg font-semibold tracking-wide')}>{content.title}</h3>
           <ChevronRightIcon
             className={cn(
               'size-4 -translate-x-1 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-80',
@@ -60,7 +60,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
             )}
           />
         </div>
-        <span className={cn('text-sm text-muted-foreground')}>{content.timestamp}</span>
+        <span className={cn('text-xs lg:text-sm text-muted-foreground')}>{content.timestamp}</span>
       </AccordionTrigger>
       <AccordionContent>
         <p className={cn('text-sm font-light text-justify')}>

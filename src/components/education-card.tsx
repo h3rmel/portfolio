@@ -20,8 +20,8 @@ export function EducationCard({ content }: EducationCardProps) {
     <article
       className={cn(
         'flex items-center justify-between',
-        'h-[72px]',
-        'border rounded-2xl px-4',
+        'h-14 lg:h-[72px]',
+        'border rounded-2xl px-2 lg:px-4',
       )}
     >
       <Link href={content.institutionLink} target="_blank" className={cn('group', 'h-full')}>
@@ -37,10 +37,10 @@ export function EducationCard({ content }: EducationCardProps) {
             )}
           />
           <div className={cn('flex flex-col')}>
-            <h3 className={cn('text-base font-semibold tracking-wide')}>
+            <h3 className={cn('text-sm lg:text-base font-semibold tracking-wide')}>
               {content.title}
             </h3>
-            <p className={cn('text-xs text-muted-foreground')}>{content.subtitle}</p>
+            <p className={cn('text-[10px] lg:text-xs text-muted-foreground max-w-[34ch] line-clamp-1 text-ellipsis overflow-hidden')}>{content.subtitle}</p>
           </div>
           <ChevronRightIcon
             className={cn(
@@ -49,7 +49,7 @@ export function EducationCard({ content }: EducationCardProps) {
           />
         </div>
       </Link>
-      <span className={cn('text-sm text-muted-foreground')}>{content.timestamp}</span>
+      <span className={cn('text-xs lg:text-sm text-muted-foreground')}>{content.timestamp}</span>
     </article>
   );
 }

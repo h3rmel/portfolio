@@ -6,6 +6,7 @@ import { firaCode } from '@/assets/fonts';
 
 import '@/assets/globals.css';
 
+import { NavigationBar } from '@/components/layout/navigation-bar';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 
 import { DATA } from '@/constants/data';
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn('min-h-[100dvh] w-full font-sans antialiased', firaCode.className)}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
+          <NavigationBar />
           {children}
         </ThemeProvider>
       </body>
