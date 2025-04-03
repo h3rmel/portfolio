@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '../ui/button';
-import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+
+import { Button } from '../ui/button';
 
 type NavigationLinkProps = {
   href: string;
@@ -10,40 +10,11 @@ type NavigationLinkProps = {
 };
 
 export function NavigationLink({ href, children }: NavigationLinkProps) {
-  const [isActive, setIsActive] = useState(false);
   const targetId = href.startsWith('#') ? href.substring(1) : href;
-
-  useEffect(() => {
-    const element = document.getElementById(targetId);
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsActive(true);
-          } else {
-            setIsActive(false);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: '-48px 0px 0px 0px', // Offset to match our scroll position
-        threshold: 0.5, // Consider visible when 50% of the element is in view
-      }
-    );
-
-    observer.observe(element);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [targetId]);
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-    
+
     const element = document.getElementById(targetId);
 
     if (element) {
@@ -52,7 +23,7 @@ export function NavigationLink({ href, children }: NavigationLinkProps) {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     } else {
       console.warn(`Element with id "${targetId}" not found`);
@@ -60,14 +31,10 @@ export function NavigationLink({ href, children }: NavigationLinkProps) {
   }
 
   return (
-    <Button 
-      variant="ghost" 
-      className={cn(
-        "cursor-pointer",
-        "border",
-        isActive && "lg:bg-muted/30"
-      )} 
-      size="sm" 
+    <Button
+      variant="link"
+      className={cn('lg:justify-start lg:text-xl')}
+      size="sm"
       onClick={handleClick}
     >
       {children}

@@ -40,7 +40,7 @@ export function EducationCard({ content }: EducationCardProps) {
             <h3 className={cn('text-sm lg:text-base font-semibold tracking-wide')}>
               {content.title}
             </h3>
-            <p className={cn('text-[10px] lg:text-xs text-muted-foreground max-w-[34ch] line-clamp-1 text-ellipsis overflow-hidden')}>{content.subtitle}</p>
+            <p className={cn('text-[10px] lg:text-xs text-muted-foreground max-w-[34ch] lg:max-w-full line-clamp-1 text-ellipsis overflow-hidden')}>{content.subtitle}</p>
           </div>
           <ChevronRightIcon
             className={cn(

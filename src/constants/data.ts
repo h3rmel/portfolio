@@ -75,14 +75,14 @@ export const DATA = {
       content: [
         {
           title: 'IFSul',
-          subtitle: 'Técnico em Informática para a Internet',
+          subtitle: 'Técnico em Informática para a Internet.',
           institutionLogo: '/institutions/ifsul.webp',
           institutionLink: 'https://www.ifsul.edu.br/',
           timestamp: '2018 - 2022',
         },
         {
           title: 'Descomplica',
-          subtitle: 'Técnologo em Análise e Desenvolvimento de Sistemas',
+          subtitle: 'Técnologo em Análise e Desenvolvimento de Sistemas.',
           institutionLogo: '/institutions/descomplica.webp',
           institutionLink: 'https://descomplica.com.br/',
           timestamp: '2023 - 2025',

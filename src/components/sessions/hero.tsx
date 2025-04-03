@@ -11,8 +11,8 @@ export function Hero() {
 
   return (
     <section id="hero-session" className={cn('flex flex-col gap-12')}>
-      <div id="hero-header" className={cn('flex flex-col-reverse gap-4 lg:gap-0 items-center justify-between')}>
-        <hgroup className={cn('space-y-1 text-center')}>
+      <div id="hero-header" className={cn('flex lg:flex-row flex-col-reverse gap-4 lg:gap-0 items-center justify-between')}>
+        <hgroup className={cn('space-y-1 lg:text-left text-center')}>
           <h1 className={cn('text-3xl lg:text-4xl font-bold')}>{hero.title}</h1>
           <p className={cn('text-base text-muted-foreground max-w-[52ch]')}>
             {hero.subtitle}

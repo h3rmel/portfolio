@@ -29,7 +29,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
 
   return (
     <Card>
-      <CardHeader className={cn('p-4', 'rounded-b-xl border-b')}>
+      <CardHeader className={cn('rounded-b-xl')}>
         <Link href={content.link} className={cn('cursor-pointer')} target="_blank">
           {content.imageLink && (
             <Image
@@ -37,7 +37,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
               alt={content.title}
               width={1920}
               height={1080}
-              className={cn('rounded-lg', 'w-full h-48 object-fill')}
+              className={cn('rounded-lg', 'size-full h-[174px] object-cover')}
             />
           )}
           {content.videoLink && (
