@@ -167,6 +167,7 @@ export const DATA = {
       links: {
         linkedin: 'https://www.linkedin.com/in/isaachermel/',
         email: 'mailto:isaachermel@gmail.com',
+        github: 'https://github.com/h3rmel',
       },
     },
   },

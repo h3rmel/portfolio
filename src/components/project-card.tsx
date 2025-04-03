@@ -28,7 +28,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
   const { links } = content;
 
   return (
-    <Card>
+    <Card className={cn('border border-dashed')}>
       <CardHeader className={cn('rounded-b-xl')}>
         <Link href={content.link} className={cn('cursor-pointer')} target="_blank">
           {content.imageLink && (
@@ -62,7 +62,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
           ))}
         </ul>
       </CardContent>
-      <CardFooter className={cn('flex gap-2', 'p-4', 'rounded-t-xl border-t')}>
+      <CardFooter className={cn('flex gap-2', 'p-4', 'rounded-t-xl border-t border-dashed')}>
         {links.source && (
           <Link
             className={buttonVariants({ variant: 'secondary', size: 'sm' })}

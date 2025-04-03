@@ -33,7 +33,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
   return (
     <AccordionItem
       value={index}
-      className={cn('border', 'px-2 lg:px-4 rounded-2xl')}
+      className={cn('border border-dashed', 'px-2 lg:px-4 rounded-2xl')}
       onClick={handleClick}
     >
       <AccordionTrigger
@@ -47,7 +47,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
               width={40}
               height={40}
               className={cn(
-                'rounded-full p-1 border',
+                'rounded-full p-1 border border-dashed',
                 'transition-all duration-300 hover:border-indigo-500',
               )}
             />

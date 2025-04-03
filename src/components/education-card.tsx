@@ -21,7 +21,7 @@ export function EducationCard({ content }: EducationCardProps) {
       className={cn(
         'flex items-center justify-between',
         'h-14 lg:h-[72px]',
-        'border rounded-2xl px-2 lg:px-4',
+        'border border-dashed rounded-2xl px-2 lg:px-4',
       )}
     >
       <Link href={content.institutionLink} target="_blank" className={cn('group', 'h-full')}>
@@ -32,7 +32,7 @@ export function EducationCard({ content }: EducationCardProps) {
             width={40}
             height={40}
             className={cn(
-              'rounded-full p-1 border',
+              'rounded-full p-1 border border-dashed',
               'transition-all duration-300 group-hover:border-indigo-500',
             )}
           />

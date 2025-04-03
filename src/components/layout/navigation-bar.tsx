@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { Linkedin, List, Mail, Origami } from 'lucide-react';
+import { Github, Linkedin, List, Mail, Origami } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -30,8 +30,8 @@ export function NavigationBar() {
       className={cn(
         'fixed lg:top-0 bottom-0 left-0 right-0 z-50',
         'w-full h-16',
-        'lg:border-b',
-        'lg:bg-background/30 lg:backdrop-blur-md',
+        'lg:border-b border-dashed',
+        'lg:bg-background/40 lg:backdrop-blur-md',
       )}
     >
       <nav
@@ -62,18 +62,31 @@ export function NavigationBar() {
           >
             <Mail className={cn('size-4')} />
           </Link>
+          <Link
+            href={contact.links.github}
+            className={cn(
+              buttonVariants({ variant: 'ghost', size: 'icon' }),
+              'hidden lg:inline-flex',
+            )}
+            target="_blank"
+          >
+            <Github className={cn('size-4')} />
+          </Link>
         </div>
         <Drawer direction={isDesktop ? 'top' : 'bottom'}>
           <DrawerTrigger asChild>
             <Button
               variant="default"
               size="icon"
-              className={cn('absolute bottom-4 right-4 lg:bottom-0 lg:right-0 lg:relative z-50', 'rounded-full lg:rounded-md')}
+              className={cn(
+                'absolute bottom-4 right-4 lg:bottom-0 lg:right-0 lg:relative z-50',
+                'rounded-full lg:rounded-md',
+              )}
             >
               <List className={cn('size-5 lg:size-4 z-50')} />
             </Button>
           </DrawerTrigger>
-          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x lg:mx-auto">
+          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x border-dashed lg:mx-auto">
             <DrawerHeader>
               <DrawerTitle>{DATA.navbar.title}</DrawerTitle>
               <DrawerDescription>{DATA.navbar.description}</DrawerDescription>
