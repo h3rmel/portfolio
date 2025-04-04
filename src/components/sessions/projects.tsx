@@ -20,7 +20,7 @@ export function Projects() {
           {projects.description}
         </p>
       </hgroup>
-      <div className={cn('grid grid-cols-1 lg:grid-cols-2 gap-4')}>
+      <div className={cn('grid grid-cols-1 md:grid-cols-2 gap-4')}>
         {projects.content.map((project) => (
           <ProjectCard key={project.title} content={project} />
         ))}

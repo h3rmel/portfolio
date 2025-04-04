@@ -57,7 +57,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
         <ul className={cn('flex flex-wrap gap-1')}>
           {content.tags.map((tag) => (
             <li key={tag}>
-              <Badge className={cn('text-[10px]', 'px-1 py-0.5 rounded-md')}>{tag}</Badge>
+              <Badge className={cn('text-[10px]', 'px-1 py-0 rounded-md')}>{tag}</Badge>
             </li>
           ))}
         </ul>
