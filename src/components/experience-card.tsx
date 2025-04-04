@@ -60,7 +60,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
             )}
           />
         </div>
-        <span className={cn('text-xs lg:text-sm text-muted-foreground')}>{content.timestamp}</span>
+        <span className={cn('text-[10px] lg:text-sm text-muted-foreground')}>{content.timestamp}</span>
       </AccordionTrigger>
       <AccordionContent>
         <p className={cn('text-sm font-light text-justify')}>
