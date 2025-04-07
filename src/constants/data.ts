@@ -27,7 +27,7 @@ export const DATA = {
           title: 'Zenvia',
           companyLogo: '/companies/zenvia.webp',
           companyLink: 'https://www.zenvia.com',
-          role: 'Engenheiro de Software',
+          role: 'Desenvolvedor Full-Stack',
           timestamp: 'Ago 2023 - Atual',
           description:
             'Liderei tecnicamente e implementei a integração de plataformas terceiras com o Zenvia Customer Cloud para melhorar a experiência dos clientes da empresa. Criei APIs para integração com o Zenvia Customer Cloud e criei novas funcionalidades para o Zenvia Nutrir.',
@@ -36,7 +36,7 @@ export const DATA = {
           title: 'Catency',
           companyLogo: '/companies/catency.webp',
           companyLink: 'https://www.catency.com.br',
-          role: 'Desenvolvedor Front-end (Freelancer)',
+          role: 'Desenvolvedor Front-end',
           timestamp: 'Jul 2023 - Abr 2025',
           description:
             'Trabalhei na construção de landing pages e sites institucionais para clientes da empresa, como Regina Festas, K2L Entertainment, Galen Academy, MD Health, BCRI e Outros.',

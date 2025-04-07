@@ -34,19 +34,23 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
   return (
     <AccordionItem
       value={index}
-      className={cn(
-        'relative',
-        'border',
-        'px-2 lg:px-4 rounded-2xl',
-        'group',
-      )}
+      className={cn('relative', 'border', 'px-2 lg:px-4 rounded-2xl', 'group')}
       onClick={handleClick}
     >
       <AccordionTrigger
-        className={cn('group', 'flex items-center justify-between gap-2', 'cursor-pointer')}
+        className={cn(
+          'group',
+          'relative',
+          'flex items-center justify-between gap-2',
+          'cursor-pointer',
+        )}
       >
         <div className={cn('inline-flex justify-center items-center gap-2')}>
-          <Link href={content.companyLink} className={cn('cursor-pointer')} target="_blank">
+          <Link
+            href={content.companyLink}
+            className={cn('cursor-pointer')}
+            target="_blank"
+          >
             <Image
               src={content.companyLogo}
               alt={content.title}
@@ -58,27 +62,43 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
               )}
             />
           </Link>
-          <h3 className={cn('text-base lg:text-lg font-semibold tracking-wide')}>
-            {content.title}
-          </h3>
-          <ChevronRightIcon
-            className={cn(
-              'size-4 -translate-x-1 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-80',
-              isExpanded ? 'rotate-90' : 'rotate-0',
-            )}
-          />
+          <div className={cn('flex flex-col')}>
+            <h3
+              className={cn(
+                'inline-flex items-center gap-1',
+                'text-sm lg:text-base font-semibold tracking-wide',
+              )}
+            >
+              {content.title}
+              <ChevronRightIcon
+                className={cn(
+                  'size-4 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-80',
+                  isExpanded ? 'rotate-90' : 'rotate-0',
+                )}
+              />
+            </h3>
+            <p className={cn('text-[10px] lg:text-xs text-muted-foreground')}>
+              {content.role}
+            </p>
+          </div>
         </div>
-        <span className={cn('text-[10px] lg:text-sm text-muted-foreground')}>
+        <span
+          className={cn(
+            'absolute right-1.5 lg:right-0 top-[25%] lg:top-auto text-[10px] lg:text-sm text-muted-foreground',
+          )}
+        >
           {content.timestamp}
         </span>
       </AccordionTrigger>
       <AccordionContent>
-        <p className={cn('text-sm font-light text-justify')}>{content.description}</p>
+        <p className={cn('text-xs lg:text-sm font-light text-justify')}>
+          {content.description}
+        </p>
       </AccordionContent>
       <div
         className={cn('group-hover:opacity-100 opacity-0', 'rounded-2xl', 'duration-300')}
       >
-        <BorderBeam size={128} colorFrom='#312c85' colorTo='#615fff' />
+        <BorderBeam size={128} colorFrom="#312c85" colorTo="#615fff" />
       </div>
     </AccordionItem>
   );
