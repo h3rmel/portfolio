@@ -1,0 +1,85 @@
+import Image from 'next/image';
+
+import { X } from 'lucide-react';
+
+import { cn } from '@/lib/utils';
+
+import { Button } from './ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from './ui/dialog';
+
+type ProjectBannerProps = {
+  title: string;
+  description: string;
+  imageLink: string;
+  videoLink: string;
+};
+
+export function ProjectBanner({
+  title,
+  description,
+  imageLink,
+  videoLink,
+}: ProjectBannerProps) {
+  function renderBannerContent(isDialog: boolean = false) {
+    if (imageLink) {
+      return (
+        <Image
+          src={imageLink}
+          alt={title}
+          width={1920}
+          height={1080}
+          className={cn(
+            'rounded-lg',
+            'size-full object-cover',
+            isDialog ? 'h-[403px]' : 'h-[174px]',
+          )}
+        />
+      );
+    }
+
+    if (videoLink) {
+      return (
+        <video
+          src={videoLink}
+          autoPlay
+          muted
+          loop
+          className={cn(
+            'rounded-lg',
+            'size-full object-cover',
+            isDialog ? 'max-h-[403px] h-max' : 'h-[174px]',
+          )}
+        />
+      );
+    }
+  }
+
+  return (
+    <Dialog>
+      <DialogTrigger asChild className={cn('cursor-pointer')}>
+        {renderBannerContent()}
+      </DialogTrigger>
+      <DialogContent className="max-w-3xl w-full">
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
+        </DialogHeader>
+        {renderBannerContent(true)}
+        <DialogClose asChild>
+          <Button variant="ghost" size="icon" className="absolute top-2 right-2">
+            <X className="size-4" />
+            <span className="sr-only">Close</span>
+          </Button>
+        </DialogClose>
+      </DialogContent>
+    </Dialog>
+  );
+}

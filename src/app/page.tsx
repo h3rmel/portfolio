@@ -19,7 +19,7 @@ export default function Home() {
         'mx-auto px-3 lg:px-0 lg:pt-32 py-8 lg:pb-12',
       )}
     >
-    <Hero />
+      <Hero />
       <Experience />
       <Education />
       <Skills />

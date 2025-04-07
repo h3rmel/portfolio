@@ -5,6 +5,7 @@ import { Github, Globe } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
+import { ProjectBanner } from './project-banner';
 import { Badge } from './ui/badge';
 import { buttonVariants } from './ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
@@ -30,26 +31,12 @@ export function ProjectCard({ content }: ProjectCardProps) {
   return (
     <Card className={cn('border border-dashed')}>
       <CardHeader className={cn('rounded-b-xl')}>
-        <Link href={content.link} className={cn('cursor-pointer')} target="_blank">
-          {content.imageLink && (
-            <Image
-              src={content.imageLink}
-              alt={content.title}
-              width={1920}
-              height={1080}
-              className={cn('rounded-lg', 'size-full h-[174px] object-cover')}
-            />
-          )}
-          {content.videoLink && (
-            <video
-              src={content.videoLink}
-              autoPlay
-              muted
-              loop
-              className={cn('rounded-lg', 'size-full object-cover', 'cursor-pointer')}
-            />
-          )}
-        </Link>
+        <ProjectBanner
+          title={content.title}
+          description={content.description}
+          imageLink={content.imageLink}
+          videoLink={content.videoLink}
+        />
       </CardHeader>
       <CardContent className={cn('p-4', 'h-full', 'space-y-1')}>
         <h3 className={cn('text-base font-bold')}>{content.title}</h3>
@@ -62,7 +49,9 @@ export function ProjectCard({ content }: ProjectCardProps) {
           ))}
         </ul>
       </CardContent>
-      <CardFooter className={cn('flex gap-2', 'p-4', 'rounded-t-xl border-t border-dashed')}>
+      <CardFooter
+        className={cn('flex gap-2', 'p-4', 'rounded-t-xl border-t border-dashed')}
+      >
         {links.source && (
           <Link
             className={buttonVariants({ variant: 'secondary', size: 'sm' })}

@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 
 import { DATA } from '@/constants/data';
 
+import { BorderBeam } from '../magicui/border-beam';
 import { buttonVariants } from '../ui/button';
 
 export function Contact() {
@@ -27,17 +28,19 @@ export function Contact() {
       <div className={cn('flex gap-4 items-center justify-center')}>
         <Link
           href={contact.links.linkedin}
-          className={buttonVariants({ variant: 'outline' })}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
           <Linkedin className={cn('size-4')} /> LinkedIn
+          <BorderBeam size={32} colorFrom="#0a66c2" colorTo="#074b8f" />
         </Link>
         <Link
           href={contact.links.email}
-          className={buttonVariants({ variant: 'outline' })}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
           <Mail className={cn('size-4')} /> Email
+          <BorderBeam size={32} colorFrom="#ce3c30" colorTo="#ad201d" />
         </Link>
       </div>
     </section>

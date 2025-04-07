@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 
 import { DATA } from '@/constants/data';
 
+import { BorderBeam } from '../magicui/border-beam';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 export function Hero() {
@@ -11,16 +12,25 @@ export function Hero() {
 
   return (
     <section id="hero-session" className={cn('flex flex-col gap-12')}>
-      <div id="hero-header" className={cn('flex lg:flex-row flex-col-reverse gap-4 lg:gap-0 items-center justify-between')}>
+      <div
+        id="hero-header"
+        className={cn(
+          'flex lg:flex-row flex-col-reverse gap-4 lg:gap-0 items-center justify-between',
+        )}
+      >
         <hgroup className={cn('space-y-1 lg:text-left text-center')}>
           <h1 className={cn('text-3xl lg:text-4xl font-bold')}>{hero.title}</h1>
           <p className={cn('text-base text-muted-foreground max-w-[52ch]')}>
             {hero.subtitle}
           </p>
         </hgroup>
-        <Avatar className={cn('size-32', 'border border-dashed p-1', 'transition-all duration-300 hover:border-indigo-500')}>
+        <Avatar className={cn('relative', 'size-32', 'border p-1')}>
           <AvatarImage src={DATA.avatarUrl} className={cn('rounded-full')} />
           <AvatarFallback>{DATA.initials}</AvatarFallback>
+          <BorderBeam duration={4} colorFrom="#312c85" colorTo="#615fff" />
+          <BorderBeam reverse duration={5} colorFrom="#312c85" colorTo="#615fff" />
+          <BorderBeam duration={4.5} colorFrom="#312c85" colorTo="#615fff" />
+          <BorderBeam reverse duration={3} colorFrom="#312c85" colorTo="#615fff" />
         </Avatar>
       </div>
       <div id="hero-content" className={cn('space-y-1')}>
