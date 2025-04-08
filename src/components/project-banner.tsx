@@ -67,7 +67,7 @@ export function ProjectBanner({
       <DialogTrigger asChild className={cn('cursor-pointer')}>
         {renderBannerContent()}
       </DialogTrigger>
-      <DialogContent className="max-w-3xl w-full">
+      <DialogContent className="w-full">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>

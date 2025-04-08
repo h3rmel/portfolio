@@ -30,7 +30,7 @@ export function NavigationBar() {
       className={cn(
         'fixed lg:top-0 bottom-0 left-0 right-0 z-50',
         'w-full h-16',
-        'lg:border-b border-dashed',
+        'lg:border-b',
         'lg:bg-background/40 lg:backdrop-blur-md',
       )}
     >
