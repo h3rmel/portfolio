@@ -40,7 +40,33 @@ export function NavigationBar() {
           'w-full h-full max-w-screen-sm mx-auto',
         )}
       >
-        <Origami size={32} className={cn('hidden lg:inline-flex')} />
+        <Drawer direction={isDesktop ? 'top' : 'bottom'}>
+          <DrawerTrigger asChild>
+            <Button
+              variant="default"
+              size="icon"
+              className={cn(
+                'absolute bottom-4 right-4 lg:bottom-0 lg:right-0 lg:relative z-50',
+                'rounded-full lg:rounded-md',
+              )}
+            >
+              <List className={cn('size-5 lg:size-4 z-50')} />
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x border-dashed lg:mx-auto">
+            <DrawerHeader>
+              <DrawerTitle>{DATA.navbar.title}</DrawerTitle>
+              <DrawerDescription>{DATA.navbar.description}</DrawerDescription>
+            </DrawerHeader>
+            <ul className={cn('flex flex-col gap-2')}>
+              {DATA.navbar.links.map((link) => (
+                <NavigationLink key={link.href} href={link.href}>
+                  {link.label}
+                </NavigationLink>
+              ))}
+            </ul>
+          </DrawerContent>
+        </Drawer>
         <div className={cn('flex items-center gap-2')}>
           <Link
             href={contact.links.linkedin}
@@ -73,33 +99,6 @@ export function NavigationBar() {
             <Github className={cn('size-4')} />
           </Link>
         </div>
-        <Drawer direction={isDesktop ? 'top' : 'bottom'}>
-          <DrawerTrigger asChild>
-            <Button
-              variant="default"
-              size="icon"
-              className={cn(
-                'absolute bottom-4 right-4 lg:bottom-0 lg:right-0 lg:relative z-50',
-                'rounded-full lg:rounded-md',
-              )}
-            >
-              <List className={cn('size-5 lg:size-4 z-50')} />
-            </Button>
-          </DrawerTrigger>
-          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x border-dashed lg:mx-auto">
-            <DrawerHeader>
-              <DrawerTitle>{DATA.navbar.title}</DrawerTitle>
-              <DrawerDescription>{DATA.navbar.description}</DrawerDescription>
-            </DrawerHeader>
-            <ul className={cn('flex flex-col gap-2')}>
-              {DATA.navbar.links.map((link) => (
-                <NavigationLink key={link.href} href={link.href}>
-                  {link.label}
-                </NavigationLink>
-              ))}
-            </ul>
-          </DrawerContent>
-        </Drawer>
       </nav>
     </header>
   );
