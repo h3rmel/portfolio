@@ -34,7 +34,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
   return (
     <AccordionItem
       value={index}
-      className={cn('relative', 'border', 'px-2 lg:px-4 rounded-2xl', 'group')}
+      className={cn('relative', 'border bg-card/30', 'px-2 lg:px-4 rounded-2xl', 'group')}
       onClick={handleClick}
     >
       <AccordionTrigger
@@ -98,7 +98,12 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
       <div
         className={cn('group-hover:opacity-100 opacity-0', 'rounded-2xl', 'duration-300')}
       >
-        <BorderBeam size={128} colorFrom="#312c85" colorTo="#615fff" />
+        <BorderBeam
+          size={64}
+          delay={Math.random() * 8 + 1}
+          colorFrom="#312c85"
+          colorTo="#615fff"
+        />
       </div>
     </AccordionItem>
   );

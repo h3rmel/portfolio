@@ -52,6 +52,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={cn('min-h-[100dvh] w-full font-sans antialiased', firaCode.className)}
       >
+        <div
+          className={cn('absolute -top-2/3 z-[-1] h-screen w-screen')}
+          style={{
+            backgroundImage: `radial-gradient(circle at top, #09090b 40%, #1e1b4b 50%, #09090b 80%)`,
+            backdropFilter: `blur(10px)`,
+          }}
+        />
         <ThemeProvider attribute="class" defaultTheme="dark">
           <NavigationBar />
           {children}

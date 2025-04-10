@@ -39,7 +39,7 @@ export function ProjectBanner({
           className={cn(
             'rounded-lg',
             'size-full object-cover',
-            isDialog ? 'h-[403px]' : 'h-[174px]',
+            isDialog ? 'h-[403px]' : 'h-[149px]',
           )}
         />
       );
@@ -55,7 +55,7 @@ export function ProjectBanner({
           className={cn(
             'rounded-lg',
             'size-full object-cover',
-            isDialog ? 'max-h-[403px] h-max' : 'h-[174px]',
+            isDialog ? 'max-h-[403px] h-max' : 'h-[149px]',
           )}
         />
       );

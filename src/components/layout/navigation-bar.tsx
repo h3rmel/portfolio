@@ -23,7 +23,7 @@ import { NavigationLink } from './navigation-link';
 export function NavigationBar() {
   const { contact } = DATA.sessions;
 
-  const isDesktop = useMedia('(min-width: 1024px)');
+  const isDesktop = useMedia('(min-width: 1024px)', true);
 
   return (
     <header

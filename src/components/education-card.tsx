@@ -25,7 +25,7 @@ export function EducationCard({ content }: EducationCardProps) {
         'group',
         'flex items-center justify-between',
         'h-[72px]',
-        'border rounded-2xl px-2 lg:px-4',
+        'border bg-card/30 rounded-2xl px-2 lg:px-4',
       )}
     >
       <Link
@@ -68,7 +68,11 @@ export function EducationCard({ content }: EducationCardProps) {
           </div>
         </div>
       </Link>
-      <span className={cn('absolute right-4 top-[15%] lg:top-auto text-[10px] lg:text-sm w-1/3 text-end text-muted-foreground')}>
+      <span
+        className={cn(
+          'absolute right-4 top-[15%] lg:top-auto text-[10px] lg:text-sm w-1/3 text-end text-muted-foreground',
+        )}
+      >
         {content.timestamp}
       </span>
       <div
@@ -79,7 +83,12 @@ export function EducationCard({ content }: EducationCardProps) {
           'duration-300',
         )}
       >
-        <BorderBeam size={128} colorFrom="#312c85" colorTo="#615fff" />
+        <BorderBeam
+          size={64}
+          delay={Math.random() * 8 + 1}
+          colorFrom="#312c85"
+          colorTo="#615fff"
+        />
       </div>
     </article>
   );
