@@ -53,7 +53,7 @@ export function NavigationBar() {
               <List className={cn('size-5 lg:size-4 z-50')} />
             </Button>
           </DrawerTrigger>
-          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x border-dashed lg:mx-auto">
+          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x lg:mx-auto">
             <DrawerHeader>
               <DrawerTitle>{DATA.navbar.title}</DrawerTitle>
               <DrawerDescription>{DATA.navbar.description}</DrawerDescription>
