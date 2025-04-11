@@ -50,7 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={cn('min-h-[100dvh] w-full font-sans antialiased', firaCode.className)}
+        className={cn('min-h-[100dvh] w-full overflow-x-hidden font-sans antialiased', firaCode.className)}
       >
         <div
           className={cn('absolute -top-2/3 z-[-1] h-screen w-screen')}
