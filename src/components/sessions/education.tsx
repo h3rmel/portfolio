@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { DATA } from '@/constants/data';
+import { DATA } from '@/config/data';
 
 import { EducationCard } from '../education-card';
 

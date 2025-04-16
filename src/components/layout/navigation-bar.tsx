@@ -6,7 +6,7 @@ import { Github, Linkedin, List, Mail, Origami } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
-import { DATA } from '@/constants/data';
+import { DATA } from '@/config/data';
 import { useMedia } from '@/hooks/use-media';
 
 import { Button, buttonVariants } from '../ui/button';
