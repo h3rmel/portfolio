@@ -9,7 +9,7 @@ import '@/assets/globals.css';
 import { NavigationBar } from '@/components/layout/navigation-bar';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 
-import { DATA } from '@/constants/data';
+import { DATA } from '@/config/data';
 
 export const metadata: Metadata = {
   title: {

@@ -2,7 +2,7 @@ import Markdown from 'react-markdown';
 
 import { cn } from '@/lib/utils';
 
-import { DATA } from '@/constants/data';
+import { DATA } from '@/config/data';
 
 import { BorderBeam } from '../magicui/border-beam';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';

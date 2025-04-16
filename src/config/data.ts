@@ -158,6 +158,18 @@ export const DATA = {
           },
         },
         {
+          title: 'h3/use',
+          description:
+            'Collection of copy-and-paste hooks to help you build applications.',
+          tags: ['React', 'TypeScript', 'Shadcn', 'Shadcn UI', 'Next.js'],
+          imageLink: '/projects/h3-use.webp',
+          videoLink: '',
+          links: {
+            source: 'https://github.com/h3rmel/h3-use',
+            website: 'https://h3-use.vercel.app/',
+          },
+        },
+        {
           title: 'Próxima Jogada',
           description:
             'Aplicativo web progressivo para sortear times para partidas de quaisquer esportes.',
