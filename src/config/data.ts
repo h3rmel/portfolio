@@ -163,7 +163,7 @@ export const DATA = {
             'Collection of copy-and-paste hooks to help you build applications.',
           tags: ['React', 'TypeScript', 'Shadcn', 'Shadcn UI', 'Next.js'],
           link: 'https://h3-use.vercel.app/',
-          imageLink: '/projects/h3-use.webp',
+          imageLink: '/projects/h3-use.png',
           videoLink: '',
           links: {
             source: 'https://github.com/h3rmel/h3-use',

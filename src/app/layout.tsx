@@ -59,7 +59,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" defaultTheme="dark">
           <NavigationBar />
           {children}
-          <BackgroundBeams />
         </ThemeProvider>
       </body>
     </html>
