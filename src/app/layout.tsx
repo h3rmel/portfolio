@@ -6,9 +6,8 @@ import { firaCode } from '@/assets/fonts';
 
 import '@/assets/globals.css';
 
-import { NavigationBar } from '@/components/layout/navigation-bar';
+import { Header } from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 
 import { DATA } from '@/config/data';
 
@@ -41,6 +40,7 @@ export const metadata: Metadata = {
     google: '',
     yandex: '',
   },
+  creator: DATA.creator,
 };
 
 type RootLayoutProps = {
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <NavigationBar />
+          <Header />
           {children}
         </ThemeProvider>
       </body>

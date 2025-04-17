@@ -16,7 +16,7 @@ export default function Home() {
       className={cn(
         'w-full max-w-screen-sm',
         'flex flex-col gap-12',
-        'mx-auto px-3 lg:px-0 lg:pt-32 py-8 lg:pb-12',
+        'mx-auto px-3 lg:px-0 py-8 lg:py-12',
       )}
     >
       <Hero />

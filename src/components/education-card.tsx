@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ChevronRightIcon } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 
+import { Icons } from './icons';
 import { BorderBeam } from './magicui/border-beam';
+import { Badge } from './ui/badge';
 
 type EducationCardProps = {
   content: {
@@ -25,7 +25,7 @@ export function EducationCard({ content }: EducationCardProps) {
         'group',
         'flex items-center justify-between',
         'h-[72px]',
-        'border bg-card/30 backdrop-blur-xs rounded-2xl px-2 lg:px-4',
+        'border bg-card/30 backdrop-blur-xs rounded-md px-2 lg:px-4',
       )}
     >
       <Link
@@ -52,7 +52,7 @@ export function EducationCard({ content }: EducationCardProps) {
               )}
             >
               {content.title}
-              <ChevronRightIcon
+              <Icons.ChevronRight
                 className={cn(
                   'size-4 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-80',
                 )}
@@ -68,18 +68,20 @@ export function EducationCard({ content }: EducationCardProps) {
           </div>
         </div>
       </Link>
-      <span
+      <Badge
+        variant="outline"
         className={cn(
-          'absolute right-4 top-[15%] lg:top-auto text-[10px] lg:text-sm w-1/3 text-end text-muted-foreground',
+          'absolute right-1 top-1 text-[10px] lg:text-sm text-muted-foreground',
         )}
       >
         {content.timestamp}
-      </span>
+      </Badge>
+
       <div
         className={cn(
           'absolute inset-0',
           'group-hover:opacity-100 opacity-0',
-          'rounded-2xl',
+          'rounded-md',
           'duration-300',
         )}
       >

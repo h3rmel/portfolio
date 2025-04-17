@@ -7,9 +7,10 @@ import { Button } from '../ui/button';
 type NavigationLinkProps = {
   href: string;
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
-export function NavigationLink({ href, children }: NavigationLinkProps) {
+export function NavigationLink({ href, children, onClick }: NavigationLinkProps) {
   const targetId = href.startsWith('#') ? href.substring(1) : href;
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
@@ -28,6 +29,7 @@ export function NavigationLink({ href, children }: NavigationLinkProps) {
     } else {
       console.warn(`Element with id "${targetId}" not found`);
     }
+    if (onClick) onClick();
   }
 
   return (

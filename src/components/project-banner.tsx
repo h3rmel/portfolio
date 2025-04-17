@@ -37,7 +37,7 @@ export function ProjectBanner({
           width={1920}
           height={1080}
           className={cn(
-            'rounded-lg',
+            'rounded-sm border',
             'size-full object-cover',
             isDialog ? 'h-[403px]' : 'h-[149px]',
           )}
@@ -53,7 +53,7 @@ export function ProjectBanner({
           muted
           loop
           className={cn(
-            'rounded-lg',
+            'rounded-sm border',
             'size-full object-cover',
             isDialog ? 'max-h-[403px] h-max' : 'h-[149px]',
           )}

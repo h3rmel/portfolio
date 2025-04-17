@@ -1,6 +1,8 @@
 export const DATA = {
   name: 'Isaac Hermel Reginato',
+  creator: 'h3rmel',
   initials: 'IHR',
+  ogImage: 'https://isaachermel.dev.br/og.webp',
   description:
     'Engenheiro de Software com experiência em diversos segmentos. Especialista Front-end e Autodidata.',
   url: 'https://isaachermel.dev.br',
@@ -163,7 +165,7 @@ export const DATA = {
             'Collection of copy-and-paste hooks to help you build applications.',
           tags: ['React', 'TypeScript', 'Shadcn', 'Shadcn UI', 'Next.js'],
           link: 'https://h3-use.vercel.app/',
-          imageLink: '/projects/h3-use.png',
+          imageLink: '/projects/h3-use.webp',
           videoLink: '',
           links: {
             source: 'https://github.com/h3rmel/h3-use',
@@ -173,7 +175,7 @@ export const DATA = {
         {
           title: 'Próxima Jogada',
           description:
-            'Aplicativo web progressivo para sortear times para partidas de quaisquer esportes.',
+            'Aplicativo web progressivo para sortear times.',
           tags: ['React', 'TypeScript', 'TailwindCSS', 'Shadcn UI', 'Next-PWA'],
           link: 'https://next-play-hermel.vercel.app/',
           imageLink: '/projects/next-play.webp',

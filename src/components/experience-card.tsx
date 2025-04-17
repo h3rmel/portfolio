@@ -5,12 +5,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ChevronRightIcon } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 
+import { Icons } from './icons';
 import { BorderBeam } from './magicui/border-beam';
 import { AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
+import { Badge } from './ui/badge';
 
 type ExperienceCardProps = {
   content: {
@@ -34,7 +34,12 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
   return (
     <AccordionItem
       value={index}
-      className={cn('relative', 'border bg-card/30 backdrop-blur-xs', 'px-2 lg:px-4 rounded-2xl', 'group')}
+      className={cn(
+        'relative',
+        'border bg-card/30 backdrop-blur-xs',
+        'px-2 lg:px-4 rounded-md',
+        'group',
+      )}
       onClick={handleClick}
     >
       <AccordionTrigger
@@ -70,7 +75,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
               )}
             >
               {content.title}
-              <ChevronRightIcon
+              <Icons.ChevronRight
                 className={cn(
                   'size-4 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-80',
                   isExpanded ? 'rotate-90' : 'rotate-0',
@@ -82,13 +87,14 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
             </p>
           </div>
         </div>
-        <span
+        <Badge
+          variant="outline"
           className={cn(
-            'absolute right-1.5 lg:right-0 top-[25%] lg:top-auto text-[10px] lg:text-sm text-muted-foreground',
+            'absolute -right-1 lg:-right-3 top-1 text-[10px] lg:text-sm text-muted-foreground',
           )}
         >
           {content.timestamp}
-        </span>
+        </Badge>
       </AccordionTrigger>
       <AccordionContent>
         <p className={cn('text-xs lg:text-sm font-light text-justify')}>
@@ -96,7 +102,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
         </p>
       </AccordionContent>
       <div
-        className={cn('group-hover:opacity-100 opacity-0', 'rounded-2xl', 'duration-300')}
+        className={cn('group-hover:opacity-100 opacity-0', 'rounded-md', 'duration-300')}
       >
         <BorderBeam
           size={64}
