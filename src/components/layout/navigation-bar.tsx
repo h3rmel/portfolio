@@ -43,7 +43,7 @@ export function NavigationBar() {
         <Drawer direction={isDesktop ? 'top' : 'bottom'}>
           <DrawerTrigger asChild>
             <Button
-              variant="default"
+              variant="ghost"
               size="icon"
               className={cn(
                 'absolute bottom-4 right-4 lg:bottom-0 lg:right-0 lg:relative z-50',
