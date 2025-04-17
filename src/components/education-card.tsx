@@ -41,7 +41,7 @@ export function EducationCard({ content }: EducationCardProps) {
             height={40}
             className={cn(
               'rounded-full p-1 border',
-              'transition-all duration-300 group-hover:border-indigo-500',
+              'transition-all duration-300 group-hover:border-emerald-500',
             )}
           />
           <div className={cn('flex flex-col')}>
@@ -88,8 +88,8 @@ export function EducationCard({ content }: EducationCardProps) {
         <BorderBeam
           size={64}
           delay={Math.random() * 8 + 1}
-          colorFrom="#312c85"
-          colorTo="#615fff"
+          colorFrom="#10b981"
+          colorTo="#065f46"
         />
       </div>
     </article>

@@ -63,7 +63,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
               height={40}
               className={cn(
                 'rounded-full p-1 border',
-                'transition-all duration-300 hover:border-indigo-500',
+                'transition-all duration-300 hover:border-emerald-500',
               )}
             />
           </Link>
@@ -107,8 +107,8 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
         <BorderBeam
           size={64}
           delay={Math.random() * 8 + 1}
-          colorFrom="#312c85"
-          colorTo="#615fff"
+          colorFrom="#10b981"
+          colorTo="#065f46"
         />
       </div>
     </AccordionItem>
