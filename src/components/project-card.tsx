@@ -1,3 +1,6 @@
+'use client';
+
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 
 import { Github, Globe } from 'lucide-react';
@@ -26,11 +29,18 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ content }: ProjectCardProps) {
+  const { theme } = useTheme();
+
   const { links } = content;
 
   return (
     <Card>
-      <MagicCard className="p-0 h-full w-fit border-none" gradientFrom="#312c85" gradientTo="#615fff">
+      <MagicCard
+        className="p-0 h-full w-fit border-none"
+        gradientFrom="#312c85"
+        gradientTo="#615fff"
+        gradientColor={theme === 'dark' ? '#27272a' : '#e4e4e7'}
+      >
         <CardHeader className="border-b rounded-b-md">
           <ProjectBanner
             title={content.title}
@@ -45,7 +55,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
           <ul className={cn('flex flex-wrap gap-1')}>
             {content.tags.map((tag) => (
               <li key={tag}>
-                <Badge className={cn('text-[10px]', 'px-1 py-0 rounded-md')}>{tag}</Badge>
+                <Badge className={cn('text-[10px]', 'px-1 py-0')}>{tag}</Badge>
               </li>
             ))}
           </ul>

@@ -15,9 +15,10 @@ import { Icons } from '@/components/icons';
 type ThemeToggleProps = {
   variant?: VariantProps<typeof buttonVariants>['variant'];
   size?: VariantProps<typeof buttonVariants>['size'];
+  className?: string;
 };
 
-export function ThemeToggle({ variant = 'outline', size = 'icon' }: ThemeToggleProps) {
+export function ThemeToggle({ variant = 'outline', size = 'icon', className }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -59,7 +60,7 @@ export function ThemeToggle({ variant = 'outline', size = 'icon' }: ThemeToggleP
   };
 
   return (
-    <Button ref={buttonRef} variant={variant} size={size} onClick={changeTheme}>
+    <Button ref={buttonRef} variant={variant} size={size} onClick={changeTheme} className={className}>
       <Icons.Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Icons.Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       <span className="sr-only">Toggle theme</span>

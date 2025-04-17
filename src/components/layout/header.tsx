@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import React, { useState } from 'react';
+
+import Link from 'next/link';
 
 import { Github, Linkedin, List, Mail, Origami } from 'lucide-react';
 
@@ -11,6 +12,7 @@ import { DATA } from '@/config/data';
 import { useMedia } from '@/hooks/use-media';
 
 import { Icons } from '../icons';
+import { ThemeToggle } from '../theme/theme-toggle';
 import { Button, buttonVariants } from '../ui/button';
 import {
   Drawer,
@@ -39,11 +41,39 @@ export function Header() {
     >
       <nav
         className={cn(
-          'flex items-center justify-end lg:justify-between px-4 lg:px-0',
+          'flex items-center justify-end px-4 lg:px-0',
           'w-full h-full max-w-screen-sm lg:mx-auto',
         )}
       >
-        <div className={cn('hidden lg:flex items-center gap-2')}>
+        <Drawer
+          direction={isDesktop ? 'top' : 'bottom'}
+          open={isDrawerOpen}
+          onOpenChange={setIsDrawerOpen}
+        >
+          <DrawerTrigger asChild>
+            <Button variant="ghost" size="icon" onClick={() => setIsDrawerOpen(true)}>
+              <Icons.Menu className="size-5 -scale-x-100" />
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x lg:mx-auto">
+            <DrawerHeader>
+              <DrawerTitle>{DATA.navbar.title}</DrawerTitle>
+              <DrawerDescription>{DATA.navbar.description}</DrawerDescription>
+            </DrawerHeader>
+            <ul className={cn('flex flex-col gap-2')}>
+              {DATA.navbar.links.map((link) => (
+                <NavigationLink
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsDrawerOpen(false)}
+                >
+                  {link.label}
+                </NavigationLink>
+              ))}
+            </ul>
+          </DrawerContent>
+        </Drawer>
+        <div className={cn('hidden lg:flex items-center gap-2', 'border-r ml-auto pr-4')}>
           <Link
             href={contact.links.linkedin}
             className={cn(
@@ -75,34 +105,7 @@ export function Header() {
             <Icons.Github className={cn('size-4')} />
           </Link>
         </div>
-        <Drawer
-          direction={isDesktop ? 'top' : 'bottom'}
-          open={isDrawerOpen}
-          onOpenChange={setIsDrawerOpen}
-        >
-          <DrawerTrigger asChild>
-            <Button variant="ghost" size="icon" onClick={() => setIsDrawerOpen(true)}>
-              <Icons.Menu className="size-5" />
-            </Button>
-          </DrawerTrigger>
-          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x lg:mx-auto">
-            <DrawerHeader>
-              <DrawerTitle>{DATA.navbar.title}</DrawerTitle>
-              <DrawerDescription>{DATA.navbar.description}</DrawerDescription>
-            </DrawerHeader>
-            <ul className={cn('flex flex-col gap-2')}>
-              {DATA.navbar.links.map((link) => (
-                <NavigationLink
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsDrawerOpen(false)}
-                >
-                  {link.label}
-                </NavigationLink>
-              ))}
-            </ul>
-          </DrawerContent>
-        </Drawer>
+        <ThemeToggle variant="ghost" className="ml-4" />
       </nav>
     </header>
   );
