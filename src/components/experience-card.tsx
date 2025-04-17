@@ -34,7 +34,7 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
   return (
     <AccordionItem
       value={index}
-      className={cn('relative', 'border bg-card/30', 'px-2 lg:px-4 rounded-2xl', 'group')}
+      className={cn('relative', 'border bg-card/30 backdrop-blur-xs', 'px-2 lg:px-4 rounded-2xl', 'group')}
       onClick={handleClick}
     >
       <AccordionTrigger

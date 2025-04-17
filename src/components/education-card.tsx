@@ -25,7 +25,7 @@ export function EducationCard({ content }: EducationCardProps) {
         'group',
         'flex items-center justify-between',
         'h-[72px]',
-        'border bg-card/30 rounded-2xl px-2 lg:px-4',
+        'border bg-card/30 backdrop-blur-xs rounded-2xl px-2 lg:px-4',
       )}
     >
       <Link
