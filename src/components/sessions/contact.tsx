@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, Twitter } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -41,6 +41,14 @@ export function Contact() {
         >
           <Mail className={cn('size-4')} /> Email
           <BorderBeam size={32} colorFrom="#ce3c30" colorTo="#ad201d" />
+        </Link>
+        <Link
+          href={contact.links.twitter}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
+          target="_blank"
+        >
+          <Twitter className={cn('size-4')} /> Twitter
+          <BorderBeam size={32} colorFrom="#1da1f2" colorTo="#1a8cd8" />
         </Link>
       </div>
     </section>
