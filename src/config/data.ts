@@ -4,7 +4,7 @@ export const DATA = {
   initials: 'IHR',
   ogImage: 'https://isaachermel.dev.br/og.webp',
   description:
-    'Engenheiro de Software com experiência em diversos segmentos. Especialista Front-end e Autodidata.',
+    'Software Engineer with experience in various segments. Front-end Specialist and Self-taught.',
   url: 'https://isaachermel.dev.br',
   avatarUrl: '/me.webp',
   location: {
@@ -13,78 +13,78 @@ export const DATA = {
   },
   sessions: {
     hero: {
-      title: 'Olá, eu sou Isaac Hermel Reginato',
+      title: "Hello, I'm Isaac Hermel Reginato",
       subtitle:
-        'Engenheiro de Software e Especialista Front-end. Apaixonado por criar coisas novas.',
+        'Software Engineer. Front-end Specialist & Open Source Contributor. Passionate about creating and helping others.',
       about: {
-        title: 'Introdução',
+        title: 'Introduction',
         content:
-          'No início de 2022, comecei minha carreira como engenheiro de software para construir aplicativos que podem ajudar a melhorar a vida das pessoas. Já integrei e liderei tecnicamente times para construir produtos de alta qualidade e colaborei com projetos open-source.',
+          'At the end of 2024, I decided to start working on open-source projects and founding my own applications. In the last three years, [I completed my technical education and am currently finishing my technologist degree](#education-session) and [worked at several companies in different market segments](#experience-session). I am currently working on an open-source project called [h3/use](https://h3-use.com/) and [founding my own applications](#projects-session).',
       },
     },
     experience: {
-      title: 'Experiência',
+      title: 'Experience',
       content: [
         {
           title: 'Zenvia',
           companyLogo: '/companies/zenvia.webp',
           companyLink: 'https://www.zenvia.com',
-          role: 'Desenvolvedor Full-Stack',
-          timestamp: 'Ago 2023 - Atual',
+          role: 'Full-Stack Developer',
+          timestamp: 'Aug 2023 - Present',
           description:
-            'Liderei tecnicamente e implementei a integração de plataformas terceiras com o Zenvia Customer Cloud para melhorar a experiência dos clientes da empresa. Criei APIs para integração com o Zenvia Customer Cloud e criei novas funcionalidades para o Zenvia Nutrir.',
+            "Led technically and implemented the integration of third-party platforms with Zenvia Customer Cloud to improve the experience of the company's customers. Created APIs for integration with Zenvia Customer Cloud and developed new features for Zenvia Nutrir.",
         },
         {
           title: 'Catency',
           companyLogo: '/companies/catency.webp',
           companyLink: 'https://www.catency.com.br',
-          role: 'Desenvolvedor Front-end',
-          timestamp: 'Jul 2023 - Abr 2025',
+          role: 'Front-end Developer',
+          timestamp: 'Jul 2023 - Apr 2025',
           description:
-            'Trabalhei na construção de landing pages e sites institucionais para clientes da empresa, como Regina Festas, K2L Entertainment, Galen Academy, MD Health, BCRI e Outros.',
+            "Worked on building landing pages and institutional websites for the company's clients, such as Regina Festas, K2L Entertainment, Galen Academy, MD Health, BCRI, and others.",
         },
         {
           title: 'Webgru',
           companyLogo: '/companies/webgru.webp',
           companyLink: 'https://www.webgru.de/en/',
-          role: 'Desenvolvedor Front-end',
-          timestamp: 'Abr 2023 - Ago 2023',
+          role: 'Front-end Developer',
+          timestamp: 'Apr 2023 - Aug 2023',
           description:
-            'Trabalhei na criação de plataformas e-commerce para clientes da empresa, como a Fatburners AT, Outros.',
+            "Worked on creating e-commerce platforms for the company's clients, such as Fatburners AT, among others.",
         },
         {
           title: 'Umbler',
           companyLogo: '/companies/umbler.webp',
           companyLink: 'https://www.umbler.com/br',
-          role: 'Desenvolvedor Full-Stack',
-          timestamp: 'Fev 2022 - Abr 2023',
+          role: 'Full-Stack Developer',
+          timestamp: 'Feb 2022 - Apr 2023',
           description:
-            'Trabalhei na melhoria da plataforma de gerenciamento da carteira de clientes da empresa e Design System usado nos produtos da empresa, desenvolvendo novas funcionalidades para o sistema.',
+            "Worked on improving the company's customer portfolio management platform and Design System used in the company's products, developing new features for the system.",
         },
         {
           title: 'Umbler',
           companyLogo: '/companies/umbler.webp',
           companyLink: 'https://www.umbler.com/br',
-          role: 'Analista de Sucesso do Cliente (Estágio)',
-          timestamp: 'Nov 2020 - Fev 2022',
+          role: 'Customer Success Analyst (Internship)',
+          timestamp: 'Nov 2020 - Feb 2022',
           description:
-            'Auxiliei clientes com dúvidas e problemas relacionados aos produtos da Umbler. Também fui responsável por criar e manter documentação técnica para os produtos da empresa.',
+            "Assisted customers with questions and issues related to Umbler products. Also responsible for creating and maintaining technical documentation for the company's products.",
         },
       ],
     },
     education: {
-      title: 'Educação',
+      title: 'Education',
       content: [
         {
           title: 'IFSul',
-          subtitle: 'Técnico em Informática para a Internet.',
+          subtitle: 'Technical Degree in Internet Informatics.',
           institutionLogo: '/institutions/ifsul.webp',
           institutionLink: 'https://www.ifsul.edu.br/',
           timestamp: '2018 - 2022',
         },
         {
           title: 'Descomplica',
-          subtitle: 'Técnologo em Análise e Desenvolvimento de Sistemas.',
+          subtitle: 'Technologist in Systems Analysis and Development.',
           institutionLogo: '/institutions/descomplica.webp',
           institutionLink: 'https://descomplica.com.br/',
           timestamp: '2023 - 2025',
@@ -98,7 +98,7 @@ export const DATA = {
         },
         {
           title: 'Alura',
-          subtitle: 'Python, Flask, Desenvolvimento Web.',
+          subtitle: 'Python, Flask, Web Development.',
           institutionLogo: '/institutions/alura.webp',
           institutionLink: 'https://www.alura.com.br/',
           timestamp: '2023 - 2024',
@@ -106,7 +106,7 @@ export const DATA = {
       ],
     },
     skills: {
-      title: 'Habilidades',
+      title: 'Skills',
       content: [
         'React',
         'Next.js',
@@ -138,13 +138,12 @@ export const DATA = {
       ],
     },
     languages: {
-      title: 'Idiomas',
-      content: ['Português (Nativo)', 'Inglês (B2)'],
+      title: 'Languages',
+      content: ['Portuguese (Native)', 'English (B2)'],
     },
     projects: {
-      title: 'Projetos',
-      description:
-        'Alguns dos projetos que colaborei, de landing pages à aplicações web complexas.',
+      title: 'Projects',
+      description: 'Some of the projects I created and contributed.',
       content: [
         {
           title: 'Magic UI',
@@ -172,63 +171,63 @@ export const DATA = {
             website: 'https://h3-use.vercel.app/',
           },
         },
-        {
-          title: 'Próxima Jogada',
-          description:
-            'Aplicativo web progressivo para sortear times.',
-          tags: ['React', 'TypeScript', 'TailwindCSS', 'Shadcn UI', 'Next-PWA'],
-          link: 'https://next-play-hermel.vercel.app/',
-          imageLink: '/projects/next-play.webp',
-          videoLink: '',
-          links: {
-            source: 'https://github.com/h3rmel/next-play',
-            website: 'https://next-play-hermel.vercel.app/',
-          },
-        },
+        // {
+        //   title: 'Próxima Jogada',
+        //   description: 'Progressive web app to draw teams.',
+        //   tags: ['React', 'TypeScript', 'TailwindCSS', 'Shadcn UI', 'Next-PWA'],
+        //   link: 'https://next-play-hermel.vercel.app/',
+        //   imageLink: '/projects/next-play.webp',
+        //   videoLink: '',
+        //   links: {
+        //     source: 'https://github.com/h3rmel/next-play',
+        //     website: 'https://next-play-hermel.vercel.app/',
+        //   },
+        // },
       ],
     },
     contact: {
-      title: 'Contato',
+      title: 'Contact',
       description:
-        'Entre em contato comigo para um projeto/colaboração, freelance ou oportunidade de trabalho.',
+        'Want to chat? Send me a message on Twitter/X or get in touch with me for a project/collaboration, freelance or job opportunity.',
       links: {
         linkedin: 'https://www.linkedin.com/in/isaachermel/',
         email: 'mailto:isaachermel@gmail.com',
         github: 'https://github.com/h3rmel',
+        twitter: 'https://x.com/isaach3rmel',
       },
     },
   },
   navbar: {
-    title: 'Navegação',
-    description: 'Navegue pelas sessões do meu portfólio.',
+    title: 'Navigation',
+    description: 'Browse through the sections of my portfolio.',
     links: [
       {
         href: '#hero-session',
-        label: 'Início',
+        label: 'Home',
       },
       {
         href: '#experience-session',
-        label: 'Experiência',
+        label: 'Experience',
       },
       {
         href: '#education-session',
-        label: 'Educação',
+        label: 'Education',
       },
       {
         href: '#skills-session',
-        label: 'Habilidades',
+        label: 'Skills',
       },
       {
         href: '#languages-session',
-        label: 'Idiomas',
+        label: 'Languages',
       },
       {
         href: '#projects-session',
-        label: 'Projetos',
+        label: 'Projects',
       },
       {
         href: '#contact-session',
-        label: 'Contato',
+        label: 'Contact',
       },
     ],
   },

@@ -37,10 +37,9 @@ export function Hero() {
         <h2 className={cn('text-xl font-bold')}>{hero.about.title}</h2>
         <span
           className={cn(
-            'text-sm text-muted-foreground',
-            'prose max-w-full text-pretty text-sm lg:text-base text-muted-foreground dark:prose-invert',
-            'text-justify',
-            'hover:prose-a:text-emerald-500 prose-a:transition-all prose-a:duration-300 prose-a:ease-out',
+            'text-sm text-muted-foreground text-justify',
+            'prose max-w-full text-pretty dark:prose-invert',
+            'prose-a:hover:text-emerald-500 prose-a:transition-all prose-a:duration-300 prose-a:ease-out',
           )}
         >
           <Markdown>{hero.about.content}</Markdown>

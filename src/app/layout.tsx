@@ -13,8 +13,8 @@ import { DATA } from '@/config/data';
 
 export const metadata: Metadata = {
   title: {
-    default: DATA.name,
-    template: `%s | ${DATA.name}`,
+    default: DATA.name.replace('Reginato', ''),
+    template: `%s | ${DATA.name.replace('Reginato', '')}`,
   },
   description: DATA.description,
   openGraph: {
