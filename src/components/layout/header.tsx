@@ -95,6 +95,13 @@ export function Header() {
             <Icons.Mail className={cn('size-4')} />
           </Link>
           <Link
+            href={contact.links.twitter}
+            className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
+            target="_blank"
+          >
+            <Icons.Twitter className={cn('size-4 fill-current')} />
+          </Link>
+          <Link
             href={contact.links.github}
             className={cn(
               buttonVariants({ variant: 'ghost', size: 'icon' }),

@@ -171,18 +171,6 @@ export const DATA = {
             website: 'https://h3-use.vercel.app/',
           },
         },
-        // {
-        //   title: 'Próxima Jogada',
-        //   description: 'Progressive web app to draw teams.',
-        //   tags: ['React', 'TypeScript', 'TailwindCSS', 'Shadcn UI', 'Next-PWA'],
-        //   link: 'https://next-play-hermel.vercel.app/',
-        //   imageLink: '/projects/next-play.webp',
-        //   videoLink: '',
-        //   links: {
-        //     source: 'https://github.com/h3rmel/next-play',
-        //     website: 'https://next-play-hermel.vercel.app/',
-        //   },
-        // },
       ],
     },
     contact: {
