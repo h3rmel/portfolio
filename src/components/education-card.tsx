@@ -88,8 +88,8 @@ export function EducationCard({ content }: EducationCardProps) {
         <BorderBeam
           size={64}
           delay={Math.random() * 8 + 1}
-          colorFrom="#10b981"
-          colorTo="#065f46"
+          colorFrom="#f43f5e"
+          colorTo="#10b981"
         />
       </div>
     </article>

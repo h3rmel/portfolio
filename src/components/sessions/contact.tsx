@@ -47,7 +47,7 @@ export function Contact() {
           target="_blank"
         >
           <Icons.Twitter className={cn('size-4 fill-current')} /> Twitter
-          <BorderBeam size={32} colorFrom="#1da1f2" colorTo="#1a8cd8" />
+          <BorderBeam size={32} colorFrom="##71717a" colorTo="#fafafa" />
         </Link>
       </div>
     </section>

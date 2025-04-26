@@ -30,10 +30,30 @@ export function Hero() {
         <Avatar className={cn('relative', 'size-32', 'border p-1')}>
           <AvatarImage src={DATA.avatarUrl} className={cn('rounded-full')} />
           <AvatarFallback>{DATA.initials}</AvatarFallback>
-          <BorderBeam duration={4} colorFrom="#10b981" colorTo="#065f46" />
-          <BorderBeam reverse duration={5} colorFrom="#10b981" colorTo="#065f46" />
-          <BorderBeam duration={4.5} colorFrom="#10b981" colorTo="#065f46" />
-          <BorderBeam reverse duration={3} colorFrom="#10b981" colorTo="#065f46" />
+          <BorderBeam
+            initialOffset={0}
+            duration={4}
+            colorFrom="#f43f5e"
+            colorTo="#10b981"
+          />
+          <BorderBeam
+            initialOffset={25}
+            duration={4}
+            colorFrom="#f43f5e"
+            colorTo="#10b981"
+          />
+          <BorderBeam
+            initialOffset={50}
+            duration={4}
+            colorFrom="#f43f5e"
+            colorTo="#10b981"
+          />
+          <BorderBeam
+            initialOffset={75}
+            duration={4}
+            colorFrom="#f43f5e"
+            colorTo="#10b981"
+          />
         </Avatar>
       </div>
       <div id="hero-content" className={cn('space-y-1')}>

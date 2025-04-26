@@ -17,30 +17,27 @@ export const metadata: Metadata = {
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
+  keywords: DATA.keywords,
+  authors: [{ name: DATA.name, url: DATA.url }],
   openGraph: {
-    title: `${DATA.name}`,
+    title: DATA.name,
     description: DATA.description,
-    url: DATA.url,
-    siteName: `${DATA.name}`,
-    locale: 'pt-BR',
-    type: 'website',
+    type: 'profile',
+    images: [{ url: DATA.ogImage, width: 1200, height: 628, alt: DATA.name }],
   },
+  metadataBase: new URL(DATA.url),
+  creator: DATA.creator,
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
-  verification: {
-    google: '',
-    yandex: '',
+  twitter: {
+    card: 'summary_large_image',
+    creator: `@isaac${DATA.creator}`,
+    title: DATA.name,
+    description: DATA.description,
+    images: [DATA.ogImage],
   },
-  creator: DATA.creator,
 };
 
 type RootLayoutProps = {

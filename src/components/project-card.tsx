@@ -37,8 +37,8 @@ export function ProjectCard({ content }: ProjectCardProps) {
     <Card>
       <MagicCard
         className="p-0 h-full w-fit border-none"
-        gradientFrom="#312c85"
-        gradientTo="#615fff"
+        gradientFrom="#f43f5e"
+        gradientTo="#10b981"
         gradientColor={theme === 'dark' ? '#27272a' : '#e4e4e7'}
       >
         <CardHeader className="border-b rounded-b-md">
