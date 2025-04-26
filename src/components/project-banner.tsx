@@ -2,9 +2,7 @@ import Image from 'next/image';
 
 import { X } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
-
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogClose,
@@ -13,7 +11,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './ui/dialog';
+} from '@/components/ui/dialog';
+
+import { cn } from '@/lib/utils';
 
 type ProjectBannerProps = {
   title: string;

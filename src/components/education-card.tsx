@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { cn } from '@/lib/utils';
+import { Icons } from '@/components/icons';
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { Badge } from '@/components/ui/badge';
 
-import { Icons } from './icons';
-import { BorderBeam } from './magicui/border-beam';
-import { Badge } from './ui/badge';
+import { cn } from '@/lib/utils';
 
 type EducationCardProps = {
   content: {

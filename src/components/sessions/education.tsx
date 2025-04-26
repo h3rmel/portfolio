@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 import { DATA } from '@/config/data';
 
-import { EducationCard } from '../education-card';
+import { EducationCard } from '@/components/education-card';
 
 export function Education() {
   const { education } = DATA.sessions;

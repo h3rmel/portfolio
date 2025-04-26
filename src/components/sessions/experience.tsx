@@ -1,9 +1,9 @@
+import { ExperienceCard } from '@/components/experience-card';
+import { Accordion } from '@/components/ui/accordion';
+
 import { cn } from '@/lib/utils';
 
 import { DATA } from '@/config/data';
-
-import { ExperienceCard } from '../experience-card';
-import { Accordion } from '../ui/accordion';
 
 export function Experience() {
   const { experience } = DATA.sessions;

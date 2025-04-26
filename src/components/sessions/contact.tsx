@@ -1,13 +1,12 @@
 import Link from 'next/link';
 
-import { Linkedin, Mail, Twitter } from 'lucide-react';
+import { Icons } from '@/components/icons';
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { buttonVariants } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
 
 import { DATA } from '@/config/data';
-
-import { BorderBeam } from '../magicui/border-beam';
-import { buttonVariants } from '../ui/button';
 
 export function Contact() {
   const { contact } = DATA.sessions;
@@ -31,7 +30,7 @@ export function Contact() {
           className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
-          <Linkedin className={cn('size-4')} /> LinkedIn
+          <Icons.Linkedin className={cn('size-4')} /> LinkedIn
           <BorderBeam size={32} colorFrom="#0a66c2" colorTo="#074b8f" />
         </Link>
         <Link
@@ -39,7 +38,7 @@ export function Contact() {
           className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
-          <Mail className={cn('size-4')} /> Email
+          <Icons.Mail className={cn('size-4')} /> Email
           <BorderBeam size={32} colorFrom="#ce3c30" colorTo="#ad201d" />
         </Link>
         <Link
@@ -47,7 +46,7 @@ export function Contact() {
           className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
-          <Twitter className={cn('size-4')} /> Twitter
+          <Icons.Twitter className={cn('size-4 fill-current')} /> Twitter
           <BorderBeam size={32} colorFrom="#1da1f2" colorTo="#1a8cd8" />
         </Link>
       </div>

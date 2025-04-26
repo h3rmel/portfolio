@@ -1,13 +1,14 @@
 import Markdown from 'react-markdown';
 
+import { BorderBeam } from '@/components/magicui/border-beam';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
 import { cn } from '@/lib/utils';
 
 import { DATA } from '@/config/data';
 
-import { BorderBeam } from '../magicui/border-beam';
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-
 export function Hero() {
+  const { name } = DATA;
   const { hero } = DATA.sessions;
 
   return (
@@ -19,7 +20,9 @@ export function Hero() {
         )}
       >
         <hgroup className={cn('space-y-1 lg:text-left text-center')}>
-          <h1 className={cn('text-3xl lg:text-4xl font-bold')}>{hero.title}</h1>
+          <h1 className={cn('text-3xl lg:text-4xl font-bold')}>
+            {hero.title} <span className="block">{name}</span>
+          </h1>
           <p className={cn('text-base text-muted-foreground max-w-[52ch]')}>
             {hero.subtitle}
           </p>

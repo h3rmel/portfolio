@@ -1,8 +1,8 @@
+import { ProjectCard } from '@/components/project-card';
+
 import { cn } from '@/lib/utils';
 
 import { DATA } from '@/config/data';
-
-import { ProjectCard } from '../project-card';
 
 export function Projects() {
   const { projects } = DATA.sessions;

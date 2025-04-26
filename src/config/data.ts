@@ -4,7 +4,7 @@ export const DATA = {
   initials: 'IHR',
   ogImage: 'https://isaachermel.dev.br/og.webp',
   description:
-    'Software Engineer with experience in various segments. Front-end Specialist and Self-taught.',
+    'Software Engineer. Front-end Specialist & Open Source Contributor. Founder of h3/use. Passionate about creating and helping others.',
   url: 'https://isaachermel.dev.br',
   avatarUrl: '/me.webp',
   location: {
@@ -13,7 +13,7 @@ export const DATA = {
   },
   sessions: {
     hero: {
-      title: "Hello, I'm Isaac Hermel Reginato",
+      title: "Hello, I'm",
       subtitle:
         'Software Engineer. Front-end Specialist & Open Source Contributor. Passionate about creating and helping others.',
       about: {

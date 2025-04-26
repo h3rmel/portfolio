@@ -4,16 +4,10 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
-import { Github, Linkedin, List, Mail, Origami } from 'lucide-react';
-
-import { cn } from '@/lib/utils';
-
-import { DATA } from '@/config/data';
-import { useMedia } from '@/hooks/use-media';
-
-import { Icons } from '../icons';
-import { ThemeToggle } from '../theme/theme-toggle';
-import { Button, buttonVariants } from '../ui/button';
+import { Icons } from '@/components/icons';
+import { NavigationLink } from '@/components/layout/navigation-link';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { Button, buttonVariants } from '@/components/ui/button';
 import {
   Drawer,
   DrawerContent,
@@ -21,8 +15,12 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '../ui/drawer';
-import { NavigationLink } from './navigation-link';
+} from '@/components/ui/drawer';
+
+import { cn } from '@/lib/utils';
+
+import { DATA } from '@/config/data';
+import { useMedia } from '@/hooks/use-media';
 
 export function Header() {
   const { contact } = DATA.sessions;

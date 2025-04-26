@@ -1,8 +1,8 @@
+import { Badge } from '@/components/ui/badge';
+
 import { cn } from '@/lib/utils';
 
 import { DATA } from '@/config/data';
-
-import { Badge } from '../ui/badge';
 
 export function Skills() {
   const { skills } = DATA.sessions;

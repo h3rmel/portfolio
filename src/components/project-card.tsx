@@ -5,13 +5,13 @@ import Link from 'next/link';
 
 import { Github, Globe } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { MagicCard } from '@/components/magicui/magic-card';
+import { ProjectBanner } from '@/components/project-banner';
+import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 
-import { MagicCard } from './magicui/magic-card';
-import { ProjectBanner } from './project-banner';
-import { Badge } from './ui/badge';
-import { buttonVariants } from './ui/button';
-import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
+import { cn } from '@/lib/utils';
 
 type ProjectCardProps = {
   content: {
