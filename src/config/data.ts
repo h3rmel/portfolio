@@ -37,15 +37,19 @@ export const DATA = {
     },
     experience: {
       title: 'Experience',
+      title2: 'Work History',
       content: [
         {
           title: 'Zenvia',
           companyLogo: '/companies/zenvia.webp',
           companyLink: 'https://www.zenvia.com',
-          role: 'Full-Stack Developer',
+          role: 'Software Engineer',
           timestamp: 'Aug 2023 - Present',
-          description:
-            "Led technically and implemented the integration of third-party platforms with Zenvia Customer Cloud to improve the experience of the company's customers. Created APIs for integration with Zenvia Customer Cloud and developed new features for Zenvia Nutrir.",
+          descriptions: [
+            'Led the integration of 6 third-party ERPs with company products and platforms, reducing data import costs by 15%',
+            'Completely refactored the financial securities management functionality of Zenvia Nutrir, resulting in a 20% improvement in operational efficiency and a 40% reduction in processing errors',
+            'Developed an analytical dashboard for real-time monitoring of customer success teams performance, enabling data-driven decision making',
+          ],
         },
         {
           title: 'Catency',
@@ -53,17 +57,9 @@ export const DATA = {
           companyLink: 'https://www.catency.com.br',
           role: 'Front-end Developer',
           timestamp: 'Jul 2023 - Apr 2025',
-          description:
-            "Worked on building landing pages and institutional websites for the company's clients, such as Regina Festas, K2L Entertainment, Galen Academy, MD Health, BCRI, and others.",
-        },
-        {
-          title: 'Webgru',
-          companyLogo: '/companies/webgru.webp',
-          companyLink: 'https://www.webgru.de/en/',
-          role: 'Front-end Developer',
-          timestamp: 'Apr 2023 - Aug 2023',
-          description:
-            "Worked on creating e-commerce platforms for the company's clients, such as Fatburners AT, among others.",
+          descriptions: [
+            'Developed landing pages and corporate websites for more than 5 clients across various sectors, including: Regina Festas (events), K2L Entertainment (entertainment), Galen Academy (education), and MD Health (healthcare). The projects resulted in an average increase of 20% in organic traffic and 12% in conversion rate',
+          ],
         },
         {
           title: 'Umbler',
@@ -71,8 +67,10 @@ export const DATA = {
           companyLink: 'https://www.umbler.com/br',
           role: 'Full-Stack Developer',
           timestamp: 'Feb 2022 - Apr 2023',
-          description:
-            "Worked on improving the company's customer portfolio management platform and Design System used in the company's products, developing new features for the system.",
+          descriptions: [
+            "Developed a platform for managing the company's client portfolio, integrating data from more than 10,000 clients across 4 distinct products. The solution allowed account managers to be 30% more efficient with the same available time",
+            'Developed an internal system for documenting processes and learning content for the customer success team (more than 20 professionals), centralizing over 100 documents and 25 video tutorials, reducing training time for new employees by half and decreasing repetitive internal queries by 40%',
+          ],
         },
         {
           title: 'Umbler',
@@ -80,11 +78,34 @@ export const DATA = {
           companyLink: 'https://www.umbler.com/br',
           role: 'Customer Success Analyst (Internship)',
           timestamp: 'Nov 2020 - Feb 2022',
-          description:
-            "Assisted customers with questions and issues related to Umbler products. Also responsible for creating and maintaining technical documentation for the company's products.",
+          descriptions: [
+            "Assisted customer with questions and issues related to company's products. Having a customer satisfaction rate of 92.5%. Also created and maintained technical documentation for the most common issues, reducing the time to resolve issues by 20%.",
+          ],
         },
       ],
     },
+    experienceStats: [
+      {
+        icon: 'Suitcase',
+        value: '4',
+        label: 'Years of Experience',
+      },
+      {
+        icon: 'CheckCircle',
+        value: '10',
+        label: 'Completed Projects',
+      },
+      {
+        icon: 'HappyUser',
+        value: '10',
+        label: 'Satisfied Clients',
+      },
+      {
+        icon: 'CodeSlash',
+        value: '100000',
+        label: 'Lines of Code',
+      },
+    ],
     education: {
       title: 'Education',
       content: [
@@ -121,23 +142,31 @@ export const DATA = {
     skills: {
       title: 'Skills',
       content: [
+        'JavaScript',
+        'TypeScript',
+        'Python',
+        'C#',
         'React',
         'Next.js',
-        'TypeScript',
         'Node.js',
-        'Nest.js',
-        'Vue.js',
-        'TailwindCSS',
-        'SCSS',
-        'Webpack',
-        'Jest',
+        'Express',
+        'NestJS',
+        'Vue',
         'Flask',
-        'Python',
-        'SQL',
+        '.NET',
+        'PostgreSQL',
+        'MySQL',
         'MongoDB',
         'Docker',
         'Kubernetes',
         'Kafka',
+        'Argo CD',
+        'GitHub Actions',
+        'GitLab CI/CD',
+        'Git',
+        'Jest',
+        'Vitest',
+        'Testing Library',
         'TDD',
         'BDD',
         'Clean Code',
@@ -145,9 +174,6 @@ export const DATA = {
         'Clean Architecture',
         'Search Engine Optimization',
         'API Rest',
-        'Git',
-        'GitHub Actions',
-        'GitLab CI/CD',
       ],
     },
     languages: {

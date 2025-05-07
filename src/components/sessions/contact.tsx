@@ -24,7 +24,11 @@ export function Contact() {
           {contact.description}
         </p>
       </hgroup>
-      <div className={cn('flex gap-4 items-center justify-center')}>
+      <div
+        className={cn(
+          'flex flex-col lg:flex-row gap-2 lg:gap-4 items-center justify-center',
+        )}
+      >
         <Link
           href={contact.links.linkedin}
           className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}

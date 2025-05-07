@@ -23,7 +23,7 @@ type ExperienceCardProps = {
     companyLink: string;
     role: string;
     timestamp: string;
-    description: string;
+    descriptions: string[];
   };
   index: string;
 };
@@ -101,9 +101,13 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
         </Badge>
       </AccordionTrigger>
       <AccordionContent>
-        <p className={cn('text-xs lg:text-sm font-light text-justify')}>
-          {content.description}
-        </p>
+        <ul className={cn('space-y-2')}>
+          {content.descriptions.map((description, index) => (
+            <li key={index} className={cn('text-xs font-light text-justify')}>
+              {description}
+            </li>
+          ))}
+        </ul>
       </AccordionContent>
       <div
         className={cn('group-hover:opacity-100 opacity-0', 'rounded-md', 'duration-300')}

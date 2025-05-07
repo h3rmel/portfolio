@@ -8,6 +8,7 @@ import '@/assets/globals.css';
 
 import { Header } from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
+import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
 import { DATA } from '@/config/data';
 
@@ -49,13 +50,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={cn(
-          'relative min-h-dvh w-full overflow-x-hidden scroll-smooth font-sans antialiased',
+          'relative w-full min-h-dvh font-sans antialiased scroll-smooth',
           firaCode.className,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
           {children}
+          <SmoothCursor />
         </ThemeProvider>
       </body>
     </html>

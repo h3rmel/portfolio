@@ -39,7 +39,7 @@ export function Header() {
     >
       <nav
         className={cn(
-          'flex items-center justify-end px-4 lg:px-0',
+          'flex items-center justify-between lg:justify-end px-4 lg:px-0',
           'w-full h-full max-w-screen-sm lg:mx-auto',
         )}
       >

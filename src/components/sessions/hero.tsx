@@ -57,7 +57,7 @@ export function Hero() {
         </Avatar>
       </div>
       <div id="hero-content" className={cn('space-y-1')}>
-        <h2 className={cn('text-xl font-bold')}>{hero.about.title}</h2>
+        <h2 className={cn('text-2xl font-bold')}>{hero.about.title}</h2>
         <span
           className={cn(
             'text-sm text-muted-foreground text-justify',

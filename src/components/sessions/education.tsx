@@ -9,7 +9,7 @@ export function Education() {
 
   return (
     <section id="education-session" className={cn('space-y-2')}>
-      <h2 className={cn('text-xl font-bold')}>{education.title}</h2>
+      <h2 className={cn('text-2xl font-bold')}>{education.title}</h2>
       <ul className={cn('space-y-2')}>
         {education.content.map((item, index) => (
           <li key={index}>
