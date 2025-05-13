@@ -210,6 +210,18 @@ export const DATA = {
             website: 'https://h3-use.vercel.app/',
           },
         },
+        {
+          title: 'RetroUI',
+          description: 'A retro-styled UI library for modern web applications.',
+          tags: ['React', 'TypeScript', 'Tailwind CSS', 'Shadcn UI'],
+          link: 'https://www.retroui.dev/',
+          imageLink: '/projects/retro-ui.webp',
+          videoLink: '',
+          links: {
+            source: 'https://github.com/Logging-Stuff/retroui',
+            website: 'https://www.retroui.dev/',
+          },
+        },
       ],
     },
     contact: {

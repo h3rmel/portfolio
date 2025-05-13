@@ -26,7 +26,8 @@ export function ExperienceGrid() {
                 'text-foreground bg-accent',
                 'rounded-full border',
                 'flex items-center justify-center',
-                'group-hover:scale-110 transition-all duration-300',
+                'group-hover:scale-110 group-hover:bg-emerald-500/30 group-hover:text-emerald-500 transition-all duration-300',
+                'group-hover:shadow-[0_0_16px_rgba(0,188,125,0.4)]',
               )}
             >
               {renderIcon(item.icon as keyof typeof Icons)}
