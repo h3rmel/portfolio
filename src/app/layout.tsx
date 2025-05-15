@@ -8,7 +8,6 @@ import '@/assets/globals.css';
 
 import { Header } from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
-import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
 import { DATA } from '@/config/data';
 
@@ -57,7 +56,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
           {children}
-          <SmoothCursor />
         </ThemeProvider>
       </body>
     </html>

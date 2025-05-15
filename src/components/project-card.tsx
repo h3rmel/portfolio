@@ -34,7 +34,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
   const { links } = content;
 
   return (
-    <Card>
+    <Card className={cn('rounded-md')}>
       <MagicCard
         className="p-0 h-full w-fit border-none"
         gradientFrom="#f43f5e"
@@ -52,7 +52,7 @@ export function ProjectCard({ content }: ProjectCardProps) {
         <CardContent className="py-4">
           <h3 className={cn('text-base font-bold')}>{content.title}</h3>
           <p className={cn('text-xs text-muted-foreground')}>{content.description}</p>
-          <ul className={cn('flex flex-wrap gap-1')}>
+          <ul className={cn('flex flex-wrap gap-1', 'mt-2')}>
             {content.tags.map((tag) => (
               <li key={tag}>
                 <Badge className={cn('text-[10px]', 'px-1 py-0')}>{tag}</Badge>

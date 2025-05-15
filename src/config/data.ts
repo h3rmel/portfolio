@@ -201,7 +201,7 @@ export const DATA = {
           title: 'h3/use',
           description:
             'Collection of copy-and-paste hooks to help you build applications.',
-          tags: ['React', 'TypeScript', 'Shadcn', 'Shadcn UI', 'Next.js'],
+          tags: ['TypeScript', 'Shadcn', 'Shadcn UI', 'Next.js', 'React Hooks'],
           link: 'https://h3-use.vercel.app/',
           imageLink: '/projects/h3-use.webp',
           videoLink: '',
@@ -213,13 +213,25 @@ export const DATA = {
         {
           title: 'RetroUI',
           description: 'A retro-styled UI library for modern web applications.',
-          tags: ['React', 'TypeScript', 'Tailwind CSS', 'Shadcn UI'],
+          tags: ['TypeScript', 'Tailwind CSS', 'Shadcn UI', 'UI Library', 'Shadcn'],
           link: 'https://www.retroui.dev/',
           imageLink: '/projects/retro-ui.webp',
           videoLink: '',
           links: {
             source: 'https://github.com/Logging-Stuff/retroui',
             website: 'https://www.retroui.dev/',
+          },
+        },
+        {
+          title: 'FocusBrew',
+          description: 'Free productivity toolkit to help you stay focused.',
+          tags: ['TypeScript', 'Next.js', 'Shadcn UI', 'PWA', 'Framer Motion'],
+          link: 'https://focusbrew.vercel.app/',
+          imageLink: '/projects/focus-brew.webp',
+          videoLink: '',
+          links: {
+            source: 'https://github.com/birobirobiro/focusbrew',
+            website: 'https://focusbrew.vercel.app/',
           },
         },
       ],

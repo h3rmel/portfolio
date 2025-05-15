@@ -1,5 +1,6 @@
 import { Icons } from '@/components/icons';
 import { NumberTicker } from '@/components/magicui/number-ticker';
+import { ShineBorder } from '@/components/magicui/shine-border';
 import { Card, CardContent } from '@/components/ui/card';
 
 import { cn } from '@/lib/utils';
@@ -18,7 +19,14 @@ export function ExperienceGrid() {
   return (
     <section className={cn('grid grid-cols-1 sm:grid-cols-2 gap-2')}>
       {experienceStats.map((item, index) => (
-        <Card key={index} className="border shadow-sm dark:shadow-none group">
+        <Card
+          key={index}
+          className="relative border duration-300 transition-all shadow-sm dark:shadow-none group hover:border-transparent"
+        >
+          <ShineBorder
+            className="opacity-0 group-hover:opacity-100 transition-all duration-300"
+            shineColor={['#10b981', '#059669', '#047857', '#065f46']}
+          />
           <CardContent className="flex items-center gap-4 p-4">
             <div
               className={cn(
