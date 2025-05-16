@@ -33,6 +33,7 @@ export function ProjectBanner({
       return (
         <Image
           src={imageLink}
+          aria-label={`${title} image`}
           alt={title}
           width={1920}
           height={1080}
@@ -49,6 +50,7 @@ export function ProjectBanner({
       return (
         <video
           src={videoLink}
+          aria-label={`${title} video`}
           autoPlay
           muted
           loop

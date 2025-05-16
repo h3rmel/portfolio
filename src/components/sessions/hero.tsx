@@ -28,8 +28,13 @@ export function Hero() {
           </p>
         </hgroup>
         <Avatar className={cn('relative', 'size-32', 'border p-1')}>
-          <AvatarImage src={DATA.avatarUrl} className={cn('rounded-full')} />
-          <AvatarFallback>{DATA.initials}</AvatarFallback>
+          <AvatarImage
+            src={DATA.avatarUrl}
+            alt={DATA.name}
+            className={cn('rounded-full')}
+            aria-label="Avatar image"
+          />
+          <AvatarFallback aria-label="Avatar fallback">{DATA.initials}</AvatarFallback>
           <BorderBeam
             initialOffset={0}
             duration={4}

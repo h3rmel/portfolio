@@ -49,7 +49,12 @@ export function Header() {
           onOpenChange={setIsDrawerOpen}
         >
           <DrawerTrigger asChild>
-            <Button variant="ghost" size="icon" onClick={() => setIsDrawerOpen(true)}>
+            <Button
+              variant="ghost"
+              aria-label="Open navigation drawer"
+              size="icon"
+              onClick={() => setIsDrawerOpen(true)}
+            >
               <Icons.Menu className="size-5 -scale-x-100" />
             </Button>
           </DrawerTrigger>
@@ -79,6 +84,7 @@ export function Header() {
               'hidden lg:inline-flex',
             )}
             target="_blank"
+            aria-label="LinkedIn"
           >
             <Icons.Linkedin className={cn('size-4')} />
           </Link>
@@ -89,6 +95,7 @@ export function Header() {
               'hidden lg:inline-flex',
             )}
             target="_blank"
+            aria-label="Email"
           >
             <Icons.Mail className={cn('size-4')} />
           </Link>
@@ -96,6 +103,7 @@ export function Header() {
             href={contact.links.twitter}
             className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }))}
             target="_blank"
+            aria-label="Twitter"
           >
             <Icons.Twitter className={cn('size-4 fill-current')} />
           </Link>
@@ -106,6 +114,7 @@ export function Header() {
               'hidden lg:inline-flex',
             )}
             target="_blank"
+            aria-label="GitHub"
           >
             <Icons.Github className={cn('size-4')} />
           </Link>
