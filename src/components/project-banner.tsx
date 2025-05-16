@@ -33,13 +33,12 @@ export function ProjectBanner({
       return (
         <Image
           src={imageLink}
-          aria-label={`${title} image`}
           alt={title}
           width={1920}
           height={1080}
           className={cn(
             'rounded-[8px] border',
-            'size-full object-cover',
+            'w-full object-cover',
             isDialog ? 'h-[403px]' : 'h-[149px]',
           )}
         />
@@ -50,13 +49,12 @@ export function ProjectBanner({
       return (
         <video
           src={videoLink}
-          aria-label={`${title} video`}
           autoPlay
           muted
           loop
           className={cn(
             'rounded-[8px] border',
-            'size-full object-cover',
+            'w-full object-cover',
             isDialog ? 'max-h-[403px] h-max' : 'h-[149px]',
           )}
         />
@@ -66,7 +64,7 @@ export function ProjectBanner({
 
   return (
     <Dialog>
-      <DialogTrigger asChild className={cn('cursor-pointer')}>
+      <DialogTrigger className={cn('block w-full cursor-pointer')} aria-label={title}>
         {renderBannerContent()}
       </DialogTrigger>
       <DialogContent className="w-full">
