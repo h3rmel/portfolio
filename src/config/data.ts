@@ -198,16 +198,16 @@ export const DATA = {
           },
         },
         {
-          title: 'h3/use',
+          title: 'guarahooks',
           description:
             'Collection of copy-and-paste hooks to help you build applications.',
           tags: ['TypeScript', 'Shadcn', 'Shadcn UI', 'Next.js', 'React Hooks'],
-          link: 'https://h3-use.vercel.app/',
-          imageLink: '/projects/h3-use.webp',
+          link: 'https://guarahooks.com/',
+          imageLink: '/projects/guarahooks.webp',
           videoLink: '',
           links: {
-            source: 'https://github.com/h3rmel/h3-use',
-            website: 'https://h3-use.vercel.app/',
+            source: 'https://github.com/h3rmel/guarahooks',
+            website: 'https://guarahooks.com/',
           },
         },
         {
