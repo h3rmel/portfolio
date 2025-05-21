@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main
       className={cn(
-        'w-full max-w-screen-sm overflow-x-hidden',
+        'w-full max-w-screen-sm overflow-x-hidden lg:overflow-x-auto',
         'flex flex-col gap-12',
         'mx-auto px-4 lg:px-0 py-8 lg:py-12',
       )}

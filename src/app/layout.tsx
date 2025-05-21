@@ -7,6 +7,7 @@ import { firaCode } from '@/assets/fonts';
 import '@/assets/globals.css';
 
 import { Header } from '@/components/layout/header';
+import { ClickSpark } from '@/components/reactbits/click-spark';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 
 import { DATA } from '@/config/data';
@@ -54,8 +55,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <Header />
-          {children}
+          <ClickSpark>
+            <Header />
+            {children}
+          </ClickSpark>
         </ThemeProvider>
       </body>
     </html>

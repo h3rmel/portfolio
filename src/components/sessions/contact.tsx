@@ -26,12 +26,13 @@ export function Contact() {
       </hgroup>
       <div
         className={cn(
-          'flex flex-col lg:flex-row gap-2 lg:gap-4 items-center justify-center',
+          'max-w-60 lg:max-w-full mx-auto lg:mx-0',
+          'flex flex-col lg:flex-row gap-4 lg:gap-4 items-center justify-center',
         )}
       >
         <Link
           href={contact.links.linkedin}
-          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative w-full')}
           target="_blank"
         >
           <Icons.Linkedin className={cn('size-4')} /> LinkedIn
@@ -39,7 +40,7 @@ export function Contact() {
         </Link>
         <Link
           href={contact.links.email}
-          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative w-full')}
           target="_blank"
         >
           <Icons.Mail className={cn('size-4')} /> Email
@@ -47,7 +48,7 @@ export function Contact() {
         </Link>
         <Link
           href={contact.links.twitter}
-          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative w-full')}
           target="_blank"
         >
           <Icons.Twitter className={cn('size-4 fill-current')} /> Twitter
