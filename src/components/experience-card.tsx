@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Icons } from '@/components/icons';
-import { BorderBeam } from '@/components/magicui/border-beam';
 import {
   AccordionContent,
   AccordionItem,
@@ -15,6 +14,8 @@ import {
 import { Badge } from '@/components/ui/badge';
 
 import { cn } from '@/lib/utils';
+
+import { ShineBorder } from './magicui/shine-border';
 
 type ExperienceCardProps = {
   content: {
@@ -112,11 +113,9 @@ export function ExperienceCard({ content, index }: ExperienceCardProps) {
       <div
         className={cn('group-hover:opacity-100 opacity-0', 'rounded-md', 'duration-300')}
       >
-        <BorderBeam
-          size={64}
-          delay={Math.random() * 8 + 1}
-          colorFrom="#f43f5e"
-          colorTo="#10b981"
+        <ShineBorder
+          className="opacity-0 group-hover:opacity-100 transition-all duration-300"
+          shineColor={['#10b981', '#059669', '#047857', '#065f46']}
         />
       </div>
     </AccordionItem>

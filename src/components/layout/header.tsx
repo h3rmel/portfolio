@@ -58,7 +58,7 @@ export function Header() {
               <Icons.Menu className="size-5 -scale-x-100" />
             </Button>
           </DrawerTrigger>
-          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x lg:mx-auto">
+          <DrawerContent className="px-4 pb-4 lg:max-w-screen-lg lg:border-x lg:mx-auto bg-background/40 backdrop-blur-md">
             <DrawerHeader>
               <DrawerTitle>{DATA.navbar.title}</DrawerTitle>
               <DrawerDescription>{DATA.navbar.description}</DrawerDescription>

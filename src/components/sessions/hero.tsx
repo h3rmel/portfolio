@@ -66,7 +66,7 @@ export function Hero() {
         <span
           className={cn(
             'text-sm text-muted-foreground text-justify',
-            'prose max-w-full text-pretty dark:prose-invert',
+            'prose leading-6 max-w-full text-pretty dark:prose-invert',
             'prose-a:hover:text-emerald-500 prose-a:transition-all prose-a:duration-300 prose-a:ease-out',
           )}
         >

@@ -32,7 +32,7 @@ export function Contact() {
       >
         <Link
           href={contact.links.linkedin}
-          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative w-full')}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
           <Icons.Linkedin className={cn('size-4')} /> LinkedIn
@@ -40,7 +40,7 @@ export function Contact() {
         </Link>
         <Link
           href={contact.links.email}
-          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative w-full')}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
           <Icons.Mail className={cn('size-4')} /> Email
@@ -48,7 +48,7 @@ export function Contact() {
         </Link>
         <Link
           href={contact.links.twitter}
-          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative w-full')}
+          className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'relative')}
           target="_blank"
         >
           <Icons.Twitter className={cn('size-4 fill-current')} /> Twitter
