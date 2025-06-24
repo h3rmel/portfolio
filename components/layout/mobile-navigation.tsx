@@ -22,7 +22,7 @@ export function MobileNavigation() {
       <Logo />
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" aria-label="Open navigation">
             <Icons.Menu className="size-4" />
           </Button>
         </PopoverTrigger>

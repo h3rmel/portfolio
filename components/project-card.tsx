@@ -33,6 +33,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.videoUrl && (
             <video
               src={project.videoUrl}
+              aria-label={`${project.title} video`}
               autoPlay
               muted
               loop
@@ -56,7 +57,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </Link>
       </CardHeader>
       <CardContent className="p-4 space-y-2">
-        <h3 className={cn('text-lg font-bold')}>{project.title}</h3>
+        <h2 className={cn('text-lg font-bold')}>{project.title}</h2>
         <p className={cn('text-sm text-muted-foreground')}>{project.description}</p>
       </CardContent>
       <CardFooter className="pb-4 space-x-2">

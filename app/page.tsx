@@ -10,6 +10,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 import { navigationLinks, socialLinks } from '@/config/navigation';
+import { siteConfig } from '@/config/site';
 
 export default function Page() {
   const links = navigationLinks.filter((link) => link.href !== '/');
@@ -28,7 +29,7 @@ export default function Page() {
         <div className={cn('z-10', 'space-y-4 flex flex-col items-center')}>
           <BlurFade direction="up" delay={0.1}>
             <Avatar className="size-12 lg:size-16">
-              <AvatarImage src="https://github.com/h3rmel.png" />
+              <AvatarImage src="https://github.com/h3rmel.png" alt={siteConfig.name} />
               <AvatarFallback>IH</AvatarFallback>
             </Avatar>
           </BlurFade>
