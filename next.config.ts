@@ -1,10 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+
+import { createMDX } from 'fumadocs-mdx/next';
+
+const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    optimizeCss: true,
-  }
+  images: {
+    remotePatterns: [
+      { hostname: 'media.licdn.com' },
+      { hostname: 'cdn.magicui.design' },
+      { hostname: 'focusbrew.vercel.app' },
+      { hostname: 'www.retroui.dev' },
+      { hostname: 'guarahooks.com' },
+    ],
+  },
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);
