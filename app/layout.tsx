@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next';
 
 import '@/assets/globals.css';
 
+import { RootProvider } from 'fumadocs-ui/provider';
+
 import { ThemeProvider } from '@/components/theme-provider';
 
 import { cn } from '@/lib/utils';
@@ -62,7 +64,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <RootProvider>{children}</RootProvider>
         </ThemeProvider>
       </body>
     </html>

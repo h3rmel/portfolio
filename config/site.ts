@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Isaac Hermel",
+  name: "Isaac Hermel Reginato",
   url: "https://isaachermel.dev.br",
   description:
     "Software Engineer. Front-end Specialist & Open Source Contributor. Founder of guarahooks. Passionate about creating and helping others.",
