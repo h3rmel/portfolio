@@ -35,4 +35,8 @@ export const socialLinks: NavigationItem[] = [
     label: 'X',
     href: siteConfig.links.x,
   },
+  {
+    label: 'Email',
+    href: siteConfig.links.email,
+  },
 ];

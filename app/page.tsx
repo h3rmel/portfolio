@@ -15,15 +15,17 @@ export default function Page() {
   const links = navigationLinks.filter((link) => link.href !== '/');
 
   return (
-    <main className={cn('relative min-h-dvh w-full flex items-center justify-center overflow-hidden')}>
+    <main
+      className={cn(
+        'relative min-h-dvh w-full flex items-center justify-center overflow-hidden',
+      )}
+    >
       <Spotlight className="md:-top-60 -top-32 left-0 md:left-60" fill="white" />
       <section
         className={cn('z-10', 'lg:max-w-md', 'w-full flex flex-col space-y-10 p-4')}
       >
         {/* First Impression */}
-        <div
-          className={cn('z-10', 'space-y-4 flex flex-col items-center')}
-        >
+        <div className={cn('z-10', 'space-y-4 flex flex-col items-center')}>
           <BlurFade direction="up" delay={0.1}>
             <Avatar className="size-12 lg:size-16">
               <AvatarImage src="https://github.com/h3rmel.png" />
@@ -34,6 +36,7 @@ export default function Page() {
             className={cn(
               'text-center lg:text-justify',
               'font-medium text-base text-muted-foreground',
+              'space-y-2',
             )}
           >
             <BlurFade direction="up" delay={0.2}>
@@ -82,20 +85,22 @@ export default function Page() {
             Copyright © {new Date().getFullYear()}
           </p>
           <ul className={cn('flex space-x-2', 'text-sm text-muted-foreground')}>
-            {socialLinks.map((link, index) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    'underline underline-offset-1',
-                    'transition-all hover:underline-offset-4',
-                  )}
-                >
-                  {link.label}
-                </Link>
-                {index !== socialLinks.length - 1 && <span className="ml-2">::</span>}
-              </li>
-            ))}
+            {socialLinks
+              .filter((link) => link.label !== 'LinkedIn')
+              .map((link, index) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      'underline underline-offset-1',
+                      'transition-all hover:underline-offset-4',
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                  {index !== socialLinks.length - 2 && <span className="ml-2">::</span>}
+                </li>
+              ))}
           </ul>
         </BlurFade>
       </section>

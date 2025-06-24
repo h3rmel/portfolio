@@ -7,6 +7,7 @@ export const siteConfig = {
     github: "https://github.com/h3rmel/portfolio",
     linkedin: "https://www.linkedin.com/in/isaachermel/",
     x: "https://x.com/isaach3rmel",
+    email: "mailto:isaach3rmel@gmail.com",
   },
   authorUrl: "https://github.com/h3rmel",
   keywords: [
