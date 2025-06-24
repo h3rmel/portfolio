@@ -15,8 +15,8 @@ export default function Page() {
   const links = navigationLinks.filter((link) => link.href !== '/');
 
   return (
-    <main className={cn('relative min-h-dvh w-full flex items-center justify-center')}>
-      <Spotlight className="-top-60 left-0 md:left-60" fill="white" />
+    <main className={cn('relative min-h-dvh w-full flex items-center justify-center overflow-hidden')}>
+      <Spotlight className="md:-top-60 -top-32 left-0 md:left-60" fill="white" />
       <section
         className={cn('z-10', 'lg:max-w-md', 'w-full flex flex-col space-y-10 p-4')}
       >
@@ -79,7 +79,7 @@ export default function Page() {
           )}
         >
           <p className={cn('text-sm text-muted-foreground')}>
-            Copyright © {new Date().getFullYear()} By Isaac
+            Copyright © {new Date().getFullYear()}
           </p>
           <ul className={cn('flex space-x-2', 'text-sm text-muted-foreground')}>
             {socialLinks.map((link, index) => (

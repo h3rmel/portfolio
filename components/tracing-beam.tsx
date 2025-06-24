@@ -28,6 +28,7 @@ export function TracingBeam({ children }: { children: React.ReactNode }) {
         animate={{
           backgroundColor: y > 0 ? '#10b981' : '#26262a',
         }}
+        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
       />
       <div
         className={cn(

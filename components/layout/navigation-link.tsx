@@ -23,7 +23,7 @@ export function NavigationLink({
       href={href}
       className={cn(
         buttonVariants({ variant: 'ghost', size: 'sm' }),
-        pathname === href && 'bg-accent/50',
+        pathname === href && 'bg-accent/50 border-border',
       )}
     >
       {icon}
