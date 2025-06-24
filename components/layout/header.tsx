@@ -13,8 +13,10 @@ export function Header() {
         'border border-t-0 border-x-0 lg:border-x lg:rounded-b-2xl',
       )}
     >
-      <DesktopNavigation />
-      <MobileNavigation />
+      <nav className={cn('flex items-center justify-between', 'size-full px-4')}>
+        <DesktopNavigation />
+        <MobileNavigation />
+      </nav>
     </header>
   );
 }

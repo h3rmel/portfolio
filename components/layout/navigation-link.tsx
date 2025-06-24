@@ -5,36 +5,27 @@ import { usePathname } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
 
-import { buttonVariants } from '../ui/button';
+import { Button, ButtonProps } from '../ui/button';
 
 export function NavigationLink({
   href,
   label,
   icon,
-  variant = 'ghost',
-  size = 'sm',
   className,
-}: {
-  href: string;
-  label: string;
-  icon: React.ReactNode;
-  variant?: 'default' | 'secondary' | 'ghost' | 'outline';
-  size?: 'default' | 'sm' | 'lg' | 'icon';
-  className?: string;
-}) {
+  ...rest
+}: ButtonProps & { href: string; label: string; icon: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <Link
-      href={href}
-      className={cn(
-        buttonVariants({ variant, size }),
-        pathname === href && 'bg-accent/50 border-border',
-        className,
-      )}
+    <Button
+      asChild
+      className={cn(className, pathname === href && 'bg-accent/50 border-border')}
+      {...rest}
     >
-      {icon}
-      {label}
-    </Link>
+      <Link href={href}>
+        {icon}
+        {label}
+      </Link>
+    </Button>
   );
 }

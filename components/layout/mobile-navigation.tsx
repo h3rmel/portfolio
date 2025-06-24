@@ -1,18 +1,26 @@
+'use client';
+
+import { useState } from 'react';
+
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
 import { navigationLinks } from '@/config/navigation';
 
+import { Logo } from '../logo';
 import { Button, buttonVariants } from '../ui/button';
 import { Icons, renderIcon } from '../ui/icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { NavigationLink } from './navigation-link';
 
 export function MobileNavigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className={cn('size-full px-4', 'flex items-center justify-end', 'lg:hidden')}>
-      <Popover>
+    <>
+      <Logo />
+      <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button variant="outline" size="icon">
             <Icons.Menu className="size-4" />
@@ -45,12 +53,13 @@ export function MobileNavigation() {
                   variant="outline"
                   size="lg"
                   className="w-full"
+                  onClick={() => setIsOpen(!isOpen)}
                 />
               </li>
             ))}
           </ul>
         </PopoverContent>
       </Popover>
-    </nav>
+    </>
   );
 }
