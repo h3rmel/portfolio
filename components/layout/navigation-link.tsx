@@ -11,10 +11,16 @@ export function NavigationLink({
   href,
   label,
   icon,
+  variant = 'ghost',
+  size = 'sm',
+  className,
 }: {
   href: string;
   label: string;
   icon: React.ReactNode;
+  variant?: 'default' | 'secondary' | 'ghost' | 'outline';
+  size?: 'default' | 'sm' | 'lg' | 'icon';
+  className?: string;
 }) {
   const pathname = usePathname();
 
@@ -22,8 +28,9 @@ export function NavigationLink({
     <Link
       href={href}
       className={cn(
-        buttonVariants({ variant: 'ghost', size: 'sm' }),
+        buttonVariants({ variant, size }),
         pathname === href && 'bg-accent/50 border-border',
+        className,
       )}
     >
       {icon}

@@ -6,9 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <main
-        className={cn('relative', 'w-full max-w-screen-lg mx-auto', 'p-4 lg:py-12')}
-      >
+      <main className={cn('relative', 'w-full max-w-screen-lg mx-auto', 'p-4 lg:py-12')}>
         {children}
       </main>
     </>
