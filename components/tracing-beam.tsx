@@ -9,7 +9,10 @@ import { useScrollPosition } from '@/hooks/guarahooks/use-scroll-position';
 export function TracingBeam({ children }: { children: React.ReactNode }) {
   const { y } = useScrollPosition();
 
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollHeight = typeof window !== 'undefined' && typeof document !== 'undefined'
+    ? document.documentElement.scrollHeight - window.innerHeight
+    : 0;
+
   const scrollPercent = scrollHeight > 0 ? y / scrollHeight : 0;
   const beamHeight = `${scrollPercent * 100}%`;
 
