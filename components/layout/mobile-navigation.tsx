@@ -19,10 +19,15 @@ export function MobileNavigation() {
 
   return (
     <>
-      <Logo />
+      <Logo className="lg:hidden" />
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="icon" aria-label="Open navigation">
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label="Open navigation"
+            className="lg:hidden"
+          >
             <Icons.Menu className="size-4" />
           </Button>
         </PopoverTrigger>
