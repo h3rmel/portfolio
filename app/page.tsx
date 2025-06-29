@@ -6,10 +6,11 @@ import { Spotlight } from '@/components/acertinityui/spotlight';
 import { BlurFade } from '@/components/magicui/blur-fade';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { buttonVariants } from '@/components/ui/button';
+import { renderIcon } from '@/components/ui/icons';
 
 import { cn } from '@/lib/utils';
 
-import { navigationLinks, socialLinks } from '@/config/navigation';
+import { cvLinks, navigationLinks, socialLinks } from '@/config/navigation';
 import { siteConfig } from '@/config/site';
 
 export default function Page() {
@@ -74,6 +75,25 @@ export default function Page() {
             </li>
           ))}
         </ul>
+        {/* CV */}
+        <div className={cn('flex flex-col space-y-2')}>
+          <h2 className={cn('text-center text-base font-medium')}>See my CV on...</h2>
+          <div className={cn('flex flex-col items-center space-y-2')}>
+            {cvLinks.map((link) => (
+              <Link
+                href={link.href}
+                key={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'max-w-1/2 lg:max-w-1/3 w-full')}
+              >
+                {renderIcon(link.icon)}
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+        {/* Social Links */}
         <BlurFade
           direction="up"
           delay={0.5}
@@ -92,6 +112,8 @@ export default function Page() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={cn(
                       'underline underline-offset-1',
                       'transition-all hover:underline-offset-4',

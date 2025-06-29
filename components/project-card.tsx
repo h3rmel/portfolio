@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
       className={cn('flex flex-col', 'p-0', 'bg-background overflow-hidden', 'group')}
     >
       <CardHeader className={cn('p-0 border-b overflow-hidden', 'relative')}>
-        <Link href={project.url} target="_blank">
+        <Link href={project.url} target="_blank" rel="noopener noreferrer">
           {project.imageUrl && (
             <Image
               src={project.imageUrl}
@@ -65,6 +65,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <Link
             href={project.links.source}
             target="_blank"
+            rel="noopener noreferrer"
             className={cn(buttonVariants({ variant: 'secondary', size: 'sm' }))}
           >
             <Icons.Github className="size-4" />
@@ -75,6 +76,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <Link
             href={project.links.website}
             target="_blank"
+            rel="noopener noreferrer"
             className={cn(buttonVariants({ variant: 'secondary', size: 'sm' }))}
           >
             <Icons.WorldWWW className="size-4" />
