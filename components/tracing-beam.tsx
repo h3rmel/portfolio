@@ -20,7 +20,7 @@ export function TracingBeam({ children }: { children: React.ReactNode }) {
     <div className={cn('relative mx-auto size-full max-w-screen-lg')}>
       <motion.div
         className={cn(
-          'absolute z-50 top-0 -left-4 md:-left-[85px]',
+          'absolute z-50 top-0 -left-4 md:-left-[69px]',
           'size-3 rounded-md',
           'bg-accent',
           'hidden lg:block'
@@ -32,7 +32,7 @@ export function TracingBeam({ children }: { children: React.ReactNode }) {
       />
       <div
         className={cn(
-          'absolute top-0 -left-4 md:-left-20',
+          'absolute top-0 -left-4 md:-left-16',
           'w-[2px] h-full',
           'bg-accent/50',
           'hidden lg:block'
