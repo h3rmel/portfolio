@@ -78,7 +78,7 @@ export default function Page() {
         {/* CV */}
         <div className={cn('flex flex-col space-y-2')}>
           <h2 className={cn('text-center text-base font-medium')}>See my CV on...</h2>
-          <div className={cn('flex flex-col items-center space-y-2')}>
+          <div className={cn('flex flex-col items-center', 'space-y-2 lg:space-y-0 lg:space-x-2 lg:flex-row lg:justify-center')}>
             {cvLinks.map((link) => (
               <Link
                 href={link.href}
