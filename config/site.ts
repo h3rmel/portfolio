@@ -9,9 +9,9 @@ export const siteConfig = {
     x: 'https://x.com/isaach3rmel',
     email: 'mailto:isaach3rmel@gmail.com',
     cvEnglish:
-      'https://docs.google.com/document/d/1YK0yVOZQ98Ksvzn0GueXwhRMbn-rZPgM/edit?usp=sharing&ouid=116393342882969432644&rtpof=true&sd=true',
+      'https://docs.google.com/document/d/e/2PACX-1vS9nR178R0iewPp1gKNn0JmZC1zyLxmffLJaapr4Q4k2e8VDPZKp3jdcjGG9YyWeN74mspbCxqZ5wuN/pub',
     cvPortuguese:
-      'https://docs.google.com/document/d/1e9ljEcahzQv8K1-i2Hfa-NmTY2zKLGsJ/edit?usp=sharing&ouid=116393342882969432644&rtpof=true&sd=true',
+      'https://docs.google.com/document/d/e/2PACX-1vRHWANBkjP8uSZ-B8L3EobZpxst7eAH2vDJzRnct16gCt0alSAj1hwVfRDSiNwU-0-CW1448ESq9JJr/pub',
   },
   authorUrl: 'https://github.com/h3rmel',
   keywords: [
