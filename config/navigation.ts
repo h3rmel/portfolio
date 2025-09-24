@@ -20,11 +20,6 @@ export const navigationLinks: NavigationItem[] = [
     href: '/projects',
     icon: 'Compass',
   },
-  // {
-  //   label: 'Bitacora',
-  //   href: '/bitacora',
-  //   icon: 'Writing',
-  // },
 ];
 
 export const cvLinks: NavigationItem[] = [
