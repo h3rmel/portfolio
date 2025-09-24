@@ -25,7 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
               height={1000}
               className={cn(
                 'rounded-t-xl',
-                'max-h-44 object-cover',
+                'max-h-40 max-w-80 w-full object-cover',
                 'group-hover:scale-105 transition-all',
               )}
             />
@@ -39,7 +39,7 @@ export function ProjectCard({ project }: { project: Project }) {
               loop
               className={cn(
                 'rounded-t-xl',
-                'max-h-44 w-full object-cover',
+                'max-h-40 max-w-80 w-full object-cover',
                 'group-hover:scale-105 transition-all',
               )}
             />

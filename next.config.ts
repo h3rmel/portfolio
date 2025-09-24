@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { hostname: 'focusbrew.vercel.app' },
       { hostname: 'www.retroui.dev' },
       { hostname: 'guarahooks.com' },
+      { hostname: 'opengraph.githubassets.com' },
     ],
   },
 };
