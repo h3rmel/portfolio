@@ -13,8 +13,8 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...eslintConfigPrettier,
-  ...eslintPluginPrettierRecommended,
+  eslintConfigPrettier,
+  eslintPluginPrettierRecommended,
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   ...compat.config({
     ignorePatterns: [
