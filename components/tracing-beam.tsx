@@ -9,9 +9,10 @@ import { useScrollPosition } from '@/hooks/guarahooks/use-scroll-position';
 export function TracingBeam({ children }: { children: React.ReactNode }) {
   const { y } = useScrollPosition();
 
-  const scrollHeight = typeof window !== 'undefined' && typeof document !== 'undefined'
-    ? document.documentElement.scrollHeight - window.innerHeight
-    : 0;
+  const scrollHeight =
+    typeof window !== 'undefined' && typeof document !== 'undefined'
+      ? document.documentElement.scrollHeight - window.innerHeight
+      : 0;
 
   const scrollPercent = scrollHeight > 0 ? y / scrollHeight : 0;
   const beamHeight = `${scrollPercent * 100}%`;
@@ -23,7 +24,7 @@ export function TracingBeam({ children }: { children: React.ReactNode }) {
           'absolute z-50 top-0 -left-4 md:-left-[69px]',
           'size-3 rounded-md',
           'bg-accent',
-          'hidden lg:block'
+          'hidden lg:block',
         )}
         animate={{
           backgroundColor: y > 0 ? '#10b981' : '#26262a',
@@ -35,7 +36,7 @@ export function TracingBeam({ children }: { children: React.ReactNode }) {
           'absolute top-0 -left-4 md:-left-16',
           'w-[2px] h-full',
           'bg-accent/50',
-          'hidden lg:block'
+          'hidden lg:block',
         )}
       >
         <motion.div

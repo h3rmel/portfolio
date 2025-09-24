@@ -135,7 +135,11 @@ export default function Page() {
                 />
                 <div className={cn('flex flex-col space-y-1', 'w-full')}>
                   <div className={cn('flex items-center justify-between')}>
-                    <h3 className={cn('text-sm lg:text-base font-medium max-w-[20ch] lg:max-w-full line-clamp-1')}>
+                    <h3
+                      className={cn(
+                        'text-sm lg:text-base font-medium max-w-[20ch] lg:max-w-full line-clamp-1',
+                      )}
+                    >
                       {education.institution}
                     </h3>
                     <p className={cn('text-xs lg:text-sm text-muted-foreground')}>

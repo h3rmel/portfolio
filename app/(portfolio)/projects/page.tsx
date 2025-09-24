@@ -1,9 +1,8 @@
-
+import { ProjectCard } from '@/components/project-card';
 
 import { cn } from '@/lib/utils';
 
 import { projects } from '@/config/projects';
-import { ProjectCard } from '@/components/project-card';
 
 export default function Page() {
   return (
