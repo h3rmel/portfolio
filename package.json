@@ -9,6 +9,14 @@
     "name": "Isaac Hermel Reginato",
     "url": "https://github.com/h3rmel"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h3rmel/portfolio"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -17,8 +25,7 @@
     "lint:fix": "next lint --fix",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
-    "preinstall": "npx only-allow pnpm",
-    "postinstall": "fumadocs-mdx"
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
@@ -29,9 +36,6 @@
     "@types/mdx": "^2.0.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "fumadocs-core": "^15.5.4",
-    "fumadocs-mdx": "^11.6.9",
-    "fumadocs-ui": "^15.5.4",
     "lucide-react": "^0.522.0",
     "motion": "^12.19.1",
     "next": "15.3.4",
