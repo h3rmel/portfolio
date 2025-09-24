@@ -22,11 +22,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "lint:fix": "next lint --fix",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky"
+    "prepare": "husky",
+    "ci:local": "pnpm install --frozen-lockfile && pnpm run lint && pnpm run typecheck && pnpm run build"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
