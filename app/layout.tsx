@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 import { cn } from '@/lib/utils';
 
-import { firaCode } from '@/assets/fonts';
+import { jetBrainsMono } from '@/assets/fonts';
 
 import { siteConfig } from '@/config/site';
 
@@ -53,7 +53,7 @@ export default function RootLayout({
       <body
         className={cn(
           'relative size-full min-h-dvh font-sans antialiased scroll-smooth overflow-x-hidden flex flex-col',
-          firaCode.variable,
+          jetBrainsMono.variable,
         )}
       >
         <ThemeProvider

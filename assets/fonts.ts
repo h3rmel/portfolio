@@ -1,9 +1,9 @@
-import { Fira_Code } from 'next/font/google';
+import { JetBrains_Mono } from 'next/font/google';
 
-const firaCode = Fira_Code({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-fira-code',
+  variable: '--font-jet-brains-mono',
   weight: ['300', '400', '500', '600', '700'],
 });
 
-export { firaCode };
+export { jetBrainsMono };
