@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 import { ChevronRight } from 'lucide-react';
 
-import { Spotlight } from '@/components/acertinityui/spotlight';
 import { BlurFade } from '@/components/magicui/blur-fade';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { buttonVariants } from '@/components/ui/button';
 import { renderIcon } from '@/components/ui/icons';
+import { LightRays } from '@/components/ui/light-rays';
 
 import { cn } from '@/lib/utils';
 
@@ -22,7 +22,7 @@ export default function Page() {
         'relative min-h-dvh w-full flex items-center justify-center overflow-hidden',
       )}
     >
-      <Spotlight className="md:-top-60 -top-32 left-0 md:left-60" fill="white" />
+      <LightRays />
       <section
         className={cn('z-10', 'lg:max-w-md', 'w-full flex flex-col space-y-10 p-4')}
       >
