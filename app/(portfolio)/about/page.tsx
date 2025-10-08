@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import { TracingBeam } from '@/components/tracing-beam';
-
 import { cn } from '@/lib/utils';
 
 import { carrerExperiences } from '@/config/carrer';
@@ -9,7 +7,7 @@ import { educationExperiences } from '@/config/education';
 
 export default function Page() {
   return (
-    <TracingBeam>
+    <main className={cn('relative mx-auto size-full max-w-screen-lg')}>
       {/* Little history */}
       <article className={cn('flex flex-col space-y-8')}>
         <hgroup className={cn('flex flex-col')}>
@@ -155,6 +153,6 @@ export default function Page() {
           ))}
         </ul>
       </article>
-    </TracingBeam>
+    </main>
   );
 }
