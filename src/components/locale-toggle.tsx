@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { Languages } from 'lucide-react';
-
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -10,13 +8,14 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
+import { Icons } from './icons';
+
 type Locale = 'en' | 'pt';
 
 export function LocaleToggle({ className = '' }: { className?: string }) {
   const [currentLocale, setCurrentLocale] = React.useState<Locale>('en');
 
   React.useEffect(() => {
-    // Detect current locale from URL path
     const path = window.location.pathname;
     const locale = path.startsWith('/pt') ? 'pt' : 'en';
     setCurrentLocale(locale);
@@ -25,7 +24,6 @@ export function LocaleToggle({ className = '' }: { className?: string }) {
   const switchLocale = (newLocale: Locale) => {
     const path = window.location.pathname;
 
-    // Replace the locale in the current path
     let newPath: string;
     if (path.startsWith('/en')) {
       newPath = path.replace(/^\/en/, `/${newLocale}`);
@@ -43,7 +41,7 @@ export function LocaleToggle({ className = '' }: { className?: string }) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className={className}>
-          <Languages className="h-[1.2rem] w-[1.2rem]" />
+          <Icons.Languages className="h-[1.2rem] w-[1.2rem]" />
           <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>
