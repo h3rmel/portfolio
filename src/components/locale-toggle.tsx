@@ -45,7 +45,7 @@ export function LocaleToggle({ className = '' }: { className?: string }) {
           <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent className="space-y-1" align="end">
         <DropdownMenuItem
           onClick={() => switchLocale('en')}
           className={currentLocale === 'en' ? 'bg-accent' : ''}
