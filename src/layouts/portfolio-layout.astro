@@ -1,0 +1,13 @@
+---
+import { NavigationBar } from "@/components/layout/navigation-bar";
+import BaseLayout from "@/layouts/base-layout.astro";
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <NavigationBar />
+  <main class="mx-auto mt-8 max-w-7xl">
+    <slot />
+  </main>
+</BaseLayout>
