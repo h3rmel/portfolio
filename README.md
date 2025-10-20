@@ -1,53 +1,43 @@
-# Portfolio
+# Astro Starter Kit: Minimal
 
-My personal portfolio.
+```sh
+bun create astro@latest -- --template minimal
+```
 
-Deployed on [Vercel](https://vercel.com), you can check it in [isaachermel.dev.br](https://isaachermel.dev.br).
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## How to run the project
+## 🚀 Project Structure
 
-### Prerequisites
+Inside of your Astro project, you'll see the following folders and files:
 
-- Node.js (version 20 or higher)
-- pnpm (or npm/yarn)
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-### Step by step
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-1. **Clone the repository**
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-   ```bash
-   git clone https://github.com/h3rmel/portfolio.git
-   cd portfolio
-   ```
+Any static assets, like images, can be placed in the `public/` directory.
 
-2. **Install dependencies**
+## 🧞 Commands
 
-   ```bash
-   pnpm install
-   ```
+All commands are run from the root of the project, from a terminal:
 
-3. **Run the development environment**
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `bun install`             | Installs dependencies                            |
+| `bun dev`             | Starts local dev server at `localhost:4321`      |
+| `bun build`           | Build your production site to `./dist/`          |
+| `bun preview`         | Preview your build locally, before deploying     |
+| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `bun astro -- --help` | Get help using the Astro CLI                     |
 
-   ```bash
-   pnpm dev
-   ```
+## 👀 Want to learn more?
 
-   The application will be available at `http://localhost:5173`
-
-4. **For production build**
-
-   ```bash
-   pnpm build
-   ```
-
-   Optimized files will be generated in the `dist/` folder
-
-5. **To preview the production version locally**
-
-   ```bash
-   pnpm preview
-   ```
-
-## License
-
-This project is licensed under the [MIT](LICENSE) License.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
