@@ -1,4 +1,6 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
 import { Avatar } from '@/components/avatar';
 import { Icons } from '@/components/icons';
 import { LinksList } from '@/components/links-list';
@@ -6,6 +8,9 @@ import { LinksListItem } from '@/components/links-list-item';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LightRays } from '@/components/ui/light-rays';
 import BaseLayout from '@/layouts/base-layout.astro';
+
+const aboutUrl = getRelativeLocaleUrl(Astro.currentLocale!, 'about');
+const projectsUrl = getRelativeLocaleUrl(Astro.currentLocale!, 'projects');
 ---
 
 <BaseLayout title="Isaac Hermel Reginato">
@@ -34,8 +39,8 @@ import BaseLayout from '@/layouts/base-layout.astro';
       </div>
       <!-- Links -->
       <LinksList className="flex flex-col space-y-4">
-        <LinksListItem href="/en/about"> About </LinksListItem>
-        <LinksListItem href="/en/projects"> Projects </LinksListItem>
+        <LinksListItem href={aboutUrl}> About </LinksListItem>
+        <LinksListItem href={projectsUrl}> Projects </LinksListItem>
         <LinksListItem
           href="https://docs.google.com/document/d/e/2PACX-1vS9nR178R0iewPp1gKNn0JmZC1zyLxmffLJaapr4Q4k2e8VDPZKp3jdcjGG9YyWeN74mspbCxqZ5wuN/pub"
         >

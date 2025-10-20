@@ -1,9 +1,79 @@
 ---
-import BaseLayout from "@/layouts/base-layout.astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+import { Avatar } from '@/components/avatar';
+import { Icons } from '@/components/icons';
+import { LinksList } from '@/components/links-list';
+import { LinksListItem } from '@/components/links-list-item';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { LightRays } from '@/components/ui/light-rays';
+import BaseLayout from '@/layouts/base-layout.astro';
+
+const aboutUrl = getRelativeLocaleUrl(Astro.currentLocale!, 'about');
+const projectsUrl = getRelativeLocaleUrl(Astro.currentLocale!, 'projects');
 ---
 
-<BaseLayout title="Home">
-  <main class="flex min-h-dvh w-full items-center justify-center">
-    <h1 class="text-3xl font-bold">Olá Mundo</h1>
+<BaseLayout title="Isaac Hermel Reginato">
+  <main
+    class="relative flex min-h-dvh w-full items-center justify-center overflow-hidden"
+  >
+    <LightRays client:only="react" />
+    <ThemeToggle client:load className="absolute top-4 right-4" />
+    <section class="z-10 flex w-full flex-col space-y-10 p-4 lg:max-w-md lg:p-0">
+      <!-- First Impression -->
+      <div class="flex flex-col items-center space-y-4">
+        <div>
+          <Avatar client:load />
+        </div>
+        <h1
+          class="text-muted-foreground space-y-2 text-center text-base font-medium lg:text-justify"
+        >
+          <span class="text-foreground block font-bold italic">
+            Olá — Eu sou Isaac Hermel Reginato, um Engenheiro de Software do Brasil.
+          </span>
+          <span class="block">
+            Especialista em front-end e contribuidor open-source. Atualmente criando e
+            aprendendo coisas novas. Você pode saber mais sobre mim abaixo.
+          </span>
+        </h1>
+      </div>
+      <!-- Links -->
+      <LinksList className="flex flex-col space-y-4">
+        <LinksListItem href={aboutUrl}> Sobre </LinksListItem>
+        <LinksListItem href={projectsUrl}> Projetos </LinksListItem>
+        <LinksListItem
+          href="https://docs.google.com/document/d/e/2PACX-1vS9nR178R0iewPp1gKNn0JmZC1zyLxmffLJaapr4Q4k2e8VDPZKp3jdcjGG9YyWeN74mspbCxqZ5wuN/pub"
+        >
+          Currículo
+        </LinksListItem>
+      </LinksList>
+      <!-- Socials -->
+      <LinksList className="flex flex-row space-x-4">
+        <LinksListItem
+          className="w-full"
+          linkClassName="justify-center"
+          href="https://github.com/h3rmel"
+          target="_blank"
+        >
+          <Icons.Github className="size-4" />
+        </LinksListItem>
+        <LinksListItem
+          className="w-full"
+          linkClassName="justify-center"
+          href="https://www.linkedin.com/in/isaachermel/"
+          target="_blank"
+        >
+          <Icons.Linkedin className="size-4" />
+        </LinksListItem>
+        <LinksListItem
+          className="w-full"
+          linkClassName="justify-center"
+          href="https://x.com/isaach3rmel"
+          target="_blank"
+        >
+          <Icons.X className="size-4" />
+        </LinksListItem>
+      </LinksList>
+    </section>
   </main>
 </BaseLayout>
