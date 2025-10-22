@@ -48,13 +48,18 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
     </div>
     <!-- Links -->
     <LinksList className="flex flex-col space-y-4">
-      <LinksListItem href={aboutUrl}>
+      <LinksListItem href={aboutUrl} icon="ChevronRight">
         {t.home.about}
       </LinksListItem>
-      <LinksListItem href={projectsUrl}>
+      <LinksListItem href={projectsUrl} icon="ChevronRight">
         {t.home.projects}
       </LinksListItem>
-      <LinksListItem href={CV_URL}>
+      <LinksListItem
+        target="_blank"
+        linkClassName=" hover:[&_svg]:translate-x-0"
+        href={CV_URL}
+        icon="ExternalLink"
+      >
         {t.home.cv}
       </LinksListItem>
     </LinksList>
@@ -62,7 +67,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
     <LinksList className="flex flex-row space-x-4">
       <LinksListItem
         className="w-full"
-        linkClassName="justify-center"
+        linkClassName="justify-center hover:[&_svg]:translate-x-0"
         href={SOCIAL_LINKS.github}
         target="_blank"
       >
@@ -70,7 +75,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
       </LinksListItem>
       <LinksListItem
         className="w-full"
-        linkClassName="justify-center"
+        linkClassName="justify-center hover:[&_svg]:translate-x-0"
         href={SOCIAL_LINKS.linkedin}
         target="_blank"
       >
@@ -78,7 +83,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
       </LinksListItem>
       <LinksListItem
         className="w-full"
-        linkClassName="justify-center"
+        linkClassName="justify-center hover:[&_svg]:translate-x-0"
         href={SOCIAL_LINKS.x}
         target="_blank"
       >
