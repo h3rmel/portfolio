@@ -56,5 +56,8 @@ const t = getTranslations(locale);
     <h2 class="text-2xl font-bold tracking-tight">{t.education.title}</h2>
     <h6 class="text-muted-foreground text-lg">{t.education.subtitle}</h6>
   </hgroup>
+  <p class="text-foreground text-justify text-sm leading-relaxed font-light">
+    {t.education.paragraph}
+  </p>
   <EducationList curriculum={t.education.curriculum} />
 </article>

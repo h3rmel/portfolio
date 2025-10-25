@@ -59,7 +59,15 @@ export const translations = {
     education: {
       title: 'Education',
       subtitle: 'Degree and Courses',
+      paragraph:
+        'I have a degree in Systems Analysis and Development and a degree in Internet Computing. I have also taken courses in React, Next.js, Clean Code, SOLID, TDD and other courses. Currently, I am studying a postgraduate degree in Software Engineering at Descomplica.',
       curriculum: [
+        {
+          institution: 'Descomplica',
+          degree: 'Postgraduate degree in Software Engineering',
+          year: '2025 - 2026',
+          logoUrl: 'https://descomplica.com.br/assets/images/logo.png',
+        },
         {
           institution: 'Descomplica',
           degree: 'Systems Analysis and Development',
@@ -141,7 +149,15 @@ export const translations = {
     education: {
       title: 'Educação',
       subtitle: 'Formação e Cursos',
+      paragraph:
+        'Possuo um diploma em Análise e Desenvolvimento de Sistemas e um diploma em Informática para a Internet. Também realizei cursos em React, Next.js, Clean Code, SOLID, TDD e outros. Atualmente, estou fazendo uma pós-graduação em Engenharia de Software na Descomplica.',
       curriculum: [
+        {
+          institution: 'Descomplica',
+          degree: 'Pós-graduação em Engenharia de Software',
+          year: '2025 - 2026',
+          logoUrl: 'https://descomplica.com.br/assets/images/logo.png',
+        },
         {
           institution: 'Descomplica',
           degree: 'Análise e Desenvolvimento de Sistemas',
