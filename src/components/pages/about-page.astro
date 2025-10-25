@@ -1,0 +1,58 @@
+---
+import { getTranslations } from '@/i18n/utils';
+
+import { CarrerList } from '../carrer-list';
+import { EducationList } from '../education-list';
+import { Separator } from '../ui/separator';
+
+interface Props {
+  locale: string | undefined;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+---
+
+<!-- About me -->
+<article class="flex flex-col space-y-10">
+  <hgroup class="flex flex-col">
+    <h1 class="text-2xl font-bold tracking-tight">
+      {t.about.title}
+    </h1>
+    <h6 class="text-muted-foreground text-lg">
+      {t.about.subtitle}
+    </h6>
+  </hgroup>
+  <section class="flex flex-col space-y-10">
+    {
+      t.about.paragraphs.map((paragraph) => (
+        <p class="text-foreground text-justify text-sm leading-relaxed">{paragraph}</p>
+      ))
+    }
+  </section>
+</article>
+<Separator className="my-10" />
+<!-- Carrer -->
+<article class="flex flex-col space-y-10">
+  <hgroup>
+    <h2 class="text-2xl font-bold tracking-tight">
+      {t.carrer.title}
+    </h2>
+    <h6 class="text-muted-foreground text-lg">
+      {t.carrer.subtitle}
+    </h6>
+  </hgroup>
+  <p class="text-foreground text-justify text-sm leading-relaxed">
+    {t.carrer.paragraph}
+  </p>
+  <CarrerList experiences={t.carrer.experiences} />
+</article>
+<Separator className="my-10" />
+<!-- Education -->
+<article class="flex flex-col space-y-10">
+  <hgroup class="flex flex-col">
+    <h2 class="text-2xl font-bold tracking-tight">{t.education.title}</h2>
+    <h6 class="text-muted-foreground text-lg">{t.education.subtitle}</h6>
+  </hgroup>
+  <EducationList curriculum={t.education.curriculum} />
+</article>

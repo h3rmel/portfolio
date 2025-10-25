@@ -1,16 +1,17 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from '@tabler/icons-react';
+
 import { CV_URL, SOCIAL_LINKS } from '@/constants/links';
 import { getTranslations } from '@/i18n/utils';
 
-import { Avatar } from './avatar';
-import { Icons } from './icons';
-import { LinksList } from './links-list';
-import { LinksListItem } from './links-list-item';
-import { LocaleToggle } from './locale-toggle';
-import { ThemeToggle } from './theme-toggle';
-import { LightRays } from './ui/light-rays';
+import { Avatar } from '../avatar';
+import { LinksList } from '../links-list';
+import { LinksListItem } from '../links-list-item';
+import { LocaleToggle } from '../locale-toggle';
+import { ThemeToggle } from '../theme-toggle';
+import { LightRays } from '../ui/light-rays';
 
 interface Props {
   locale: string | undefined;
@@ -48,17 +49,17 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
     </div>
     <!-- Links -->
     <LinksList className="flex flex-col space-y-4">
-      <LinksListItem href={aboutUrl} icon="ChevronRight">
+      <LinksListItem href={aboutUrl} icon="IconChevronRight">
         {t.home.about}
       </LinksListItem>
-      <LinksListItem href={projectsUrl} icon="ChevronRight">
+      <LinksListItem href={projectsUrl} icon="IconChevronRight">
         {t.home.projects}
       </LinksListItem>
       <LinksListItem
         target="_blank"
         linkClassName=" hover:[&_svg]:translate-x-0"
         href={CV_URL}
-        icon="ExternalLink"
+        icon="IconExternalLink"
       >
         {t.home.cv}
       </LinksListItem>
@@ -71,7 +72,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
         href={SOCIAL_LINKS.github}
         target="_blank"
       >
-        <Icons.Github className="size-4" />
+        <IconBrandGithub className="size-4" />
       </LinksListItem>
       <LinksListItem
         className="w-full"
@@ -79,7 +80,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
         href={SOCIAL_LINKS.linkedin}
         target="_blank"
       >
-        <Icons.Linkedin className="size-4" />
+        <IconBrandLinkedin className="size-4" />
       </LinksListItem>
       <LinksListItem
         className="w-full"
@@ -87,7 +88,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
         href={SOCIAL_LINKS.x}
         target="_blank"
       >
-        <Icons.X className="size-4" />
+        <IconBrandX className="size-4" />
       </LinksListItem>
     </LinksList>
   </section>

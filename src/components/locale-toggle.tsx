@@ -1,6 +1,8 @@
 import * as React from 'react';
 
-import { Button } from '@/components/ui/button';
+import { IconLanguage } from '@tabler/icons-react';
+
+import { Button, type ButtonVariant } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,11 +10,15 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-import { Icons } from './icons';
-
 type Locale = 'en' | 'pt';
 
-export function LocaleToggle({ className = '' }: { className?: string }) {
+export function LocaleToggle({
+  className = '',
+  variant = 'secondary',
+}: {
+  className?: string;
+  variant?: ButtonVariant;
+}) {
   const [currentLocale, setCurrentLocale] = React.useState<Locale>('en');
 
   React.useEffect(() => {
@@ -40,8 +46,8 @@ export function LocaleToggle({ className = '' }: { className?: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className={className}>
-          <Icons.Languages className="h-[1.2rem] w-[1.2rem]" />
+        <Button variant={variant} size="icon" className={className}>
+          <IconLanguage className="h-[1.2rem] w-[1.2rem]" />
           <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>

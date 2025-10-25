@@ -1,8 +1,10 @@
 import type { HTMLAttributeAnchorTarget } from 'react';
 
+import { icons } from '@tabler/icons-react';
+
 import { cn } from '@/lib/utils';
 
-import { Icons, renderIcon } from './icons';
+import { Icon } from './icon';
 import { buttonVariants } from './ui/button';
 
 export function LinksListItem({
@@ -10,21 +12,21 @@ export function LinksListItem({
   children,
   className,
   linkClassName,
-  icon = 'ChevronRight',
+  icon,
   target = '_self',
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
   linkClassName?: string;
-  icon?: keyof typeof Icons;
+  icon?: keyof typeof icons;
   target?: HTMLAttributeAnchorTarget;
 }) {
   return (
     <li className={cn('w-full', className)}>
       <a
         className={cn(
-          buttonVariants({ variant: 'outline', size: 'lg' }),
+          buttonVariants({ variant: 'secondary', size: 'lg' }),
           'w-full justify-between text-base group',
           'group-hover:hover:opacity-100 group-hover:opacity-60',
           'hover:[&_svg]:translate-x-1 [&_svg]:transition-transform',
@@ -34,7 +36,7 @@ export function LinksListItem({
         target={target}
       >
         {children}
-        {icon && renderIcon(icon)}
+        {icon && <Icon icon={icon} />}
       </a>
     </li>
   );
