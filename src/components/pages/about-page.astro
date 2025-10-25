@@ -26,7 +26,9 @@ const t = getTranslations(locale);
   <section class="flex flex-col space-y-10">
     {
       t.about.paragraphs.map((paragraph) => (
-        <p class="text-foreground text-justify text-sm leading-relaxed">{paragraph}</p>
+        <p class="text-foreground text-justify text-sm leading-relaxed font-light">
+          {paragraph}
+        </p>
       ))
     }
   </section>
@@ -42,7 +44,7 @@ const t = getTranslations(locale);
       {t.carrer.subtitle}
     </h6>
   </hgroup>
-  <p class="text-foreground text-justify text-sm leading-relaxed">
+  <p class="text-foreground text-justify text-sm leading-relaxed font-light">
     {t.carrer.paragraph}
   </p>
   <CarrerList experiences={t.carrer.experiences} />
