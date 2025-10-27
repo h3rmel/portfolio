@@ -1,5 +1,6 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
+import { CV_URL } from '@/constants/links';
 import { cn } from '@/lib/utils';
 
 import { LocaleToggle } from '../locale-toggle';
@@ -16,7 +17,7 @@ export function NavigationBar({
   return (
     <header className="sticky top-0 z-50">
       <nav className="max-w-screen-lg relative mx-auto flex justify-between items-center border border-border border-b-3 p-3 rounded-b-lg bg-background/50 backdrop-blur-xs">
-        <a href={getRelativeLocaleUrl(currentLocale!, 'home')} className="ml-1">
+        <a href={getRelativeLocaleUrl(currentLocale!)} className="ml-1">
           <span className="text-2xl tracking-wider">I</span>
           <span className="text-2xl tracking-wider -ml-1.5">H</span>
         </a>
@@ -30,6 +31,13 @@ export function NavigationBar({
               {link.label}
             </a>
           ))}
+          <a
+            href={CV_URL[currentLocale as keyof typeof CV_URL]}
+            target="_blank"
+            className={cn(buttonVariants({ variant: 'link', size: 'sm' }))}
+          >
+            CV
+          </a>
         </div>
         {/* Locale and Theme Toggle */}
         <div className="flex items-center space-x-3">

@@ -56,7 +56,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
       <LinksListItem
         target="_blank"
         linkClassName=" hover:[&_svg]:translate-x-0"
-        href={CV_URL}
+        href={CV_URL[locale as keyof typeof CV_URL]}
         icon="IconExternalLink"
       >
         {t.home.cv}

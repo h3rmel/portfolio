@@ -11,10 +11,8 @@ const locale = Astro.currentLocale;
 const t = getTranslations(locale);
 
 const navigationLinks = [
-  // { href: getRelativeLocaleUrl(locale!), label: t.navigation.home },
   { href: getRelativeLocaleUrl(locale!, 'about'), label: t.navigation.about },
   { href: getRelativeLocaleUrl(locale!, 'projects'), label: t.navigation.projects },
-  { href: getRelativeLocaleUrl(locale!, 'cv'), label: t.navigation.cv },
 ];
 ---
 
