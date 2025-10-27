@@ -1,12 +1,25 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
 import { NavigationBar } from '@/components/layout/navigation-bar';
+import { getTranslations } from '@/i18n/utils';
 import BaseLayout from '@/layouts/base-layout.astro';
 
 const { title } = Astro.props;
+const locale = Astro.currentLocale;
+
+const t = getTranslations(locale);
+
+const navigationLinks = [
+  // { href: getRelativeLocaleUrl(locale!), label: t.navigation.home },
+  { href: getRelativeLocaleUrl(locale!, 'about'), label: t.navigation.about },
+  { href: getRelativeLocaleUrl(locale!, 'projects'), label: t.navigation.projects },
+  { href: getRelativeLocaleUrl(locale!, 'cv'), label: t.navigation.cv },
+];
 ---
 
 <BaseLayout title={title}>
-  <NavigationBar client:idle />
+  <NavigationBar client:idle currentLocale={locale!} navigationLinks={navigationLinks} />
   <main class="relative mx-auto my-16 size-full max-w-screen-lg px-4">
     <slot />
   </main>

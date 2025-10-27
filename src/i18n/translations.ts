@@ -7,6 +7,12 @@ export type Locale = 'en' | 'pt';
 
 export const translations = {
   en: {
+    navigation: {
+      home: 'Home',
+      about: 'About',
+      projects: 'Projects',
+      cv: 'CV',
+    },
     home: {
       greeting: "Hi — I'm Isaac Hermel Reginato, a Software Engineer based in Brazil.",
       subtitle:
@@ -96,6 +102,12 @@ export const translations = {
     },
   },
   pt: {
+    navigation: {
+      home: 'Home',
+      about: 'Sobre',
+      projects: 'Projetos',
+      cv: 'Currículo',
+    },
     home: {
       greeting:
         'Olá — Eu sou Isaac Hermel Reginato, um Engenheiro de Software do Brasil.',
