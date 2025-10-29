@@ -9,7 +9,7 @@ import udemyLogo from '@/assets/udemy.webp';
  */
 export const EDUCATION_LOGOS = {
   Descomplica: decomplicaLogo,
-  'Instituto Federal Sul-rio-grandense': ifsulLogo,
+  IFSul: ifsulLogo,
   Udemy: udemyLogo,
   Alura: aluraLogo,
 } as const;

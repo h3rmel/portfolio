@@ -154,7 +154,7 @@ export const translations: Record<Locale, LocaleTranslations> = {
           year: '2023 - 2025',
         },
         {
-          institution: 'Instituto Federal Sul-rio-grandense',
+          institution: 'IFSul',
           degree: 'Internet Computing',
           year: '2018 - 2022',
         },
@@ -272,7 +272,7 @@ export const translations: Record<Locale, LocaleTranslations> = {
           year: '2023 - 2025',
         },
         {
-          institution: 'Instituto Federal Sul-rio-grandense',
+          institution: 'IFSul',
           degree: 'Informática para a Internet',
           year: '2018 - 2022',
         },
