@@ -1,7 +1,7 @@
-import { memo } from 'react';
+import type { Icon as TablerIcon } from '@tabler/icons-react';
 
 import { icons } from '@tabler/icons-react';
-import type { Icon as TablerIcon } from '@tabler/icons-react';
+import { memo } from 'react';
 
 import type { IconProps } from '@/types';
 

@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Check if bun.lock was changed
+changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+check_run() {
+  echo "$changed_files" | grep --quiet "$1" && eval "$2"
+}
+
+# If bun.lock changed, run bun install
+check_run bun.lock "echo '📦 bun.lock changed. Running bun install...' && bun install"
+
