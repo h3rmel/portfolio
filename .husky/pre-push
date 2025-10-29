@@ -1,4 +1,8 @@
-# #!/usr/bin/env sh
-# . "$(dirname -- "$0")/_/husky.sh"
+#!/usr/bin/env sh
 
-pnpm lint && pnpm typecheck
+echo "🔍 Running type check..."
+bun run typecheck
+
+echo "🏗️  Running build..."
+bun run build
+

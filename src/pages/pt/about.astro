@@ -1,0 +1,11 @@
+---
+import AboutPage from '@/components/pages/about-page.astro';
+import { PAGE_SEO } from '@/config/seo';
+import PortfolioLayout from '@/layouts/portfolio-layout.astro';
+
+const seo = PAGE_SEO.about.pt;
+---
+
+<PortfolioLayout title={seo.title} description={seo.description}>
+  <AboutPage locale={Astro.currentLocale} />
+</PortfolioLayout>

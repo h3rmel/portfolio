@@ -1,0 +1,23 @@
+---
+// Client-side redirect to preferred locale
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Isaac Hermel Reginato - Portfolio</title>
+    <script>
+      // Detect browser language and redirect to appropriate locale
+      const preferredLocale = navigator.language?.split('-')[0];
+      const targetLocale = preferredLocale === 'pt' ? 'pt' : 'en';
+      window.location.href = `/${targetLocale}/`;
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p>Please enable JavaScript or navigate to <a href="/en/">/en/</a> or <a href="/pt/">/pt/</a></p>
+    </noscript>
+  </body>
+</html>

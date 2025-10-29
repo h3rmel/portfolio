@@ -1,0 +1,94 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from '@tabler/icons-react';
+
+import { CV_URL, SOCIAL_LINKS } from '@/config/links';
+import { getTranslations, getValidLocale } from '@/i18n/utils';
+
+import { Avatar } from '../avatar';
+import { LinksList } from '../links-list';
+import { LinksListItem } from '../links-list-item';
+import { LocaleToggle } from '../locale-toggle';
+import { ThemeToggle } from '../theme-toggle';
+import { LightRays } from '../ui/light-rays';
+
+interface Props {
+  locale: string | undefined;
+}
+
+const { locale } = Astro.props;
+const validLocale = getValidLocale(locale);
+const t = getTranslations(locale);
+
+const aboutUrl = getRelativeLocaleUrl(validLocale, 'about');
+const projectsUrl = getRelativeLocaleUrl(validLocale, 'projects');
+---
+
+<main class="relative flex min-h-dvh w-full items-center justify-center overflow-hidden">
+  <LightRays client:only="react" />
+  <div class="absolute top-4 right-4 flex gap-4">
+    <LocaleToggle client:idle />
+    <ThemeToggle client:idle />
+  </div>
+  <section class="z-10 flex w-full flex-col space-y-10 p-4 lg:max-w-md lg:p-0">
+    <!-- First Impression -->
+    <div class="flex flex-col items-center space-y-4">
+      <div>
+        <Avatar client:visible />
+      </div>
+      <h1 class="text-muted-foreground space-y-2 text-center text-base lg:text-justify">
+        <span class="text-foreground block font-bold italic">
+          {t.home.greeting}
+        </span>
+        <span class="block">
+          {t.home.subtitle}
+        </span>
+      </h1>
+    </div>
+    <!-- Links -->
+    <LinksList className="flex flex-col space-y-4">
+      <LinksListItem href={aboutUrl} icon="IconChevronRight">
+        {t.home.about}
+      </LinksListItem>
+      <LinksListItem href={projectsUrl} icon="IconChevronRight">
+        {t.home.projects}
+      </LinksListItem>
+      <LinksListItem
+        target="_blank"
+        linkClassName=" hover:[&_svg]:translate-x-0"
+        href={CV_URL[validLocale]}
+        icon="IconExternalLink"
+      >
+        {t.home.cv}
+      </LinksListItem>
+    </LinksList>
+    <!-- Socials -->
+    <LinksList className="flex flex-row space-x-4">
+      <LinksListItem
+        className="w-full"
+        linkClassName="justify-center hover:[&_svg]:translate-x-0"
+        href={SOCIAL_LINKS.github}
+        target="_blank"
+      >
+        <IconBrandGithub className="size-4" />
+      </LinksListItem>
+      <LinksListItem
+        className="w-full"
+        linkClassName="justify-center hover:[&_svg]:translate-x-0"
+        href={SOCIAL_LINKS.linkedin}
+        target="_blank"
+      >
+        <IconBrandLinkedin className="size-4" />
+      </LinksListItem>
+      <LinksListItem
+        className="w-full"
+        linkClassName="justify-center hover:[&_svg]:translate-x-0"
+        href={SOCIAL_LINKS.x}
+        target="_blank"
+      >
+        <IconBrandX className="size-4" />
+      </LinksListItem>
+    </LinksList>
+  </section>
+</main>

@@ -1,0 +1,11 @@
+---
+import HomePage from '@/components/pages/home-page.astro';
+import { DEFAULT_SEO } from '@/config/seo';
+import BaseLayout from '@/layouts/base-layout.astro';
+
+const seo = DEFAULT_SEO.en;
+---
+
+<BaseLayout title={seo.title} description={seo.description} ogType="profile">
+  <HomePage locale={Astro.currentLocale} />
+</BaseLayout>
