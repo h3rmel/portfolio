@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import { CAREER_LOGOS } from '@/config/career';
 import { EDUCATION_LOGOS } from '@/config/education';
 import { getTranslations } from '@/i18n/utils';
@@ -52,11 +54,10 @@ const t = getTranslations(locale);
       t.career.experiences.map((experience) => (
         <li class="flex items-start justify-between rounded-lg border border-b-3 p-4">
           <div class="flex items-center space-x-4">
-            <img
+            <Image
               class="border-border size-16 rounded-full border p-0.5"
               src={CAREER_LOGOS[experience.employer]}
               alt={experience.employer}
-              loading="lazy"
               width={64}
               height={64}
             />
@@ -86,11 +87,10 @@ const t = getTranslations(locale);
       t.education.curriculum.map((item) => (
         <li class="flex items-start justify-between rounded-lg border border-b-3 p-4">
           <div class="flex items-center space-x-4">
-            <img
+            <Image
               class="border-border size-16 rounded-full border p-0.5"
               src={EDUCATION_LOGOS[item.institution]}
               alt={item.institution}
-              loading="lazy"
               width={64}
               height={64}
             />

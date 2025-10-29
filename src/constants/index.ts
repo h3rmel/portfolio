@@ -10,7 +10,6 @@ export const USER_PROFILE = {
   name: 'Isaac Hermel Reginato',
   initials: 'IR',
   githubUsername: 'h3rmel',
-  avatarUrl: 'https://github.com/h3rmel.png',
 } as const;
 
 /**

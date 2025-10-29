@@ -1,9 +1,13 @@
+import catencyLogo from '@/assets/catency.webp';
+import umblerLogo from '@/assets/umbler.webp';
+import zenviaLogo from '@/assets/zenvia.webp';
+
 /**
- * Career experience logo URLs configuration.
- * Maps employer names to their logo URLs.
+ * Career experience logo configuration.
+ * Maps employer names to their imported image assets.
  */
-export const CAREER_LOGOS: Record<string, string> = {
-  Zenvia: 'https://zenvia.com/assets/images/logo.png',
-  Catency: 'https://catency.com/assets/images/logo.png',
-  Umbler: 'https://umbler.com/assets/images/logo.png',
+export const CAREER_LOGOS = {
+  Zenvia: zenviaLogo,
+  Catency: catencyLogo,
+  Umbler: umblerLogo,
 } as const;
