@@ -2,25 +2,26 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import { NavigationBar } from '@/components/layout/navigation-bar';
-import { getTranslations } from '@/i18n/utils';
+import { getTranslations, getValidLocale } from '@/i18n/utils';
 import BaseLayout from '@/layouts/base-layout.astro';
 
 const { title } = Astro.props;
 const locale = Astro.currentLocale;
 const currentPath = Astro.url.pathname;
+const validLocale = getValidLocale(locale);
 
 const t = getTranslations(locale);
 
 const navigationLinks = [
-  { href: getRelativeLocaleUrl(locale!, 'about'), label: t.navigation.about },
-  { href: getRelativeLocaleUrl(locale!, 'projects'), label: t.navigation.projects },
+  { href: getRelativeLocaleUrl(validLocale, 'about'), label: t.navigation.about },
+  { href: getRelativeLocaleUrl(validLocale, 'projects'), label: t.navigation.projects },
 ];
 ---
 
 <BaseLayout title={title}>
   <NavigationBar
     client:idle
-    currentLocale={locale!}
+    currentLocale={validLocale}
     navigationLinks={navigationLinks}
     currentPath={currentPath}
   />

@@ -1,11 +1,90 @@
+import type { EducationItem, Experience, Locale } from '@/types';
+
 /**
  * Translation dictionary for supported locales.
  * Provides type-safe translations for all UI strings in the application.
  */
 
-export type Locale = 'en' | 'pt';
+/**
+ * Navigation section translations
+ */
+interface NavigationTranslations {
+  home: string;
+  about: string;
+  projects: string;
+  cv: string;
+}
 
-export const translations = {
+/**
+ * Home page translations
+ */
+interface HomeTranslations {
+  greeting: string;
+  subtitle: string;
+  about: string;
+  projects: string;
+  cv: string;
+}
+
+/**
+ * About section translations
+ */
+interface AboutTranslations {
+  title: string;
+  subtitle: string;
+  paragraphs: string[];
+}
+
+/**
+ * Career section translations
+ */
+interface CareerTranslations {
+  title: string;
+  subtitle: string;
+  paragraph: string;
+  experiences: Experience[];
+}
+
+/**
+ * Education section translations
+ */
+interface EducationTranslations {
+  title: string;
+  subtitle: string;
+  paragraph: string;
+  curriculum: EducationItem[];
+}
+
+/**
+ * Project item translation
+ */
+interface ProjectItemTranslation {
+  title: string;
+  description: string;
+}
+
+/**
+ * Projects section translations
+ */
+interface ProjectsTranslations {
+  title: string;
+  subtitle: string;
+  items: Record<string, ProjectItemTranslation>;
+}
+
+/**
+ * Complete translation structure for a locale
+ */
+interface LocaleTranslations {
+  navigation: NavigationTranslations;
+  home: HomeTranslations;
+  about: AboutTranslations;
+  career: CareerTranslations;
+  education: EducationTranslations;
+  projects: ProjectsTranslations;
+}
+
+export const translations: Record<Locale, LocaleTranslations> = {
   en: {
     navigation: {
       home: 'Home',
@@ -30,8 +109,8 @@ export const translations = {
         'Motivated by problem-solving through technology and continuous learning. I demonstrate aptitude for teamwork, taking responsibility for both team support tasks and complex technical or maintenance challenges. I maintain programming studies and personal project development as my main activity.',
       ],
     },
-    carrer: {
-      title: 'My carrer',
+    career: {
+      title: 'My career',
       subtitle: '+3 years of professional experience.',
       paragraph:
         "Experience in startups and large companies. I worked in various areas, from the creation of landing pages to applications for Customer Success, data extraction and processing, the construction of high-performance APIs, the development of data engineering projects and business intelligence. Currently, I am a software engineer at Zenvia, focused on developing the company's CPaaS platform.",
@@ -40,25 +119,21 @@ export const translations = {
           employer: 'Zenvia',
           position: 'Software Engineer',
           year: '2023 - Present',
-          logoUrl: 'https://zenvia.com/assets/images/logo.png',
         },
         {
           employer: 'Catency',
           position: 'Frontend Developer',
           year: '2023 - 2023',
-          logoUrl: 'https://catency.com/assets/images/logo.png',
         },
         {
           employer: 'Umbler',
           position: 'Fullstack Developer',
           year: '2022 - 2023',
-          logoUrl: 'https://umbler.com/assets/images/logo.png',
         },
         {
           employer: 'Umbler',
           position: 'Customer Success Analyst',
           year: '2020 - 2022',
-          logoUrl: 'https://umbler.com/assets/images/logo.png',
         },
       ],
     },
@@ -72,31 +147,26 @@ export const translations = {
           institution: 'Descomplica',
           degree: 'Postgraduate degree in Software Engineering',
           year: '2025 - 2026',
-          logoUrl: 'https://descomplica.com.br/assets/images/logo.png',
         },
         {
           institution: 'Descomplica',
           degree: 'Systems Analysis and Development',
           year: '2023 - 2025',
-          logoUrl: 'https://descomplica.com.br/assets/images/logo.png',
         },
         {
           institution: 'Instituto Federal Sul-rio-grandense',
           degree: 'Internet Computing',
           year: '2018 - 2022',
-          logoUrl: 'https://ifrs.edu.br/assets/images/logo.png',
         },
         {
           institution: 'Udemy',
           degree: 'React, Next.js, Clean Code, SOLID, TDD and other courses.',
           year: '2023 - 2025',
-          logoUrl: 'https://udemy.com/assets/images/logo.png',
         },
         {
           institution: 'Alura',
           degree: 'Python and Flask courses.',
           year: '2023 - 2024',
-          logoUrl: 'https://alura.com.br/assets/images/logo.png',
         },
       ],
     },
@@ -157,7 +227,7 @@ export const translations = {
         'Motivado pela resolução de problemas através da tecnologia e pelo aprendizado contínuo. Demonstro aptidão para o trabalho em equipe, assumindo responsabilidade tanto em tarefas de suporte ao time quanto em desafios técnicos complexos ou de manutenção. Mantenho o estudo de programação e o desenvolvimento de projetos pessoais como atividade principal.',
       ],
     },
-    carrer: {
+    career: {
       title: 'Minha carreira',
       subtitle: '+3 anos de experiência profissional.',
       paragraph:
@@ -167,25 +237,21 @@ export const translations = {
           employer: 'Zenvia',
           position: 'Engenheiro de Software',
           year: '2023 - Present',
-          logoUrl: 'https://zenvia.com/assets/images/logo.png',
         },
         {
           employer: 'Catency',
           position: 'Desenvolvedor Frontend',
           year: '2023 - 2023',
-          logoUrl: 'https://catency.com/assets/images/logo.png',
         },
         {
           employer: 'Umbler',
           position: 'Desenvolvedor Fullstack',
           year: '2022 - 2023',
-          logoUrl: 'https://umbler.com/assets/images/logo.png',
         },
         {
           employer: 'Umbler',
           position: 'Analista de Sucesso do Cliente',
           year: '2020 - 2022',
-          logoUrl: 'https://umbler.com/assets/images/logo.png',
         },
       ],
     },
@@ -199,31 +265,26 @@ export const translations = {
           institution: 'Descomplica',
           degree: 'Pós-graduação em Engenharia de Software',
           year: '2025 - 2026',
-          logoUrl: 'https://descomplica.com.br/assets/images/logo.png',
         },
         {
           institution: 'Descomplica',
           degree: 'Análise e Desenvolvimento de Sistemas',
           year: '2023 - 2025',
-          logoUrl: 'https://descomplica.com.br/assets/images/logo.png',
         },
         {
           institution: 'Instituto Federal Sul-rio-grandense',
           degree: 'Informática para a Internet',
           year: '2018 - 2022',
-          logoUrl: 'https://ifrs.edu.br/assets/images/logo.png',
         },
         {
           institution: 'Udemy',
           degree: 'Cursos de React, Next.js, Clean Code, SOLID, TDD e outros.',
           year: '2023 - 2025',
-          logoUrl: 'https://udemy.com/assets/images/logo.png',
         },
         {
           institution: 'Alura',
           degree: 'Cursos de Python e Flask.',
           year: '2023 - 2024',
-          logoUrl: 'https://alura.com.br/assets/images/logo.png',
         },
       ],
     },
@@ -259,9 +320,6 @@ export const translations = {
       },
     },
   },
-} as const satisfies Record<
-  Locale,
-  Record<string, Record<string, string | unknown[] | Record<string, unknown>>>
->;
+} as const;
 
-export type Translations = (typeof translations)[Locale];
+export type Translations = LocaleTranslations;

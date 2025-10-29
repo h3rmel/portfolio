@@ -1,27 +1,32 @@
-import type { HTMLAttributeAnchorTarget } from 'react';
-
-import { icons } from '@tabler/icons-react';
+import { memo } from 'react';
 
 import { cn } from '@/lib/utils';
+import type { LinksListItemProps } from '@/types';
 
 import { Icon } from './icon';
 import { buttonVariants } from './ui/button';
 
-export function LinksListItem({
+/**
+ * Individual link item with optional icon and hover effects.
+ * Styled as a button with support for internal and external links.
+ * Memoized for performance in lists.
+ *
+ * @param href - Link destination URL
+ * @param children - Link text or content
+ * @param className - Optional CSS classes for the list item wrapper
+ * @param linkClassName - Optional CSS classes for the anchor element
+ * @param icon - Optional Tabler icon name to display
+ * @param target - Link target attribute (default: '_self')
+ * @returns A styled link item with icon support
+ */
+export const LinksListItem = memo(function LinksListItem({
   href,
   children,
   className,
   linkClassName,
   icon,
   target = '_self',
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-  linkClassName?: string;
-  icon?: keyof typeof icons;
-  target?: HTMLAttributeAnchorTarget;
-}) {
+}: LinksListItemProps) {
   return (
     <li className={cn('w-full', className)}>
       <a
@@ -40,4 +45,4 @@ export function LinksListItem({
       </a>
     </li>
   );
-}
+});

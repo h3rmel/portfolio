@@ -2,28 +2,31 @@ import * as React from 'react';
 
 import { IconMoon, IconSun } from '@tabler/icons-react';
 
-import { Button, type ButtonVariant } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { THEME } from '@/constants';
+import type { Theme, ThemeToggleProps } from '@/types';
 
-export function ThemeToggle({
-  className = '',
-  variant = 'secondary',
-}: {
-  className?: string;
-  variant?: ButtonVariant;
-}) {
-  const [theme, setThemeState] = React.useState<'theme-light' | 'dark' | 'system'>(
-    'theme-light',
-  );
+/**
+ * Theme toggle component for switching between light, dark, and system themes.
+ * Persists theme preference and updates document classes accordingly.
+ * Supports light mode, dark mode, and system preference.
+ *
+ * @param className - Optional CSS classes for the button
+ * @param variant - Button style variant (default: 'secondary')
+ * @returns A dropdown menu for theme selection
+ */
+export function ThemeToggle({ className = '', variant = 'secondary' }: ThemeToggleProps) {
+  const [theme, setThemeState] = React.useState<Theme>(THEME.default);
 
   React.useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains('dark');
-    setThemeState(isDarkMode ? 'dark' : 'theme-light');
+    setThemeState(isDarkMode ? 'dark' : THEME.default);
   }, []);
 
   React.useEffect(() => {

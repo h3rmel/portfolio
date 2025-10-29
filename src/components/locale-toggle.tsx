@@ -2,28 +2,34 @@ import * as React from 'react';
 
 import { IconLanguage } from '@tabler/icons-react';
 
-import { Button, type ButtonVariant } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { LOCALE } from '@/constants';
+import type { Locale, LocaleToggleProps } from '@/types';
 
-type Locale = 'en' | 'pt';
-
+/**
+ * Locale toggle component for switching between supported languages.
+ * Detects current locale from URL and allows navigation between locales.
+ * Supports English (en) and Portuguese (pt).
+ *
+ * @param className - Optional CSS classes for the button
+ * @param variant - Button style variant (default: 'secondary')
+ * @returns A dropdown menu for language selection
+ */
 export function LocaleToggle({
   className = '',
   variant = 'secondary',
-}: {
-  className?: string;
-  variant?: ButtonVariant;
-}) {
-  const [currentLocale, setCurrentLocale] = React.useState<Locale>('en');
+}: LocaleToggleProps) {
+  const [currentLocale, setCurrentLocale] = React.useState<Locale>(LOCALE.default);
 
   React.useEffect(() => {
     const path = window.location.pathname;
-    const locale = path.startsWith('/pt') ? 'pt' : 'en';
+    const locale = path.startsWith('/pt') ? 'pt' : LOCALE.default;
     setCurrentLocale(locale);
   }, []);
 

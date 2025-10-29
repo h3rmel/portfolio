@@ -5,7 +5,9 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { IconMenu2 } from '@tabler/icons-react';
 
 import { CV_URL } from '@/config/links';
+import { getValidLocale } from '@/i18n/utils';
 import { cn } from '@/lib/utils';
+import type { NavigationBarProps } from '@/types';
 
 import { LocaleToggle } from '../locale-toggle';
 import { ThemeToggle } from '../theme-toggle';
@@ -33,11 +35,7 @@ export function NavigationBar({
   currentLocale,
   navigationLinks,
   currentPath,
-}: {
-  currentLocale: string;
-  navigationLinks: { href: string; label: string }[];
-  currentPath: string;
-}) {
+}: NavigationBarProps) {
   const [open, setOpen] = useState(false);
 
   /**
@@ -49,11 +47,13 @@ export function NavigationBar({
     return currentPath === href;
   };
 
+  const validLocale = getValidLocale(currentLocale);
+
   return (
     <header className="sticky top-0 z-50">
       <nav className="max-w-screen-lg relative mx-auto flex justify-between items-center border border-border border-b-3 p-3 lg:rounded-b-lg bg-background/50 backdrop-blur-xs">
         {/* Logo */}
-        <a href={getRelativeLocaleUrl(currentLocale!)} className="ml-1">
+        <a href={getRelativeLocaleUrl(validLocale)} className="ml-1">
           <span className="text-2xl tracking-wider">I</span>
           <span className="text-2xl tracking-wider -ml-1.5">H</span>
         </a>
@@ -73,7 +73,7 @@ export function NavigationBar({
             </a>
           ))}
           <a
-            href={CV_URL[currentLocale as keyof typeof CV_URL]}
+            href={CV_URL[validLocale]}
             target="_blank"
             className={cn(buttonVariants({ variant: 'link', size: 'sm' }))}
           >
@@ -117,7 +117,7 @@ export function NavigationBar({
                 <Separator className="my-2" />
                 <DrawerClose asChild>
                   <a
-                    href={CV_URL[currentLocale as keyof typeof CV_URL]}
+                    href={CV_URL[validLocale]}
                     target="_blank"
                     className={cn(
                       buttonVariants({ variant: 'ghost', size: 'lg' }),

@@ -1,6 +1,8 @@
-import { PROJECT_DATA, type Project } from '@/config/projects';
+import { PROJECT_DATA } from '@/config/projects';
+import { LOCALE } from '@/constants';
+import type { Locale, Project } from '@/types';
 
-import { translations, type Locale, type Translations } from './translations';
+import { translations, type Translations } from './translations';
 
 /**
  * Retrieves translations for a given locale.
@@ -10,7 +12,7 @@ import { translations, type Locale, type Translations } from './translations';
  * @returns Translation object for the specified locale
  */
 export function getTranslations(locale: string | undefined): Translations {
-  const normalizedLocale = (locale === 'pt' ? 'pt' : 'en') as Locale;
+  const normalizedLocale = (locale === 'pt' ? 'pt' : LOCALE.default) as Locale;
   return translations[normalizedLocale];
 }
 
@@ -25,6 +27,20 @@ export function isValidLocale(locale: string): locale is Locale {
 }
 
 /**
+ * Validates and returns a valid locale, with fallback to default locale.
+ * Use this instead of non-null assertions when working with potentially undefined locales.
+ *
+ * @param locale - The locale to validate
+ * @returns A valid Locale ('en' or 'pt'), defaults to configured default if invalid
+ */
+export function getValidLocale(locale: string | undefined): Locale {
+  if (locale && isValidLocale(locale)) {
+    return locale;
+  }
+  return LOCALE.default;
+}
+
+/**
  * Retrieves projects with translations for a given locale.
  * Combines static project data with localized title and description.
  *
@@ -33,14 +49,11 @@ export function isValidLocale(locale: string): locale is Locale {
  */
 export function getProjects(locale: string | undefined): Project[] {
   const t = getTranslations(locale);
-  const projectTranslations = t.projects.items as Record<
-    string,
-    { title: string; description: string }
-  >;
+  const projectTranslations = t.projects.items;
 
   return PROJECT_DATA.map((project) => ({
     ...project,
-    title: projectTranslations[project.id]?.title || project.id,
-    description: projectTranslations[project.id]?.description || '',
+    title: projectTranslations[project.id]?.title ?? project.id,
+    description: projectTranslations[project.id]?.description ?? '',
   }));
 }

@@ -1,25 +1,4 @@
-/**
- * Project data structure containing non-translatable information.
- * For translatable content (title, description), use the getProjects function with a locale.
- */
-export type ProjectData = {
-  id: string;
-  imageUrl?: string;
-  videoUrl?: string;
-  url: string;
-  links?: {
-    source?: string;
-    website?: string;
-  };
-};
-
-/**
- * Complete project structure including translations.
- */
-export type Project = ProjectData & {
-  title: string;
-  description: string;
-};
+import type { ProjectData } from '@/types';
 
 /**
  * Static project data without translations.

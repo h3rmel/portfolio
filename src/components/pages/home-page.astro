@@ -4,7 +4,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from '@tabler/icons-react';
 
 import { CV_URL, SOCIAL_LINKS } from '@/config/links';
-import { getTranslations } from '@/i18n/utils';
+import { getTranslations, getValidLocale } from '@/i18n/utils';
 
 import { Avatar } from '../avatar';
 import { LinksList } from '../links-list';
@@ -18,10 +18,11 @@ interface Props {
 }
 
 const { locale } = Astro.props;
+const validLocale = getValidLocale(locale);
 const t = getTranslations(locale);
 
-const aboutUrl = getRelativeLocaleUrl(locale!, 'about');
-const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
+const aboutUrl = getRelativeLocaleUrl(validLocale, 'about');
+const projectsUrl = getRelativeLocaleUrl(validLocale, 'projects');
 ---
 
 <main class="relative flex min-h-dvh w-full items-center justify-center overflow-hidden">
@@ -56,7 +57,7 @@ const projectsUrl = getRelativeLocaleUrl(locale!, 'projects');
       <LinksListItem
         target="_blank"
         linkClassName=" hover:[&_svg]:translate-x-0"
-        href={CV_URL[locale as keyof typeof CV_URL]}
+        href={CV_URL[validLocale]}
         icon="IconExternalLink"
       >
         {t.home.cv}
