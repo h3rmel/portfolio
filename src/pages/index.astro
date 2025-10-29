@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 // Detect browser language and redirect to appropriate locale
 const acceptLanguage = Astro.request.headers.get('accept-language');
 const preferredLocale = acceptLanguage?.split(',')[0]?.split('-')[0];

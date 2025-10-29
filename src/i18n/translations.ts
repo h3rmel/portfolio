@@ -23,7 +23,7 @@ export const translations = {
     },
     about: {
       title: 'A bit about me',
-      subtitle: 'Get to know me better as a person and professional',
+      subtitle: 'Get to know me better as a person and professional.',
       paragraphs: [
         'Full-Stack Developer with specialization in Front-End, focused on building scalable and intuitive applications. I have 3 years of development experience applied to Customer Success, data extraction and processing, and landing page conversion optimization.',
         'I use agile methodologies (Scrum/Kanban) to structure the development cycle, from planning and refinement to execution, testing, and delivery of new features and code improvements. My previous experience in Customer Success enables detailed analysis of user flows, facilitating the identification and anticipation of friction points in the product experience.',
@@ -119,7 +119,7 @@ export const translations = {
     },
     about: {
       title: 'Um pouco sobre mim',
-      subtitle: 'Conheça-me melhor como pessoa e profissional',
+      subtitle: 'Conheça-me melhor como pessoa e profissional.',
       paragraphs: [
         'Desenvolvedor Full-Stack com especialização em Front-End, focado na construção de aplicações escaláveis e intuitivas. Possuo 3 anos de experiência em desenvolvimento aplicado aos setores de Sucesso do Cliente, extração e tratamento de dados, e otimização de landing pages para conversão.',
         'Utilizo metodologias ágeis (Scrum/Kanban) para estruturar o ciclo de desenvolvimento, desde o planejamento e refinamento até a execução, teste e entrega de novas funcionalidades e melhorias de código. Minha experiência prévia em Sucesso do Cliente permite uma análise detalhada dos fluxos de usuário, facilitando a identificação e antecipação de pontos de atrito na experiência do produto.',

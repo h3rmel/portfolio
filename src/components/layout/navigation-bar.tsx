@@ -27,15 +27,27 @@ import { Separator } from '../ui/separator';
  *
  * @param currentLocale - The current locale for i18n routing
  * @param navigationLinks - Array of navigation links with href and label
+ * @param currentPath - The current URL pathname to determine active link
  */
 export function NavigationBar({
   currentLocale,
   navigationLinks,
+  currentPath,
 }: {
   currentLocale: string;
   navigationLinks: { href: string; label: string }[];
+  currentPath: string;
 }) {
   const [open, setOpen] = useState(false);
+
+  /**
+   * Checks if a link is currently active by comparing its href with the current path.
+   * @param href - The link's href to compare
+   * @returns true if the link matches the current path
+   */
+  const isActive = (href: string): boolean => {
+    return currentPath === href;
+  };
 
   return (
     <header className="sticky top-0 z-50">
@@ -52,7 +64,10 @@ export function NavigationBar({
             <a
               href={link.href}
               key={link.href}
-              className={cn(buttonVariants({ variant: 'link', size: 'sm' }))}
+              className={cn(
+                buttonVariants({ variant: 'link', size: 'sm' }),
+                isActive(link.href) && 'underline underline-offset-4 font-semibold',
+              )}
             >
               {link.label}
             </a>
@@ -92,6 +107,7 @@ export function NavigationBar({
                       className={cn(
                         buttonVariants({ variant: 'ghost', size: 'lg' }),
                         'justify-start',
+                        isActive(link.href) && 'bg-accent font-semibold',
                       )}
                     >
                       {link.label}

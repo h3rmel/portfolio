@@ -7,6 +7,7 @@ import BaseLayout from '@/layouts/base-layout.astro';
 
 const { title } = Astro.props;
 const locale = Astro.currentLocale;
+const currentPath = Astro.url.pathname;
 
 const t = getTranslations(locale);
 
@@ -17,7 +18,12 @@ const navigationLinks = [
 ---
 
 <BaseLayout title={title}>
-  <NavigationBar client:idle currentLocale={locale!} navigationLinks={navigationLinks} />
+  <NavigationBar
+    client:idle
+    currentLocale={locale!}
+    navigationLinks={navigationLinks}
+    currentPath={currentPath}
+  />
   <main class="relative mx-auto my-16 size-full max-w-screen-lg px-4">
     <slot />
   </main>
