@@ -1,1 +1,20 @@
-<section>Hi mom.</section>
+---
+import { ProjectsGrid } from '@/components/projects-grid';
+import { getProjects, getTranslations } from '@/i18n/utils';
+
+interface Props {
+  locale: string | undefined;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const projects = getProjects(locale);
+---
+
+<div class="flex flex-col gap-8">
+  <hgroup class="flex flex-col gap-2">
+    <h1 class="text-2xl font-bold tracking-tight">{t.projects.title}</h1>
+    <h6 class="text-muted-foreground text-lg">{t.projects.subtitle}</h6>
+  </hgroup>
+  <ProjectsGrid client:load projects={projects} />
+</div>

@@ -100,6 +100,37 @@ export const translations = {
         },
       ],
     },
+    projects: {
+      title: 'Projects',
+      subtitle: 'Explore my latest projects and contributions.',
+      items: {
+        guarahooks: {
+          title: 'guarahooks',
+          description:
+            'Collection of reusable and customizable hooks that you can copy-and-paste into your apps. Free. Open Source and Open Code.',
+        },
+        'magic-ui': {
+          title: 'Magic UI',
+          description:
+            'UI library for Design Engineers. Animated components and effects to copy-and-paste into your React apps.',
+        },
+        'focus-brew': {
+          title: 'FocusBrew',
+          description:
+            'Free productivity toolkit that combines essential tools to help you stay focused, organized and efficient throughout your workday.',
+        },
+        'retro-ui': {
+          title: 'RetroUI',
+          description:
+            'Retro-styled UI library for modern web applications using React. Shadcn UI components with a retro aesthetic.',
+        },
+        'volley-driven-development': {
+          title: 'Volley Driven Development',
+          description:
+            'Proof of Concept showcasing how to apply BDD and TDD while building a modern React + TypeScript front-end application.',
+        },
+      },
+    },
   },
   pt: {
     navigation: {
@@ -196,7 +227,41 @@ export const translations = {
         },
       ],
     },
+    projects: {
+      title: 'Projetos',
+      subtitle: 'Explore meus últimos projetos e contribuições.',
+      items: {
+        guarahooks: {
+          title: 'guarahooks',
+          description:
+            'Coleção de hooks reutilizáveis e customizáveis que você pode copiar e colar em seus aplicativos. Gratuito. Open Source e Open Code.',
+        },
+        'magic-ui': {
+          title: 'Magic UI',
+          description:
+            'Biblioteca de UI para Design Engineers. Componentes animados e efeitos para copiar e colar em seus projetos React.',
+        },
+        'focus-brew': {
+          title: 'FocusBrew',
+          description:
+            'Kit de produtividade gratuito para ajudá-lo a se manter focado, organizado e eficiente durante o seu dia de trabalho.',
+        },
+        'retro-ui': {
+          title: 'RetroUI',
+          description:
+            'Biblioteca de UI com estilo retrô para aplicações web usando React. Componentes Shadcn UI com estética retrô.',
+        },
+        'volley-driven-development': {
+          title: 'Volley Driven Development',
+          description:
+            'Prova de Conceito demonstrando como aplicar BDD e TDD enquanto constrói uma aplicação front-end moderna com React + TypeScript.',
+        },
+      },
+    },
   },
-} as const satisfies Record<Locale, Record<string, Record<string, string | unknown[]>>>;
+} as const satisfies Record<
+  Locale,
+  Record<string, Record<string, string | unknown[] | Record<string, unknown>>>
+>;
 
 export type Translations = (typeof translations)[Locale];

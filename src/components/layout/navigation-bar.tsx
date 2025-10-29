@@ -4,7 +4,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import { IconMenu2 } from '@tabler/icons-react';
 
-import { CV_URL } from '@/constants/links';
+import { CV_URL } from '@/config/links';
 import { cn } from '@/lib/utils';
 
 import { LocaleToggle } from '../locale-toggle';
@@ -51,7 +51,7 @@ export function NavigationBar({
 
   return (
     <header className="sticky top-0 z-50">
-      <nav className="max-w-screen-lg relative mx-auto flex justify-between items-center border border-border border-b-3 p-3 rounded-b-lg bg-background/50 backdrop-blur-xs">
+      <nav className="max-w-screen-lg relative mx-auto flex justify-between items-center border border-border border-b-3 p-3 lg:rounded-b-lg bg-background/50 backdrop-blur-xs">
         {/* Logo */}
         <a href={getRelativeLocaleUrl(currentLocale!)} className="ml-1">
           <span className="text-2xl tracking-wider">I</span>
@@ -59,7 +59,7 @@ export function NavigationBar({
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-3">
+        <div className="hidden md:flex items-center space-x-4">
           {navigationLinks.map((link) => (
             <a
               href={link.href}
@@ -82,13 +82,13 @@ export function NavigationBar({
         </div>
 
         {/* Desktop Locale and Theme Toggle */}
-        <div className="hidden md:flex items-center space-x-3">
+        <div className="hidden md:flex items-center space-x-4">
           <LocaleToggle variant="outline" />
           <ThemeToggle variant="outline" />
         </div>
 
         {/* Mobile Navigation */}
-        <div className="flex md:hidden items-center space-x-3">
+        <div className="flex md:hidden items-center space-x-4">
           <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild>
               <Button variant="outline" size="icon">
@@ -107,7 +107,7 @@ export function NavigationBar({
                       className={cn(
                         buttonVariants({ variant: 'ghost', size: 'lg' }),
                         'justify-start',
-                        isActive(link.href) && 'bg-accent font-semibold',
+                        isActive(link.href) && 'bg-accent/60 font-semibold',
                       )}
                     >
                       {link.label}
