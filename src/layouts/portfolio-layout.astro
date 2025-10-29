@@ -5,7 +5,15 @@ import { NavigationBar } from '@/components/layout/navigation-bar';
 import { getTranslations, getValidLocale } from '@/i18n/utils';
 import BaseLayout from '@/layouts/base-layout.astro';
 
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+}
+
+const { title, description, ogImage, ogType, noindex } = Astro.props;
 const locale = Astro.currentLocale;
 const currentPath = Astro.url.pathname;
 const validLocale = getValidLocale(locale);
@@ -18,7 +26,13 @@ const navigationLinks = [
 ];
 ---
 
-<BaseLayout title={title}>
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  ogType={ogType}
+  noindex={noindex}
+>
   <NavigationBar
     client:idle
     currentLocale={validLocale}

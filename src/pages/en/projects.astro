@@ -1,8 +1,11 @@
 ---
 import ProjectsPage from '@/components/pages/projects-page.astro';
+import { PAGE_SEO } from '@/config/seo';
 import PortfolioLayout from '@/layouts/portfolio-layout.astro';
+
+const seo = PAGE_SEO.projects.en;
 ---
 
-<PortfolioLayout title="Projects - Isaac Hermel Reginato">
+<PortfolioLayout title={seo.title} description={seo.description}>
   <ProjectsPage locale={Astro.currentLocale} />
 </PortfolioLayout>

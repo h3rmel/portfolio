@@ -2,7 +2,21 @@
 import '@fontsource-variable/jetbrains-mono';
 import '@/styles/global.css';
 
-const { title } = Astro.props;
+import SEO from '@/components/seo.astro';
+import { getValidLocale } from '@/i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+}
+
+const { title, description, ogImage, ogType, noindex } = Astro.props;
+const locale = Astro.currentLocale;
+const validLocale = getValidLocale(locale);
+const lang = validLocale === 'pt' ? 'pt-BR' : 'en-US';
 ---
 
 <script is:inline>
@@ -27,11 +41,17 @@ const { title } = Astro.props;
   }
 </script>
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <SEO
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
