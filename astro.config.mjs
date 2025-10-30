@@ -1,23 +1,22 @@
 // @ts-check
 
-import { defineConfig } from "astro/config";
-
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import tailwindcss from "@tailwindcss/vite";
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static",
-  site: "https://isaachermel.dev.br",
+  output: 'static',
+  site: 'https://isaachermel.dev.br',
   integrations: [
     react(),
     sitemap({
       i18n: {
-        defaultLocale: "en",
+        defaultLocale: 'en',
         locales: {
-          en: "en-US",
-          pt: "pt-BR",
+          en: 'en-US',
+          pt: 'pt-BR',
         },
       },
     }),
@@ -26,8 +25,8 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   i18n: {
-    locales: ["en", "pt"],
-    defaultLocale: "en",
+    locales: ['en', 'pt'],
+    defaultLocale: 'en',
     routing: {
       prefixDefaultLocale: true,
       redirectToDefaultLocale: true,

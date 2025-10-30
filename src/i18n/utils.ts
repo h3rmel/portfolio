@@ -1,8 +1,7 @@
 import { PROJECT_DATA } from '@/config/projects';
 import { LOCALE } from '@/constants';
 import type { Locale, Project } from '@/types';
-
-import { type Translations, translations } from './translations';
+import { translations, type Translations } from './translations';
 
 /**
  * Retrieves translations for a given locale.

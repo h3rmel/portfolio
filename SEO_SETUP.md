@@ -79,14 +79,14 @@ public/
 
 ### Manual Creation (Recommended sizes)
 
-| File | Size | Purpose |
-|------|------|---------|
-| `favicon-16x16.png` | 16x16 | Browser tabs |
-| `favicon-32x32.png` | 32x32 | Browser tabs |
-| `apple-touch-icon.png` | 180x180 | iOS home screen |
-| `favicon-192x192.png` | 192x192 | Android/Chrome |
-| `favicon-512x512.png` | 512x512 | Android/Chrome |
-| `og-image.png` | 1200x630 | Social media preview |
+| File                   | Size     | Purpose              |
+| ---------------------- | -------- | -------------------- |
+| `favicon-16x16.png`    | 16x16    | Browser tabs         |
+| `favicon-32x32.png`    | 32x32    | Browser tabs         |
+| `apple-touch-icon.png` | 180x180  | iOS home screen      |
+| `favicon-192x192.png`  | 192x192  | Android/Chrome       |
+| `favicon-512x512.png`  | 512x512  | Android/Chrome       |
+| `og-image.png`         | 1200x630 | Social media preview |
 
 ### OG Image Tips
 

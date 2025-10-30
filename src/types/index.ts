@@ -1,5 +1,5 @@
-import type { icons } from '@tabler/icons-react';
 import type { HTMLAttributeAnchorTarget } from 'react';
+import type { icons } from '@tabler/icons-react';
 
 /**
  * Supported locales in the application
