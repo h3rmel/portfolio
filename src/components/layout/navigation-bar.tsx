@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { IconMenu2 } from '@tabler/icons-react';
+import { motion } from 'motion/react';
 import { CV_URL } from '@/config/links';
 import { getValidLocale } from '@/i18n/utils';
 import { cn } from '@/lib/utils';
@@ -32,7 +33,36 @@ export function NavigationBar({
   navigationLinks,
   currentPath,
 }: NavigationBarProps) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isDesktop, setIsDesktop] = useState<boolean>(false);
+
+  /**
+   * Monitors scroll position and updates state when user scrolls beyond 160px.
+   * Only tracks scroll on desktop viewports.
+   */
+  useEffect(() => {
+    const handleScroll = () => {
+      // Only apply scroll detection on desktop (md breakpoint and above)
+      const currentIsDesktop = window.innerWidth >= 768;
+      setIsDesktop(currentIsDesktop);
+
+      if (currentIsDesktop) {
+        setIsScrolled(window.scrollY > 160);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    handleScroll(); // Check initial scroll position
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   /**
    * Checks if a link is currently active by comparing its href with the current path.
@@ -47,12 +77,32 @@ export function NavigationBar({
 
   return (
     <header className="sticky top-0 z-50">
-      <nav className="border-border bg-background/50 relative mx-auto flex max-w-screen-lg items-center justify-between border border-b-3 p-3 backdrop-blur-xs lg:rounded-b-lg">
+      <motion.nav
+        className="border-border bg-background/50 relative mx-auto flex max-w-screen-lg items-center justify-between border border-b-3 p-3 backdrop-blur-xs"
+        animate={{
+          top: isScrolled && isDesktop ? '1.5rem' : '0',
+          borderRadius: isScrolled && isDesktop ? '0.5rem' : '0 0 0.5rem 0.5rem',
+        }}
+        transition={{
+          duration: 0.3,
+          ease: [0.4, 0.0, 0.2, 1],
+        }}
+      >
         {/* Logo */}
-        <a href={getRelativeLocaleUrl(validLocale)} className="ml-1">
-          <span className="text-2xl tracking-wider">I</span>
-          <span className="-ml-1.5 text-2xl tracking-wider">H</span>
-        </a>
+        <motion.a
+          href={getRelativeLocaleUrl(validLocale)}
+          className="ml-1"
+          animate={{
+            fontSize: isScrolled ? '1.25rem' : '1.5rem',
+          }}
+          transition={{
+            duration: 0.3,
+            ease: [0.4, 0.0, 0.2, 1],
+          }}
+        >
+          <span className="tracking-wider">I</span>
+          <span className="-ml-1.5 tracking-wider">H</span>
+        </motion.a>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-4 md:flex">
@@ -127,7 +177,7 @@ export function NavigationBar({
             </DrawerContent>
           </Drawer>
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 }
