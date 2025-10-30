@@ -89,20 +89,10 @@ export function NavigationBar({
         }}
       >
         {/* Logo */}
-        <motion.a
-          href={getRelativeLocaleUrl(validLocale)}
-          className="ml-1"
-          animate={{
-            fontSize: isScrolled ? '1.25rem' : '1.5rem',
-          }}
-          transition={{
-            duration: 0.3,
-            ease: [0.4, 0.0, 0.2, 1],
-          }}
-        >
-          <span className="tracking-wider">I</span>
-          <span className="-ml-1.5 tracking-wider">H</span>
-        </motion.a>
+        <a href={getRelativeLocaleUrl(validLocale)} className="ml-1">
+          <span className="text-2xl tracking-wider">I</span>
+          <span className="-ml-1.5 text-2xl tracking-wider">H</span>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-4 md:flex">
