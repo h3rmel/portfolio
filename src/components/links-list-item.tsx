@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { cn } from '@/lib/utils';
+import { linkItemVariants } from '@/lib/variants';
 import type { LinksListItemProps } from '@/types';
 import { Icon } from './icon';
 import { buttonVariants } from './ui/button';
@@ -32,9 +33,7 @@ export const LinksListItem = memo(function LinksListItem({
       <a
         className={cn(
           buttonVariants({ variant: 'secondary', size: 'lg' }),
-          'group w-full justify-between text-base',
-          'group-hover:opacity-60 group-hover:hover:opacity-100',
-          '[&_svg]:transition-transform hover:[&_svg]:translate-x-1',
+          linkItemVariants(),
           linkClassName,
         )}
         href={href}

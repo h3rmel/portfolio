@@ -23,6 +23,15 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      cssMinify: 'lightningcss',
+      rollupOptions: {
+        output: {
+          // Better code splitting for CSS
+          manualChunks: undefined,
+        },
+      },
+    },
   },
   i18n: {
     locales: ['en', 'pt'],
@@ -31,5 +40,10 @@ export default defineConfig({
       prefixDefaultLocale: true,
       redirectToDefaultLocale: true,
     },
+  },
+  // Performance optimizations
+  compressHTML: true,
+  build: {
+    inlineStylesheets: 'auto',
   },
 });
