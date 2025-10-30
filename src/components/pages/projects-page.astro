@@ -25,10 +25,10 @@ const projects = getProjects(locale);
     ) : (
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
         {projects.map((project) => (
-          <div class="group bg-card text-card-foreground flex flex-col overflow-hidden rounded-lg border shadow-sm transition-all hover:shadow-lg">
+          <div class="group bg-card text-card-foreground hover:border-accent-foreground border-border flex flex-col overflow-hidden rounded-lg border border-b-3 shadow-sm transition-all">
             {/* Media Section */}
             <a href={project.url} target="_blank" rel="noopener noreferrer">
-              <div class="bg-muted relative aspect-video w-full overflow-hidden border-b">
+              <div class="bg-muted border-border group-hover:border-accent-foreground relative aspect-video w-full overflow-hidden border-b transition-all">
                 {project.videoUrl ? (
                   <video
                     src={project.videoUrl}
@@ -64,7 +64,7 @@ const projects = getProjects(locale);
             </div>
 
             {/* Actions */}
-            <div class="flex items-center gap-2 border-t p-4">
+            <div class="group-hover:border-accent-foreground flex items-center gap-2 border-t p-4 transition-all">
               {project.links?.source && (
                 <a
                   href={project.links.source}

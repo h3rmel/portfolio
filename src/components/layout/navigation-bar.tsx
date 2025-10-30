@@ -6,7 +6,7 @@ import { getValidLocale } from '@/i18n/utils';
 import { cn } from '@/lib/utils';
 import type { NavigationBarProps } from '@/types';
 import { LocaleToggle } from '../locale-toggle';
-import { ThemeToggle } from '../theme-toggle';
+import { AnimatedThemeToggler } from '../ui/animated-theme-toggler';
 import { Button, buttonVariants } from '../ui/button';
 import {
   Drawer,
@@ -80,7 +80,7 @@ export function NavigationBar({
         {/* Desktop Locale and Theme Toggle */}
         <div className="hidden items-center space-x-4 md:flex">
           <LocaleToggle variant="outline" />
-          <ThemeToggle variant="outline" />
+          <AnimatedThemeToggler variant="outline" size="icon" />
         </div>
 
         {/* Mobile Navigation */}

@@ -94,3 +94,9 @@
     @apply bg-background text-foreground tracking-normal;
   }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

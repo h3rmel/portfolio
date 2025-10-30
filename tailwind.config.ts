@@ -6,11 +6,7 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: [
-    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    // Prioritize UI components for faster scanning
-    './src/components/ui/**/*.{tsx,ts}',
-  ],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
       // Custom size utilities for icons
