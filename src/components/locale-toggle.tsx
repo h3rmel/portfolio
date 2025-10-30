@@ -51,7 +51,7 @@ export function LocaleToggle({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant={variant} size="icon" className={className}>
-          <IconLanguage className="h-[1.2rem] w-[1.2rem]" />
+          <IconLanguage className="size-5" />
           <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>

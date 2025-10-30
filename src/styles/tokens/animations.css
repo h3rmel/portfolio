@@ -1,0 +1,20 @@
+/**
+ * Design Tokens: Animations & Transitions
+ * Defines consistent timing and easing functions
+ */
+
+:root {
+  /* Duration */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Easing */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Transform */
+  --scale-active: 0.98;
+  --translate-hover: 0.25rem;
+}

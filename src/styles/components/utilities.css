@@ -1,0 +1,31 @@
+/**
+ * Component Utilities
+ * Reusable composition classes for common patterns
+ */
+
+@layer components {
+  /* Focus Visible Pattern */
+  .focus-ring {
+    @apply focus-visible:border-ring focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px];
+  }
+
+  /* Invalid State Pattern */
+  .invalid-ring {
+    @apply aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:aria-invalid:ring-destructive/40;
+  }
+
+  /* Active Scale Pattern */
+  .active-scale {
+    @apply transition-transform active:scale-[var(--scale-active,0.98)];
+  }
+
+  /* Icon Transition Pattern */
+  .icon-translate-x {
+    @apply [&_svg]:transition-transform hover:[&_svg]:translate-x-[var(--translate-hover,0.25rem)];
+  }
+
+  /* SVG Size Normalization */
+  .svg-normalize {
+    @apply [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4;
+  }
+}
