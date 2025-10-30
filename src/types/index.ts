@@ -74,6 +74,7 @@ export interface LinksListItemProps {
   linkClassName?: string;
   icon?: keyof typeof icons;
   target?: HTMLAttributeAnchorTarget;
+  ariaLabel?: string;
 }
 
 /**

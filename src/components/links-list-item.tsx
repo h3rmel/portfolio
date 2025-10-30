@@ -15,6 +15,7 @@ import { buttonVariants } from './ui/button';
  * @param linkClassName - Optional CSS classes for the anchor element
  * @param icon - Optional Tabler icon name to display
  * @param target - Link target attribute (default: '_self')
+ * @param ariaLabel - Optional aria-label attribute
  * @returns A styled link item with icon support
  */
 export const LinksListItem = memo(function LinksListItem({
@@ -24,6 +25,7 @@ export const LinksListItem = memo(function LinksListItem({
   linkClassName,
   icon,
   target = '_self',
+  ariaLabel,
 }: LinksListItemProps) {
   return (
     <li className={cn('w-full', className)}>
@@ -37,6 +39,7 @@ export const LinksListItem = memo(function LinksListItem({
         )}
         href={href}
         target={target}
+        aria-label={ariaLabel}
       >
         {children}
         {icon && <Icon icon={icon} />}
