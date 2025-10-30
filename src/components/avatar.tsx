@@ -20,6 +20,7 @@ export const Avatar = memo(function Avatar() {
         className="rounded-full"
         src={profileImage.src}
         alt="Isaac Hermel Reginato"
+        fetchPriority="high"
       />
       <AvatarFallback className="rounded-full">IR</AvatarFallback>
     </AvatarPrimitive>
