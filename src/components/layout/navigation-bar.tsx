@@ -1,14 +1,10 @@
 import { useState } from 'react';
-
 import { getRelativeLocaleUrl } from 'astro:i18n';
-
 import { IconMenu2 } from '@tabler/icons-react';
-
 import { CV_URL } from '@/config/links';
 import { getValidLocale } from '@/i18n/utils';
 import { cn } from '@/lib/utils';
 import type { NavigationBarProps } from '@/types';
-
 import { LocaleToggle } from '../locale-toggle';
 import { ThemeToggle } from '../theme-toggle';
 import { Button, buttonVariants } from '../ui/button';
@@ -51,22 +47,22 @@ export function NavigationBar({
 
   return (
     <header className="sticky top-0 z-50">
-      <nav className="max-w-screen-lg relative mx-auto flex justify-between items-center border border-border border-b-3 p-3 lg:rounded-b-lg bg-background/50 backdrop-blur-xs">
+      <nav className="border-border bg-background/50 relative mx-auto flex max-w-screen-lg items-center justify-between border border-b-3 p-3 backdrop-blur-xs lg:rounded-b-lg">
         {/* Logo */}
         <a href={getRelativeLocaleUrl(validLocale)} className="ml-1">
           <span className="text-2xl tracking-wider">I</span>
-          <span className="text-2xl tracking-wider -ml-1.5">H</span>
+          <span className="-ml-1.5 text-2xl tracking-wider">H</span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden items-center space-x-4 md:flex">
           {navigationLinks.map((link) => (
             <a
               href={link.href}
               key={link.href}
               className={cn(
                 buttonVariants({ variant: 'link', size: 'sm' }),
-                isActive(link.href) && 'underline underline-offset-4 font-semibold',
+                isActive(link.href) && 'font-semibold underline underline-offset-4',
               )}
             >
               {link.label}
@@ -82,13 +78,13 @@ export function NavigationBar({
         </div>
 
         {/* Desktop Locale and Theme Toggle */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden items-center space-x-4 md:flex">
           <LocaleToggle variant="outline" />
           <ThemeToggle variant="outline" />
         </div>
 
         {/* Mobile Navigation */}
-        <div className="flex md:hidden items-center space-x-4">
+        <div className="flex items-center space-x-4 md:hidden">
           <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild>
               <Button variant="outline" size="icon">

@@ -1,5 +1,4 @@
 import { memo } from 'react';
-
 import profileImage from '@/assets/profile.webp';
 import {
   AvatarFallback,
@@ -16,7 +15,7 @@ import {
  */
 export const Avatar = memo(function Avatar() {
   return (
-    <AvatarPrimitive className="size-16 border border-border p-0.5">
+    <AvatarPrimitive className="border-border size-16 border p-0.5">
       <AvatarImage
         className="rounded-full"
         src={profileImage.src}

@@ -107,14 +107,14 @@ The result is a blazing-fast, SEO-friendly portfolio with minimal client-side Ja
 
 All commands are run from the root of the project:
 
-| Command              | Action                                           |
-| :------------------- | :----------------------------------------------- |
-| `bun install`        | Installs dependencies                            |
-| `bun dev`            | Starts local dev server at `localhost:4321`      |
-| `bun run build`      | Build your production site to `./dist/`          |
-| `bun run preview`    | Preview your build locally, before deploying     |
-| `bun run format`     | Format code with Prettier                        |
-| `bun run format:check` | Check code formatting                          |
+| Command                | Action                                       |
+| :--------------------- | :------------------------------------------- |
+| `bun install`          | Installs dependencies                        |
+| `bun dev`              | Starts local dev server at `localhost:4321`  |
+| `bun run build`        | Build your production site to `./dist/`      |
+| `bun run preview`      | Preview your build locally, before deploying |
+| `bun run format`       | Format code with Prettier                    |
+| `bun run format:check` | Check code formatting                        |
 
 ## License
 

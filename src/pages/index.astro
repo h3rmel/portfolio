@@ -1,5 +1,6 @@
 ---
-// Client-side redirect to preferred locale
+// This page is only shown as fallback if Vercel redirects fail
+// Redirects are handled at the edge via vercel.json
 ---
 
 <!doctype html>
@@ -8,16 +9,61 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Isaac Hermel Reginato - Portfolio</title>
-    <script>
-      // Detect browser language and redirect to appropriate locale
-      const preferredLocale = navigator.language?.split('-')[0];
-      const targetLocale = preferredLocale === 'pt' ? 'pt' : 'en';
-      window.location.href = `/${targetLocale}/`;
-    </script>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background: #000;
+        color: #fff;
+      }
+      .container {
+        text-align: center;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #999;
+      }
+      .links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+      a {
+        padding: 0.75rem 2rem;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: opacity 0.2s;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+    </style>
   </head>
   <body>
-    <noscript>
-      <p>Please enable JavaScript or navigate to <a href="/en/">/en/</a> or <a href="/pt/">/pt/</a></p>
-    </noscript>
+    <div class="container">
+      <h1>Isaac Hermel Reginato</h1>
+      <p>Choose your language / Escolha seu idioma</p>
+      <div class="links">
+        <a href="/en/">English</a>
+        <a href="/pt/">Português</a>
+      </div>
+    </div>
   </body>
 </html>
