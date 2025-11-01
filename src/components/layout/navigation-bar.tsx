@@ -120,7 +120,7 @@ export function NavigationBar({
         {/* Desktop Locale and Theme Toggle */}
         <div className="hidden items-center space-x-4 md:flex">
           <LocaleToggle variant="outline" />
-          <AnimatedThemeToggler variant="outline" size="icon" />
+          <AnimatedThemeToggler variant="outline" />
         </div>
 
         {/* Mobile Navigation */}

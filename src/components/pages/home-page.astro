@@ -8,6 +8,7 @@ import { LinksList } from '../links-list';
 import { LinksListItem } from '../links-list-item';
 import { LocaleToggle } from '../locale-toggle';
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler';
+import { FlickeringGrid } from '../ui/flickering-grid';
 import { LightRays } from '../ui/light-rays';
 
 interface Props {
@@ -23,7 +24,17 @@ const projectsUrl = getRelativeLocaleUrl(validLocale, 'projects');
 ---
 
 <main class="relative flex min-h-dvh w-full items-center justify-center overflow-hidden">
-  <LightRays client:idle />
+  <FlickeringGrid
+    client:idle
+    className="absolute inset-0 top-0 left-0 z-0 size-full [mask-image:radial-gradient(480px_circle_at_center,white,transparent)]"
+    squareSize={4}
+    gridGap={6}
+    width={1920}
+    height={1080}
+    maxOpacity={0.3}
+    color={{ light: '#000000', dark: '#ffffff' }}
+    flickerChance={0.1}
+  />
   <div class="absolute top-4 right-4 flex gap-4">
     <LocaleToggle client:idle />
     <AnimatedThemeToggler client:idle />

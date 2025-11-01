@@ -11,6 +11,8 @@ interface AnimatedThemeTogglerProps extends ButtonProps {
 export const AnimatedThemeToggler = ({
   className,
   duration = 400,
+  variant = 'secondary',
+  size = 'icon',
   ...props
 }: AnimatedThemeTogglerProps) => {
   const [isDark, setIsDark] = useState(false);
@@ -68,7 +70,14 @@ export const AnimatedThemeToggler = ({
   }, [isDark, duration]);
 
   return (
-    <Button ref={buttonRef} onClick={toggleTheme} className={cn(className)} {...props}>
+    <Button
+      ref={buttonRef}
+      onClick={toggleTheme}
+      className={cn(className)}
+      variant={variant}
+      size={size}
+      {...props}
+    >
       {isDark ? <IconSun className="size-5" /> : <IconMoon className="size-5" />}
       <span className="sr-only">Toggle theme</span>
     </Button>

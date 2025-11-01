@@ -15,7 +15,7 @@ import {
  */
 export const Avatar = memo(function Avatar() {
   return (
-    <AvatarPrimitive className="border-border size-16 border p-0.5">
+    <AvatarPrimitive className="border-border hover:border-accent-foreground size-16 border p-0.5 transition-all">
       <AvatarImage
         className="rounded-full"
         src={profileImage.src}

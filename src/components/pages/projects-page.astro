@@ -25,7 +25,7 @@ const projects = getProjects(locale);
     ) : (
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
         {projects.map((project) => (
-          <div class="group bg-card text-card-foreground hover:border-accent-foreground border-border flex flex-col overflow-hidden rounded-lg border border-b-3 shadow-sm transition-all">
+          <div class="group bg-card/50 text-card-foreground hover:border-accent-foreground border-border flex flex-col overflow-hidden rounded-lg border border-b-3 shadow-sm transition-all">
             {/* Media Section */}
             <a href={project.url} target="_blank" rel="noopener noreferrer">
               <div class="bg-muted border-border group-hover:border-accent-foreground relative aspect-video w-full overflow-hidden border-b transition-all">

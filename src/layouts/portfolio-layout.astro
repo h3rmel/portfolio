@@ -1,6 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { NavigationBar } from '@/components/layout/navigation-bar';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 import { getTranslations, getValidLocale } from '@/i18n/utils';
 import BaseLayout from '@/layouts/base-layout.astro';
 
@@ -38,7 +39,20 @@ const navigationLinks = [
     navigationLinks={navigationLinks}
     currentPath={currentPath}
   />
-  <main class="relative mx-auto my-12 size-full max-w-screen-lg px-4">
-    <slot />
+  <main class="relative min-h-dvh w-full overflow-hidden">
+    <section class="relative z-10 mx-auto my-12 size-full max-w-screen-lg px-4">
+      <slot />
+    </section>
+    <FlickeringGrid
+      client:idle
+      className="fixed top-0 left-0 size-full [mask-image:radial-gradient(640px_circle_at_center,white,transparent)]"
+      squareSize={4}
+      gridGap={6}
+      width={1920}
+      height={1080}
+      maxOpacity={0.2}
+      color={{ light: '#000000', dark: '#ffffff' }}
+      flickerChance={0.1}
+    />
   </main>
 </BaseLayout>
