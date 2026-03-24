@@ -1,125 +1,34 @@
-# Portfolio
+# isaachermel-portfolio
 
-My personal portfolio built with Astro, showcasing my professional experience, education, and projects.
+Personal portfolio site (Next.js App Router).
 
-Deployed on [Vercel](https://vercel.com), you can check it live at [isaachermel.dev.br](https://isaachermel.dev.br).
+## Requirements
 
-## Why Astro?
+- **Node.js** 20.x
+- **pnpm** 9.x (`corepack enable` then `corepack prepare pnpm@9 --activate`, or use the version from your package manager)
 
-I decided to rebuild my portfolio using Astro to dive deeper into this modern framework and its ecosystem. This project serves as a learning experience and a personal challenge to explore Astro's capabilities, including:
+## Scripts
 
-- **Zero JavaScript by default** - Perfect for content-focused sites
-- **Island Architecture** - Interactive components only where needed
-- **Built-in optimizations** - Automatic image optimization, asset handling, and more
-- **Framework flexibility** - Using React components alongside Astro's native templates
-- **Type-safety** - Full TypeScript support across the project
+| Script         | Description                       |
+| -------------- | --------------------------------- |
+| `pnpm dev`     | Development server                |
+| `pnpm build`   | Production build                  |
+| `pnpm start`   | Serve production build locally    |
+| `pnpm lint`    | ESLint with auto-fix              |
+| `pnpm lint:ci` | ESLint check (no fix; used in CI) |
+| `pnpm format`  | Prettier write across the repo    |
 
-The result is a blazing-fast, SEO-friendly portfolio with minimal client-side JavaScript.
+## Performance baseline (Lighthouse)
 
-## Tech Stack
+Captured from [lighthouse-results.json](lighthouse-results.json): **Lighthouse 13.0.2**, **Chrome 146**, `pnpm start` at `http://localhost:3001/`, **2026-03-24** (local run; scores differ on production HTTPS and real network).
 
-- **Framework**: [Astro](https://astro.build) v5
-- **UI Components**: React 19 with Radix UI primitives
-- **Styling**: Tailwind CSS v4
-- **Icons**: Tabler Icons
-- **Type Safety**: TypeScript with strict mode
-- **Deployment**: Vercel Edge Network
-- **Package Manager**: Bun
+| Metric            | Value                   |
+| ----------------- | ----------------------- |
+| Performance score | 98 / 100                |
+| LCP               | ~0.57 s (~571 ms)       |
+| CLS               | ~0.0002 (reported as 0) |
+| TBT               | ~132 ms                 |
+| FCP               | ~0.21 s                 |
+| Speed Index       | ~0.30 s                 |
 
-## Features
-
-- 🌍 Internationalization (English/Portuguese)
-- 🎨 Dark/Light theme support
-- 📱 Fully responsive design
-- ⚡ Static Site Generation (SSG) for optimal performance
-- 🖼️ Optimized images with `astro:assets`
-- ♿ Accessible UI components
-- 🎯 Type-safe translations and configuration
-
-## How to Run the Project
-
-### Prerequisites
-
-- [Bun](https://bun.sh) (version 1.0 or higher)
-- Node.js (version 20 or higher) - optional, Bun can be used standalone
-
-### Step by Step
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/h3rmel/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   bun install
-   ```
-
-3. **Run the development environment**
-
-   ```bash
-   bun dev
-   ```
-
-   The application will be available at `http://localhost:4321`
-
-4. **For production build**
-
-   ```bash
-   bun run build
-   ```
-
-   Optimized files will be generated in the `dist/` folder
-
-5. **To preview the production version locally**
-
-   ```bash
-   bun run preview
-   ```
-
-## Project Structure
-
-```tree
-/
-├── public/              # Static assets (served as-is)
-├── src/
-│   ├── assets/         # Images and media (processed by Astro)
-│   ├── components/     # Reusable components
-│   │   ├── layout/    # Layout components (navigation, etc)
-│   │   ├── pages/     # Page-specific components
-│   │   └── ui/        # UI primitives (buttons, cards, etc)
-│   ├── config/        # Configuration files (logos, projects, etc)
-│   ├── constants/     # Application constants
-│   ├── i18n/          # Internationalization (translations, utils)
-│   ├── layouts/       # Page layouts
-│   ├── lib/           # Utility functions
-│   ├── pages/         # File-based routing
-│   ├── styles/        # Global styles
-│   └── types/         # TypeScript type definitions
-├── astro.config.mjs   # Astro configuration
-└── package.json
-```
-
-## Available Commands
-
-All commands are run from the root of the project:
-
-| Command                | Action                                       |
-| :--------------------- | :------------------------------------------- |
-| `bun install`          | Installs dependencies                        |
-| `bun dev`              | Starts local dev server at `localhost:4321`  |
-| `bun run build`        | Build your production site to `./dist/`      |
-| `bun run preview`      | Preview your build locally, before deploying |
-| `bun run format`       | Format code with Prettier                    |
-| `bun run format:check` | Check code formatting                        |
-
-## License
-
-This project is licensed under the [MIT](LICENSE) License.
-
----
-
-Built with ❤️ using [Astro](https://astro.build)
+**Caveats:** “Does not use HTTPS” is expected on localhost. Re-run on the production URL for numbers comparable to field data and Core Web Vitals.

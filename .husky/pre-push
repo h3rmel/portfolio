@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-echo "🔍 Running type check..."
-bun run typecheck
-
-echo "🏗️  Running build..."
-bun run build
-

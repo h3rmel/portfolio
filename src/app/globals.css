@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Audi F1 / Industrial Raw — 60-30-10 palette
+ * 60% Carbon Black (#0C0C0E)
+ * 30% Titanium Silver (#D1D5DB / #374151)
+ * 10% Lava Red (#E60000)
+ */
+
+@theme inline {
+  --color-background: oklch(0.145 0.005 286);
+  --color-foreground: oklch(0.87 0.006 264);
+  --color-card: oklch(0.178 0.005 286);
+  --color-card-foreground: oklch(0.87 0.006 264);
+  --color-popover: oklch(0.145 0.005 286);
+  --color-popover-foreground: oklch(0.87 0.006 264);
+  --color-primary: oklch(0.55 0.25 29);
+  --color-primary-foreground: oklch(1 0 0);
+  --color-secondary: oklch(0.205 0.006 286);
+  --color-secondary-foreground: oklch(0.87 0.006 264);
+  --color-muted: oklch(0.178 0.005 286);
+  --color-muted-foreground: oklch(0.685 0.01 264);
+  --color-accent: oklch(0.205 0.006 286);
+  --color-accent-foreground: oklch(0.87 0.006 264);
+  --color-destructive: oklch(0.55 0.25 29);
+  --color-destructive-foreground: oklch(1 0 0);
+  --color-border: oklch(0.395 0.015 264);
+  --color-input: oklch(0.395 0.015 264);
+  --color-ring: oklch(0.55 0.25 29);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Industrial: zero radius globally — overrides Tailwind v4 defaults */
+  --radius: 0rem;
+  --radius-xs: 0rem;
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
+  --radius-2xl: 0rem;
+  --radius-3xl: 0rem;
+  --radius-4xl: 0rem;
+  --animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+  @keyframes blink-cursor {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    .animate-blink-cursor {
+      animation: none;
+    }
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'ss01', 'cv01';
+  }
+
+  ::selection {
+    background: oklch(0.55 0.25 29 / 0.2);
+    color: oklch(0.87 0.006 264);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

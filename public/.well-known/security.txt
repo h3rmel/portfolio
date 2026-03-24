@@ -1,4 +1,0 @@
-Contact: mailto:isaachermel@gmail.com
-Preferred-Languages: en, pt
-Canonical: https://isaachermel.dev.br/.well-known/security.txt
-
