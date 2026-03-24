@@ -6,15 +6,15 @@
 
 ## 1. Tech Stack
 
-| Layer        | Technology                        | Notes                                                              |
-| ------------ | --------------------------------- | ------------------------------------------------------------------ |
-| Framework    | Next.js (App Router)              | Server Components by default; `"use client"` only when required    |
-| Language     | TypeScript (strict)               | No `any`. Explicit types/interfaces for all exports                |
-| Styling      | Tailwind CSS                      | Utility-first; design tokens via CSS variables                     |
-| Components   | shadcn/ui                         | Foundation for accessibility & infrastructure; customized per spec  |
-| Animations   | Framer Motion                     | Mechanical micro-interactions only; no fluid/organic motion        |
-| Linting      | Biome                             | Formatting + linting in a single pass                              |
-| Package Mgr  | pnpm (or bun — TBD)              | Lockfile committed                                                 |
+| Layer       | Technology           | Notes                                                              |
+| ----------- | -------------------- | ------------------------------------------------------------------ |
+| Framework   | Next.js (App Router) | Server Components by default; `"use client"` only when required    |
+| Language    | TypeScript (strict)  | No `any`. Explicit types/interfaces for all exports                |
+| Styling     | Tailwind CSS         | Utility-first; design tokens via CSS variables                     |
+| Components  | shadcn/ui            | Foundation for accessibility & infrastructure; customized per spec |
+| Animations  | Framer Motion        | Mechanical micro-interactions only; no fluid/organic motion        |
+| Linting     | Biome                | Formatting + linting in a single pass                              |
+| Package Mgr | pnpm (or bun — TBD)  | Lockfile committed                                                 |
 
 ---
 
@@ -31,13 +31,13 @@
 
 ### Animation Rules (Framer Motion)
 
-| Allowed                                    | Forbidden                              |
-| ------------------------------------------ | -------------------------------------- |
-| Snap-in transitions (spring, stiff)        | Fluid/organic easing                   |
-| Mechanical slide/reveal                    | Bouncy/playful motion                  |
-| Cursor blink, indicator pulse              | Parallax scrolling                     |
-| Hover state with hard displacement (2-4px) | Elastic overshoot                      |
-| Stagger with fixed delay (40-80ms)         | Random/physics-based particle effects  |
+| Allowed                                    | Forbidden                             |
+| ------------------------------------------ | ------------------------------------- |
+| Snap-in transitions (spring, stiff)        | Fluid/organic easing                  |
+| Mechanical slide/reveal                    | Bouncy/playful motion                 |
+| Cursor blink, indicator pulse              | Parallax scrolling                    |
+| Hover state with hard displacement (2-4px) | Elastic overshoot                     |
+| Stagger with fixed delay (40-80ms)         | Random/physics-based particle effects |
 
 ---
 
@@ -45,19 +45,19 @@
 
 ### Hex Reference
 
-| Role                  | Token                | Hex       | Usage                                              |
-| --------------------- | -------------------- | --------- | -------------------------------------------------- |
-| 60% Base              | `--background`       | `#0C0C0E` | Main background, modals, negative space             |
-| 30% Structure (light) | `--foreground`       | `#D1D5DB` | Primary text, headings                              |
-| 30% Structure (dark)  | `--border`           | `#374151` | Borders, grid lines, dark metallic surfaces         |
-| 10% Highlight         | `--primary`          | `#E60000` | CTA buttons, hover states, terminal cursor, alerts  |
-| Derived               | `--primary-foreground` | `#FFFFFF` | Text on primary backgrounds                       |
-| Derived               | `--muted`            | `#18181B` | Elevated surfaces, cards                            |
-| Derived               | `--muted-foreground` | `#9CA3AF` | Secondary/disabled text                             |
-| Derived               | `--accent`           | `#1F1F23` | Subtle highlights, active nav items                 |
-| Derived               | `--accent-foreground`| `#D1D5DB` | Text on accent surfaces                             |
-| Derived               | `--destructive`      | `#E60000` | Maps to primary (errors = same red indicator)       |
-| Derived               | `--ring`             | `#E60000` | Focus rings                                         |
+| Role                  | Token                  | Hex       | Usage                                              |
+| --------------------- | ---------------------- | --------- | -------------------------------------------------- |
+| 60% Base              | `--background`         | `#0C0C0E` | Main background, modals, negative space            |
+| 30% Structure (light) | `--foreground`         | `#D1D5DB` | Primary text, headings                             |
+| 30% Structure (dark)  | `--border`             | `#374151` | Borders, grid lines, dark metallic surfaces        |
+| 10% Highlight         | `--primary`            | `#E60000` | CTA buttons, hover states, terminal cursor, alerts |
+| Derived               | `--primary-foreground` | `#FFFFFF` | Text on primary backgrounds                        |
+| Derived               | `--muted`              | `#18181B` | Elevated surfaces, cards                           |
+| Derived               | `--muted-foreground`   | `#9CA3AF` | Secondary/disabled text                            |
+| Derived               | `--accent`             | `#1F1F23` | Subtle highlights, active nav items                |
+| Derived               | `--accent-foreground`  | `#D1D5DB` | Text on accent surfaces                            |
+| Derived               | `--destructive`        | `#E60000` | Maps to primary (errors = same red indicator)      |
+| Derived               | `--ring`               | `#E60000` | Focus rings                                        |
 
 ### Application Rules
 
@@ -83,20 +83,20 @@
 
 Metrics-first. No generic task lists.
 
-| Company  | Key Metric                                                                 |
-| -------- | -------------------------------------------------------------------------- |
-| Zenvia   | Structural refactoring with React — **200ms response time reduction**      |
-| Catency  | **LCP < 2.5s**, full Core Web Vitals compliance                           |
-| Umbler   | End-to-end automation pipeline for **100,000 clients**                     |
+| Company | Key Metric                                                            |
+| ------- | --------------------------------------------------------------------- |
+| Zenvia  | Structural refactoring with React — **200ms response time reduction** |
+| Catency | **LCP < 2.5s**, full Core Web Vitals compliance                       |
+| Umbler  | End-to-end automation pipeline for **100,000 clients**                |
 
 ### 4.3 Open-Source & Architecture
 
-| Project                        | Highlight                                              |
-| ------------------------------ | ------------------------------------------------------ |
-| Distributed Systems Lab        | 5M records with 57MB RAM, 7.35ms P95, 60 FPS          |
-| Guarahooks                     | 50 React hooks, shadcn registry distribution           |
-| MagicUI                        | Visual engineering, bundle size reduction               |
-| Enterprise React Architecture  | Shift-Left Testing, TDD/BDD methodology                |
+| Project                       | Highlight                                    |
+| ----------------------------- | -------------------------------------------- |
+| Distributed Systems Lab       | 5M records with 57MB RAM, 7.35ms P95, 60 FPS |
+| Guarahooks                    | 50 React hooks, shadcn registry distribution |
+| MagicUI                       | Visual engineering, bundle size reduction    |
+| Enterprise React Architecture | Shift-Left Testing, TDD/BDD methodology      |
 
 ### 4.4 Visual Stack
 
@@ -117,17 +117,17 @@ Metrics-first. No generic task lists.
 
 ## 6. Architecture Decisions Log
 
-| Date       | Decision                          | Rationale                                        |
-| ---------- | --------------------------------- | ------------------------------------------------ |
-| 2026-03-19 | Next.js App Router                | Server Components, streaming, RSC for performance |
-| 2026-03-19 | Tailwind + CSS variables palette  | Token-based theming aligned with shadcn/ui        |
-| 2026-03-19 | Framer Motion (mechanical only)   | Matches industrial design language                |
-| 2026-03-19 | Single-page portfolio (no routing)| All sections on one page, anchor navigation       |
-| 2026-03-19 | shadcn/ui v4 initialized          | Base UI primitives with registry-driven components |
-| 2026-03-19 | `Badge` adopted for tags          | Consistent tokenized pills across sections         |
-| 2026-03-19 | Projects bento grid               | Highlights Distributed Systems Lab as primary case |
-| 2026-03-19 | Hero CTA staggered entrance       | Improves visual rhythm and scanability             |
-| 2026-03-19 | Global motion tuned slower        | Smoother, more fluid transitions and typing pace   |
+| Date       | Decision                           | Rationale                                          |
+| ---------- | ---------------------------------- | -------------------------------------------------- |
+| 2026-03-19 | Next.js App Router                 | Server Components, streaming, RSC for performance  |
+| 2026-03-19 | Tailwind + CSS variables palette   | Token-based theming aligned with shadcn/ui         |
+| 2026-03-19 | Framer Motion (mechanical only)    | Matches industrial design language                 |
+| 2026-03-19 | Single-page portfolio (no routing) | All sections on one page, anchor navigation        |
+| 2026-03-19 | shadcn/ui v4 initialized           | Base UI primitives with registry-driven components |
+| 2026-03-19 | `Badge` adopted for tags           | Consistent tokenized pills across sections         |
+| 2026-03-19 | Projects bento grid                | Highlights Distributed Systems Lab as primary case |
+| 2026-03-19 | Hero CTA staggered entrance        | Improves visual rhythm and scanability             |
+| 2026-03-19 | Global motion tuned slower         | Smoother, more fluid transitions and typing pace   |
 
 ---
 

@@ -1,7 +1,9 @@
-"use client";
+'use client';
 
-import { TypingAnimation } from "@/components/ui/typing-animation";
-import { cn } from "@/lib/utils";
+import type { ReactElement } from 'react';
+
+import { TypingAnimation } from '@/components/ui/typing-animation';
+import { cn } from '@/lib/utils';
 
 interface SectionProps {
   children: React.ReactNode;
@@ -10,9 +12,9 @@ interface SectionProps {
   className?: string;
 }
 
-export function Section({ children, index, title, className }: SectionProps) {
+export function Section({ children, index, title, className }: SectionProps): ReactElement {
   return (
-    <section className="relative px-6 py-20 md:px-12 lg:px-24">
+    <section className='relative px-6 py-20 md:px-12 lg:px-24'>
       <SectionHeader index={index} title={title} className={className} />
       <SectionContent>{children}</SectionContent>
     </section>
@@ -25,19 +27,13 @@ interface SectionHeaderProps {
   className?: string;
 }
 
-export function SectionHeader({ index, title, className }: SectionHeaderProps) {
+export function SectionHeader({ index, title, className }: SectionHeaderProps): ReactElement {
   const text = `[ ${index} / ${title} ]`;
 
   return (
-    <div className={cn("absolute top-6 right-6", className)}>
-      <div className="font-mono text-xs tracking-widest text-muted-foreground">
-        <TypingAnimation
-          as="span"
-          className="uppercase"
-          showCursor
-          cursorStyle="underscore"
-          duration={55}
-        >
+    <div className={cn('absolute top-6 right-6', className)}>
+      <div className='font-mono text-xs tracking-widest text-muted-foreground'>
+        <TypingAnimation key={text} as='span' className='uppercase' showCursor cursorStyle='underscore' duration={55}>
           {text}
         </TypingAnimation>
       </div>
@@ -50,6 +46,6 @@ interface SectionContentProps {
   className?: string;
 }
 
-export function SectionContent({ children, className }: SectionContentProps) {
-  return <div className={cn("flex flex-col gap-4", className)}>{children}</div>;
+export function SectionContent({ children, className }: SectionContentProps): ReactElement {
+  return <div className={cn('flex flex-col gap-4', className)}>{children}</div>;
 }
