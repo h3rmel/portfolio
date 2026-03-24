@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const socialImageAlt = `${siteConfig.name} — ${siteConfig.title}`;
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.title,
@@ -31,11 +33,27 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: siteConfig.locale,
     type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: socialImageAlt,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [
+      {
+        url: '/twitter-image',
+        width: 1200,
+        height: 630,
+        alt: socialImageAlt,
+      },
+    ],
   },
   robots: {
     index: true,

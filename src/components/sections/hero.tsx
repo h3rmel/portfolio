@@ -1,9 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Download, Github, Linkedin, Terminal } from 'lucide-react';
 import Link from 'next/link';
-import type { ReactElement } from 'react';
+import { useMemo, type ReactElement } from 'react';
 
 import { Section } from '../shared/section';
 
@@ -12,20 +12,31 @@ import { siteConfig } from '@/config/site';
 
 const STAGGER_DELAY = 0.09;
 
-const mechanical = {
-  hidden: { opacity: 0, y: 8 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * STAGGER_DELAY,
-      duration: 0.45,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  }),
-};
+const EASE_MECHANICAL = [0.22, 1, 0.36, 1] as const;
 
 export function HeroSection(): ReactElement {
+  const prefersReducedMotion = useReducedMotion();
+
+  const mechanical = useMemo(
+    () => ({
+      hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 8 },
+      visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: prefersReducedMotion
+          ? { duration: 0 }
+          : {
+              delay: i * STAGGER_DELAY,
+              duration: 0.45,
+              ease: EASE_MECHANICAL,
+            },
+      }),
+    }),
+    [prefersReducedMotion],
+  );
+
+  const ctaInitial = prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 };
+
   return (
     <Section index='01' title='Hero'>
       <div className='relative z-10 max-w-3xl'>
@@ -76,15 +87,20 @@ export function HeroSection(): ReactElement {
           className='mt-4 flex flex-wrap gap-4'
         >
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
+            initial={ctaInitial}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.34,
-              duration: 0.35,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { delay: 0.34, duration: 0.35, ease: EASE_MECHANICAL }
+            }
           >
-            <Link href={siteConfig.resume} target='_blank' rel='noopener noreferrer'>
+            <Link
+              href={siteConfig.resume}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Open resume (Google Docs)'
+            >
               <Button size='lg' variant='default'>
                 <Download className='h-4 w-4' />
                 Resume
@@ -92,13 +108,13 @@ export function HeroSection(): ReactElement {
             </Link>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
+            initial={ctaInitial}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.46,
-              duration: 0.35,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { delay: 0.46, duration: 0.35, ease: EASE_MECHANICAL }
+            }
           >
             <Link href={siteConfig.github} target='_blank' rel='noopener noreferrer'>
               <Button size='lg' variant='outline'>
@@ -108,13 +124,13 @@ export function HeroSection(): ReactElement {
             </Link>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
+            initial={ctaInitial}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.58,
-              duration: 0.35,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { delay: 0.58, duration: 0.35, ease: EASE_MECHANICAL }
+            }
           >
             <Link href={siteConfig.linkedin} target='_blank' rel='noopener noreferrer'>
               <Button size='lg' variant='outline'>

@@ -57,6 +57,12 @@
 }
 
 @layer base {
+  @media (prefers-reduced-motion: reduce) {
+    .animate-blink-cursor {
+      animation: none;
+    }
+  }
+
   * {
     @apply border-border;
   }

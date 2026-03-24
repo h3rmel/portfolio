@@ -1,7 +1,23 @@
 'use client';
 
-import { motion, useInView, type DOMMotionComponents, type HTMLMotionProps, type MotionProps } from 'motion/react';
-import {useEffect, useMemo, useRef, useState, type ComponentType, type RefAttributes, type RefObject, type ReactElement} from 'react';
+import {
+  motion,
+  useInView,
+  useReducedMotion,
+  type DOMMotionComponents,
+  type HTMLMotionProps,
+  type MotionProps,
+} from 'motion/react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentType,
+  type RefAttributes,
+  type RefObject,
+  type ReactElement,
+} from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -58,6 +74,7 @@ export function TypingAnimation({
   ...props
 }: TypingAnimationProps): ReactElement {
   const MotionComponent = motionElements[Component] as TypingAnimationMotionComponent;
+  const prefersReducedMotion = useReducedMotion();
 
   const [displayedText, setDisplayedText] = useState<string>('');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -71,6 +88,16 @@ export function TypingAnimation({
 
   const wordsToAnimate = useMemo(() => words ?? (children ? [children] : []), [words, children]);
   const hasMultipleWords = wordsToAnimate.length > 1;
+
+  const staticReducedText = useMemo(() => {
+    if (wordsToAnimate.length === 0) {
+      return '';
+    }
+    if (!loop && hasMultipleWords) {
+      return wordsToAnimate[wordsToAnimate.length - 1] ?? '';
+    }
+    return wordsToAnimate[0] ?? '';
+  }, [wordsToAnimate, loop, hasMultipleWords]);
 
   const typingSpeed = typeSpeed ?? duration;
   const deletingSpeed = deleteSpeed ?? typingSpeed / 2;
@@ -167,6 +194,14 @@ export function TypingAnimation({
         return '|';
     }
   };
+
+  if (prefersReducedMotion && wordsToAnimate.length > 0) {
+    return (
+      <MotionComponent ref={elementRef} className={cn('tracking-[-0.02em]', Component === 'span' && 'inline-block', className)} {...props}>
+        {staticReducedText}
+      </MotionComponent>
+    );
+  }
 
   return (
     <MotionComponent

@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import type { ReactElement } from 'react';
+import { useMemo, type ReactElement } from 'react';
 
 import { Section } from '@/components/shared/section';
 import { StatusIndicator } from '@/components/shared/status-indicator';
@@ -11,40 +11,31 @@ import type { ProjectEntry } from '@/config/projects';
 import { projects } from '@/config/projects';
 import { cn } from '@/lib/utils';
 
-
-const mechanical = {
-  hidden: { opacity: 0, y: 8 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.45,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  }),
-};
+const EASE_MECHANICAL = [0.22, 1, 0.36, 1] as const;
 
 interface ProjectCardProps {
   project: ProjectEntry;
   index: number;
   featured?: boolean;
+  variants: Variants;
 }
 
-function ProjectCard({ project, index, featured = false }: ProjectCardProps): ReactElement {
+function ProjectCard({ project, index, featured = false, variants }: ProjectCardProps): ReactElement {
   return (
     <motion.a
       href={project.url}
       target='_blank'
       rel='noopener noreferrer'
+      aria-label={`${project.name} (opens in new tab)`}
       custom={index}
-      variants={mechanical}
+      variants={variants}
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, margin: '-64px' }}
       className={cn(
         'group flex h-full flex-col gap-4 border border-border bg-background p-6 transition-all duration-100',
         'hover:translate-y-[-2px] hover:border-foreground hover:shadow-[0_4px_0_0_oklch(0.87_0.006_264)]',
+        'outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50',
         featured && 'md:p-8',
       )}
     >
@@ -109,12 +100,32 @@ function ProjectCard({ project, index, featured = false }: ProjectCardProps): Re
 const bentoPositions = ['lg:col-span-2', 'lg:col-span-1', 'lg:col-span-1', 'lg:col-span-2'] as const;
 
 export function ProjectsSection(): ReactElement {
+  const prefersReducedMotion = useReducedMotion();
+
+  const mechanical = useMemo(
+    () => ({
+      hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 8 },
+      visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: prefersReducedMotion
+          ? { duration: 0 }
+          : {
+              delay: i * 0.1,
+              duration: 0.45,
+              ease: EASE_MECHANICAL,
+            },
+      }),
+    }),
+    [prefersReducedMotion],
+  );
+
   return (
     <Section index='03' title='Open-Source & Architecture'>
       <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
         {projects.map((project, i) => (
           <div key={project.name} className={bentoPositions[i]}>
-            <ProjectCard project={project} index={i} featured={i === 0} />
+            <ProjectCard project={project} index={i} featured={i === 0} variants={mechanical} />
           </div>
         ))}
       </div>
