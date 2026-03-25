@@ -44,7 +44,7 @@ Ordered checklist derived from the improvement plan. Complete items in sequence 
 **Goal:** Fast first paint, minimal layout shift, no regressions as content grows.
 
 - [x] Run `pnpm build && pnpm start` (or production deploy) and Lighthouse on `/`. _(Local run → `lighthouse-results.json`.)_
-- [x] Document baseline LCP, CLS, TBT; fix regressions (font loading, large images, blocking scripts). _(See README Performance baseline; production run still recommended.)_
+- [x] Document baseline LCP, CLS, TBT; fix regressions (font loading, large images, blocking scripts). _(README: local + production `lighthouse-results-prd.json`.)_
 - [ ] If sections grow: consider dynamic import for below-the-fold client sections (only if metrics justify it).
 - [ ] Re-run Lighthouse after meaningful UI changes.
 
