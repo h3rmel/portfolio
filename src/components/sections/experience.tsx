@@ -57,13 +57,13 @@ export function ExperienceSection(): ReactElement {
               <div className='flex flex-1/2 flex-col gap-1'>
                 <h3 className='font-mono text-sm font-semibold text-foreground'>{entry.company}</h3>
                 <p className='font-mono text-xs text-muted-foreground'>{entry.role}</p>
-                <p className='font-mono text-[10px] text-border'>{entry.period}</p>
+                <p className='font-mono text-[10px] text-muted-foreground'>{entry.period}</p>
               </div>
 
               <div className='flex flex-col gap-4'>
                 <div className='inline-flex items-center gap-2'>
                   <span className='inline-block h-1.5 w-1.5 bg-primary' />
-                  <span className='font-mono text-sm font-bold tracking-wide text-primary'>{entry.metric}</span>
+                  <span className='font-mono text-sm font-bold tracking-wide text-foreground'>{entry.metric}</span>
                 </div>
 
                 <p className='text-sm leading-relaxed text-justify text-muted-foreground'>{entry.description}</p>
