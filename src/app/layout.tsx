@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ReactElement } from 'react';
@@ -78,6 +79,7 @@ export default function RootLayout({
           className='mask-[radial-gradient(1500px_circle_at_center,white,transparent)]'
         />
         <main className='relative z-10 max-w-6xl w-full mx-auto'>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
