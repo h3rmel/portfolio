@@ -16,11 +16,10 @@ const EASE_MECHANICAL = [0.22, 1, 0.36, 1] as const;
 interface ProjectCardProps {
   project: ProjectEntry;
   index: number;
-  featured?: boolean;
   variants: Variants;
 }
 
-function ProjectCard({ project, index, featured = false, variants }: ProjectCardProps): ReactElement {
+function ProjectCard({ project, index, variants }: ProjectCardProps): ReactElement {
   return (
     <motion.a
       href={project.url}
@@ -33,50 +32,35 @@ function ProjectCard({ project, index, featured = false, variants }: ProjectCard
       whileInView='visible'
       viewport={{ once: true, margin: '-64px' }}
       className={cn(
-        'group flex h-full flex-col gap-4 border border-border bg-background p-6 transition-all duration-100',
+        'group flex h-full w-full flex-col gap-4 border border-border bg-background p-6 transition-all duration-100',
         'hover:translate-y-[-2px] hover:border-foreground hover:shadow-[0_4px_0_0_oklch(0.87_0.006_264)]',
         'outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50',
-        featured && 'md:p-8',
       )}
     >
       {/* Header */}
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-3'>
           <StatusIndicator status={project.status} />
-          <span
-            className={cn('font-mono font-semibold text-foreground', featured ? 'text-base md:text-lg' : 'text-sm')}
-          >
-            {project.name}
-          </span>
+          <h3 className={cn('m-0 font-mono font-semibold text-foreground', 'text-sm')}>{project.name}</h3>
         </div>
         <ArrowUpRight
-          className={cn(
-            'text-border transition-colors duration-100 group-hover:text-primary',
-            featured ? 'h-5 w-5' : 'h-4 w-4',
-          )}
+          className={cn('text-border transition-colors duration-100 group-hover:text-primary', 'h-4 w-4')}
         />
       </div>
 
       {/* Metric */}
-      {featured ? (
+      {project.metric.length > 0 ? (
         <div className='flex flex-wrap gap-x-6 gap-y-2 border-y border-border py-3'>
           {project.metric.split(' · ').map((m) => (
-            <span key={m} className='font-mono text-sm font-bold tracking-wide text-primary'>
+            <span key={m} className='font-mono text-sm font-bold tracking-wide text-foreground'>
               {m}
             </span>
           ))}
         </div>
-      ) : (
-        <span className='font-mono text-xs font-bold tracking-wide text-primary'>{project.metric}</span>
-      )}
+      ) : null}
 
       {/* Description */}
-      <p
-        className={cn(
-          'flex-1 leading-relaxed text-muted-foreground text-justify',
-          featured ? 'text-sm md:text-base' : 'text-sm',
-        )}
-      >
+      <p className={cn('flex-1 leading-relaxed text-muted-foreground text-justify', 'text-sm')}>
         {project.description}
       </p>
 
@@ -94,8 +78,8 @@ function ProjectCard({ project, index, featured = false, variants }: ProjectCard
 
 /**
  * Bento layout (3 cols × 2 rows):
- * Row 1: [Featured ·········] [Card]
- * Row 2: [Card] [Card ··············]
+ * Row 1: [ Featured wide ] [ Card ]
+ * Row 2: [ Card ] [ Wide ]
  */
 const bentoPositions = ['lg:col-span-2', 'lg:col-span-1', 'lg:col-span-1', 'lg:col-span-2'] as const;
 
@@ -122,10 +106,10 @@ export function ProjectsSection(): ReactElement {
 
   return (
     <Section index='03' title='Open-Source & Architecture'>
-      <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch'>
         {projects.map((project, i) => (
-          <div key={project.name} className={bentoPositions[i]}>
-            <ProjectCard project={project} index={i} featured={i === 0} variants={mechanical} />
+          <div key={project.name} className={cn(bentoPositions[i], 'min-w-0')}>
+            <ProjectCard project={project} index={i} variants={mechanical} />
           </div>
         ))}
       </div>
