@@ -33,7 +33,7 @@ function ProjectCard({ project, index, variants }: ProjectCardProps): ReactEleme
       viewport={{ once: true, margin: '-64px' }}
       className={cn(
         'group flex h-full w-full flex-col gap-4 border border-border bg-background p-6 transition-all duration-100',
-        'hover:translate-y-[-2px] hover:border-foreground hover:shadow-[0_4px_0_0_oklch(0.87_0.006_264)]',
+        'hover:-translate-y-0.5 hover:border-foreground hover:shadow-[0_4px_0_0_oklch(0.87_0.006_264)]',
         'outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50',
       )}
     >
