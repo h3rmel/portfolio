@@ -1,22 +1,13 @@
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import { ReactElement } from 'react';
+
+import { jetBrainsMono, figtree } from './fonts';
 
 import { GridPattern } from '@/components/ui/grid-pattern';
 import { siteConfig } from '@/config/site';
 
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 const socialImageAlt = `${siteConfig.name} — ${siteConfig.title}`;
 
@@ -68,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): ReactElement {
   return (
-    <html lang='en' className={`${geistSans.variable} ${geistMono.variable} dark`}>
+    <html lang='en' className={`${figtree.variable} ${jetBrainsMono.variable} dark`}>
       <body className='relative min-h-screen w-full bg-background text-foreground antialiased'>
         <GridPattern
           width={100}

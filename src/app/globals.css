@@ -30,8 +30,8 @@
   --color-border: oklch(0.395 0.015 264);
   --color-input: oklch(0.395 0.015 264);
   --color-ring: oklch(0.55 0.25 29);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-figtree);
+  --font-mono: var(--font-jetbrains-mono);
 
   /* Industrial: zero radius globally — overrides Tailwind v4 defaults */
   --radius: 0rem;
@@ -44,6 +44,7 @@
   --radius-3xl: 0rem;
   --radius-4xl: 0rem;
   --animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+
   @keyframes blink-cursor {
     0%,
     49% {
