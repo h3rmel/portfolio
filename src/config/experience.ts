@@ -12,10 +12,10 @@ export const experience: ExperienceEntry[] = [
     company: 'Zenvia',
     role: 'Software Engineer',
     period: '08/2023 — Present',
-    metric: '20% rendering gain · −200ms TTL',
+    metric: '26% ETL optimization · TTI 5s → 3.2s',
     description:
-      'Structural refactoring of the Zenvia Nutrir feature. Rewrote the front-end in React.js using the MVVM pattern to isolate presentation logic from business rules. Standardized the network layer via Axios for RESTful API consumption in Python/Flask. Implemented BDD-driven tests for critical flow validation. Achieved definitive resolution of interface synchronization failures.',
-    tags: ['React', 'MVVM', 'BDD', 'Flask', 'Axios'],
+      'Led the end-to-end refactoring of Zenvia Nutrir. Architected a new React front-end utilizing MVVM and standardized Axios network layers, successfully reducing TTI from 5s to 3.2s. Optimized backend Python/Flask RESTful APIs and ETL pipelines for a 26% performance increase. Ensured robust system reliability by eliminating UI sync failures through BDD-driven testing.',
+    tags: ['React', 'MVVM', 'BDD', 'Flask', 'Axios', 'Data Engineering', 'ETL'],
   },
   {
     company: 'Catency',

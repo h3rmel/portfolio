@@ -50,11 +50,11 @@ function ProjectCard({ project, index, variants }: ProjectCardProps): ReactEleme
 
       {/* Metric */}
       {project.metric.length > 0 ? (
-        <div className='flex flex-wrap gap-x-6 gap-y-2 border-y border-border py-3'>
+        <div className='flex flex-wrap gap-x-4 gap-y-2 border-y border-border py-3'>
           {project.metric.split(' · ').map((m) => (
-            <span key={m} className='font-mono text-sm font-bold tracking-wide text-foreground'>
+            <Badge key={`${project.name}-${m}`} variant='outline' className='font-mono text-sm tracking-wide'>
               {m}
-            </span>
+            </Badge>
           ))}
         </div>
       ) : null}

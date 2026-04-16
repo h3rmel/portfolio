@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useMemo, type ReactElement } from 'react';
 
 import { Section } from '@/components/shared/section';
+import { StatusIndicator } from '@/components/shared/status-indicator';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { experience } from '@/config/experience';
@@ -51,7 +52,7 @@ export function ExperienceSection(): ReactElement {
                 'flex flex-col md:flex-row gap-4',
                 'bg-background',
                 'border border-border p-6',
-                'transition-all duration-200 hover:translate-x-[4px] hover:border-foreground hover:shadow-[-4px_0_0_0_oklch(0.87_0.006_264)]',
+                'transition-all duration-200 hover:translate-x-1 hover:border-foreground hover:shadow-[-4px_0_0_0_oklch(0.87_0.006_264)]',
               )}
             >
               <div className='flex flex-1/2 flex-col gap-1'>
@@ -62,7 +63,7 @@ export function ExperienceSection(): ReactElement {
 
               <div className='flex flex-col gap-4'>
                 <div className='inline-flex items-center gap-2'>
-                  <span className='inline-block h-1.5 w-1.5 bg-primary' />
+                  <StatusIndicator status={'active'} />
                   <span className='font-mono text-sm font-bold tracking-wide text-foreground'>{entry.metric}</span>
                 </div>
 
