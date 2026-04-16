@@ -50,7 +50,7 @@ export function HeroSection(): ReactElement {
         >
           <Terminal className='h-4 w-4 text-primary' />
           <span className='font-mono text-xs tracking-widest text-muted-foreground uppercase'>sys.status — online</span>
-          <span className='inline-block h-2 w-2 bg-primary shadow-[0_0_6px_oklch(0.55_0.25_29)]' />
+          <span className='inline-block h-2 w-2 bg-primary rounded-full shadow-[0_0_6px_oklch(0.55_0.25_29)]' />
         </motion.div>
       </div>
       <div className='relative z-10 max-w-3xl'>
@@ -83,11 +83,7 @@ export function HeroSection(): ReactElement {
           <motion.div
             initial={ctaInitial}
             animate={{ opacity: 1, y: 0 }}
-            transition={
-              prefersReducedMotion
-                ? { duration: 0 }
-                : { delay: 0.34, duration: 0.35, ease: EASE_MECHANICAL }
-            }
+            transition={prefersReducedMotion ? { duration: 0 } : { delay: 0.34, duration: 0.35, ease: EASE_MECHANICAL }}
           >
             <Link
               href={siteConfig.resume}
@@ -104,11 +100,7 @@ export function HeroSection(): ReactElement {
           <motion.div
             initial={ctaInitial}
             animate={{ opacity: 1, y: 0 }}
-            transition={
-              prefersReducedMotion
-                ? { duration: 0 }
-                : { delay: 0.46, duration: 0.35, ease: EASE_MECHANICAL }
-            }
+            transition={prefersReducedMotion ? { duration: 0 } : { delay: 0.46, duration: 0.35, ease: EASE_MECHANICAL }}
           >
             <Link href={siteConfig.github} target='_blank' rel='noopener noreferrer'>
               <Button size='lg' variant='outline'>
@@ -120,11 +112,7 @@ export function HeroSection(): ReactElement {
           <motion.div
             initial={ctaInitial}
             animate={{ opacity: 1, y: 0 }}
-            transition={
-              prefersReducedMotion
-                ? { duration: 0 }
-                : { delay: 0.58, duration: 0.35, ease: EASE_MECHANICAL }
-            }
+            transition={prefersReducedMotion ? { duration: 0 } : { delay: 0.58, duration: 0.35, ease: EASE_MECHANICAL }}
           >
             <Link href={siteConfig.linkedin} target='_blank' rel='noopener noreferrer'>
               <Button size='lg' variant='outline'>
