@@ -35,7 +35,7 @@ export function StackSection(): ReactElement {
     <Section index='04' title='Technical Stack'>
       <div className={cn('grid', 'grid-cols-2 sm:grid-cols-4 md:grid-cols-5', 'gap-px bg-border border border-border')}>
         {stack.map((item, i) => (
-          <GlareHover className='w-full' key={item.name} duration={600} opacity={0.1}>
+          <GlareHover className='w-full' key={item.name} duration={500} opacity={0.1}>
             <motion.div
               custom={i}
               variants={mechanical}
