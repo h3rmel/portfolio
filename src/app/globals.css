@@ -30,8 +30,8 @@
   --color-border: oklch(0.395 0.015 264);
   --color-input: oklch(0.395 0.015 264);
   --color-ring: oklch(0.55 0.25 29);
-  --font-sans: var(--font-figtree);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-departure-mono);
+  --font-mono: var(--font-departure-mono);
 
   /* Industrial: zero radius globally — overrides Tailwind v4 defaults */
   --radius: 0rem;

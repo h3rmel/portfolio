@@ -60,14 +60,14 @@ function ProjectCard({ project, index, variants }: ProjectCardProps): ReactEleme
       ) : null}
 
       {/* Description */}
-      <p className={cn('flex-1 leading-relaxed text-muted-foreground text-justify', 'text-sm')}>
+      <p className={cn('flex-1 leading-loose text-muted-foreground text-justify', 'text-sm')}>
         {project.description}
       </p>
 
       {/* Tags */}
       <div className='flex flex-wrap gap-2 border-t border-border pt-3'>
         {project.tags.map((tag) => (
-          <Badge key={tag} variant='outline' className='font-mono text-[10px] tracking-wider uppercase'>
+          <Badge key={tag} variant='outline' className='font-mono text-xs tracking-wider uppercase'>
             {tag}
           </Badge>
         ))}

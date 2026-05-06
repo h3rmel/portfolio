@@ -49,7 +49,7 @@ export function StackSection(): ReactElement {
               )}
             >
               <span className='font-mono text-sm font-medium text-foreground'>{item.name}</span>
-              <span className='font-mono text-[10px] tracking-widest text-muted-foreground uppercase'>
+              <span className='font-mono text-xs tracking-widest text-muted-foreground uppercase'>
                 {item.category}
               </span>
             </motion.div>

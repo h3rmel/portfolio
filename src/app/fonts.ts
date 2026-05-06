@@ -1,15 +1,9 @@
-import { JetBrains_Mono, Figtree } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const figtree = Figtree({
-  variable: '--font-figtree',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const departureMono = localFont({
+  src: './fonts/DepartureMono-Regular.woff2',
+  variable: '--font-departure-mono',
+  display: 'swap',
 });
 
-const jetBrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-});
-
-export { figtree, jetBrainsMono };
+export { departureMono };

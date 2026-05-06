@@ -55,10 +55,10 @@ export function ExperienceSection(): ReactElement {
                 'transition-all duration-200 hover:translate-x-1 hover:border-foreground hover:shadow-[-4px_0_0_0_oklch(0.87_0.006_264)]',
               )}
             >
-              <div className='flex flex-1/2 flex-col gap-1'>
+              <div className='flex flex-1/2 flex-col gap-2'>
                 <h3 className='font-mono text-sm font-semibold text-foreground'>{entry.company}</h3>
                 <p className='font-mono text-xs text-muted-foreground'>{entry.role}</p>
-                <p className='font-mono text-[10px] text-muted-foreground'>{entry.period}</p>
+                <p className='font-mono text-xs text-muted-foreground'>{entry.period}</p>
               </div>
 
               <div className='flex flex-col gap-4'>
@@ -67,11 +67,11 @@ export function ExperienceSection(): ReactElement {
                   <span className='font-mono text-sm font-bold tracking-wide text-foreground'>{entry.metric}</span>
                 </div>
 
-                <p className='text-sm leading-relaxed text-justify text-muted-foreground'>{entry.description}</p>
+                <p className='text-sm leading-loose text-justify text-muted-foreground'>{entry.description}</p>
 
                 <div className='flex flex-wrap gap-2'>
                   {entry.tags.map((tag) => (
-                    <Badge key={tag} variant='outline' className='font-mono text-[10px] tracking-wider uppercase'>
+                    <Badge key={tag} variant='outline' className='font-mono text-xs tracking-wider uppercase'>
                       {tag}
                     </Badge>
                   ))}

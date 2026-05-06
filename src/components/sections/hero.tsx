@@ -56,14 +56,14 @@ export function HeroSection(): ReactElement {
       <div className='relative z-10 max-w-3xl'>
         {/* Name */}
         <motion.div custom={1} variants={mechanical} initial='hidden' animate='visible' className='mb-4'>
-          <h1 className='font-sans text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl'>
+          <h1 className='font-sans text-4xl font-bold tracking-normal text-foreground md:text-5xl lg:text-6xl'>
             {siteConfig.name}
           </h1>
         </motion.div>
       </div>
       <div className='relative z-10 max-w-3xl'>
         {/* Core value proposition — static markup for LCP (no Framer initial opacity on this node). */}
-        <p className='mb-4 max-w-2xl font-sans text-lg leading-relaxed text-muted-foreground md:text-xl'>
+        <p className='mb-4 max-w-3xl font-sans text-lg leading-relaxed text-muted-foreground md:text-xl'>
           Software Engineer with <span className='font-medium text-foreground'>4 years of experience</span> in
           full-stack development, specializing in{' '}
           <span className='font-medium text-foreground'>scalable architectures</span> and{' '}

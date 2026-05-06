@@ -2,7 +2,7 @@ import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { ReactElement } from 'react';
 
-import { jetBrainsMono, figtree } from './fonts';
+import { departureMono } from './fonts';
 
 import { GridPattern } from '@/components/ui/grid-pattern';
 import { siteConfig } from '@/config/site';
@@ -59,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): ReactElement {
   return (
-    <html lang='en' className={`${figtree.variable} ${jetBrainsMono.variable} dark`}>
+    <html lang='en' className={`${departureMono.variable} dark`}>
       <body className='relative min-h-screen w-full bg-background text-foreground antialiased'>
         <GridPattern
           width={100}
