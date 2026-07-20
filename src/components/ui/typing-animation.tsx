@@ -197,7 +197,11 @@ export function TypingAnimation({
 
   if (prefersReducedMotion && wordsToAnimate.length > 0) {
     return (
-      <MotionComponent ref={elementRef} className={cn('tracking-[-0.02em]', Component === 'span' && 'inline-block', className)} {...props}>
+      <MotionComponent
+        ref={elementRef}
+        className={cn('tracking-[-0.02em]', Component === 'span' && 'inline-block', className)}
+        {...props}
+      >
         {staticReducedText}
       </MotionComponent>
     );
