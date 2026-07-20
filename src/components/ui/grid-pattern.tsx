@@ -1,4 +1,4 @@
-import {useId, type ReactElement} from 'react';
+import { useId, type ReactElement } from 'react';
 
 import { cn } from '@/lib/utils';
 

@@ -12,10 +12,10 @@ export const experience: ExperienceEntry[] = [
     company: 'Zenvia',
     role: 'Software Engineer',
     period: '08/2023 — Present',
-    metric: '26% ETL optimization · TTI 5s → 3.2s',
+    metric: 'LCP 2.91s → 2.35s · INP 275ms → 199ms',
     description:
-      'Led the end-to-end refactoring of Zenvia Nutrir. Architected a new React front-end utilizing MVVM and standardized Axios network layers, successfully reducing TTI from 5s to 3.2s. Optimized backend Python/Flask RESTful APIs and ETL pipelines for a 26% performance increase. Ensured robust system reliability by eliminating UI sync failures through BDD-driven testing.',
-    tags: ['React', 'MVVM', 'BDD', 'Flask', 'Axios', 'Data Engineering', 'ETL'],
+      "Full ownership, from scratch, of the ZCC ↔ Mercado Livre messaging integration (Q&A, post-sale, complaints), plus ZCC ↔ ERP integration interfaces (Bling, Tiny, Omie, Microvix) shipped under feature-flag-controlled rollout (Canary) with per-client versioned exposure. Ownership of partners-api, a batch CSV-import service in layered architecture with dependency injection isolating business rules from I/O. Cut production Core Web Vitals into the 'good' range — LCP 2.91s → 2.35s, INP 275ms → 199ms — via a React rendering refactor on MVVM. Contributor to the company design system in StencilJS/Storybook.",
+    tags: ['React', 'MVVM', 'Feature Flags', 'Core Web Vitals', 'StencilJS', 'Layered Architecture'],
   },
   {
     company: 'Catency',

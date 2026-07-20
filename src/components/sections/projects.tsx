@@ -60,9 +60,7 @@ function ProjectCard({ project, index, variants }: ProjectCardProps): ReactEleme
       ) : null}
 
       {/* Description */}
-      <p className={cn('flex-1 leading-loose text-muted-foreground text-justify', 'text-sm')}>
-        {project.description}
-      </p>
+      <p className={cn('flex-1 leading-loose text-muted-foreground text-justify', 'text-sm')}>{project.description}</p>
 
       {/* Tags */}
       <div className='flex flex-wrap gap-2 border-t border-border pt-3'>
