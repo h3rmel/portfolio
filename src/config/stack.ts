@@ -5,6 +5,7 @@ export interface StackItem {
 
 export const stack: StackItem[] = [
   { name: 'TypeScript', category: 'languages' },
+  { name: 'JavaScript', category: 'languages' },
   { name: 'Python', category: 'languages' },
 
   { name: 'React.js', category: 'frontend' },
@@ -27,7 +28,11 @@ export const stack: StackItem[] = [
   { name: 'Argo CD', category: 'cloud' },
 
   { name: 'Jest', category: 'testing' },
+  { name: 'Vitest', category: 'testing' },
   { name: 'Testing Library', category: 'testing' },
 
   { name: 'TDD', category: 'architecture' },
+  { name: 'BDD', category: 'architecture' },
+  { name: 'MVVM', category: 'architecture' },
+  { name: 'Layered Architecture', category: 'architecture' },
 ];
