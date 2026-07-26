@@ -14,7 +14,7 @@ export const experience: ExperienceEntry[] = [
     period: '08/2023 — Present',
     metric: 'LCP 2.91s → 2.35s · INP 275ms → 199ms',
     description:
-      "Full ownership, from scratch, of the ZCC ↔ Mercado Livre messaging integration (Q&A, post-sale, complaints), plus ZCC ↔ ERP integration interfaces (Bling, Tiny, Omie, Microvix) shipped under feature-flag-controlled rollout (Canary) with per-client versioned exposure. Ownership of partners-api, a batch CSV-import service in layered architecture with dependency injection isolating business rules from I/O. Cut production Core Web Vitals into the 'good' range — LCP 2.91s → 2.35s, INP 275ms → 199ms — via a React rendering refactor on MVVM. Contributor to the company design system in StencilJS/Storybook.",
+      "Full ownership, from scratch, of the ZCC ↔ Mercado Livre messaging integration (Q&A, post-sale, complaints), plus ZCC ↔ ERP integration interfaces (Bling, Tiny, Omie, Microvix) shipped under feature-flag-controlled rollout (Canary) with per-client versioned exposure. Ownership of partners-api, a batch CSV-import service in layered architecture with dependency injection isolating business rules from I/O. Cut production Core Web Vitals into the 'good' range via a React rendering refactor on MVVM. Contributor to the company design system in StencilJS/Storybook.",
     tags: ['React', 'MVVM', 'Feature Flags', 'Core Web Vitals', 'StencilJS', 'Layered Architecture'],
   },
   {

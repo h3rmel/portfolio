@@ -64,11 +64,13 @@ export function HeroSection(): ReactElement {
       <div className='relative z-10 max-w-3xl'>
         {/* Core value proposition — static markup for LCP (no Framer initial opacity on this node). */}
         <p className='mb-4 max-w-3xl font-sans text-lg leading-relaxed text-muted-foreground md:text-xl'>
-          Software Engineer with <span className='font-medium text-foreground'>4 years of experience</span> in
-          full-stack development, specializing in{' '}
-          <span className='font-medium text-foreground'>scalable architectures</span> and{' '}
-          <span className='font-medium text-foreground'>performance optimization</span> within the JavaScript/TypeScript
-          ecosystem.
+          Full-stack Software Engineer with <span className='font-medium text-foreground'>4 years</span> in the
+          JavaScript/TypeScript ecosystem, and maintainer of{' '}
+          <span className='font-medium text-foreground'>guarahooks</span> — an open-source React hooks library
+          distributed via the shadcn registry (CLI on npm). I build React/Next.js front-ends tuned for{' '}
+          <span className='font-medium text-foreground'>Core Web Vitals</span> and NestJS/Node.js back-ends with REST
+          APIs and data-processing pipelines, under{' '}
+          <span className='font-medium text-foreground'>Shift-Left testing (TDD/BDD)</span>.
         </p>
       </div>
       <div className='relative z-10 max-w-3xl'>
