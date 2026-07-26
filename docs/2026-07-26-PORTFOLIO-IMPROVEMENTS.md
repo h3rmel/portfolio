@@ -15,7 +15,7 @@ Legend: `[ ]` todo · `[~]` in progress · `[x]` done
 
 ## Tier 1 — Substantive
 
-### 1. `[ ]` SEO: add JSON-LD structured data
+### 1. `[x]` SEO: add JSON-LD structured data
 
 **Problem:** No schema.org structured data anywhere. Search engines can't build a rich `Person` result for the portfolio.
 
