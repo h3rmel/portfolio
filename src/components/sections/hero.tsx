@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
 import { Download, Github, Linkedin, Terminal } from 'lucide-react';
+import { motion, useReducedMotion } from 'motion/react';
 import Link from 'next/link';
 import { useMemo, type ReactElement } from 'react';
 

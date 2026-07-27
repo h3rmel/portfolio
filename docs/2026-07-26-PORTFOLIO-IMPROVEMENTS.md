@@ -32,7 +32,7 @@ Keep it data-driven (build the object from `siteConfig`, don't hardcode). Consid
 **Files:** `src/app/layout.tsx` (+ maybe a small `src/config/site.ts` addition if new fields needed).
 **Gate:** verify JSON parses and appears in the rendered `<head>` via `pnpm build` output / view-source.
 
-### 2. `[ ]` Drop the duplicate motion library
+### 2. `[x]` Drop the duplicate motion library
 
 **Problem:** `package.json` depends on BOTH `framer-motion` and `motion` (both `^12.38.0`). `motion` is the successor; `framer-motion` v12 just re-exports it. Imports are split — 4 section files use `framer-motion`, `typing-animation.tsx` uses `motion/react`.
 

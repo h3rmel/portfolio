@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { motion, useReducedMotion, type Variants } from 'motion/react';
 import { useMemo, type ReactElement } from 'react';
 
 import { Section } from '@/components/shared/section';

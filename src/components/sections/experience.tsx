@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'motion/react';
 import { useMemo, type ReactElement } from 'react';
 
 import { Section } from '@/components/shared/section';
