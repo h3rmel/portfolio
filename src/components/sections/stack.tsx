@@ -1,35 +1,17 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
-import { useMemo, type ReactElement } from 'react';
+import { motion } from 'motion/react';
+import { type ReactElement } from 'react';
 
 import { GlareHover } from '../ui/glare-hover';
 
 import { Section } from '@/components/shared/section';
 import { stack } from '@/config/stack';
+import { useMechanicalVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
-const EASE_MECHANICAL = [0.22, 1, 0.36, 1] as const;
-
 export function StackSection(): ReactElement {
-  const prefersReducedMotion = useReducedMotion();
-
-  const mechanical = useMemo(
-    () => ({
-      hidden: { opacity: prefersReducedMotion ? 1 : 0 },
-      visible: (i: number) => ({
-        opacity: 1,
-        transition: prefersReducedMotion
-          ? { duration: 0 }
-          : {
-              delay: i * 0.055,
-              duration: 0.32,
-              ease: EASE_MECHANICAL,
-            },
-      }),
-    }),
-    [prefersReducedMotion],
-  );
+  const mechanical = useMechanicalVariants({ stagger: 0.055, duration: 0.32, offsetY: 0 });
 
   return (
     <Section index='04' title='Technical Stack'>

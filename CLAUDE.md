@@ -41,7 +41,7 @@ There is **no test suite**. CI (`.github/workflows/ci.yml`) runs `pnpm lint:ci` 
 
 ## Motion
 
-Animations use `framer-motion`. **Every animated section must respect reduced motion**: call `useReducedMotion()` and branch variants/transitions to a zero-duration, no-offset path (see `experience.tsx` for the established `mechanical` variants pattern with the shared `EASE_MECHANICAL` easing constant).
+Animations use `motion/react` (formerly imported as `framer-motion`; both packages resolve to the same v12 release, but only `motion` is a dependency now — always import from `motion/react`). **Every animated section must respect reduced motion**: the shared `useMechanicalVariants()` hook in `src/lib/motion.ts` encapsulates the `useReducedMotion()` branch to a zero-duration, no-offset path, plus the `EASE_MECHANICAL` easing constant — call it instead of hand-rolling a new variants factory per section.
 
 ## Conventions
 

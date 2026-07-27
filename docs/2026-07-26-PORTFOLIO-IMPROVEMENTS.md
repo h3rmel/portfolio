@@ -42,7 +42,7 @@ Keep it data-driven (build the object from `siteConfig`, don't hardcode). Consid
 **Watch:** `Variants` type import in `projects.tsx` — comes from `motion/react` too.
 **Gate:** `pnpm build` must still resolve all motion imports.
 
-### 3. `[ ]` De-duplicate the `mechanical` motion variants
+### 3. `[x]` De-duplicate the `mechanical` motion variants
 
 **Problem:** `EASE_MECHANICAL = [0.22, 1, 0.36, 1]` is copy-pasted in 4 files (`hero`, `experience`, `projects`, `stack`), and the reduced-motion `mechanical` variant factory (`useMemo` + `useReducedMotion` branch) is near-identical in 3 of them.
 

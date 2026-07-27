@@ -3,37 +3,18 @@
 import { Download, Github, Linkedin, Terminal } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import Link from 'next/link';
-import { useMemo, type ReactElement } from 'react';
+import { type ReactElement } from 'react';
 
 import { Section } from '../shared/section';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-
-const STAGGER_DELAY = 0.09;
-
-const EASE_MECHANICAL = [0.22, 1, 0.36, 1] as const;
+import { EASE_MECHANICAL, useMechanicalVariants } from '@/lib/motion';
 
 export function HeroSection(): ReactElement {
   const prefersReducedMotion = useReducedMotion();
 
-  const mechanical = useMemo(
-    () => ({
-      hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 8 },
-      visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: prefersReducedMotion
-          ? { duration: 0 }
-          : {
-              delay: i * STAGGER_DELAY,
-              duration: 0.45,
-              ease: EASE_MECHANICAL,
-            },
-      }),
-    }),
-    [prefersReducedMotion],
-  );
+  const mechanical = useMechanicalVariants({ stagger: 0.09 });
 
   const ctaInitial = prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 };
 
