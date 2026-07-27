@@ -83,12 +83,13 @@ Parameterize the small differences (stagger delay, duration, whether `y` offset 
 
 ## Tier 3 — Follow-up from recent content change
 
-### 7. `[ ]` Re-check lazy-fallback height for Stack
+### 7. `[x]` Re-check lazy-fallback height for Stack
 
-The stack list grew 20 → 25 items (one extra grid row) in the content refresh. The placeholder in `src/app/page.tsx:20` is still `min-h-56`. CLAUDE.md flags keeping these in sync to avoid layout shift. Re-measure the rendered Stack section height and bump the fallback if it now understates it.
+The stack list grew 20 → 25 items (one extra grid row) in the content refresh. The placeholder in `src/app/page.tsx:20` was still `min-h-56` (224px). Re-measured using exact values from the compiled Tailwind CSS (not a screenshot — no headless-browser runtime available in this environment; `libnss3`/`libgbm`/etc. missing for the cached Chrome binary, and installing system packages felt too heavy for this check): at the desktop 5-column layout, actual height computes to ≈646px (4 standard rows × 92px + 1 taller row × 112px for the wrapped "Layered Architecture" label + 160px section `py-20` padding) — the old fallback understated it by ~420px, well beyond "one extra row." Bumped to `min-h-160` (640px).
 
-**Files:** `src/app/page.tsx`.
-**Note:** sections are `'use client'` but SSR'd by `next/dynamic` (no `ssr:false`), so the fallback mainly guards the hydration/chunk-fetch window — impact is real but bounded.
+**Files:** `src/app/page.tsx` — done.
+**Note:** sections are `'use client'` but SSR'd by `next/dynamic` (no `ssr:false`), so the real prerendered content ships in the initial HTML already; the fallback mostly guards edge cases (slow hydration, JS disabled), not a first-load CLS hit on this site in practice. Still worth keeping accurate per CLAUDE.md's stated convention.
+**Known gap:** the fallback is a single fixed height with no responsive variants, so it only really matches the 5-column desktop case — narrower breakpoints (4-col, 2-col) reflow to more rows and are progressively more understated. Same limitation predates this fix and applies to the Experience/Projects fallbacks too; out of scope here.
 
 ---
 
