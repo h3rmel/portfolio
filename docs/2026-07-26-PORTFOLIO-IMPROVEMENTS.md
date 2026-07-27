@@ -60,24 +60,24 @@ Parameterize the small differences (stagger delay, duration, whether `y` offset 
 
 ## Tier 2 — Polish
 
-### 4. `[ ]` Add `viewport` export + canonical
+### 4. `[x]` Add `viewport` export + canonical
 
 - Add a Next `viewport` export (in `layout.tsx`) with `themeColor: '#0c0c0e'` so mobile browser chrome matches the dark theme.
 - Add `alternates: { canonical: '/' }` to the metadata object.
 
 **Files:** `src/app/layout.tsx`.
 
-### 5. `[ ]` `cursor-pointer` on non-interactive stack cells
+### 5. `[x]` `cursor-pointer` on non-interactive stack cells
 
 `src/components/ui/glare-hover.tsx:131` hardcodes `cursor-pointer`. The Stack section wraps non-clickable tech cells in `GlareHover`, so the cursor falsely implies clickability. Make the cursor opt-in (prop) or drop it from the base class and let consumers add it.
 
 **Files:** `src/components/ui/glare-hover.tsx`, possibly `stack.tsx`.
 **Watch:** don't regress any place that legitimately relies on the pointer cursor.
 
-### 6. `[ ]` Trivia cleanups
+### 6. `[~]` Trivia cleanups
 
-- `src/components/sections/footer.tsx:24-31` — `mailto:` link has `target='_blank' rel='noopener noreferrer'`; meaningless for mail, remove.
-- `src/components/shared/status-indicator.tsx:19-21` — `aria-label` on a bare decorative `<span>` is announced inconsistently; it's decorative (status is conveyed by adjacent text), so prefer `aria-hidden`. Confirm no place relies on it as the sole status signal before changing.
+- `[x]` `src/components/sections/footer.tsx:24-31` — `mailto:` link had `target='_blank' rel='noopener noreferrer'`; meaningless for mail, removed.
+- `[ ]` `src/components/shared/status-indicator.tsx:19-21` — **skipped, not a safe change.** Checked both consumers: in `experience.tsx` the status is hardcoded to `'active'` (decorative, redundant), but in `projects.tsx` `project.status` (`active`/`stable`/`archived`) is **not** rendered as text anywhere else — the `aria-label` on `StatusIndicator` is the only way this is conveyed to screen readers. Since the component is shared, switching to `aria-hidden` would silently remove real information from the Projects section. Needs either: (a) an opt-in prop so callers can choose `aria-hidden` vs `aria-label` per instance, or (b) surfacing `project.status` as visible/`sr-only` text in the Projects card so the dot can safely become decorative. Left as-is pending that decision.
 
 ---
 

@@ -42,9 +42,9 @@ export function HeroSection(): ReactElement {
           </h1>
         </motion.div>
       </div>
-      <div className='relative z-10 max-w-3xl'>
+      <div className='relative z-10 max-w-4xl'>
         {/* Core value proposition — static markup for LCP (no Framer initial opacity on this node). */}
-        <p className='mb-4 max-w-3xl font-sans text-lg leading-relaxed text-muted-foreground md:text-xl'>
+        <p className='mb-4 max-w-4xl font-sans text-lg leading-relaxed text-muted-foreground md:text-xl'>
           Full-stack Software Engineer with <span className='font-medium text-foreground'>4 years</span> in the
           JavaScript/TypeScript ecosystem, and maintainer of{' '}
           <span className='font-medium text-foreground'>guarahooks</span> — an open-source React hooks library

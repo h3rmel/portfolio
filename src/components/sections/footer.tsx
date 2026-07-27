@@ -23,8 +23,6 @@ export function Footer(): ReactElement {
           </Link>
           <Link
             href={`mailto:${siteConfig.email}`}
-            target='_blank'
-            rel='noopener noreferrer'
             className='uppercase tracking-widest transition-colors duration-100 hover:text-foreground hover:underline'
           >
             Contact

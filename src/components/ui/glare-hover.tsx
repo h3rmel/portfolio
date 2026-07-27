@@ -128,7 +128,7 @@ function GlareHover({
     <div
       {...props}
       className={cn(
-        'relative grid size-fit cursor-pointer place-items-center overflow-hidden bg-transparent',
+        'relative grid size-fit place-items-center overflow-hidden bg-transparent',
         // BEFORE ELEMENT
         "before:pointer-events-none before:absolute before:inset-0 before:z-10 before:bg-no-repeat before:content-['']",
         // GRADIENT

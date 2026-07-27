@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/next';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { ReactElement } from 'react';
 
 import { departureMono } from './fonts';
@@ -38,6 +38,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -71,6 +74,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0c0c0e',
 };
 
 export default function RootLayout({
