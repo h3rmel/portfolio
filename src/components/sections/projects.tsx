@@ -1,17 +1,16 @@
 'use client';
 
-import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { useMemo, type ReactElement } from 'react';
+import { motion, type Variants } from 'motion/react';
+import { type ReactElement } from 'react';
 
 import { Section } from '@/components/shared/section';
 import { StatusIndicator } from '@/components/shared/status-indicator';
 import { Badge } from '@/components/ui/badge';
 import type { ProjectEntry } from '@/config/projects';
 import { projects } from '@/config/projects';
+import { useMechanicalVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
-
-const EASE_MECHANICAL = [0.22, 1, 0.36, 1] as const;
 
 interface ProjectCardProps {
   project: ProjectEntry;
@@ -82,25 +81,7 @@ function ProjectCard({ project, index, variants }: ProjectCardProps): ReactEleme
 const bentoPositions = ['lg:col-span-2', 'lg:col-span-1', 'lg:col-span-1', 'lg:col-span-2'] as const;
 
 export function ProjectsSection(): ReactElement {
-  const prefersReducedMotion = useReducedMotion();
-
-  const mechanical = useMemo(
-    () => ({
-      hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 8 },
-      visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: prefersReducedMotion
-          ? { duration: 0 }
-          : {
-              delay: i * 0.1,
-              duration: 0.45,
-              ease: EASE_MECHANICAL,
-            },
-      }),
-    }),
-    [prefersReducedMotion],
-  );
+  const mechanical = useMechanicalVariants();
 
   return (
     <Section index='03' title='Open-Source & Architecture'>

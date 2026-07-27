@@ -17,7 +17,7 @@ const ProjectsSection = dynamic(
 
 const StackSection = dynamic(
   () => import('@/components/sections/stack').then((mod) => ({ default: mod.StackSection })),
-  { loading: () => <SectionLazyFallback className='min-h-56' /> },
+  { loading: () => <SectionLazyFallback className='min-h-160' /> },
 );
 
 export default function HomePage(): ReactElement {

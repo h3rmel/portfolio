@@ -1,39 +1,20 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
 import { Download, Github, Linkedin, Terminal } from 'lucide-react';
+import { motion, useReducedMotion } from 'motion/react';
 import Link from 'next/link';
-import { useMemo, type ReactElement } from 'react';
+import { type ReactElement } from 'react';
 
 import { Section } from '../shared/section';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-
-const STAGGER_DELAY = 0.09;
-
-const EASE_MECHANICAL = [0.22, 1, 0.36, 1] as const;
+import { EASE_MECHANICAL, useMechanicalVariants } from '@/lib/motion';
 
 export function HeroSection(): ReactElement {
   const prefersReducedMotion = useReducedMotion();
 
-  const mechanical = useMemo(
-    () => ({
-      hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 8 },
-      visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: prefersReducedMotion
-          ? { duration: 0 }
-          : {
-              delay: i * STAGGER_DELAY,
-              duration: 0.45,
-              ease: EASE_MECHANICAL,
-            },
-      }),
-    }),
-    [prefersReducedMotion],
-  );
+  const mechanical = useMechanicalVariants({ stagger: 0.09 });
 
   const ctaInitial = prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 };
 
@@ -61,14 +42,16 @@ export function HeroSection(): ReactElement {
           </h1>
         </motion.div>
       </div>
-      <div className='relative z-10 max-w-3xl'>
+      <div className='relative z-10 max-w-4xl'>
         {/* Core value proposition — static markup for LCP (no Framer initial opacity on this node). */}
-        <p className='mb-4 max-w-3xl font-sans text-lg leading-relaxed text-muted-foreground md:text-xl'>
-          Software Engineer with <span className='font-medium text-foreground'>4 years of experience</span> in
-          full-stack development, specializing in{' '}
-          <span className='font-medium text-foreground'>scalable architectures</span> and{' '}
-          <span className='font-medium text-foreground'>performance optimization</span> within the JavaScript/TypeScript
-          ecosystem.
+        <p className='mb-4 max-w-4xl font-sans text-lg leading-relaxed text-muted-foreground md:text-xl'>
+          Full-stack Software Engineer with <span className='font-medium text-foreground'>4 years</span> in the
+          JavaScript/TypeScript ecosystem, and maintainer of{' '}
+          <span className='font-medium text-foreground'>guarahooks</span> — an open-source React hooks library
+          distributed via the shadcn registry (CLI on npm). I build React/Next.js front-ends tuned for{' '}
+          <span className='font-medium text-foreground'>Core Web Vitals</span> and NestJS/Node.js back-ends with REST
+          APIs and data-processing pipelines, under{' '}
+          <span className='font-medium text-foreground'>Shift-Left testing (TDD/BDD)</span>.
         </p>
       </div>
       <div className='relative z-10 max-w-3xl'>

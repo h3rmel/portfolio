@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/next';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { ReactElement } from 'react';
 
 import { departureMono } from './fonts';
@@ -11,6 +11,26 @@ import './globals.css';
 
 const socialImageAlt = `${siteConfig.name} — ${siteConfig.title}`;
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      jobTitle: 'Software Engineer',
+      description: siteConfig.description,
+      email: siteConfig.email,
+      sameAs: [siteConfig.github, siteConfig.linkedin],
+    },
+    {
+      '@type': 'WebSite',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.title,
@@ -18,6 +38,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -53,6 +76,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: '#0c0c0e',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,6 +88,8 @@ export default function RootLayout({
   return (
     <html lang='en' className={`${departureMono.variable} dark`}>
       <body className='relative min-h-screen w-full bg-background text-foreground antialiased'>
+        {/* Built from static siteConfig values, not user input — safe to inject. */}
+        <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <GridPattern
           width={100}
           height={100}
