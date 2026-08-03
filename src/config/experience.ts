@@ -14,8 +14,18 @@ export const experience: ExperienceEntry[] = [
     period: '08/2023 — Present',
     metric: 'LCP 2.91s → 2.35s · INP 275ms → 199ms',
     description:
-      "Full ownership, from scratch, of the ZCC ↔ Mercado Livre messaging integration (Q&A, post-sale, complaints), plus ZCC ↔ ERP integration interfaces (Bling, Tiny, Omie, Microvix) shipped under feature-flag-controlled rollout (Canary) with per-client versioned exposure. Ownership of partners-api, a batch CSV-import service in layered architecture with dependency injection isolating business rules from I/O. Cut production Core Web Vitals into the 'good' range via a React rendering refactor on MVVM. Contributor to the company design system in StencilJS/Storybook.",
-    tags: ['React', 'MVVM', 'Feature Flags', 'Core Web Vitals', 'StencilJS', 'Layered Architecture'],
+      "Full ownership, from scratch, of the ZCC ↔ Mercado Livre messaging integration (Q&A, post-sale, complaints), plus ZCC ↔ ERP integration interfaces (Bling, Tiny, Omie, Microvix) shipped under feature-flag-controlled rollout (Canary) with per-client versioned exposure. Ownership of partners-api, a batch CSV-import service in layered architecture with dependency injection isolating business rules from I/O, sustaining peaks of 60k rows/minute in production. Ownership of the ETL pipelines synchronizing with ERPs — Apache Airflow DAGs (Python) covering contacts, orders, invoices, and product catalog, architected against two nested vendor-API budgets (3 requests/second and 120k requests/day, per client) under an HTTP N+1 pattern: work-conserving scheduling with priority-weighted allocation across concurrent streams, and durable resumption via page-and-record checkpoint on hitting the daily quota. Cut production Core Web Vitals into the 'good' range via a React rendering refactor on MVVM. Contributor to the company design system in StencilJS/Storybook.",
+    tags: [
+      'React',
+      'MVVM',
+      'Feature Flags',
+      'Core Web Vitals',
+      'StencilJS',
+      'Layered Architecture',
+      'Apache Airflow',
+      'Python',
+      'ETL',
+    ],
   },
   {
     company: 'Catency',

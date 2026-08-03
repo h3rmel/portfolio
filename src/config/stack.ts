@@ -16,6 +16,7 @@ export const stack: StackItem[] = [
   { name: 'Node.js', category: 'backend' },
   { name: 'NestJS', category: 'backend' },
   { name: '.NET', category: 'backend' },
+  { name: 'Apache Airflow', category: 'backend' },
 
   { name: 'PostgreSQL', category: 'databases' },
   { name: 'Redis', category: 'databases' },
@@ -35,4 +36,5 @@ export const stack: StackItem[] = [
   { name: 'BDD', category: 'architecture' },
   { name: 'MVVM', category: 'architecture' },
   { name: 'Layered Architecture', category: 'architecture' },
+  { name: 'ETL', category: 'architecture' },
 ];
