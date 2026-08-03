@@ -1,6 +1,6 @@
 'use client';
 
-import { Download, Github, Linkedin, Terminal } from 'lucide-react';
+import { FileText, Github, Linkedin, Terminal } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import Link from 'next/link';
 import { type ReactElement } from 'react';
@@ -68,14 +68,9 @@ export function HeroSection(): ReactElement {
             animate={{ opacity: 1, y: 0 }}
             transition={prefersReducedMotion ? { duration: 0 } : { delay: 0.34, duration: 0.35, ease: EASE_MECHANICAL }}
           >
-            <Link
-              href={siteConfig.resume}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label='Open resume (Google Docs)'
-            >
+            <Link href={siteConfig.resume} target='_blank' rel='noopener noreferrer' aria-label='Open resume (PDF)'>
               <Button size='lg' variant='default'>
-                <Download className='h-4 w-4' />
+                <FileText className='h-4 w-4' />
                 Resume
               </Button>
             </Link>
