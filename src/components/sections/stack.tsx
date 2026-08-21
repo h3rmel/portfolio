@@ -30,7 +30,7 @@ export function StackSection(): ReactElement {
                 'transition-colors duration-100',
               )}
             >
-              <span className='font-mono text-sm font-medium text-foreground '>{item.name}</span>
+              <span className='font-mono text-sm font-medium text-foreground text-center'>{item.name}</span>
               <span className='font-mono text-xs tracking-widest text-muted-foreground uppercase'>{item.category}</span>
             </motion.div>
           </GlareHover>
