@@ -7,6 +7,7 @@ export const stack: StackItem[] = [
   { name: 'TypeScript', category: 'languages' },
   { name: 'JavaScript', category: 'languages' },
   { name: 'Python', category: 'languages' },
+  { name: 'C#', category: 'languages' },
 
   { name: 'React.js', category: 'frontend' },
   { name: 'Next.js', category: 'frontend' },
@@ -19,6 +20,7 @@ export const stack: StackItem[] = [
   { name: 'Apache Airflow', category: 'backend' },
 
   { name: 'PostgreSQL', category: 'databases' },
+  { name: 'MongoDB', category: 'databases' },
   { name: 'Redis', category: 'databases' },
   { name: 'Kafka', category: 'databases' },
 
@@ -37,4 +39,5 @@ export const stack: StackItem[] = [
   { name: 'MVVM', category: 'architecture' },
   { name: 'Layered Architecture', category: 'architecture' },
   { name: 'ETL', category: 'architecture' },
+  { name: 'SOLID', category: 'architecture' },
 ];

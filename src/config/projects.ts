@@ -21,8 +21,7 @@ export const projects: ProjectEntry[] = [
     name: 'Guarahooks',
     description:
       'Open-source React hooks library — 50 hooks, distributed via the shadcn package registry with a CLI published on npm (guara-cli). Documentation ecosystem built on content-collections. Code consumed by third-party applications.',
-    // TODO(star-count): replace '~102 stars' placeholder with real stargazers_count from the GitHub API — no GITHUB_TOKEN was available at edit time.
-    metric: '50 hooks · shadcn registry · guara-cli (npm) · ~102 stars',
+    metric: '50 hooks · shadcn registry · guara-cli (npm) · 107 stars',
     url: 'https://github.com/h3rmel/guarahooks',
     tags: ['React', 'Hooks', 'Open Source', 'shadcn', 'npm'],
     status: 'active',
@@ -39,10 +38,10 @@ export const projects: ProjectEntry[] = [
   {
     name: 'Enterprise React Architecture',
     description:
-      'A volleyball-scoreboard proof of concept built to exercise a Shift-Left testing workflow — TypeScript, Vitest, and React Testing Library driving TDD/BDD over a stateful UI domain.',
-    metric: 'Shift-Left · TDD/BDD · Vitest',
+      'A volleyball-scoreboard app used as a testbed for Shift-Left Testing: Clean Architecture separates framework-agnostic domain rules, Zustand-based application state, and React presentation, while Cucumber.js/Gherkin specs precede Red-Green-Refactor TDD in Vitest and React Testing Library.',
+    metric: 'Clean Architecture · Shift-Left TDD/BDD',
     url: 'https://github.com/h3rmel/enterprise-react-architecture',
-    tags: ['TypeScript', 'Vitest', 'TDD/BDD', 'Testing Library'],
+    tags: ['TypeScript', 'Clean Architecture', 'Zustand', 'Vitest', 'Cucumber.js'],
     status: 'stable',
   },
 ];

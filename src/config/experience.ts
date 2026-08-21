@@ -12,15 +12,14 @@ export const experience: ExperienceEntry[] = [
     company: 'Zenvia',
     role: 'Software Engineer',
     period: '08/2023 — Present',
-    metric: 'LCP 2.91s → 2.35s · INP 275ms → 199ms',
+    metric: '60k rows/min · LCP 2.91s → 2.35s',
     description:
-      "Full ownership, from scratch, of the ZCC ↔ Mercado Livre messaging integration (Q&A, post-sale, complaints), plus ZCC ↔ ERP integration interfaces (Bling, Tiny, Omie, Microvix) shipped under feature-flag-controlled rollout (Canary) with per-client versioned exposure. Ownership of partners-api, a batch CSV-import service in layered architecture with dependency injection isolating business rules from I/O, sustaining peaks of 60k rows/minute in production. Ownership of the ETL pipelines synchronizing with ERPs — Apache Airflow DAGs (Python) covering contacts, orders, invoices, and product catalog, architected against two nested vendor-API budgets (3 requests/second and 120k requests/day, per client) under an HTTP N+1 pattern: work-conserving scheduling with priority-weighted allocation across concurrent streams, and durable resumption via page-and-record checkpoint on hitting the daily quota. Cut production Core Web Vitals into the 'good' range via a React rendering refactor on MVVM. Contributor to the company design system in StencilJS/Storybook.",
+      "Owns partners-api, a layered CSV-import service with DI-isolated business rules sustaining 60k rows/minute in production. Owns the ETL pipelines syncing Bling, Tiny, and Microvix via Apache Airflow DAGs, with priority-weighted scheduling and checkpoint resumption against per-client rate budgets as tight as 3 requests/second. Authored security-settings-sdk, an HTTP client and cache library adopted by four internal apps, replacing duplicated logic with a typed Result-pattern error contract. Fixed a prototype-chain regression in the org's Winston-based logger that had silently broken instanceof checks and test mocking across every consumer. Cut production Core Web Vitals into the 'good' range (LCP 2.91s → 2.35s, INP 275ms → 199ms) via an MVVM rendering refactor.",
     tags: [
       'React',
       'MVVM',
-      'Feature Flags',
+      'Result Pattern',
       'Core Web Vitals',
-      'StencilJS',
       'Layered Architecture',
       'Apache Airflow',
       'Python',
